@@ -8,7 +8,7 @@ public class FieldOfView : MonoBehaviour
     public float viewRadius;
     [Range(0, 360)]
     public float viewAngle;
-
+    
     public LayerMask targetMask;
     public LayerMask obstacleMask;
 
@@ -146,7 +146,14 @@ public class FieldOfView : MonoBehaviour
     {
         Vector3 dir = DirFromAngle(globalAngle, true);
         RaycastHit hit;
-
+        
+        
+        
+        //Here left for enemy find player trigger to do
+        if (Physics.Raycast(transform.position, dir, out hit, viewRadius, targetMask)) {
+            Debug.Log("Player Find");
+            
+        }
         if (Physics.Raycast(transform.position, dir, out hit, viewRadius, obstacleMask))
         {
             return new ViewCastInfo(true, hit.point, hit.distance, globalAngle);
