@@ -8,6 +8,7 @@ public class CharacterController_Player : MonoBehaviour
 {
     // Physics variables
     Rigidbody rb;
+    CapsuleCollider capsule;
     float gravityFac = 9.81f;
     Ray groundRay;
     RaycastHit groundRayHit;
@@ -95,6 +96,12 @@ public class CharacterController_Player : MonoBehaviour
             // Add gravity factor when not standing on a surface
             moveVector += Vector3.down * gravityFac * Time.deltaTime;
 
+            // Cap falling speed at gravity factor per second
+            if (moveVector.y < -gravityFac)
+            {
+                moveVector = new Vector3(moveVector.x, -gravityFac, moveVector.z);
+            }
+
             // Draw red line where ground detection is being checked (collision hasn't happened yet)
             Debug.DrawRay(groundRayBase.position + Vector3.up * 0.5f, groundRay.direction, Color.green);
         }
@@ -102,7 +109,9 @@ public class CharacterController_Player : MonoBehaviour
         // Draw current rotation direction
         Debug.DrawRay(groundRayBase.position, transform.forward, Color.blue);
 
+        Vector3 nextPosition = rb.position + moveVector * Time.fixedDeltaTime;
+        
         // Final movement calculation
-        rb.MovePosition(rb.position + moveVector * Time.fixedDeltaTime);
+        rb.MovePosition(nextPosition);
     }
 }
