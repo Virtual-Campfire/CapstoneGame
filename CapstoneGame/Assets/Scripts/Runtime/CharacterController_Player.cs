@@ -26,6 +26,8 @@ public class CharacterController_Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        capsule = GetComponent<CapsuleCollider>();
         
         floorLayer = LayerMask.NameToLayer("Floor");
     }
