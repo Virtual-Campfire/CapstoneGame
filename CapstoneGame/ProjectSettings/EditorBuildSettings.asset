@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/KC Test Field.unity
+    guid: e8399c7e294bc81478c9ba6d86cb484f
   m_configObjects: {}
