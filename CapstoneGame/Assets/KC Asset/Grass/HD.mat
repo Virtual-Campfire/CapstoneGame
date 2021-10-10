@@ -183,6 +183,7 @@ Material:
     m_Floats:
     - Vector1_8766ef95b0434d32afd6f3bf9c3931bd: 1.13
     - Vector1_8dffd8d2aa6a431582110c864d01a2f9: 0.35
+    - Vector1_c335be660744436395621bfa70dc4fd3: 1
     - _AORemapMax: 1
     - _AORemapMin: 0
     - _ATDistance: 1
@@ -324,4 +325,5 @@ Material:
     - _UVDetailsMappingMask: {r: 1, g: 0, b: 0, a: 0}
     - _UVMappingMask: {r: 1, g: 0, b: 0, a: 0}
     - _UVMappingMaskEmissive: {r: 1, g: 0, b: 0, a: 0}
+    - _position: {r: -0.018764496, g: 3.3385618, b: -48.8, a: 0}
   m_BuildTextureStacks: []

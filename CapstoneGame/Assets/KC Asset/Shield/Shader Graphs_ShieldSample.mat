@@ -38,6 +38,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _SampleTexture2D_223187059c9a41a1b6152ce2d7670cbd_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 6116ff05006961244a2841e07af5dbfb, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_5acb61834b184f699a5fe7c9c176bdac_Texture_1:
         m_Texture: {fileID: 2800000, guid: 6116ff05006961244a2841e07af5dbfb, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -55,9 +59,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_025be3408bee42a69ec1dddfb9dc75d2: 0
     - Vector1_40618ca8559e43cc99ace67f194c0171: 1
     - Vector1_49a788f6d199430db102f89e97154a1c: 0.5
     - Vector1_55e1edc70faa421fa501ea8b264c7262: 3.5
+    - Vector1_7d7861902b904c3eb00c1c240d5d689e: 0
     - Vector1_83f67d0611114e0ca0c8e2eda5ddae8e: 1
     - Vector1_afa9eddeead543ae84337d6cc268a963: 0.5
     - Vector1_f1b3f374da12487aa6fd3c17747dae32: 1.5
@@ -76,6 +82,9 @@ Material:
     - _DstBlend: 10
     - _EnableBlendModePreserveSpecularLighting: 0
     - _EnableFogOnTransparent: 1
+    - _ImpactAmplitude: 0
+    - _ImpactMaxR: 0
+    - _ImpactSpeed: 0
     - _OpaqueCullMode: 2
     - _RenderQueueType: 4
     - _SrcBlend: 1
@@ -105,6 +114,10 @@ Material:
     m_Colors:
     - Color_55fef2143a34456ba0fa792832f43406: {r: 0.5747152, g: 0.990566, b: 0.658639, a: 0}
     - Vector2_b1984a53b1ba42d7b89dba420211f11c: {r: 1, g: 0, b: 0, a: 0}
+    - Vector3_09c67c95b53148d4a8a0fe05ffc31ca8: {r: 0, g: 0, b: 1, a: 0}
+    - Vector3_4afe8c4add224580ac729edf19fb3b7e: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _ImpactDirection: {r: 0, g: 0, b: 1, a: 0}
+    - _ImpactPoint: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
