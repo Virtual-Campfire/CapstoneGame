@@ -6,11 +6,28 @@ public class Interactive : MonoBehaviour
 {
     public Vector3 BigScale;
     public float IncreaseSpeed;
-    public bool TurnOn=false;
+    bool TurnOn=false;
+    public Vector3 OrginalSize;
+    public bool Distory = false;
+
+    private void Start()
+    {
+        OrginalSize = new Vector3(0, 0, 0);
+
+        this.gameObject.transform.localScale = OrginalSize;
+    }
 
 
     void Bigger() {
+
         this.gameObject.transform.localScale = new Vector3(this.gameObject.transform.localScale.x + IncreaseSpeed, this.gameObject.transform.localScale.y + IncreaseSpeed, this.gameObject.transform.localScale.z + IncreaseSpeed);
+
+    }
+
+    void CleanUp() {
+
+        this.gameObject.transform.localScale = OrginalSize;
+
 
     }
 
@@ -30,12 +47,16 @@ public class Interactive : MonoBehaviour
         }
 
 
-        if (TurnOn) {
+        if (TurnOn)
+        {
             Bigger();
-            if (this.gameObject.transform.localScale.x > BigScale.x) {
+            if (this.gameObject.transform.localScale.x > BigScale.x)
+            {
                 TurnOn = false;
+
             }
 
         }
+        else { if (Distory) { CleanUp(); Distory = false; }  }
     }
 }
