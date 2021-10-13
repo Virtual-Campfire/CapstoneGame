@@ -20,7 +20,14 @@ public class CharacterController_Player : MonoBehaviour
     // Variables for movement control factors
     Vector3 moveIntent, moveVector;
     public float moveSpeed = 1, jumpPower = 2;
-    bool isGrounded = false, isJumping = false;
+    bool isGrounded = false, isJumping = false, isLocked = false;
+
+    // Variables for melee attack (Note: for the melee attack to do anything, other objects will have to check for hurtboxes on the "hitbox" physics layer later on)
+    public Collider meleeHurtbox;
+    bool isMeleeing = false;
+    float meleeStartTime;
+    Quaternion meleeAngle;
+    public float meleeDuration = .5f, meleeCooldown = .5f;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +37,8 @@ public class CharacterController_Player : MonoBehaviour
         capsule = GetComponent<CapsuleCollider>();
         
         floorLayer = LayerMask.NameToLayer("Floor");
+
+        meleeHurtbox.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -40,6 +49,11 @@ public class CharacterController_Player : MonoBehaviour
         if(Input.GetButtonDown("Jump"))
         {
             isJumping = true;
+        }
+        
+        if (Input.GetButtonDown("Fire1"))
+        {
+            isMeleeing = true;
         }
     }
 
@@ -111,9 +125,51 @@ public class CharacterController_Player : MonoBehaviour
         // Draw current rotation direction
         Debug.DrawRay(groundRayBase.position, transform.forward, Color.blue);
 
+        // Calculate position character is trying to move to for this physics update
         Vector3 nextPosition = rb.position + moveVector * Time.fixedDeltaTime;
-        
-        // Final movement calculation
-        rb.MovePosition(nextPosition);
+
+        // If not interrupted by attacking or other effects, move to destination
+        if (!isLocked)
+        {
+            // Apply final movement calculation
+            rb.MovePosition(nextPosition);
+        }
+
+        // If trying to melee and previous melee attack has finished
+        if (isMeleeing && Time.fixedTime > meleeStartTime + meleeDuration + meleeCooldown)
+        {
+            // Reset variables
+            meleeStartTime = Time.fixedTime;
+            
+            // Get angle to derive the arc the weapon will cover when swiping
+            meleeAngle = transform.rotation;
+
+            // Reset input flag
+            isMeleeing = false;
+            
+            // Lock character in place during attack (to allow for hover or other movement effects to take over)
+            isLocked = true;
+
+            // Make weapon swipe model/effect appear
+            meleeHurtbox.gameObject.SetActive(true);
+        }
+
+        // If within duration of melee attack
+        if (Time.fixedTime < meleeStartTime + meleeDuration)
+        {
+            // The angle the weapon will be rotating to for this physics update
+            Quaternion tempRot = Quaternion.Euler(0, Mathf.Lerp(-90, 90, (Time.fixedTime - meleeStartTime) / meleeDuration), 0);
+
+            // Rotate weapon based on time since attacking
+            meleeHurtbox.gameObject.GetComponent<Rigidbody>().MoveRotation(Quaternion.Euler(meleeAngle.eulerAngles + tempRot.eulerAngles));
+        }
+        else
+        {
+            // Unlock character movement
+            isLocked = false;
+            
+            // Make weapon swipe model/effect disappear
+            meleeHurtbox.gameObject.SetActive(false);
+        }
     }
 }
