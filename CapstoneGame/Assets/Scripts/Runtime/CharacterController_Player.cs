@@ -22,12 +22,15 @@ public class CharacterController_Player : MonoBehaviour
     public float moveSpeed = 1, jumpPower = 2;
     bool isGrounded = false, isJumping = false, isLocked = false;
 
-    // Variables for melee attack (Note: for the melee attack to do anything, other objects will have to check for hurtboxes on the "hitbox" physics layer later on)
+    // Variables for melee attack and tools (Note: melee attack works on the "hitbox" physics layer)
     public BoxCollider meleeHurtbox;
     bool isMeleeing = false;
     float meleeStartTime;
     Quaternion meleeAngle;
-    public float meleeDuration = .5f, meleeCooldown = .5f;
+    public float meleeDuration = .5f, meleeCooldown = .5f, meleeBufferTime = .5f;
+
+    bool isViolinning = false;
+    float violinRadius = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -52,9 +55,19 @@ public class CharacterController_Player : MonoBehaviour
             isJumping = true;
         }
         
-        if (Input.GetButtonDown("Fire1"))
+        // Check last melee attack and melee buffer time (so that players can queue up an attack if they click right before ending their last)
+        if (Input.GetButtonDown("Fire1") && Time.fixedTime > meleeStartTime + meleeDuration + meleeCooldown - meleeBufferTime)
         {
             isMeleeing = true;
+        }
+
+        if (Input.GetButton("Fire2"))
+        {
+            isViolinning = true;
+        }
+        else
+        {
+            isViolinning = false;
         }
     }
 
@@ -185,6 +198,32 @@ public class CharacterController_Player : MonoBehaviour
             
             // Make weapon swipe model/effect disappear
             meleeHurtbox.gameObject.SetActive(false);
+        }
+
+        // Violin behaviour
+        if (isViolinning)
+        {
+            // Check for hearing actors within violin's range
+            Collider [] temp = Physics.OverlapSphere(transform.position, violinRadius, 1 << 14);
+
+            // Call each hearing actor's hearing response function
+            foreach (Collider item in temp)
+            {
+                if (item.gameObject.GetComponent<HearWithinRadius>())
+                {
+                    // Send nearby, hearing actors this player's position
+                    item.gameObject.GetComponent<HearWithinRadius>().CheckHearing(rb.transform.position);
+                }
+            }
+        }
+    }
+
+    void OnDrawGizmos()
+    {
+        // Debug effect for violin radius
+        if (isViolinning)
+        {
+            Gizmos.DrawWireSphere(transform.position, violinRadius);
         }
     }
 }
