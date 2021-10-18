@@ -29,6 +29,7 @@ public class CharacterController_Player : MonoBehaviour
     Quaternion meleeAngle;
     public float meleeDuration = .5f, meleeCooldown = .5f, meleeBufferTime = .5f;
 
+    public GameObject violinRadiusIndicator;
     bool isViolinning = false;
     float violinRadius = 5;
 
@@ -215,6 +216,14 @@ public class CharacterController_Player : MonoBehaviour
                     item.gameObject.GetComponent<HearWithinRadius>().CheckHearing(rb.transform.position);
                 }
             }
+
+            // Visual effect for violin sound radius
+            violinRadiusIndicator.SetActive(true);
+            violinRadiusIndicator.transform.localScale = new Vector3(violinRadius * 2 - Mathf.Cos(Time.fixedTime * 5) * .25f, violinRadius * 2 - Mathf.Cos(Time.fixedTime * 5) * .25f, violinRadius * 2 - Mathf.Cos(Time.fixedTime * 5) * .25f);
+        }
+        else
+        {
+            violinRadiusIndicator.SetActive(false);
         }
     }
 
