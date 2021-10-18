@@ -93,9 +93,8 @@ GameObject:
   - component: {fileID: 1899238032322336286}
   - component: {fileID: 1899238032322336273}
   - component: {fileID: 1899238032322336272}
-  - component: {fileID: 1899238032322336275}
   - component: {fileID: 1899238032322336274}
-  - component: {fileID: 1899238032322336277}
+  - component: {fileID: 4927290045014211424}
   - component: {fileID: 1899238032322336284}
   - component: {fileID: 1899238032322336285}
   m_Layer: 14
@@ -182,20 +181,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1899238032322336275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1899238032322336276}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca160fdd94c2c674f87436b7e8b09506, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  agent: {fileID: 1899238032322336274}
 --- !u!195 &1899238032322336274
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -218,7 +203,7 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1899238032322336277
+--- !u!114 &4927290045014211424
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -227,11 +212,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1899238032322336276}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60cab90d8321a4d4d95726185ea9055a, type: 3}
+  m_Script: {fileID: 11500000, guid: cbb409b0bf3a53547ae2fcbc63bcffa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   viewRadius: 5
-  viewAngle: 360
+  viewAngle: 120
   targetMask:
     serializedVersion: 2
     m_Bits: 8
