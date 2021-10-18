@@ -15,7 +15,7 @@ public class CharacterController_Player : MonoBehaviour
     public Transform groundRayBase;
 
     // Layer masks involved in character movement
-    LayerMask floorLayer;
+    LayerMask floorLayer, wallLayer;
 
     // Variables for movement control factors
     Vector3 moveIntent, moveVector;
@@ -23,7 +23,7 @@ public class CharacterController_Player : MonoBehaviour
     bool isGrounded = false, isJumping = false, isLocked = false;
 
     // Variables for melee attack (Note: for the melee attack to do anything, other objects will have to check for hurtboxes on the "hitbox" physics layer later on)
-    public Collider meleeHurtbox;
+    public BoxCollider meleeHurtbox;
     bool isMeleeing = false;
     float meleeStartTime;
     Quaternion meleeAngle;
@@ -36,7 +36,8 @@ public class CharacterController_Player : MonoBehaviour
 
         capsule = GetComponent<CapsuleCollider>();
         
-        floorLayer = LayerMask.NameToLayer("Floor");
+        floorLayer = 1 << LayerMask.NameToLayer("Floor");
+        wallLayer = 1 << LayerMask.NameToLayer("Wall");
 
         meleeHurtbox.gameObject.SetActive(false);
     }
@@ -67,7 +68,7 @@ public class CharacterController_Player : MonoBehaviour
 
         // Check if ground collision is below
         // Added conditional so ground collision is only checked when moving down (velocity-based solution might be better later)
-        if (Physics.Raycast(groundRay, out groundRayHit, 1f, 1 << floorLayer, QueryTriggerInteraction.Ignore) && rb.velocity.y <= 0)
+        if (Physics.Raycast(groundRay, out groundRayHit, 1f, floorLayer | wallLayer, QueryTriggerInteraction.Ignore) && rb.velocity.y <= 0)
         {
             // Set grounded flag on
             isGrounded = true;
@@ -127,6 +128,20 @@ public class CharacterController_Player : MonoBehaviour
 
         // Calculate position character is trying to move to for this physics update
         Vector3 nextPosition = rb.position + moveVector * Time.fixedDeltaTime;
+
+        // Check if damage source overlaps character
+        if (meleeHurtbox.gameObject.activeSelf)
+        {
+            Collider[] temp = Physics.OverlapBox(meleeHurtbox.transform.position + transform.forward * meleeHurtbox.center.z, meleeHurtbox.size, meleeHurtbox.gameObject.transform.rotation, 1 << 14);
+            print(meleeHurtbox.transform.position + meleeHurtbox.center);
+            foreach (Collider item in temp)
+            {
+                if (item.GetComponent<DamageKnockback>() && item.gameObject.tag == "Enemy")
+                {
+                    item.GetComponent<DamageKnockback>().TakeDamage(rb.transform.position, 3, 1);
+                }
+            }
+        }
 
         // If not interrupted by attacking or other effects, move to destination
         if (!isLocked)
