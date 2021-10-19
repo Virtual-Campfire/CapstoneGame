@@ -19,7 +19,7 @@ public Camera cam;
     {
  if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("Click Click");
+
             
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;

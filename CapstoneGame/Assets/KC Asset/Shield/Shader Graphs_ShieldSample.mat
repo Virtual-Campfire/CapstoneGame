@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7107959528693955987
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da692e001514ec24dbc4cca1949ff7e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 11
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Shader Graphs_ShieldSample
+  m_Shader: {fileID: -6465566751694194690, guid: 13824da471b88c048bbc0a254a531774, type: 3}
+  m_ShaderKeywords: _ENABLE_FOG_ON_TRANSPARENT _SURFACE_TYPE_TRANSPARENT
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3000
+  stringTagMap:
+    MotionVector: User
+    RenderType: Transparent
+  disabledShaderPasses:
+  - MOTIONVECTORS
+  - TransparentDepthPrepass
+  - TransparentDepthPostpass
+  - TransparentBackface
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _SampleTexture2D_223187059c9a41a1b6152ce2d7670cbd_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 6116ff05006961244a2841e07af5dbfb, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_24d2d71532a0451e94b7634f163ad917_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 1f2cb602c3f7e074b8fec82d82f857b1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_5acb61834b184f699a5fe7c9c176bdac_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 6116ff05006961244a2841e07af5dbfb, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_025be3408bee42a69ec1dddfb9dc75d2: 0
+    - Vector1_40618ca8559e43cc99ace67f194c0171: 11
+    - Vector1_49a788f6d199430db102f89e97154a1c: 0.5
+    - Vector1_55e1edc70faa421fa501ea8b264c7262: 3.5
+    - Vector1_7d7861902b904c3eb00c1c240d5d689e: 0
+    - Vector1_83f67d0611114e0ca0c8e2eda5ddae8e: 1
+    - Vector1_afa9eddeead543ae84337d6cc268a963: 0.5
+    - Vector1_f1b3f374da12487aa6fd3c17747dae32: 1.5
+    - _AddPrecomputedVelocity: 0
+    - _AlphaCutoffEnable: 0
+    - _AlphaDstBlend: 10
+    - _AlphaSrcBlend: 1
+    - _AlphaToMask: 0
+    - _AlphaToMaskInspectorValue: 0
+    - _BlendMode: 0
+    - _CullMode: 2
+    - _CullModeForward: 2
+    - _DepthOffsetEnable: 0
+    - _DoubleSidedEnable: 0
+    - _DoubleSidedNormalMode: 2
+    - _DstBlend: 10
+    - _EnableBlendModePreserveSpecularLighting: 0
+    - _EnableFogOnTransparent: 1
+    - _ImpactAmplitude: 0
+    - _ImpactMaxR: 0
+    - _ImpactSpeed: 0
+    - _OpaqueCullMode: 2
+    - _RenderQueueType: 4
+    - _SrcBlend: 1
+    - _StencilRef: 0
+    - _StencilRefDepth: 0
+    - _StencilRefDistortionVec: 4
+    - _StencilRefGBuffer: 2
+    - _StencilRefMV: 32
+    - _StencilWriteMask: 6
+    - _StencilWriteMaskDepth: 8
+    - _StencilWriteMaskDistortionVec: 4
+    - _StencilWriteMaskGBuffer: 14
+    - _StencilWriteMaskMV: 40
+    - _SurfaceType: 1
+    - _TransparentBackfaceEnable: 0
+    - _TransparentCullMode: 2
+    - _TransparentDepthPostpassEnable: 0
+    - _TransparentDepthPrepassEnable: 0
+    - _TransparentSortPriority: 0
+    - _TransparentWritingMotionVec: 0
+    - _TransparentZWrite: 0
+    - _UseShadowThreshold: 0
+    - _ZTestDepthEqualForOpaque: 4
+    - _ZTestGBuffer: 4
+    - _ZTestTransparent: 4
+    - _ZWrite: 0
+    m_Colors:
+    - Color_55fef2143a34456ba0fa792832f43406: {r: 0.5747152, g: 0.990566, b: 0.658639, a: 0}
+    - Vector2_b1984a53b1ba42d7b89dba420211f11c: {r: 1, g: 0, b: 0, a: 0}
+    - Vector3_09c67c95b53148d4a8a0fe05ffc31ca8: {r: 0, g: 0, b: 1, a: 0}
+    - Vector3_4afe8c4add224580ac729edf19fb3b7e: {r: 0, g: 0, b: 0, a: 0}
+    - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _ImpactDirection: {r: 0, g: 0, b: 1, a: 0}
+    - _ImpactPoint: {r: 0, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []
