@@ -12,7 +12,10 @@ public class ChaseState : FSMState
         AddTransition(Transition.IntoIdeal, StateID.Ideal);
     }
 
+    private void Start()
+    {
 
+    }
 
 
     public override void DoBeforeEntering()
