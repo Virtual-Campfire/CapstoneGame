@@ -5082,8 +5082,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1602348617}
-  - component: {fileID: 1602348618}
   - component: {fileID: 1602348619}
+  - component: {fileID: 1602348618}
   m_Layer: 0
   m_Name: States
   m_TagString: Untagged
