@@ -3,32 +3,24 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Enemy
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Player
+  - 
   - Water
   - UI
-  - Weapon
   - 
   - 
   - 
-  - Floor
-  - Wall
-<<<<<<< HEAD
-  - Glass
-  - Hitbox
-  - Actor
-  - 
-=======
-  - Galss
   - 
   - 
-  - Shield
->>>>>>> KC_Vision
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 

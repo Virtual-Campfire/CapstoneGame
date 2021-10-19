@@ -63,7 +63,7 @@ public class FSMSystem
                 {
                     Debug.LogError("FSM ERROR: Impossible to add state " + fsmState.ID.ToString() +
                                    " because state has already been added");
-                    return;
+                    //return;
                 }
             }
 

@@ -4,13 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-<<<<<<< HEAD
-    path: Assets/Scenes/MovementTest.unity
-    guid: 3a55d7d9d38039b4fb667e723d66df0a
-=======
-    path: Assets/Scenes/KC Test Field.unity
-    guid: e8399c7e294bc81478c9ba6d86cb484f
->>>>>>> KC_Vision
+  m_Scenes: []
   m_configObjects: {}
