@@ -7,7 +7,7 @@ public class IdealState : FSMState
     void Awake()
     {
         stateID = StateID.Ideal;
-        AddTransition(Transition.IntoChasing, StateID.Chasing); 
+        AddTransition(Transition.IntoDoubt, StateID.Doubt); 
     }
 
 
@@ -27,7 +27,7 @@ public class IdealState : FSMState
     public override void Act()
     {
         Debug.Log("NPC In ideal");
-        Debug.Log("11111");
+        
 
     }
 
@@ -36,7 +36,7 @@ public class IdealState : FSMState
     public override void Reason()
     {
 
-        if (Input.GetMouseButtonUp(0)) { manager.Fsm.PerformTransition(Transition.IntoChasing); }
+        if (GetComponentInParent<Attention>().attentionValue>0) { manager.Fsm.PerformTransition(Transition.IntoDoubt); }
         
     }
 

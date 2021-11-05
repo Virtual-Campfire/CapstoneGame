@@ -24,7 +24,6 @@ public class FieldOfView : MonoBehaviour
 
 
 
-
     void Start()
     {
         viewMesh = new Mesh();
@@ -146,14 +145,17 @@ public class FieldOfView : MonoBehaviour
     {
         Vector3 dir = DirFromAngle(globalAngle, true);
         RaycastHit hit;
-        
-        
-        
+
+
+
         //Here left for enemy find player trigger to do
-        if (Physics.Raycast(transform.position, dir, out hit, viewRadius, targetMask)) {
+        if (Physics.Raycast(transform.position, dir, out hit, viewRadius, targetMask))
+        {
             Debug.Log("Player Find");
-            
+            GetComponent<Attention>().seePlayer = true;
         }
+        
+     
         if (Physics.Raycast(transform.position, dir, out hit, viewRadius, obstacleMask))
         {
             return new ViewCastInfo(true, hit.point, hit.distance, globalAngle);
@@ -162,6 +164,9 @@ public class FieldOfView : MonoBehaviour
         {
             return new ViewCastInfo(false, transform.position + dir * viewRadius, viewRadius, globalAngle);
         }
+
+       
+
     }
 
     public Vector3 DirFromAngle(float angleInDegrees, bool angleIsGlobal)

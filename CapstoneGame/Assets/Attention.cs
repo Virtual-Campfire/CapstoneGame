@@ -6,7 +6,7 @@ public class Attention : MonoBehaviour
 {
 
 
-    float value = 0;
+    public float attentionValue = 0;
 
 
     [SerializeField]
@@ -14,8 +14,8 @@ public class Attention : MonoBehaviour
     [SerializeField]
     float decreaseSpeed;
 
-
-    public GameObject player;
+    GameObject player;
+    public bool seePlayer;
 
 
 
@@ -31,22 +31,29 @@ public class Attention : MonoBehaviour
     void Update()
     {
         float dist = Vector3.Distance(player.transform.position, transform.position);
-        if (dist <= GetComponent<FieldOfView>().viewRadius)
+        if (seePlayer == true)
         {
-            value += (GetComponent<FieldOfView>().viewRadius - dist) / GetComponent<FieldOfView>().viewRadius * increaseSpeed;
-            if (value >= 100)
+            attentionValue += (GetComponent<FieldOfView>().viewRadius - dist) / GetComponent<FieldOfView>().viewRadius * increaseSpeed;
+            if (attentionValue >= 100)
             {
-                value = 100;
+                attentionValue = 100;
             }
         }
-        if (dist > GetComponent<FieldOfView>().viewRadius)
+
+        if (seePlayer == false)
         {
-            value -= Time.deltaTime * decreaseSpeed;
-            if (value < 0) { value = 0; }
+            attentionValue -= Time.deltaTime * decreaseSpeed;
+            if (attentionValue <= 0) { attentionValue = 0; }
         }
 
-        Debug.Log(value);
+        seePlayer = false;
 
 
+
+
+        //Debug.Log(attentionValue);
     }
 }
+
+
+

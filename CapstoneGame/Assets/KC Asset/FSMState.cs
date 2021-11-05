@@ -8,6 +8,7 @@ public enum StateID
 {
     NullStateId,
     Ideal,
+    Doubt,
     Chasing
 
 }
@@ -16,6 +17,7 @@ public enum Transition
 {
     NullTransition,
     IntoIdeal,
+    IntoDoubt,
     IntoChasing
 }
 
