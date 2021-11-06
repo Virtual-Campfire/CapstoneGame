@@ -20,7 +20,9 @@ public class IdealState : FSMState
     private void Update()
     {
         if (GetComponentInParent<Attention>().attentionValue == 0) {
+
             GetComponentInParent<EnemyState>().ReturnFromChase = false;
+
         }
     }
 

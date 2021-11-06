@@ -29,6 +29,7 @@ public class DoubtState : FSMState
     public override void DoBeforeEntering()
     {
         Debug.Log("In Doubt: Ehmmm£¿What I just saw?");
+        transform.parent.LookAt(transform.parent.position);
     }
 
 
@@ -36,7 +37,7 @@ public class DoubtState : FSMState
     public override void DoBeforeLeaving()
     {
 
-        transform.parent.LookAt(new Vector3(0, 0, 0));
+        transform.parent.LookAt(transform.parent.position);
 
        
     }

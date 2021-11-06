@@ -4253,6 +4253,7 @@ GameObject:
   - component: {fileID: 1302100160}
   - component: {fileID: 1302100161}
   - component: {fileID: 1302100162}
+  - component: {fileID: 1302100163}
   m_Layer: 6
   m_Name: Tester
   m_TagString: Untagged
@@ -4475,6 +4476,19 @@ MonoBehaviour:
   increaseSpeed: 1
   decreaseSpeed: 10
   seePlayer: 0
+--- !u!114 &1302100163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302100150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9827ac0f827d4ec479fb82e35ba3cbb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ReturnFromChase: 0
 --- !u!1 &1392217430
 GameObject:
   m_ObjectHideFlags: 0
@@ -5204,9 +5218,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1602348617}
-  - component: {fileID: 1602348620}
-  - component: {fileID: 1602348619}
   - component: {fileID: 1602348618}
+  - component: {fileID: 1602348619}
+  - component: {fileID: 1602348620}
   - component: {fileID: 1602348621}
   m_Layer: 0
   m_Name: States
