@@ -5,6 +5,9 @@ using UnityEngine;
 public class DoubtState : FSMState
 {
     public GameObject Player;
+
+  
+
     void Awake()
     {
         stateID = StateID.Doubt;
@@ -19,7 +22,7 @@ public class DoubtState : FSMState
 
     private void Start()
     {
-
+      
     }
 
 
@@ -33,18 +36,21 @@ public class DoubtState : FSMState
     public override void DoBeforeLeaving()
     {
 
+        transform.parent.LookAt(new Vector3(0, 0, 0));
+
+       
     }
 
 
     public override void Reason()
     {
-        if (GetComponentInParent<Attention>().attentionValue < 5)
+        if (GetComponentInParent<Attention>().attentionValue < 10)
         {
             manager.Fsm.PerformTransition(Transition.IntoIdeal);
         }
 
 
-        if (GetComponentInParent<Attention>().attentionValue >= 30)
+        if (GetComponentInParent<Attention>().attentionValue >= 50)
         {
             manager.Fsm.PerformTransition(Transition.IntoChasing);
         }
@@ -54,6 +60,11 @@ public class DoubtState : FSMState
 
     public override void Act()
     {
-        transform.parent.LookAt(Player.transform.position);
+
+        if (GetComponentInParent<Attention>().attentionValue > 10 && GetComponentInParent<EnemyState>().ReturnFromChase==false) {
+            transform.parent.LookAt(Player.transform.position);
+        }
+
+        
     }
 }

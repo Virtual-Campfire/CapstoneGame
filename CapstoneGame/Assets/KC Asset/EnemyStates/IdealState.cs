@@ -17,16 +17,24 @@ public class IdealState : FSMState
     }
 
 
+    private void Update()
+    {
+        if (GetComponentInParent<Attention>().attentionValue == 0) {
+            GetComponentInParent<EnemyState>().ReturnFromChase = false;
+        }
+    }
+
     public override void DoBeforeEntering()
     {
        Debug.Log("I am ready in to the Ideal now");
-
+      
 
     }
 
     public override void Act()
     {
         Debug.Log("NPC In ideal");
+        
 
     }
 
@@ -35,7 +43,7 @@ public class IdealState : FSMState
     public override void Reason()
     {
 
-        if (GetComponentInParent<Attention>().attentionValue>5) { manager.Fsm.PerformTransition(Transition.IntoDoubt); }
+        if (GetComponentInParent<Attention>().attentionValue>10) { manager.Fsm.PerformTransition(Transition.IntoDoubt); }
         
     }
 

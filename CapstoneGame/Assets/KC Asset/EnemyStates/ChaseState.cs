@@ -47,8 +47,9 @@ public class ChaseState : FSMState
 
     public override void Reason()
     {
-        if (GetComponentInParent<Attention>().attentionValue <= 50)
+        if (GetComponentInParent<Attention>().attentionValue < 50 )
         {
+            GetComponentInParent<EnemyState>().ReturnFromChase = true;
             manager.Fsm.PerformTransition(Transition.IntoIdeal);
         }
 
