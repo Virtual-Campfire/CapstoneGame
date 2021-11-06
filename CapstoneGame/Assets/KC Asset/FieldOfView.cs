@@ -151,7 +151,7 @@ public class FieldOfView : MonoBehaviour
         //Here left for enemy find player trigger to do
         if (Physics.Raycast(transform.position, dir, out hit, viewRadius, targetMask))
         {
-            Debug.Log("Player Find");
+            //Debug.Log("Player Find");
             GetComponent<Attention>().seePlayer = true;
         }
         

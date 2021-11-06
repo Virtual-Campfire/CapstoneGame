@@ -2,22 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChaseState : FSMState
+public class attackState : FSMState
 {
-    public UnityEngine.AI.NavMeshAgent agent;
     public GameObject Player;
     float dist;
+
 
     //link attack range with the setting range from here
     public float AttackRange;
 
     void Awake()
     {
-        stateID = StateID.Chasing;
-        AddTransition(Transition.IntoIdeal, StateID.Ideal);
-        AddTransition(Transition.IntoAttack, StateID.Attack);
+        stateID = StateID.Attack;
+        AddTransition(Transition.IntoChasing, StateID.Chasing);
         Player = GameObject.Find("Player");
-      
+
 
     }
 
@@ -34,37 +33,28 @@ public class ChaseState : FSMState
 
     public override void DoBeforeEntering()
     {
-        Debug.Log("I am ready in to the chasing now");
+      
     }
 
 
 
     public override void DoBeforeLeaving()
     {
-       
+
     }
 
 
     public override void Reason()
     {
-        if (GetComponentInParent<Attention>().attentionValue <= 50)
+        if (dist>AttackRange)
         {
-            manager.Fsm.PerformTransition(Transition.IntoIdeal);
-        }
-
-        if (dist <= AttackRange) {
-            manager.Fsm.PerformTransition(Transition.IntoAttack);
+            manager.Fsm.PerformTransition(Transition.IntoChasing);
         }
     }
 
     public override void Act()
     {
-        agent.SetDestination(Player.transform.position);
 
-
+        Debug.Log("Detroit Smash~~!!");
     }
-
-
-
-
 }

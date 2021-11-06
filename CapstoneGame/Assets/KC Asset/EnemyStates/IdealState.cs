@@ -27,7 +27,6 @@ public class IdealState : FSMState
     public override void Act()
     {
         Debug.Log("NPC In ideal");
-        
 
     }
 
@@ -36,7 +35,7 @@ public class IdealState : FSMState
     public override void Reason()
     {
 
-        if (GetComponentInParent<Attention>().attentionValue>0) { manager.Fsm.PerformTransition(Transition.IntoDoubt); }
+        if (GetComponentInParent<Attention>().attentionValue>5) { manager.Fsm.PerformTransition(Transition.IntoDoubt); }
         
     }
 

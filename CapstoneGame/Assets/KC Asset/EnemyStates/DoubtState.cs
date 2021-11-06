@@ -5,15 +5,15 @@ using UnityEngine;
 public class DoubtState : FSMState
 {
     public GameObject Player;
-    public GameObject MyHolder;
     void Awake()
     {
         stateID = StateID.Doubt;
-        AddTransition(Transition.IntoChasing, StateID.Chasing);
-        AddTransition(Transition.IntoIdeal, StateID.Ideal);
-        Player = GameObject.Find("Player");
-      
 
+        AddTransition(Transition.IntoIdeal, StateID.Ideal);
+
+        AddTransition(Transition.IntoChasing, StateID.Chasing);
+       
+        Player = GameObject.Find("Player");
 
     }
 
@@ -38,22 +38,22 @@ public class DoubtState : FSMState
 
     public override void Reason()
     {
-        //if (GetComponentInParent<Attention>().attentionValue>=30)
-        //{
-        //    manager.Fsm.PerformTransition(Transition.IntoChasing);
-        //}
-
-        if (GetComponentInParent<Attention>().attentionValue == 0)
+        if (GetComponentInParent<Attention>().attentionValue < 5)
         {
             manager.Fsm.PerformTransition(Transition.IntoIdeal);
         }
+
+
+        if (GetComponentInParent<Attention>().attentionValue >= 30)
+        {
+            manager.Fsm.PerformTransition(Transition.IntoChasing);
+        }
+
+
     }
 
     public override void Act()
     {
-        
         transform.parent.LookAt(Player.transform.position);
-        Debug.Log("Looking works");
-
     }
 }

@@ -4363,7 +4363,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.75
-  m_Speed: 35
+  m_Speed: 15
   m_Acceleration: 70
   avoidancePriority: 50
   m_AngularSpeed: 720
@@ -4473,7 +4473,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attentionValue: 0
   increaseSpeed: 1
-  decreaseSpeed: 1
+  decreaseSpeed: 10
   seePlayer: 0
 --- !u!1 &1392217430
 GameObject:
@@ -5204,9 +5204,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1602348617}
+  - component: {fileID: 1602348620}
   - component: {fileID: 1602348619}
   - component: {fileID: 1602348618}
-  - component: {fileID: 1602348620}
+  - component: {fileID: 1602348621}
   m_Layer: 0
   m_Name: States
   m_TagString: Untagged
@@ -5249,9 +5250,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1602348616}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcc0c7cc3570b8f44bb25d83b9c6fb2e, type: 3}
+  m_Script: {fileID: 11500000, guid: c8fe4d33fa754c24e9c65e9117af5f09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
 --- !u!114 &1602348620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5261,10 +5263,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 1602348616}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8fe4d33fa754c24e9c65e9117af5f09, type: 3}
+  m_Script: {fileID: 11500000, guid: fcc0c7cc3570b8f44bb25d83b9c6fb2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 1302100156}
+  Player: {fileID: 0}
+  AttackRange: 8
+--- !u!114 &1602348621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602348616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb3fe928c51c1c24a91368f21d5f6e1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
+  AttackRange: 8
 --- !u!1 &1634591536
 GameObject:
   m_ObjectHideFlags: 0
@@ -6193,7 +6211,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1973364983}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -53.9, y: 6.08, z: -19.12175}
+  m_LocalPosition: {x: -103.1, y: 6.08, z: -19.12175}
   m_LocalScale: {x: 20.834587, y: 20.834587, z: 20.834587}
   m_Children: []
   m_Father: {fileID: 0}
