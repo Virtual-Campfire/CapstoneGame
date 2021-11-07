@@ -62,7 +62,7 @@ public class DoubtState : FSMState
     public override void Act()
     {
 
-        if (GetComponentInParent<Attention>().attentionValue > 10 && GetComponentInParent<EnemyState>().ReturnFromChase==false) {
+        if (GetComponentInParent<Attention>().attentionValue > 10 && GetComponentInParent<EnemyState>().ReturnFromChase==false && Vector3.Distance(transform.position,Player.transform.position)<=GetComponentInParent<FieldOfView>().viewRadius) {
             transform.parent.LookAt(Player.transform.position);
         }
 

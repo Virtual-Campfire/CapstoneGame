@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ChaseState : FSMState
 {
@@ -17,7 +18,9 @@ public class ChaseState : FSMState
         AddTransition(Transition.IntoIdeal, StateID.Ideal);
         AddTransition(Transition.IntoAttack, StateID.Attack);
         Player = GameObject.Find("Player");
-      
+
+        agent = transform.parent.gameObject.GetComponent<NavMeshAgent>();
+
 
     }
 

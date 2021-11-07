@@ -1,19 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class IdealState : FSMState
 {
+
+    public UnityEngine.AI.NavMeshAgent agent;
+
+    public Transform SaveLocation;
+
+    public float rotationResetSpeed;
+
+
+
     void Awake()
     {
         stateID = StateID.Ideal;
-        AddTransition(Transition.IntoDoubt, StateID.Doubt); 
+        AddTransition(Transition.IntoDoubt, StateID.Doubt);
+
+        agent = transform.parent.gameObject.GetComponent<NavMeshAgent>();
+
+        
+
     }
 
 
     private void Start()
     {
-        
+        SaveLocation = GetComponentInParent<EnemyState>().PositionHolder.transform;
     }
 
 
@@ -22,8 +37,11 @@ public class IdealState : FSMState
         if (GetComponentInParent<Attention>().attentionValue == 0) {
 
             GetComponentInParent<EnemyState>().ReturnFromChase = false;
-
         }
+
+
+
+        Debug.Log(Vector3.Distance(transform.position, SaveLocation.position));
     }
 
     public override void DoBeforeEntering()
@@ -36,7 +54,11 @@ public class IdealState : FSMState
     public override void Act()
     {
         Debug.Log("NPC In ideal");
-        
+
+
+        //if not at origanal position, move back to where it start
+        ResetPosition(); 
+
 
     }
 
@@ -53,4 +75,27 @@ public class IdealState : FSMState
     {
         Debug.Log("Leaving Ideal");
     }
+
+
+
+    void ResetPosition() {
+        if (Vector3.Distance(transform.position, SaveLocation.position) >= 1) {
+            agent.SetDestination(SaveLocation.position);
+        }else if (Vector3.Distance(transform.position, SaveLocation.position) < 1){
+            ResetRotaion();
+        }
+    
+    }
+
+    void ResetRotaion() {
+        if (transform.parent.rotation != SaveLocation.rotation) {
+
+            transform.parent.rotation = Quaternion.Slerp(transform.rotation, SaveLocation.rotation, Time.time * rotationResetSpeed);
+
+
+        }
+    
+    }
+
+
 }
