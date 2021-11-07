@@ -61,9 +61,9 @@ public class FSMSystem
             {
                 if (state.ID == fsmState.ID)
                 {
-                    Debug.LogError("FSM ERROR: Impossible to add state " + fsmState.ID.ToString() +
-                                   " because state has already been added");
-                    return;
+                    //Debug.LogError("FSM ERROR: Impossible to add state " + fsmState.ID.ToString() +
+                    //               " because state has already been added");
+                    //return;
                 }
             }
 
