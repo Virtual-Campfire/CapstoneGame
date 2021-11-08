@@ -33,6 +33,13 @@ public class Attention : MonoBehaviour
         float dist = Vector3.Distance(player.transform.position, transform.position);
         if (seePlayer == true)
         {
+
+            //fix the equation problem: it may go - in caculation
+            if (dist > GetComponent<FieldOfView>().viewRadius) {
+                dist = GetComponent<FieldOfView>().viewRadius;
+            }
+
+
             attentionValue += (GetComponent<FieldOfView>().viewRadius - dist) / GetComponent<FieldOfView>().viewRadius * increaseSpeed;
             if (attentionValue >= 100)
             {
