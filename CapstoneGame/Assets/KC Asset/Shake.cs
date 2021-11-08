@@ -33,10 +33,9 @@ public class Shake : MonoBehaviour
         duration -= Time.deltaTime * slowDown;
         }
         else {
-            shaking = false;
             duration = initialDuration;
             holder.localPosition = startPosition;
-        
+            shaking = false;     
         }
     
     }

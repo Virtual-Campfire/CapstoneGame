@@ -36,6 +36,7 @@ public class ParticleSpawn : MonoBehaviour
         if (collision.gameObject.layer == 15)
         {
             Debug.Log("Hit Shield");
+            GetComponent<Shake>().shaking = true;
             Vector3 closestPosition = shieldCollider.ClosestPointOnBounds(transform.position);
               GameObject clone =  Instantiate(spark, touchPoint.position, Quaternion.identity);
               Destroy(clone, 1f);
