@@ -1,20 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ChaseState : FSMState
 {
+    public UnityEngine.AI.NavMeshAgent agent;
+    public GameObject Player;
+    float dist;
 
+    //link attack range with the setting range from here
+    public float AttackRange;
 
     void Awake()
     {
         stateID = StateID.Chasing;
         AddTransition(Transition.IntoIdeal, StateID.Ideal);
+        AddTransition(Transition.IntoAttack, StateID.Attack);
+        AddTransition(Transition.IntoDead, StateID.Dead);
+
+        Player = GameObject.Find("Player");
+
+        agent = transform.parent.gameObject.GetComponent<NavMeshAgent>();
+
+
     }
 
     private void Start()
     {
 
+    }
+
+    private void Update()
+    {
+        dist = Vector3.Distance(Player.transform.position, transform.position);
     }
 
 
@@ -27,22 +46,34 @@ public class ChaseState : FSMState
 
     public override void DoBeforeLeaving()
     {
-        Debug.Log("Leaving chase");
+       
     }
 
 
     public override void Reason()
     {
-        if (Input.GetMouseButtonUp(0))
+        if (GetComponentInParent<EnemyState>().HP <= 0)
         {
+            manager.Fsm.PerformTransition(Transition.IntoDead);
+
+        }
+
+
+        if (GetComponentInParent<Attention>().attentionValue < 50 )
+        {
+            GetComponentInParent<EnemyState>().ReturnFromChase = true;
             manager.Fsm.PerformTransition(Transition.IntoIdeal);
+        }
+
+        if (dist <= AttackRange) {
+            manager.Fsm.PerformTransition(Transition.IntoAttack);
         }
     }
 
     public override void Act()
     {
+        agent.SetDestination(Player.transform.position);
 
-            Debug.Log("22222");
 
     }
 
