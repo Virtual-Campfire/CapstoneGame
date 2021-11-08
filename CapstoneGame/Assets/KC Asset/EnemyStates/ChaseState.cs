@@ -17,6 +17,8 @@ public class ChaseState : FSMState
         stateID = StateID.Chasing;
         AddTransition(Transition.IntoIdeal, StateID.Ideal);
         AddTransition(Transition.IntoAttack, StateID.Attack);
+        AddTransition(Transition.IntoDead, StateID.Dead);
+
         Player = GameObject.Find("Player");
 
         agent = transform.parent.gameObject.GetComponent<NavMeshAgent>();
@@ -50,6 +52,13 @@ public class ChaseState : FSMState
 
     public override void Reason()
     {
+        if (GetComponentInParent<EnemyState>().HP <= 0)
+        {
+            manager.Fsm.PerformTransition(Transition.IntoDead);
+
+        }
+
+
         if (GetComponentInParent<Attention>().attentionValue < 50 )
         {
             GetComponentInParent<EnemyState>().ReturnFromChase = true;

@@ -10,8 +10,13 @@ public class EnemyState : MonoBehaviour
 
     public GameObject PositionHolder;
 
-
     public bool IsPatrol;
+
+    [Header("Basic")]
+    public int HP;
+
+
+
 
     private void Awake()
     {

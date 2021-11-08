@@ -15,6 +15,8 @@ public class attackState : FSMState
     {
         stateID = StateID.Attack;
         AddTransition(Transition.IntoChasing, StateID.Chasing);
+        AddTransition(Transition.IntoDead, StateID.Dead);
+
         Player = GameObject.Find("Player");
 
 
@@ -27,7 +29,7 @@ public class attackState : FSMState
 
     private void Update()
     {
-        dist = Vector3.Distance(Player.transform.position, transform.position);
+        
     }
 
 
@@ -46,6 +48,14 @@ public class attackState : FSMState
 
     public override void Reason()
     {
+
+        if (GetComponentInParent<EnemyState>().HP <= 0)
+        {
+            manager.Fsm.PerformTransition(Transition.IntoDead);
+
+        }
+
+
         if (dist>AttackRange)
         {
             manager.Fsm.PerformTransition(Transition.IntoChasing);
@@ -54,6 +64,8 @@ public class attackState : FSMState
 
     public override void Act()
     {
+
+        dist = Vector3.Distance(Player.transform.position, transform.position);
 
         Debug.Log("Detroit Smash~~!!");
     }

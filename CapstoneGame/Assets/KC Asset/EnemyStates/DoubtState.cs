@@ -15,7 +15,9 @@ public class DoubtState : FSMState
         AddTransition(Transition.IntoIdeal, StateID.Ideal);
 
         AddTransition(Transition.IntoChasing, StateID.Chasing);
-       
+
+        AddTransition(Transition.IntoDead, StateID.Dead);
+
         Player = GameObject.Find("Player");
 
     }
@@ -45,6 +47,13 @@ public class DoubtState : FSMState
 
     public override void Reason()
     {
+        if (GetComponentInParent<EnemyState>().HP <= 0)
+        {
+            manager.Fsm.PerformTransition(Transition.IntoDead);
+
+        }
+
+
         if (GetComponentInParent<Attention>().attentionValue < 10)
         {
             manager.Fsm.PerformTransition(Transition.IntoIdeal);

@@ -16,6 +16,7 @@ public class PatrolState : FSMState
     {
         stateID = StateID.Patrol;
         AddTransition(Transition.IntoDoubt, StateID.Doubt);
+        AddTransition(Transition.IntoDead, StateID.Dead);
 
         agent = transform.parent.gameObject.GetComponent<NavMeshAgent>();
 
@@ -40,7 +41,7 @@ public class PatrolState : FSMState
     public override void Act()
     {
 
-        Debug.Log("In Patrol");
+        
 
         if (GetComponentInParent<Attention>().attentionValue > 0) { agent.SetDestination(transform.parent.position); }
         else
@@ -57,7 +58,11 @@ public class PatrolState : FSMState
 
     public override void Reason()
     {
+        if (GetComponentInParent<EnemyState>().HP <= 0)
+        {
+            manager.Fsm.PerformTransition(Transition.IntoDead);
 
+        }
 
 
         if (GetComponentInParent<Attention>().attentionValue > 10) { manager.Fsm.PerformTransition(Transition.IntoDoubt); }

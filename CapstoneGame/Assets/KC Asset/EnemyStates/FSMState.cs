@@ -11,7 +11,8 @@ public enum StateID
     Patrol,
     Doubt,
     Chasing,
-    Attack
+    Attack,
+    Dead
 
 }
 
@@ -22,7 +23,8 @@ public enum Transition
     IntoPatrol,
     IntoDoubt,
     IntoChasing,
-    IntoAttack
+    IntoAttack,
+    IntoDead
 }
 
 
