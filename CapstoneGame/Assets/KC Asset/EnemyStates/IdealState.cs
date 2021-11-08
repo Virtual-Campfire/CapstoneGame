@@ -18,7 +18,7 @@ public class IdealState : FSMState
     {
         stateID = StateID.Ideal;
         AddTransition(Transition.IntoDoubt, StateID.Doubt);
-
+        AddTransition(Transition.IntoPatrol, StateID.Patrol);
         agent = transform.parent.gameObject.GetComponent<NavMeshAgent>();
 
         
@@ -29,6 +29,7 @@ public class IdealState : FSMState
     private void Start()
     {
         SaveLocation = GetComponentInParent<EnemyState>().PositionHolder.transform;
+        
     }
 
 
@@ -41,7 +42,7 @@ public class IdealState : FSMState
 
 
 
-        Debug.Log(Vector3.Distance(transform.position, SaveLocation.position));
+        //Debug.Log(Vector3.Distance(transform.position, SaveLocation.position));
     }
 
     public override void DoBeforeEntering()
@@ -66,6 +67,11 @@ public class IdealState : FSMState
 
     public override void Reason()
     {
+
+        if (GetComponentInParent<EnemyState>().IsPatrol == true) {
+            manager.Fsm.PerformTransition(Transition.IntoPatrol);
+
+        }
 
         if (GetComponentInParent<Attention>().attentionValue>10) { manager.Fsm.PerformTransition(Transition.IntoDoubt); }
         

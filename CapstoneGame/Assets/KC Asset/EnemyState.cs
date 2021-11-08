@@ -10,15 +10,15 @@ public class EnemyState : MonoBehaviour
 
     public GameObject PositionHolder;
 
+
+    public bool IsPatrol;
+
     private void Awake()
     {
 
         LocationSave = GameObject.FindWithTag("LocationSave");
 
-        
-
-  
-            }
+     }
 
     // Start is called before the first frame update
     void Start()
