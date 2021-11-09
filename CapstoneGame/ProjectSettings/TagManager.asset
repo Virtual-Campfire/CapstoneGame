@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - LocationSave
+  - Enemy
+  - Activator
+  - Activator1
+  - Activator2
   layers:
   - Default
   - TransparentFX
