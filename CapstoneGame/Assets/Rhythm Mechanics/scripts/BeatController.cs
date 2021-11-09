@@ -11,7 +11,7 @@ public class BeatController : MonoBehaviour
 
     public GameObject Player;
 
-    Animator _animator;
+    //Animator _animator;
 
     void Start()
     {
@@ -21,46 +21,46 @@ public class BeatController : MonoBehaviour
     private void Awake()
     {
         // _animator = GetComponent<Animator>();
-        _animator = Player.GetComponent<Animator>();
+        //_animator = Player.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetButtonDown("Fire1"))
         {
-            PlayerNormalBehavior();
+           // PlayerSpecialBehavior1();
         }
 
-        if (Input.GetKeyUp(KeyCode.Q))
+        if (Input.GetButtonUp("Fire1"))
         {
            // _animator.ResetTrigger("Attack1");
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetButtonDown("Fire2"))
         {
-            PlayerNormalBehavior2();
+           // PlayerSpecialBehavior2();
         }
 
-        if (Input.GetKeyUp(KeyCode.E))
+        if (Input.GetButtonUp("Fire2"))
         {
           //  _animator.ResetTrigger("Attack2");
         }
     }
 
-    public void PlayerNormalBehavior()
+    public void PlayerSpecialBehavior1()
     {
         // normal particles
-       // Instantiate(normalParticles, transform.position, Quaternion.identity);
-        _animator.SetTrigger("Attack1");
+        // Instantiate(normalParticles, transform.position, Quaternion.identity);
+        Debug.Log("PlayerSpecialBehavior 1 Triggerd !!!!!! ");
 
     }
 
-    public void PlayerNormalBehavior2()
+    public void PlayerSpecialBehavior2()
     {
         // normal particles
-       // Instantiate(normalParticles, transform.position, Quaternion.identity);
-        _animator.SetTrigger("Attack2");
+        // Instantiate(normalParticles, transform.position, Quaternion.identity);
+        Debug.Log("PlayerSpecialBehavior 2 Triggerd !!!!!! ");
 
     }
 
