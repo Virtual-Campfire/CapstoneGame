@@ -10,7 +10,8 @@ public class TriggerObject : MonoBehaviour
     public bool canBepressed2;
 
     public KeyCode keyToPress;
-    public ParticleSystem normalParticles;
+    public ParticleSystem normalParticles1;
+    public ParticleSystem normalParticles2;
 
     //public float Timer = 0.3f;
 
@@ -47,11 +48,13 @@ public class TriggerObject : MonoBehaviour
         if (other.tag == "Activator1")
         {
             canBepressed1 = true;
+            Instantiate(normalParticles1, Player.transform.position, Quaternion.identity);
         }
 
         if (other.tag == "Activator2")
         {
             canBepressed2 = true;
+            Instantiate(normalParticles2, Player.transform.position, Quaternion.identity);
         }
     }
 
