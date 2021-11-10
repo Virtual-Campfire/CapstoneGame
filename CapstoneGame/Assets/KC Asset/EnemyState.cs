@@ -15,7 +15,7 @@ public class EnemyState : MonoBehaviour
     [Header("Basic")]
     public int HP;
 
-
+    DamageKnockback health;
 
 
     private void Awake()
@@ -23,7 +23,9 @@ public class EnemyState : MonoBehaviour
 
         LocationSave = GameObject.FindWithTag("LocationSave");
 
-     }
+        health = GetComponent<DamageKnockback>();
+
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +39,7 @@ public class EnemyState : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // Temporary solution, so that nothing that relying on HP breaks
+        HP = (int)health.currentHealth;
     }
 }

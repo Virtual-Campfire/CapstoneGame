@@ -30,7 +30,7 @@ public class LerpToTarget : MonoBehaviour
         else if (mode == CameraMoveType.camSoft)
         {
             // Smooth follow, with slow approach to target (reaches target increasingly slower)
-            transform.position += (target.position - transform.position) * Time.deltaTime;
+            transform.position += (target.position - transform.position) * speed * Time.deltaTime;
         }
         else
         {
