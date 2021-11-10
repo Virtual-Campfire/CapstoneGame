@@ -26,7 +26,7 @@ public class BeatScroller : MonoBehaviour
             if (Input.anyKeyDown)
             {
                 hasStarted = true;
-                level1Music.Play();
+                FMODUnity.RuntimeManager.PlayOneShot("event:/level1BGM");
             }
         }
         else
@@ -34,6 +34,10 @@ public class BeatScroller : MonoBehaviour
             transform.position -= new Vector3(0f, beatTempo * Time.deltaTime, 0f);
         }
 
+        if (transform.position.y <= -112.7)
+        {
+            transform.position = new Vector3(12.21481f -30 , -0.7318687f, -43.57994f +40);
+        }
         //transform.position -= new Vector3(0f, beatTempo * Time.deltaTime, 0f);
     }
 }

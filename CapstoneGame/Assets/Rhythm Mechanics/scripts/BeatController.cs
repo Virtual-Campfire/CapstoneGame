@@ -7,7 +7,7 @@ public class BeatController : MonoBehaviour
     // Start is called before the first frame update
 
     public KeyCode keyToPress;
-    public ParticleSystem normalParticles;
+    public ParticleSystem specialParticles;
 
     public GameObject Player;
     // Container for player controller
@@ -54,8 +54,9 @@ public class BeatController : MonoBehaviour
     public void PlayerSpecialBehavior1()
     {
         // normal particles
-        // Instantiate(normalParticles, transform.position, Quaternion.identity);
+        Instantiate(specialParticles, Player.transform.position, Quaternion.identity);
         Debug.Log("PlayerSpecialBehavior 1 Triggerd !!!!!! ");
+
 
         // Modify the attack
         controller.meleeKnockback = 5;
