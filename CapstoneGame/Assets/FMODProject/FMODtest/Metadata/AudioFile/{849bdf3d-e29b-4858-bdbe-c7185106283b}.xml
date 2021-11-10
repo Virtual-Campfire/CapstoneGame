@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.01.00">
-	<object class="AudioFile" id="{ef213fe1-c0f9-4972-8692-0c22130ea622}">
+	<object class="AudioFile" id="{849bdf3d-e29b-4858-bdbe-c7185106283b}">
 		<property name="assetPath">
-			<value>SFX/slash2.wav</value>
+			<value>SFX/slash1 (2).wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
