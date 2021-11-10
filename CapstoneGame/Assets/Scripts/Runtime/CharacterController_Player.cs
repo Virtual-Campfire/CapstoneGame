@@ -72,6 +72,7 @@ public class CharacterController_Player : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && Time.fixedTime > meleeStartTime + meleeDuration + meleeCooldown - meleeBufferTime)
         {
             isMeleeing = true;
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Slash");
         }
 
         if (Input.GetButton("Fire2"))

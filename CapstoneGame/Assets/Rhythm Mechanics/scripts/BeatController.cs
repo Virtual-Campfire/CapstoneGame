@@ -57,6 +57,7 @@ public class BeatController : MonoBehaviour
         // Instantiate(normalParticles, transform.position, Quaternion.identity);
         Debug.Log("PlayerSpecialBehavior 1 Triggerd !!!!!! ");
 
+
         // Modify the attack
         controller.meleeKnockback = 5;
         controller.meleeDamage = 5;
