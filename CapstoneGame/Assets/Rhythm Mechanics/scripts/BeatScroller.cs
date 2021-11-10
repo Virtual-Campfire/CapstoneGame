@@ -26,7 +26,7 @@ public class BeatScroller : MonoBehaviour
             if (Input.anyKeyDown)
             {
                 hasStarted = true;
-                level1Music.Play();
+                FMODUnity.RuntimeManager.PlayOneShot("event:/level1BGM");
             }
         }
         else
