@@ -199,7 +199,7 @@ public class CharacterController_Player : MonoBehaviour
         if (Time.fixedTime < meleeStartTime + meleeDuration)
         {
             // The angle the weapon will be rotating to for this physics update
-            Quaternion tempRot = Quaternion.Euler(0, Mathf.Lerp(-90, 90, (Time.fixedTime - meleeStartTime) / meleeDuration), 0);
+            Quaternion tempRot = Quaternion.Euler(0, Mathf.Lerp(-60, 60, (Time.fixedTime - meleeStartTime) / meleeDuration), 0);
 
             // Rotate weapon based on time since attacking
             meleeHurtbox.gameObject.GetComponent<Rigidbody>().MoveRotation(Quaternion.Euler(meleeAngle.eulerAngles + tempRot.eulerAngles));
