@@ -68,5 +68,8 @@ public class attackState : FSMState
         dist = Vector3.Distance(Player.transform.position, transform.position);
 
         Debug.Log("Detroit Smash~~!!");
+
+        // Damage nearby player character
+        Player.GetComponent<DamageKnockback>().ApplyDamage(transform.position, 1, 1);
     }
 }

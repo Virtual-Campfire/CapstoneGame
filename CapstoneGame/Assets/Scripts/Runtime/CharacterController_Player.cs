@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 // Adam B.
 // Script to control player character, including general movement and collision
@@ -22,12 +23,15 @@ public class CharacterController_Player : MonoBehaviour
     public float moveSpeed = 1, jumpPower = 2;
     bool isGrounded = false, isJumping = false, isLocked = false;
 
+    // Health variables
+    DamageKnockback health;
+
     // Variables for melee attack and tools (Note: melee attack works on the "hitbox" physics layer)
     public BoxCollider meleeHurtbox;
     bool isMeleeing = false;
     float meleeStartTime;
     Quaternion meleeAngle;
-    public float meleeDuration = .5f, meleeCooldown = .5f, meleeBufferTime = .5f;
+    public float meleeDuration = .5f, meleeCooldown = .5f, meleeBufferTime = .5f, meleeDamage = 1, meleeBaseDamage = 1, meleeKnockback = 3, meleeBaseKnockback = 3;
 
     public GameObject violinRadiusIndicator;
     bool isViolinning = false;
@@ -43,12 +47,20 @@ public class CharacterController_Player : MonoBehaviour
         floorLayer = 1 << LayerMask.NameToLayer("Floor");
         wallLayer = 1 << LayerMask.NameToLayer("Wall");
 
+        health = GetComponent<DamageKnockback>();
+
         meleeHurtbox.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Once player health is depleted, reset scene (temporary solution)
+        if (health.currentHealth <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
         // Check player inputs
         moveIntent = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         if(Input.GetButtonDown("Jump"))
@@ -152,7 +164,7 @@ public class CharacterController_Player : MonoBehaviour
             {
                 if (item.GetComponent<DamageKnockback>() && item.gameObject.tag == "Enemy")
                 {
-                    item.GetComponent<DamageKnockback>().TakeDamage(rb.transform.position, 3, 1);
+                    item.GetComponent<DamageKnockback>().ApplyDamage(rb.transform.position, meleeDamage, meleeKnockback);
                 }
             }
         }
@@ -199,6 +211,10 @@ public class CharacterController_Player : MonoBehaviour
             
             // Make weapon swipe model/effect disappear
             meleeHurtbox.gameObject.SetActive(false);
+
+            // Reset melee attribute defaults
+            meleeDamage = meleeBaseDamage;
+            meleeKnockback = meleeBaseKnockback;
         }
 
         // Violin behaviour

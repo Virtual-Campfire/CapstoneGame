@@ -10,12 +10,15 @@ public class BeatController : MonoBehaviour
     public ParticleSystem normalParticles;
 
     public GameObject Player;
+    // Container for player controller
+    public CharacterController_Player controller;
 
     //Animator _animator;
 
     void Start()
     {
-
+        // Get player controller script
+        controller = Player.GetComponent<CharacterController_Player>();
     }
 
     private void Awake()
@@ -54,6 +57,9 @@ public class BeatController : MonoBehaviour
         // Instantiate(normalParticles, transform.position, Quaternion.identity);
         Debug.Log("PlayerSpecialBehavior 1 Triggerd !!!!!! ");
 
+        // Modify the attack
+        controller.meleeKnockback = 5;
+        controller.meleeDamage = 5;
     }
 
     public void PlayerSpecialBehavior2()

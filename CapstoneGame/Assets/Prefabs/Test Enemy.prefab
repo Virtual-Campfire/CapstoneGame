@@ -127,7 +127,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e1814d131ef63b4384600e59aea76d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hostileTag: Player
+  handleDeath: 1
+  currentHealth: 10
+  maxHealth: 10
 --- !u!195 &2213656656718504352
 NavMeshAgent:
   m_ObjectHideFlags: 0
