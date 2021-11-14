@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 637721730643538279
+  lastModified: 637721371759354514
   FileSizes: []
   Exists: 1
 --- !u!114 &-5758466431053794282
@@ -56,9 +56,78 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Desktop/BGM.bank
   Name: BGM
   StudioPath: bank:/BGM
-  lastModified: 637721730643518442
+  lastModified: 637721371759324531
   FileSizes: []
   Exists: 1
+--- !u!114 &-1994975777895913801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PlayerFoley/PlayerFootStep
+  m_EditorClassIdentifier: 
+  Path: event:/PlayerFoley/PlayerFootStep
+  guid: 69f2e3bfe379ae43b9213872b28ba48b
+  Banks:
+  - {fileID: -7668663992389562941}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &-1764937686721122143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PlayerFoley/PlayerJump
+  m_EditorClassIdentifier: 
+  Path: event:/PlayerFoley/PlayerJump
+  guid: 7d61d352bfad434aaf8090c9bb6be3fc
+  Banks:
+  - {fileID: -7668663992389562941}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &-721132575121205312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PlayerFoley/Slash
+  m_EditorClassIdentifier: 
+  Path: event:/PlayerFoley/Slash
+  guid: bbeaa6d1958c2a4ab5541185e9257a1d
+  Banks:
+  - {fileID: -7668663992389562941}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 475
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,13 +147,16 @@ MonoBehaviour:
   - {fileID: -7668663992389562941}
   EditorEvents:
   - {fileID: -5758466431053794282}
-  - {fileID: 8500027035925312604}
+  - {fileID: 1825647241294516361}
+  - {fileID: -1994975777895913801}
+  - {fileID: -1764937686721122143}
+  - {fileID: -721132575121205312}
   EditorParameters: []
   MasterBanks:
   - {fileID: 913560089226243733}
   StringsBanks:
   - {fileID: 2924641574611298264}
-  stringsBankWriteTime: 637721730643528361
+  stringsBankWriteTime: 637721371759344520
   cacheVersion: 8
 --- !u!114 &913560089226243733
 MonoBehaviour:
@@ -101,9 +173,32 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637721730643523400
+  lastModified: 637721371759334526
   FileSizes: []
   Exists: 1
+--- !u!114 &1825647241294516361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PlayerFoley/PlayerGrounded
+  m_EditorClassIdentifier: 
+  Path: event:/PlayerFoley/PlayerGrounded
+  guid: 57a86af9883c394ab86ee3c4c3f3b28b
+  Banks:
+  - {fileID: -7668663992389562941}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &2924641574611298264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,10 +214,10 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637721730643528361
+  lastModified: 637721371759344520
   FileSizes:
   - Name: 
-    Value: 874
+    Value: 1030
   Exists: 1
 --- !u!114 &8500027035925312604
 MonoBehaviour:

@@ -173,6 +173,7 @@ GameObject:
   - component: {fileID: 1206552032039454998}
   - component: {fileID: 1206552032039454997}
   - component: {fileID: 1206552032039454996}
+  - component: {fileID: 6292890480085915898}
   m_Layer: 13
   m_Name: Melee Hurtbox
   m_TagString: Player
@@ -224,6 +225,29 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5, z: 2}
   m_Center: {x: 0, y: 0, z: 1.5}
+--- !u!114 &6292890480085915898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1206552032039454995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/PlayerFoley/Slash
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &1206552032250544388
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,6 +291,7 @@ GameObject:
   - component: {fileID: 1206552032706234998}
   - component: {fileID: 1206552032706234997}
   - component: {fileID: 6121775139370952919}
+  - component: {fileID: 916768440695829441}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -340,12 +365,14 @@ MonoBehaviour:
   meleeHurtbox: {fileID: 1206552032039454996}
   meleeDuration: 0.25
   meleeCooldown: 0.15
-  meleeBufferTime: 0.08
+  meleeBufferTime: 0.25
   meleeDamage: 1
   meleeBaseDamage: 1
   meleeKnockback: 3
   meleeBaseKnockback: 3
   violinRadiusIndicator: {fileID: 7685905005795669616}
+  slashSpeaker: {fileID: 6292890480085915898}
+  jumpSpeaker: {fileID: 916768440695829441}
 --- !u!114 &6121775139370952919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -361,6 +388,29 @@ MonoBehaviour:
   handleDeath: 0
   currentHealth: 10
   maxHealth: 10
+--- !u!114 &916768440695829441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1206552032706234996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/PlayerFoley/PlayerJump
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &7685905005795669616
 GameObject:
   m_ObjectHideFlags: 0

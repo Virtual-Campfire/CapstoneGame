@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using FMODUnity;
 
 // Adam B.
 // Script to control player character, including general movement and collision
@@ -36,6 +37,10 @@ public class CharacterController_Player : MonoBehaviour
     public GameObject violinRadiusIndicator;
     bool isViolinning = false;
     float violinRadius = 5;
+
+    // Audio variables
+    [SerializeField]
+    StudioEventEmitter slashSpeaker, jumpSpeaker;
 
     // Start is called before the first frame update
     void Start()
@@ -127,6 +132,9 @@ public class CharacterController_Player : MonoBehaviour
                 print("Jump!");
                 moveVector += transform.up * jumpPower;
                 isJumping = false;
+
+                // Play jump sound
+                jumpSpeaker.Play();
             }
         }
         else
@@ -194,6 +202,9 @@ public class CharacterController_Player : MonoBehaviour
 
             // Make weapon swipe model/effect appear
             meleeHurtbox.gameObject.SetActive(true);
+
+            // Play slash sound
+            slashSpeaker.Play();
         }
 
         // If within duration of melee attack
