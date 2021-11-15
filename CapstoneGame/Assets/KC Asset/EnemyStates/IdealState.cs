@@ -11,7 +11,7 @@ public class IdealState : FSMState
     public Transform SaveLocation;
 
     public float rotationResetSpeed;
-
+    GameObject Player;
 
 
     void Awake()
@@ -20,10 +20,12 @@ public class IdealState : FSMState
         AddTransition(Transition.IntoDoubt, StateID.Doubt);
         AddTransition(Transition.IntoPatrol, StateID.Patrol);
         AddTransition(Transition.IntoDead, StateID.Dead);
+        AddTransition(Transition.IntoLure, StateID.Lure);
+        
         agent = transform.parent.gameObject.GetComponent<NavMeshAgent>();
 
-        
 
+        Player = GameObject.Find("Player");
     }
 
 
@@ -70,6 +72,13 @@ public class IdealState : FSMState
 
     public override void Reason()
     {
+        if (Player.GetComponent<PlayerController>().PlayLure == true && GetComponentInParent<EnemyState>().DisToPlayer <= Player.GetComponent<PlayerController>().Range)
+            {
+            manager.Fsm.PerformTransition(Transition.IntoLure);
+        
+        
+        }
+
 
         if (GetComponentInParent<EnemyState>().HP <= 0) {
             manager.Fsm.PerformTransition(Transition.IntoDead);
@@ -83,7 +92,7 @@ public class IdealState : FSMState
         }
 
         if (GetComponentInParent<Attention>().attentionValue>10) { manager.Fsm.PerformTransition(Transition.IntoDoubt); }
-        
+       
     }
 
     public override void DoBeforeLeaving()
