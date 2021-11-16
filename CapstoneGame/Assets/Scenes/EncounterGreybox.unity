@@ -8125,10 +8125,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 1206552032706234999, guid: 74c3ca48546edfd448252014d27d58af, type: 3}
-      propertyPath: m_IsKinematic
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1206552032706235000, guid: 74c3ca48546edfd448252014d27d58af, type: 3}
       propertyPath: m_RootOrder
       value: 2

@@ -99,8 +99,8 @@ public class CharacterController_Player : MonoBehaviour
         float groundAngle = Mathf.Round(Vector3.Angle(groundRayHit.normal, groundRay.direction));
 
         // Check if ground collision is below
-        // Added conditional so ground collision is only checked when moving down (velocity-based solution might be better later)
-        if (Physics.Raycast(groundRay, out groundRayHit, 1f, floorLayer | wallLayer, QueryTriggerInteraction.Ignore) && rb.velocity.y <= 0)
+        // Added conditional so ground collision is only checked when moving down
+        if (Physics.Raycast(groundRay, out groundRayHit, 1f, floorLayer | wallLayer, QueryTriggerInteraction.Ignore) && moveVector.y <= 0)
         {
             // Set grounded flag on
             isGrounded = true;
@@ -109,7 +109,7 @@ public class CharacterController_Player : MonoBehaviour
             Debug.Log("Hit!" + ", " + groundAngle % 60 + ", " + groundAngle);
             
             // Move character by distance of ground collision so that they are standing on top of the ground collision point
-            rb.position = new Vector3(transform.position.x, groundRayHit.point.y + 1, transform.position.z);
+            rb.position = new Vector3(transform.position.x, groundRayHit.point.y + 1.05f, transform.position.z);
             
             // Draw red line where ground detection is being checked (collision has already happened)
             Debug.DrawRay(groundRayBase.position + Vector3.up * 0.5f, groundRay.direction, Color.red);
@@ -123,10 +123,10 @@ public class CharacterController_Player : MonoBehaviour
             // Update character's facing direction
             if (moveIntent.magnitude > 0)
             {
-                rb.MoveRotation(Quaternion.Euler(new Vector3(0, Mathf.Rad2Deg * Mathf.Atan2(rb.velocity.x, rb.velocity.z), 0)));
+                rb.MoveRotation(Quaternion.Euler(new Vector3(0, Mathf.Rad2Deg * Mathf.Atan2(moveVector.x, moveVector.z), 0)));
             }
 
-            // Rudimentary jumping (jumping, in this case, is additive onto current movement velocity)
+            // Rudimentary jumping (jumping, in this case, is additive onto current movement vector)
             if (isJumping)
             {
                 print("Jump!");
@@ -181,6 +181,9 @@ public class CharacterController_Player : MonoBehaviour
         // If not interrupted by attacking or other effects, move to destination
         if (!isLocked)
         {
+            // Zero-out velocity just in case unexpected physics interactions occur
+            rb.velocity = Vector3.zero;
+
             // Apply final movement calculation
             rb.MovePosition(nextPosition);
         }
@@ -212,7 +215,7 @@ public class CharacterController_Player : MonoBehaviour
         {
             // The angle the weapon will be rotating to for this physics update
             Quaternion tempRot = Quaternion.Euler(0, Mathf.Lerp(-60, 60, (Time.fixedTime - meleeStartTime) / meleeDuration), 0);
-
+            
             // Rotate weapon based on time since attacking
             meleeHurtbox.gameObject.GetComponent<Rigidbody>().MoveRotation(Quaternion.Euler(meleeAngle.eulerAngles + tempRot.eulerAngles));
         }
