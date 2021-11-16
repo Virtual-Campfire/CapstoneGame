@@ -1,20 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class BeatScroller : MonoBehaviour
 {
     // Start is called before the first frame update
 
     public float beatTempo;
-    public AudioSource level1Music;
+    public static StudioEventEmitter level1Music;
 
     public bool hasStarted;
 
     void Start()
     {
         beatTempo = beatTempo / 60f;
-        level1Music = GetComponent<AudioSource>();
+        level1Music = GetComponent<StudioEventEmitter>();
     }
 
     // Update is called once per frame
@@ -26,7 +27,7 @@ public class BeatScroller : MonoBehaviour
             if (Input.anyKeyDown)
             {
                 hasStarted = true;
-                FMODUnity.RuntimeManager.PlayOneShot("event:/level1BGM");
+                level1Music.Play();
             }
         }
         else

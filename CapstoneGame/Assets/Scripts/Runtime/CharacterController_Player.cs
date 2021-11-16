@@ -63,6 +63,9 @@ public class CharacterController_Player : MonoBehaviour
         // Once player health is depleted, reset scene (temporary solution)
         if (health.currentHealth <= 0)
         {
+            // Temporary fix to stop music duplication on level reload
+            BeatScroller.level1Music.Stop();
+
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
@@ -77,7 +80,6 @@ public class CharacterController_Player : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && Time.fixedTime > meleeStartTime + meleeDuration + meleeCooldown - meleeBufferTime)
         {
             isMeleeing = true;
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Slash");
         }
 
         if (Input.GetButton("Fire2"))
