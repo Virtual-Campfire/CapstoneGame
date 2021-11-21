@@ -20,15 +20,17 @@ public class CharacterController_Player : MonoBehaviour
     LayerMask floorLayer, wallLayer;
 
     // Variables for movement control factors
-    Vector3 moveIntent, moveVector;
-    public float moveSpeed = 1, jumpPower = 2;
-    bool isGrounded = false, isJumping = false, isLocked = false;
+    Vector3 moveIntent, moveVector, rotVector, jumpVector;
+    public float moveSpeed = 1, jumpPower = 2, airControl = .5f;
+    [SerializeField]
+    bool isGrounded = false, isJumping = false, moveLock = false, rotLock = false;
 
     // Health variables
     DamageKnockback health;
 
     // Variables for melee attack and tools (Note: melee attack works on the "hitbox" physics layer)
     public BoxCollider meleeHurtbox;
+    public GameObject meleeVisualRoot;
     bool isMeleeing = false;
     float meleeStartTime;
     Quaternion meleeAngle;
@@ -104,6 +106,12 @@ public class CharacterController_Player : MonoBehaviour
         // Added conditional so ground collision is only checked when moving down
         if (Physics.Raycast(groundRay, out groundRayHit, 1f, floorLayer | wallLayer, QueryTriggerInteraction.Ignore) && moveVector.y <= 0)
         {
+            // Reset jump vector to avoid edge cases with landing velocity
+            jumpVector = Vector3.zero;
+
+            // Unlock rotation while grounded
+            rotLock = false;
+
             // Set grounded flag on
             isGrounded = true;
 
@@ -125,13 +133,18 @@ public class CharacterController_Player : MonoBehaviour
             // Update character's facing direction
             if (moveIntent.magnitude > 0)
             {
-                rb.MoveRotation(Quaternion.Euler(new Vector3(0, Mathf.Rad2Deg * Mathf.Atan2(moveVector.x, moveVector.z), 0)));
+                rotVector = new Vector3(0, Mathf.Rad2Deg * Mathf.Atan2(moveVector.x, moveVector.z), 0);
             }
 
             // Rudimentary jumping (jumping, in this case, is additive onto current movement vector)
             if (isJumping)
             {
                 print("Jump!");
+                
+                // Record velocity at moment before jumping
+                jumpVector = moveVector;
+
+                // Add jump velocity and reset jump control flag
                 moveVector += transform.up * jumpPower;
                 isJumping = false;
 
@@ -141,11 +154,20 @@ public class CharacterController_Player : MonoBehaviour
         }
         else
         {
+            // Lock rotation while airborne
+            rotLock = true;
+
             // Set grounded flag off
             isGrounded = false;
             
             // Set jumping variable to false to prevent complete jump buffering for after landing (partial jump buffering might be wanted later)
             isJumping = false;
+            
+            // Add initial velocity from before jump began
+            moveVector = new Vector3(jumpVector.x, moveVector.y, jumpVector.z);
+
+            // Player's movement intent is added, multiplied by air control factor
+            moveVector += moveIntent.normalized * (moveSpeed * airControl);
 
             // Add gravity factor when not standing on a surface
             moveVector += Vector3.down * gravityFac * Time.deltaTime;
@@ -170,7 +192,7 @@ public class CharacterController_Player : MonoBehaviour
         if (meleeHurtbox.gameObject.activeSelf)
         {
             Collider[] temp = Physics.OverlapBox(meleeHurtbox.transform.position + transform.forward * meleeHurtbox.center.z, meleeHurtbox.size, meleeHurtbox.gameObject.transform.rotation, 1 << 14);
-            print(meleeHurtbox.transform.position + meleeHurtbox.center);
+            
             foreach (Collider item in temp)
             {
                 if (item.GetComponent<DamageKnockback>() && item.gameObject.tag == "Enemy")
@@ -180,8 +202,18 @@ public class CharacterController_Player : MonoBehaviour
             }
         }
 
-        // If not interrupted by attacking or other effects, move to destination
-        if (!isLocked)
+        // If not interrupted, rotate to final rotation angle
+        if (!rotLock)
+        {
+            // Zero-out velocity just in case unexpected physics interactions occur
+            rb.angularVelocity = Vector3.zero;
+
+            // Apply final rotation calculation
+            rb.MoveRotation(Quaternion.Euler(rotVector));
+        }
+
+        // If not interrupted, move to destination
+        if (!moveLock)
         {
             // Zero-out velocity just in case unexpected physics interactions occur
             rb.velocity = Vector3.zero;
@@ -203,7 +235,7 @@ public class CharacterController_Player : MonoBehaviour
             isMeleeing = false;
             
             // Lock character in place during attack (to allow for hover or other movement effects to take over)
-            isLocked = true;
+            rotLock = true;
 
             // Make weapon swipe model/effect appear
             meleeHurtbox.gameObject.SetActive(true);
@@ -219,12 +251,12 @@ public class CharacterController_Player : MonoBehaviour
             Quaternion tempRot = Quaternion.Euler(0, Mathf.Lerp(-60, 60, (Time.fixedTime - meleeStartTime) / meleeDuration), 0);
             
             // Rotate weapon based on time since attacking
-            meleeHurtbox.gameObject.GetComponent<Rigidbody>().MoveRotation(Quaternion.Euler(meleeAngle.eulerAngles + tempRot.eulerAngles));
+            meleeVisualRoot.transform.rotation = (Quaternion.Euler(meleeAngle.eulerAngles + tempRot.eulerAngles));
         }
         else
         {
             // Unlock character movement
-            isLocked = false;
+            rotLock = false;
             
             // Make weapon swipe model/effect disappear
             meleeHurtbox.gameObject.SetActive(false);
