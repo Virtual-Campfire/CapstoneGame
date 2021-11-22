@@ -4572,6 +4572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LastInput: 0
+  Timer: 0
   ReturnFromChase: 0
   PositionHolder: {fileID: 0}
   IsPatrol: 0

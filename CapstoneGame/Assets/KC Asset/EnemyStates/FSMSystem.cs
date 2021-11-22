@@ -105,8 +105,7 @@ public class FSMSystem
         StateID id = currentState.GetOutputState(trans); 
         if (id == StateID.NullStateId)
         {
-            Debug.LogError("FSM ERROR: State " + currentStateID.ToString() + " does not have a target state " +
-                           " for transition " + trans.ToString());
+           // Debug.LogError("FSM ERROR: State " + currentStateID.ToString() + " does not have a target state " + " for transition " + trans.ToString());
             return;
         }
 
