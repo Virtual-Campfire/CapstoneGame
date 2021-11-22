@@ -36,9 +36,9 @@ public class CharacterController_Player : MonoBehaviour
     Quaternion meleeAngle;
     public float meleeDuration = .5f, meleeCooldown = .5f, meleeBufferTime = .5f, meleeDamage = 1, meleeBaseDamage = 1, meleeKnockback = 3, meleeBaseKnockback = 3;
 
-    public GameObject violinRadiusIndicator;
-    bool isViolinning = false;
-    float violinRadius = 5;
+    public GameObject lureRadiusIndicator;
+    bool isLuring = false;
+    float lureRadius = 5;
 
     // Audio variables
     [SerializeField]
@@ -86,11 +86,11 @@ public class CharacterController_Player : MonoBehaviour
 
         if (Input.GetButton("Fire2"))
         {
-            isViolinning = true;
+            isLuring = true;
         }
         else
         {
-            isViolinning = false;
+            isLuring = false;
         }
     }
 
@@ -202,26 +202,6 @@ public class CharacterController_Player : MonoBehaviour
             }
         }
 
-        // If not interrupted, rotate to final rotation angle
-        if (!rotLock)
-        {
-            // Zero-out velocity just in case unexpected physics interactions occur
-            rb.angularVelocity = Vector3.zero;
-
-            // Apply final rotation calculation
-            rb.MoveRotation(Quaternion.Euler(rotVector));
-        }
-
-        // If not interrupted, move to destination
-        if (!moveLock)
-        {
-            // Zero-out velocity just in case unexpected physics interactions occur
-            rb.velocity = Vector3.zero;
-
-            // Apply final movement calculation
-            rb.MovePosition(nextPosition);
-        }
-
         // If trying to melee and previous melee attack has finished
         if (isMeleeing && Time.fixedTime > meleeStartTime + meleeDuration + meleeCooldown)
         {
@@ -234,7 +214,7 @@ public class CharacterController_Player : MonoBehaviour
             // Reset input flag
             isMeleeing = false;
             
-            // Lock character in place during attack (to allow for hover or other movement effects to take over)
+            // Lock character's facing direction during attack
             rotLock = true;
 
             // Make weapon swipe model/effect appear
@@ -255,7 +235,7 @@ public class CharacterController_Player : MonoBehaviour
         }
         else
         {
-            // Unlock character movement
+            // Unlock character rotation
             rotLock = false;
             
             // Make weapon swipe model/effect disappear
@@ -267,10 +247,10 @@ public class CharacterController_Player : MonoBehaviour
         }
 
         // Violin behaviour
-        if (isViolinning)
+        if (isLuring)
         {
             // Check for hearing actors within violin's range
-            Collider [] temp = Physics.OverlapSphere(transform.position, violinRadius, 1 << 14);
+            Collider [] temp = Physics.OverlapSphere(transform.position, lureRadius, 1 << 14);
 
             // Call each hearing actor's hearing response function
             foreach (Collider item in temp)
@@ -283,21 +263,41 @@ public class CharacterController_Player : MonoBehaviour
             }
 
             // Visual effect for violin sound radius
-            violinRadiusIndicator.SetActive(true);
-            violinRadiusIndicator.transform.localScale = new Vector3(violinRadius * 2 - Mathf.Cos(Time.fixedTime * 5) * .25f, violinRadius * 2 - Mathf.Cos(Time.fixedTime * 5) * .25f, violinRadius * 2 - Mathf.Cos(Time.fixedTime * 5) * .25f);
+            lureRadiusIndicator.SetActive(true);
+            lureRadiusIndicator.transform.localScale = new Vector3(lureRadius * 2 - Mathf.Cos(Time.fixedTime * 5) * .25f, lureRadius * 2 - Mathf.Cos(Time.fixedTime * 5) * .25f, lureRadius * 2 - Mathf.Cos(Time.fixedTime * 5) * .25f);
         }
         else
         {
-            violinRadiusIndicator.SetActive(false);
+            lureRadiusIndicator.SetActive(false);
+        }
+
+        // If not interrupted, rotate to final rotation angle
+        if (!rotLock)
+        {
+            // Zero-out velocity just in case unexpected physics interactions occur
+            rb.angularVelocity = Vector3.zero;
+
+            // Apply final rotation calculation
+            rb.MoveRotation(Quaternion.Euler(rotVector));
+        }
+
+        // If not interrupted, move to destination
+        if (!moveLock)
+        {
+            // Zero-out velocity just in case unexpected physics interactions occur
+            rb.velocity = Vector3.zero;
+
+            // Apply final movement calculation
+            rb.MovePosition(nextPosition);
         }
     }
 
     void OnDrawGizmos()
     {
         // Debug effect for violin radius
-        if (isViolinning)
+        if (isLuring)
         {
-            Gizmos.DrawWireSphere(transform.position, violinRadius);
+            Gizmos.DrawWireSphere(transform.position, lureRadius);
         }
     }
 }

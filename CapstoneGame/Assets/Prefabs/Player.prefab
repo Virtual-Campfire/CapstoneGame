@@ -281,6 +281,11 @@ MonoBehaviour:
   groundRayBase: {fileID: 1206552032250544389}
   moveSpeed: 5
   jumpPower: 5
+  airControl: 0.5
+  isGrounded: 0
+  isJumping: 0
+  moveLock: 0
+  rotLock: 0
   meleeHurtbox: {fileID: 1206552032039454996}
   meleeVisualRoot: {fileID: 3965734059516288854}
   meleeDuration: 0.25
@@ -290,7 +295,7 @@ MonoBehaviour:
   meleeBaseDamage: 1
   meleeKnockback: 3
   meleeBaseKnockback: 3
-  violinRadiusIndicator: {fileID: 7685905005795669616}
+  lureRadiusIndicator: {fileID: 7685905005795669616}
   slashSpeaker: {fileID: 6292890480085915898}
   jumpSpeaker: {fileID: 916768440695829441}
 --- !u!114 &6121775139370952919
@@ -455,7 +460,7 @@ GameObject:
   - component: {fileID: 2623508775193768634}
   - component: {fileID: 1472874482891738007}
   m_Layer: 0
-  m_Name: Attract Radius Indicator
+  m_Name: Lure Radius Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
