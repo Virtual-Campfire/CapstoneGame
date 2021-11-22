@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class EnemyState : MonoBehaviour
 {
+
+    public  bool LastInput;
+    public float Timer;
+
+
     public bool ReturnFromChase = false;
 
     private GameObject LocationSave;
@@ -12,19 +17,19 @@ public class EnemyState : MonoBehaviour
 
     public bool IsPatrol;
 
+    GameObject Player;
+
     [Header("Basic")]
     public int HP;
+    public float DisToPlayer;
 
-    DamageKnockback health;
 
 
     private void Awake()
     {
 
         LocationSave = GameObject.FindWithTag("LocationSave");
-
-        health = GetComponent<DamageKnockback>();
-
+        Player = GameObject.Find("Player");
     }
 
     // Start is called before the first frame update
@@ -39,7 +44,30 @@ public class EnemyState : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Temporary solution, so that nothing that relying on HP breaks
-        HP = (int)health.currentHealth;
+        DisToPlayer = Vector3.Distance(transform.position, Player.transform.position);
+        Timer = Timer - Time.deltaTime;
+        if (Timer <= -1) { Timer = -1; }
+        LastLureInPut();
+
     }
+
+
+
+    void LastLureInPut()
+    {
+        if (Input.GetKey(KeyCode.G))
+        {
+            Timer = 3;
+            
+        }
+        
+
+        if (Timer <= 0)
+        {
+            LastInput = true;
+        }
+        else { LastInput = false; }
+       
+    }
+
 }
