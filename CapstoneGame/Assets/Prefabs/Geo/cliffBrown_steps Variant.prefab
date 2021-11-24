@@ -79,7 +79,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e68f3b2fce6eed049a983ede02f2cc44, type: 3}
       propertyPath: m_Name
-      value: cliffBrown_steps
+      value: cliffBrown_steps Variant
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e68f3b2fce6eed049a983ede02f2cc44, type: 3}
       propertyPath: m_Layer

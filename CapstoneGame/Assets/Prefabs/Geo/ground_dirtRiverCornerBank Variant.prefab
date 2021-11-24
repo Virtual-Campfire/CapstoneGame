@@ -15,7 +15,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1783092963898196990
 Transform:
@@ -122,7 +122,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5e3dc93e1c2a11946be131dad1ca8a2a, type: 3}
       propertyPath: m_Name
-      value: ground_dirtRiverCornerBank
+      value: ground_dirtRiverCornerBank Variant
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5e3dc93e1c2a11946be131dad1ca8a2a, type: 3}
       propertyPath: m_Layer
@@ -130,7 +130,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5e3dc93e1c2a11946be131dad1ca8a2a, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 119
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e3dc93e1c2a11946be131dad1ca8a2a, type: 3}

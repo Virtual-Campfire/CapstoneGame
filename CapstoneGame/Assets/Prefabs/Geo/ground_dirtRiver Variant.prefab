@@ -28,7 +28,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4166562998394717976
 Transform:
@@ -38,7 +38,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9166919180781472703}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4, y: 0, z: 4}
+  m_LocalPosition: {x: 5, y: 0, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5133793076061152863}
@@ -55,7 +55,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6, y: 100, z: 6}
+  m_Size: {x: 6, y: 100, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &4662453662352753076
 PrefabInstance:
@@ -122,7 +122,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c07c38c068d5ee647b723fc5b7a601c7, type: 3}
       propertyPath: m_Name
-      value: ground_dirtRiver
+      value: ground_dirtRiver Variant
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c07c38c068d5ee647b723fc5b7a601c7, type: 3}
       propertyPath: m_Layer
@@ -130,7 +130,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c07c38c068d5ee647b723fc5b7a601c7, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 119
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c07c38c068d5ee647b723fc5b7a601c7, type: 3}
