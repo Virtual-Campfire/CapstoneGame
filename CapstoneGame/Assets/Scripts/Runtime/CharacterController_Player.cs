@@ -42,7 +42,7 @@ public class CharacterController_Player : MonoBehaviour
 
     // Audio variables
     [SerializeField]
-    StudioEventEmitter slashSpeaker, jumpSpeaker, groundedSpeaker, hitSpeaker;
+    StudioEventEmitter slashSpeaker, jumpSpeaker, groundedSpeaker, hitSpeaker, damagedSpeaker;
 
     // Start is called before the first frame update
     void Start()
