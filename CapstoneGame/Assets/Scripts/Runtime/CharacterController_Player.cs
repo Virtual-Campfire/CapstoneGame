@@ -42,7 +42,7 @@ public class CharacterController_Player : MonoBehaviour
 
     // Audio variables
     [SerializeField]
-    StudioEventEmitter slashSpeaker, jumpSpeaker;
+    StudioEventEmitter slashSpeaker, jumpSpeaker, groundedSpeaker, hitSpeaker, damagedSpeaker, violinSpeaker;
 
     // Start is called before the first frame update
     void Start()
@@ -87,6 +87,7 @@ public class CharacterController_Player : MonoBehaviour
         if (Input.GetButton("Fire2"))
         {
             isViolinning = true;
+
         }
         else
         {
@@ -285,6 +286,7 @@ public class CharacterController_Player : MonoBehaviour
             // Visual effect for violin sound radius
             violinRadiusIndicator.SetActive(true);
             violinRadiusIndicator.transform.localScale = new Vector3(violinRadius * 2 - Mathf.Cos(Time.fixedTime * 5) * .25f, violinRadius * 2 - Mathf.Cos(Time.fixedTime * 5) * .25f, violinRadius * 2 - Mathf.Cos(Time.fixedTime * 5) * .25f);
+
         }
         else
         {
@@ -298,6 +300,7 @@ public class CharacterController_Player : MonoBehaviour
         if (isViolinning)
         {
             Gizmos.DrawWireSphere(transform.position, violinRadius);
+
         }
     }
 }
