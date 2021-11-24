@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{3a82343f-0b69-438a-8041-94efa51f1ba8}">
+		<property name="assetPath">
+			<value>Grounded (1).wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.72904761904761906</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{bd9b06dc-e458-44a9-b17d-7a559585b974}</destination>
+		</relationship>
+	</object>
+</objects>
