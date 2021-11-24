@@ -5,7 +5,11 @@ using UnityEngine.AI;
 
 public class ChaseState : FSMState
 {
-    public UnityEngine.AI.NavMeshAgent agent;
+    // Temporary character animator controller
+    [SerializeField]
+    Animator anim;
+
+    public NavMeshAgent agent;
     public GameObject Player;
     float dist;
 
@@ -34,6 +38,9 @@ public class ChaseState : FSMState
     private void Update()
     {
         dist = Vector3.Distance(Player.transform.position, transform.position);
+
+        // Control animator parameters
+        anim.SetFloat("Speed", agent.velocity.magnitude);
     }
 
 

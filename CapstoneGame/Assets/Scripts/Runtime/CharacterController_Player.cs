@@ -8,6 +8,10 @@ using FMODUnity;
 // Script to control player character, including general movement and collision
 public class CharacterController_Player : MonoBehaviour
 {
+    // Character animator variables
+    [SerializeField]
+    Animator anim;
+    
     // Physics variables
     Rigidbody rb;
     CapsuleCollider capsule;
@@ -96,6 +100,9 @@ public class CharacterController_Player : MonoBehaviour
 
     void FixedUpdate()
     {
+        // Animator sends variables
+        anim.SetFloat("Speed", moveVector.magnitude);
+
         // Ground ray is drawn a little bit above player character's foot
         groundRay = new Ray(groundRayBase.position + Vector3.up * 0.5f, Vector3.down);
         
