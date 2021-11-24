@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Coastal Map.unity
     guid: 9a2c7c916e326fb4d9c3c723f2dcd571
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Testing Sequence 01.unity
     guid: c82b3a11e0b8dde42b0677921bc0bff3
   m_configObjects: {}
