@@ -5826,6 +5826,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1206552032706235000, guid: 74c3ca48546edfd448252014d27d58af, type: 3}
   m_PrefabInstance: {fileID: 1206552032598046496}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &980630875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980630868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca160fdd94c2c674f87436b7e8b09506, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Range: 30
+  cam: {fileID: 0}
+  agent: {fileID: 0}
+  PlayLure: 0
 --- !u!1 &1019634986
 GameObject:
   m_ObjectHideFlags: 0
@@ -12213,6 +12229,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 916768440695829441, guid: 74c3ca48546edfd448252014d27d58af, type: 3}
+      propertyPath: Event
+      value: event:/PlayerFoley/Slash
+      objectReference: {fileID: 0}
+    - target: {fileID: 916768440695829441, guid: 74c3ca48546edfd448252014d27d58af, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1206552032706234996, guid: 74c3ca48546edfd448252014d27d58af, type: 3}
       propertyPath: m_Name
       value: Player
