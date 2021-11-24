@@ -33,7 +33,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 637733396858276835
+  lastModified: 637733485652556249
   FileSizes: []
   Exists: 1
 --- !u!114 &-6788416702229049288
@@ -80,6 +80,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 51252
+--- !u!114 &-3897609111019689866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Environment/EnviromentSound
+  m_EditorClassIdentifier: 
+  Path: event:/Environment/EnviromentSound
+  guid: a954735bb2de9b4fb75b152794abff8f
+  Banks:
+  - {fileID: -2736312619902327022}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &-2913130371319141452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,9 +141,32 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Desktop/BGM.bank
   Name: BGM
   StudioPath: bank:/BGM
-  lastModified: 637733396857960842
+  lastModified: 637733485650153094
   FileSizes: []
   Exists: 1
+--- !u!114 &-2500597342742143386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PlayerFoley/Hit
+  m_EditorClassIdentifier: 
+  Path: event:/PlayerFoley/Hit
+  guid: 1ee0814299d2314eaf30727d0b369092
+  Banks:
+  - {fileID: -7668663992389562941}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2000
 --- !u!114 &-1994975777895913801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,6 +233,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 475
+--- !u!114 &-253892434689705044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PlayerFoley/Grounded
+  m_EditorClassIdentifier: 
+  Path: event:/PlayerFoley/Grounded
+  guid: 6800e944c555624da74ff5e8997905f3
+  Banks:
+  - {fileID: -7668663992389562941}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3500
 --- !u!114 &-217705347917236943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,12 +298,19 @@ MonoBehaviour:
   EditorEvents:
   - {fileID: -2913130371319141452}
   - {fileID: 3272609192565927648}
+  - {fileID: 4572872305997321603}
+  - {fileID: -253892434689705044}
+  - {fileID: -2500597342742143386}
+  - {fileID: -3897609111019689866}
+  - {fileID: 4358550471160157437}
+  - {fileID: 4655366218049707026}
+  - {fileID: 7745683318893218943}
   EditorParameters: []
   MasterBanks:
   - {fileID: 913560089226243733}
   StringsBanks:
   - {fileID: 2924641574611298264}
-  stringsBankWriteTime: 637733396858000991
+  stringsBankWriteTime: 637733485650212796
   cacheVersion: 8
 --- !u!114 &913560089226243733
 MonoBehaviour:
@@ -251,7 +327,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637733396857990751
+  lastModified: 637733485650192850
   FileSizes: []
   Exists: 1
 --- !u!114 &1825647241294516361
@@ -335,10 +411,10 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637733396858000991
+  lastModified: 637733485650212796
   FileSizes:
   - Name: 
-    Value: 886
+    Value: 1196
   Exists: 1
 --- !u!114 &3272609192565927648
 MonoBehaviour:
@@ -356,13 +432,105 @@ MonoBehaviour:
   guid: bbeaa6d1958c2a4ab5541185e9257a1d
   Banks:
   - {fileID: -7668663992389562941}
-  IsStream: 0
+  IsStream: 1
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
   Length: 475
+--- !u!114 &4358550471160157437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PlayerFoley/Damaged
+  m_EditorClassIdentifier: 
+  Path: event:/PlayerFoley/Damaged
+  guid: 64f63a4677034b4ebdb66f8e6fc0dbb6
+  Banks:
+  - {fileID: -7668663992389562941}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2000
+--- !u!114 &4572872305997321603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PlayerFoley/Jump
+  m_EditorClassIdentifier: 
+  Path: event:/PlayerFoley/Jump
+  guid: 59b3358a8151494e984eaca41e34499a
+  Banks:
+  - {fileID: -7668663992389562941}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 924
+--- !u!114 &4655366218049707026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PlayerFoley/Violinning
+  m_EditorClassIdentifier: 
+  Path: event:/PlayerFoley/Violinning
+  guid: 67ccfb307876ba4e991729d56cd58157
+  Banks:
+  - {fileID: -7668663992389562941}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3500
+--- !u!114 &7745683318893218943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Environment/BreakDoor
+  m_EditorClassIdentifier: 
+  Path: event:/Environment/BreakDoor
+  guid: 6fc4da457599e644b3fd9d5746a4943f
+  Banks:
+  - {fileID: -7668663992389562941}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2430
 --- !u!114 &8500027035925312604
 MonoBehaviour:
   m_ObjectHideFlags: 0
