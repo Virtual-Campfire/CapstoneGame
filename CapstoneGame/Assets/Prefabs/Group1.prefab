@@ -99,6 +99,10 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3592087180405927509, guid: bfd90f0b19ef5be47a4304d040d374e5, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfd90f0b19ef5be47a4304d040d374e5, type: 3}
 --- !u!4 &2232501662608507680 stripped
@@ -168,6 +172,10 @@ PrefabInstance:
     - target: {fileID: 3592087180405927507, guid: bfd90f0b19ef5be47a4304d040d374e5, type: 3}
       propertyPath: Player
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3592087180405927509, guid: bfd90f0b19ef5be47a4304d040d374e5, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfd90f0b19ef5be47a4304d040d374e5, type: 3}
@@ -239,6 +247,10 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3592087180405927509, guid: bfd90f0b19ef5be47a4304d040d374e5, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfd90f0b19ef5be47a4304d040d374e5, type: 3}
 --- !u!4 &7524830877443645865 stripped
@@ -308,6 +320,10 @@ PrefabInstance:
     - target: {fileID: 3592087180405927507, guid: bfd90f0b19ef5be47a4304d040d374e5, type: 3}
       propertyPath: Player
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3592087180405927509, guid: bfd90f0b19ef5be47a4304d040d374e5, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfd90f0b19ef5be47a4304d040d374e5, type: 3}
@@ -379,6 +395,10 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3592087180405927509, guid: bfd90f0b19ef5be47a4304d040d374e5, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfd90f0b19ef5be47a4304d040d374e5, type: 3}
 --- !u!4 &8008443243936745538 stripped
@@ -448,6 +468,10 @@ PrefabInstance:
     - target: {fileID: 3592087180405927507, guid: bfd90f0b19ef5be47a4304d040d374e5, type: 3}
       propertyPath: Player
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3592087180405927509, guid: bfd90f0b19ef5be47a4304d040d374e5, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfd90f0b19ef5be47a4304d040d374e5, type: 3}
