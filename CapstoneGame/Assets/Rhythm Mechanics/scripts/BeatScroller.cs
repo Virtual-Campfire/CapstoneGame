@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using FMODUnity;
 
 public class BeatScroller : MonoBehaviour
@@ -8,9 +9,11 @@ public class BeatScroller : MonoBehaviour
     // Start is called before the first frame update
 
     public float beatTempo;
-    public static StudioEventEmitter level1Music;
+
 
     public bool hasStarted;
+    
+    public static StudioEventEmitter level1Music;
 
     void Start()
     {
@@ -28,6 +31,7 @@ public class BeatScroller : MonoBehaviour
             {
                 hasStarted = true;
                 level1Music.Play();
+             //   EnvironmentSound.Play();
             }
         }
         else

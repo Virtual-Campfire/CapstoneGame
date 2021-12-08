@@ -3498,8 +3498,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca160fdd94c2c674f87436b7e8b09506, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Range: 50
   cam: {fileID: 913890815}
   agent: {fileID: 1058939089}
+  PlayLure: 0
 --- !u!195 &1058939089
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4468,7 +4470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60cab90d8321a4d4d95726185ea9055a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRadius: 40
+  viewRadius: 20
   viewAngle: 95
   targetMask:
     serializedVersion: 2
@@ -4569,10 +4571,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9827ac0f827d4ec479fb82e35ba3cbb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LastInput: 0
+  Timer: 0
   ReturnFromChase: 0
   PositionHolder: {fileID: 0}
   IsPatrol: 0
   HP: 10
+  DisToPlayer: 0
 --- !u!1 &1392217430
 GameObject:
   m_ObjectHideFlags: 0
@@ -5308,6 +5313,7 @@ GameObject:
   - component: {fileID: 1602348621}
   - component: {fileID: 1602348622}
   - component: {fileID: 1602348623}
+  - component: {fileID: 1602348624}
   m_Layer: 0
   m_Name: States
   m_TagString: Untagged
@@ -5420,6 +5426,19 @@ MonoBehaviour:
   LightIn: {fileID: 2100000, guid: 0229d4e5439ede140bdb73312bc66451, type: 2}
   ControlCaulate: 0
   Speed: 0.25
+--- !u!114 &1602348624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602348616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dd4c73598691344a83d66dfcc1a23ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DelayBeforeDoing: 3
 --- !u!1 &1634591536
 GameObject:
   m_ObjectHideFlags: 0
