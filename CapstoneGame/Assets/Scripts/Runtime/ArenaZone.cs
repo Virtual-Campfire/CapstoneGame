@@ -16,11 +16,11 @@ public class ArenaZone : MonoBehaviour
         // Set gates lowered by default
         LowerGates();
 
-        // Set enemies to be deactivated until player enters arena
-        foreach (GameObject item in Enemies)
-        {
-            item.SetActive(false);
-        }
+        //// Set enemies to be deactivated until player enters arena
+        //foreach (GameObject item in Enemies)
+        //{
+        //    item.SetActive(false);
+        //}
     }
 
     void FixedUpdate()

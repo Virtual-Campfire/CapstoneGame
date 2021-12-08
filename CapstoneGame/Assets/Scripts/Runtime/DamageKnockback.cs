@@ -30,23 +30,11 @@ public class DamageKnockback : MonoBehaviour
         }
     }
 
-    // This is meant for testing without full effects
-    public void TakeDamage()
-    {
-        if (Time.fixedTime > invulnerableUntil)
-        {
-            print("Ouch++!");
-            invulnerableUntil = Time.fixedTime + 1;
-        }
-    }
-
-    // THis is meant for applying actual damage/knockback effects
+    // This is meant for applying actual damage/knockback effects
     public void ApplyDamage(Vector3 sourcePosition, float damage, float knockback)
     {
         if (Time.fixedTime > invulnerableUntil)
         {
-            print("Ouch++!");
-
             // Set invulnerability time
             invulnerableUntil = Time.fixedTime + invulnTime;
 
@@ -68,7 +56,6 @@ public class DamageKnockback : MonoBehaviour
             // Adjust health bar size based on current compared to total
             if (healthBar != null)
             {
-                print("HP scale set!");
                 healthBar.transform.localScale = new Vector3(healthBarSize.x / (1 / (currentHealth / maxHealth)), healthBarSize.y, healthBarSize.z);
             }
 

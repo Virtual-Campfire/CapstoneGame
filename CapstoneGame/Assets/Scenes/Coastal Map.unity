@@ -5933,10 +5933,10 @@ MonoBehaviour:
 
     SPACE = Jump
 
-    L-click = Attack (time w/ beat for
-    bonus dmg)
+    R-click (hold) = Use AOE Attack (uses
+    resource charge)
 
-    R-click (hold) = Lure Green Enemies'
+    L-click = Attack (time w/ beat for faster resource charge)'
 --- !u!222 &1286364758
 CanvasRenderer:
   m_ObjectHideFlags: 0

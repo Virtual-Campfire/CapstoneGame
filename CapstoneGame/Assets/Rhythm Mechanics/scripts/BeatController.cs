@@ -59,8 +59,7 @@ public class BeatController : MonoBehaviour
 
 
         // Modify the attack
-        controller.meleeKnockback = 5;
-        controller.meleeDamage = 5;
+        controller.specialMelee = true;
     }
 
     public void PlayerSpecialBehavior2()

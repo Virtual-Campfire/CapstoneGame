@@ -38,11 +38,19 @@ public class CharacterController_Player : MonoBehaviour
     bool isMeleeing = false;
     float meleeStartTime;
     Quaternion meleeAngle;
-    public float meleeDuration = .5f, meleeCooldown = .5f, meleeBufferTime = .5f, meleeDamage = 1, meleeBaseDamage = 1, meleeKnockback = 3, meleeBaseKnockback = 3;
+    public float meleeDuration = .5f, meleeCooldown = .5f, meleeBufferTime = .5f, meleeDamage = 0, meleeBaseDamage = 0, meleeKnockback = 2, meleeBaseKnockback = 2;
+    public bool specialMelee = false;
 
-    public GameObject lureRadiusIndicator;
-    bool isLuring = false;
-    float lureRadius = 5;
+    // Instrument effect variables
+    public GameObject resourceBar;
+    Vector3 resourceBarSize;
+    [SerializeField]
+    float currentResource, maxResource = 1, resourceRecoveryMult = .25f;
+    bool playingInstrument = false;
+    float effectRadius = 5;
+
+    public GameObject effectRadiusIndicator;
+    
 
     // Audio variables
     [SerializeField]
@@ -61,6 +69,10 @@ public class CharacterController_Player : MonoBehaviour
         health = GetComponent<DamageKnockback>();
 
         meleeHurtbox.gameObject.SetActive(false);
+
+        currentResource = maxResource;
+
+        resourceBarSize = resourceBar.transform.localScale;
     }
 
     // Update is called once per frame
@@ -90,11 +102,11 @@ public class CharacterController_Player : MonoBehaviour
 
         if (Input.GetButton("Fire2"))
         {
-            isLuring = true;
+            playingInstrument = true;
         }
         else
         {
-            isLuring = false;
+            playingInstrument = false;
         }
     }
 
@@ -204,6 +216,16 @@ public class CharacterController_Player : MonoBehaviour
             {
                 if (item.GetComponent<DamageKnockback>() && item.gameObject.tag == "Enemy")
                 {
+                    if (specialMelee)
+                    {
+                        // Gain resource bar charge from hit
+                        AddResource(.25f);
+
+                        // Add to knockback
+                        meleeKnockback = 5;
+                    }
+
+                    // Apply melee effects
                     item.GetComponent<DamageKnockback>().ApplyDamage(rb.transform.position, meleeDamage, meleeKnockback);
                 }
             }
@@ -242,6 +264,11 @@ public class CharacterController_Player : MonoBehaviour
         }
         else
         {
+            // End of melee attack, deactivate any special effects
+            specialMelee = false;
+            meleeDamage = meleeBaseDamage;
+            meleeKnockback = meleeBaseKnockback;
+
             // Unlock character rotation
             rotLock = false;
             
@@ -253,29 +280,34 @@ public class CharacterController_Player : MonoBehaviour
             meleeKnockback = meleeBaseKnockback;
         }
 
-        // Violin behaviour
-        if (isLuring)
+        // Instrument ability only works when resources are above 0
+        if (playingInstrument && currentResource > 0)
         {
-            // Check for hearing actors within violin's range
-            Collider [] temp = Physics.OverlapSphere(transform.position, lureRadius, 1 << 14);
-
-            // Call each hearing actor's hearing response function
+            // Check for actors within effect's range
+            Collider [] temp = Physics.OverlapSphere(transform.position, effectRadius, 1 << 14);
+            
             foreach (Collider item in temp)
             {
-                if (item.gameObject.GetComponent<HearWithinRadius>())
+                if (item.tag == "Enemy" && item.gameObject.GetComponent<DamageKnockback>())
                 {
-                    // Send nearby, hearing actors this player's position
-                    item.gameObject.GetComponent<HearWithinRadius>().CheckHearing(rb.transform.position);
+                    // Apply damage to each enemy in the radius
+                    item.gameObject.GetComponent<DamageKnockback>().ApplyDamage(transform.position, 5, 1);
+
+                    // Drain resource store
+                    AddResource(-Time.fixedDeltaTime);
                 }
             }
 
-            // Visual effect for violin sound radius
-            lureRadiusIndicator.SetActive(true);
-            lureRadiusIndicator.transform.localScale = new Vector3(lureRadius * 2 - Mathf.Cos(Time.fixedTime * 5) * .25f, lureRadius * 2 - Mathf.Cos(Time.fixedTime * 5) * .25f, lureRadius * 2 - Mathf.Cos(Time.fixedTime * 5) * .25f);
+            // Drain resource bar
+            currentResource -= Time.fixedDeltaTime;
+
+            // Visual effect for instrument effect radius
+            effectRadiusIndicator.SetActive(true);
+            effectRadiusIndicator.transform.localScale = new Vector3(effectRadius * 2 - Mathf.Cos(Time.fixedTime * 5) * .25f, effectRadius * 2 - Mathf.Cos(Time.fixedTime * 5) * .25f, effectRadius * 2 - Mathf.Cos(Time.fixedTime * 5) * .25f);
         }
         else
         {
-            lureRadiusIndicator.SetActive(false);
+            effectRadiusIndicator.SetActive(false);
         }
 
         // If not interrupted, rotate to final rotation angle
@@ -297,14 +329,55 @@ public class CharacterController_Player : MonoBehaviour
             // Apply final movement calculation
             rb.MovePosition(nextPosition);
         }
+
+        // When not playing an instrument
+        if (!playingInstrument)
+        {
+            // Recover resource over time
+            AddResource(Time.fixedDeltaTime * resourceRecoveryMult);
+        }
+
+        // Update resource bar size
+        resourceBar.transform.localScale = new Vector3(resourceBarSize.x / (1 / (currentResource / maxResource)), resourceBarSize.y, resourceBarSize.z);
+    }
+
+    void AddResource(float amount)
+    {
+        // Add value to resource variable
+        currentResource += amount;
+
+        // Cap resource at max limit
+        if (currentResource >= maxResource)
+        {
+            currentResource = maxResource;
+        }
+
+        // Cap resource at min limit
+        if (currentResource < 0)
+        {
+            currentResource = 0;
+        }
+
+        // Show resource bar if not full
+        if (resourceBar != null)
+        {
+            if (currentResource != maxResource)
+            {
+                resourceBar.SetActive(true);
+            }
+            else
+            {
+                resourceBar.SetActive(false);
+            }
+        }
     }
 
     void OnDrawGizmos()
     {
         // Debug effect for violin radius
-        if (isLuring)
+        if (playingInstrument)
         {
-            Gizmos.DrawWireSphere(transform.position, lureRadius);
+            Gizmos.DrawWireSphere(transform.position, effectRadius);
         }
     }
 }
