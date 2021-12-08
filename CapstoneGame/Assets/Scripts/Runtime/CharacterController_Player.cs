@@ -375,7 +375,7 @@ public class CharacterController_Player : MonoBehaviour
     void OnDrawGizmos()
     {
         // Debug effect for violin radius
-        if (playingInstrument)
+        if (playingInstrument && currentResource > 0)
         {
             Gizmos.DrawWireSphere(transform.position, effectRadius);
         }

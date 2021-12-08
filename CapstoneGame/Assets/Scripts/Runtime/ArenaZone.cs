@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Adam B.
+// Manages a collection of enemies and gates that activate to lock the player into a combat scenario where they need to defeat every enemy in order to be released
 public class ArenaZone : MonoBehaviour
 {
     [SerializeField]
@@ -27,7 +29,7 @@ public class ArenaZone : MonoBehaviour
     {
         bool enemiesExist = false;
 
-        foreach (GameObject item in gates)
+        foreach (GameObject item in Enemies)
         {
             if (item != null)
             {
