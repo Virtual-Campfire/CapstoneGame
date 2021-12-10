@@ -4351,7 +4351,7 @@ GameObject:
   - component: {fileID: 1302100163}
   m_Layer: 6
   m_Name: Tester
-  m_TagString: Untagged
+  m_TagString: DevilHead
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5391,7 +5391,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  AttackRange: 8
+  AttackRange: 12
+  EnemyDevilHead: 0
+  FireBallRange: 10
+  SkillCoolDown: 10
+  MeleeAttack: 7
 --- !u!114 &1602348622
 MonoBehaviour:
   m_ObjectHideFlags: 0
