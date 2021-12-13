@@ -49,6 +49,10 @@ public class CharacterController_Player : MonoBehaviour
     bool playingInstrument = false;
     float effectRadius = 5;
 
+    // Will be used later with revised instrument / weapons system
+    public bool hasAOE, hasLure;
+    public bool equippedAOE = true, equippedLure;
+
     public GameObject effectRadiusIndicator;
     
 
@@ -283,23 +287,27 @@ public class CharacterController_Player : MonoBehaviour
         // Instrument ability only works when resources are above 0
         if (playingInstrument && currentResource > 0)
         {
-            // Check for actors within effect's range
-            Collider [] temp = Physics.OverlapSphere(transform.position, effectRadius, 1 << 14);
-            
-            foreach (Collider item in temp)
+            // Instrument ability type
+            if (equippedAOE)
             {
-                if (item.tag == "Enemy" && item.gameObject.GetComponent<DamageKnockback>())
+                // Check for actors within effect's range
+                Collider[] temp = Physics.OverlapSphere(transform.position, effectRadius, 1 << 14);
+
+                foreach (Collider item in temp)
                 {
-                    // Apply damage to each enemy in the radius
-                    item.gameObject.GetComponent<DamageKnockback>().ApplyDamage(transform.position, 5, 1);
+                    if (item.tag == "Enemy" && item.gameObject.GetComponent<DamageKnockback>())
+                    {
+                        // Apply damage to each enemy in the radius
+                        item.gameObject.GetComponent<DamageKnockback>().ApplyDamage(transform.position, 5, 1);
 
-                    // Drain resource store
-                    AddResource(-Time.fixedDeltaTime);
+                        // Drain resource store
+                        AddResource(-Time.fixedDeltaTime);
+                    }
                 }
-            }
 
-            // Drain resource bar
-            currentResource -= Time.fixedDeltaTime;
+                // Drain resource bar
+                currentResource -= Time.fixedDeltaTime;
+            }
 
             // Visual effect for instrument effect radius
             effectRadiusIndicator.SetActive(true);
