@@ -151,7 +151,7 @@ public class attackState : FSMState
 
 
         // Damage nearby player character
-        //Player.GetComponent<DamageKnockback>().ApplyDamage(transform.position, 1, 1);
+        Player.GetComponent<DamageKnockback>().ApplyDamage(transform.position, 1, 1);
     }
 
 
