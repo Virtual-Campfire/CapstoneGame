@@ -1237,6 +1237,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 532480167}
+  - component: {fileID: 532480168}
   m_Layer: 6
   m_Name: TouchPoint
   m_TagString: Untagged
@@ -1258,6 +1259,22 @@ Transform:
   m_Father: {fileID: 1302100155}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &532480168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532480166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 015179d6c1a8e7d4686c7e86c89086c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rdyShoot: 0
+  projectile: {fileID: 447321581879848316, guid: f430e561fd7cb7545b49b212e88bebf5, type: 3}
+  shootPoint: {fileID: 532480166}
+  Velocity: 1000
 --- !u!1 &543780958
 GameObject:
   m_ObjectHideFlags: 0
@@ -5375,6 +5392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcc0c7cc3570b8f44bb25d83b9c6fb2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
   agent: {fileID: 1302100156}
   Player: {fileID: 0}
   AttackRange: 8
@@ -5394,8 +5412,9 @@ MonoBehaviour:
   AttackRange: 12
   EnemyDevilHead: 0
   FireBallRange: 10
-  SkillCoolDown: 10
+  SkillCoolDown: 3
   MeleeAttack: 7
+  SkillScriptFrom: {fileID: 532480166}
 --- !u!114 &1602348622
 MonoBehaviour:
   m_ObjectHideFlags: 0

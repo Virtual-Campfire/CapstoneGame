@@ -20,6 +20,7 @@ public class attackState : FSMState
     public float FireBallRange;
     public float SkillCoolDown;
     public float MeleeAttack;
+    public GameObject SkillScriptFrom;
 
 
 
@@ -106,6 +107,8 @@ public class attackState : FSMState
             if (dist <= FireBallRange && SkillUsed==false) {
                 //active skill
                 Debug.Log("Fireeeeee Ballllll~");
+                SkillScriptFrom.GetComponent<Projectile>().Shoot();
+                SkillScriptFrom.GetComponent<Projectile>().rdyShoot = false;
 
 
                 //skill used
@@ -141,6 +144,7 @@ public class attackState : FSMState
             SkillCoolDown -= Time.deltaTime;
             if (SkillCoolDown <= 0)
             {
+                SkillScriptFrom.GetComponent<Projectile>().rdyShoot = true;
                 resetTimer();
             }
         }
