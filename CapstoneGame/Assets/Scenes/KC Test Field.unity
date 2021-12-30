@@ -3342,7 +3342,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!33 &1006240112
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5411,7 +5411,7 @@ MonoBehaviour:
   Player: {fileID: 0}
   AttackRange: 12
   EnemyDevilHead: 0
-  FireBallRange: 10
+  FireBallRange: 11.5
   SkillCoolDown: 3
   MeleeAttack: 7
   SkillScriptFrom: {fileID: 532480166}
