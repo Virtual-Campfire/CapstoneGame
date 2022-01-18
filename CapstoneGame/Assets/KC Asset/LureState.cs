@@ -96,6 +96,12 @@ public class LureState : FSMState
             manager.Fsm.PerformTransition(Transition.IntoLure);
         }
 
+        // Alternative variable check
+        if (Player.GetComponent<CharacterController_Player>().playingLure == true && GetComponentInParent<EnemyState>().DisToPlayer <= Player.GetComponent<PlayerController>().Range)
+        {
+            manager.Fsm.PerformTransition(Transition.IntoLure);
+        }
+
 
     }
 

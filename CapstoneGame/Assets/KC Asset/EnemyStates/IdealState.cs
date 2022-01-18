@@ -68,13 +68,24 @@ public class IdealState : FSMState
 
     }
 
-
-    // Adam: Lure functionality will be called from CharacterController_Player.cs
     public override void Reason()
     {
-        
-         manager.Fsm.PerformTransition(Transition.IntoLure);
-     
+        if (Player.GetComponent<PlayerController>())
+        {
+            if (Player.GetComponent<PlayerController>().PlayLure == true && GetComponentInParent<EnemyState>().DisToPlayer <= Player.GetComponent<PlayerController>().Range)
+            {
+                manager.Fsm.PerformTransition(Transition.IntoLure);
+            }
+        }
+
+        if (Player.GetComponent<CharacterController_Player>())
+        {
+            // Alternative variable check
+            if (Player.GetComponent<CharacterController_Player>().playingLure == true && GetComponentInParent<EnemyState>().DisToPlayer <= Player.GetComponent<PlayerController>().Range)
+            {
+                manager.Fsm.PerformTransition(Transition.IntoLure);
+            }
+        }
 
 
         if (GetComponentInParent<EnemyState>().HP <= 0) {
