@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Title Menu Scene.unity
+    guid: 4298d33a40d90dd47b07a901bafa6887
+  - enabled: 1
     path: Assets/Scenes/Coastal Map.unity
     guid: 9a2c7c916e326fb4d9c3c723f2dcd571
   - enabled: 0
