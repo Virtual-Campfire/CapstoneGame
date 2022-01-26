@@ -95,13 +95,13 @@ public class CharacterController_Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Once player health is depleted, reset scene (temporary solution)
+        // Once player health is depleted, return to main menu
         if (health.currentHealth <= 0)
         {
             // Temporary fix to stop music duplication on level reload
             BeatScroller.level1Music.Stop();
 
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene(0);
         }
 
         // Check player inputs
