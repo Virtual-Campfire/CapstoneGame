@@ -41,13 +41,13 @@ public class PlayerController : MonoBehaviour
 
 
 
-        if (Input.GetKey(KeyCode.G))
-        {
+        //if (Input.GetKey(KeyCode.G))
+        //{
 
-            PlayLure = true;
+        //    PlayLure = true;
 
-        }
-        else { PlayLure = false; }
+        //}
+        //else { PlayLure = false; }
     }
 
 

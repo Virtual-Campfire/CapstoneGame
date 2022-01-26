@@ -53,6 +53,12 @@ public class DamageKnockback : MonoBehaviour
                 currentHealth = 0;
             }
 
+            // Conditional update of enemy health scripts
+            if (GetComponent<EnemyState>())
+            {
+                GetComponent<EnemyState>().HP = currentHealth;
+            }
+
             // Adjust health bar size based on current compared to total
             if (healthBar != null)
             {

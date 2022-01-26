@@ -321,8 +321,8 @@ MonoBehaviour:
   meleeDuration: 0.25
   meleeCooldown: 0.15
   meleeBufferTime: 0.25
-  meleeDamage: 0
-  meleeBaseDamage: 0
+  meleeDamage: 2
+  meleeBaseDamage: 2
   meleeKnockback: 2
   meleeBaseKnockback: 2
   specialMelee: 0
@@ -330,10 +330,11 @@ MonoBehaviour:
   currentResource: 1
   maxResource: 1
   resourceRecoveryMult: 0.25
-  hasAOE: 0
-  hasLure: 0
-  equippedAOE: 1
-  equippedLure: 0
+  AOEEffectRadius: 5
+  playingLure: 0
+  instrumentHeld: 0
+  instrumentsCollected: 4
+  inventoryStates: 01000000
   effectRadiusIndicator: {fileID: 7685905005795669616}
   slashSpeaker: {fileID: 6292890480085915898}
   jumpSpeaker: {fileID: 916768440695829441}

@@ -334,6 +334,7 @@ GameObject:
   - component: {fileID: 5185967568021880454}
   - component: {fileID: 5185967568021880453}
   - component: {fileID: 5185967568021880452}
+  - component: {fileID: 6955784720820372038}
   m_Layer: 0
   m_Name: States
   m_TagString: Untagged
@@ -417,6 +418,7 @@ MonoBehaviour:
   FireBallRange: 0
   SkillCoolDown: 0
   MeleeAttack: 0
+  SkillScriptFrom: {fileID: 0}
 --- !u!114 &5185967568021880453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -450,7 +452,21 @@ MonoBehaviour:
   Ma: {fileID: 2100000, guid: 0e533d28834e7914894ae618a89b296b, type: 2}
   LightIn: {fileID: 2100000, guid: 0229d4e5439ede140bdb73312bc66451, type: 2}
   ControlCaulate: 0
-  Speed: 0.25
+  Speed: 2
+--- !u!114 &6955784720820372038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5185967568021880451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dd4c73598691344a83d66dfcc1a23ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LureRange: 5
+  DelayBeforeDoing: 2
 --- !u!1 &5185967568241786537
 GameObject:
   m_ObjectHideFlags: 0

@@ -20,7 +20,7 @@ public class EnemyState : MonoBehaviour
     GameObject Player;
 
     [Header("Basic")]
-    public int HP;
+    public float HP;
     public float DisToPlayer;
 
 
@@ -55,11 +55,11 @@ public class EnemyState : MonoBehaviour
 
     void LastLureInPut()
     {
-        if (Input.GetKey(KeyCode.G))
-        {
-            Timer = 3;
+        //if (Input.GetKey(KeyCode.G))
+        //{
+        //    Timer = 3;
             
-        }
+        //}
         
 
         if (Timer <= 0)

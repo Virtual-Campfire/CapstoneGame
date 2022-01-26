@@ -81,7 +81,7 @@ public class IdealState : FSMState
         if (Player.GetComponent<CharacterController_Player>())
         {
             // Alternative variable check
-            if (Player.GetComponent<CharacterController_Player>().playingLure == true && GetComponentInParent<EnemyState>().DisToPlayer <= Player.GetComponent<PlayerController>().Range)
+            if (Player.GetComponent<CharacterController_Player>().playingLure == true && GetComponentInParent<EnemyState>().DisToPlayer <= GetComponent<LureState>().LureRange)
             {
                 manager.Fsm.PerformTransition(Transition.IntoLure);
             }
