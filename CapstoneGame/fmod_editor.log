@@ -9,7 +9,7 @@
 [LOG] DownMix::init                            : done.
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 000002325F7F1728 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0000020A00E7F328 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -20,3 +20,1155 @@
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/BGM.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] Thread::initThread                       : Init FMOD nonblocking thread (0). Affinity: 0x8000000000000003, Priority: 0xFFFF7FFC, Stack Size: 114688, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
+[LOG] SystemI::createSound                     : setdata soundi = 0000020A006FAC58 : node = 0000020CE87ED7F0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020A006FAC58
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/BGM.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1294304
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 2688
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020CE87ED900
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSound                     :     filename = Assets/StreamingAssets/Desktop/BGM.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 0000020A006FA8F8 : node = 0000020CE87EDA70
+[LOG] SystemI::createSound                     :     add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] SystemI::createSound                     :     filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 0000020A006FA748 : node = 0000020CE87ED6B0
+[LOG] SystemI::createSound                     :     add node to async list : head = 0000020A027274C8.  list count = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='enviromentSoundIsland', format=5, channels=2, frequency=48000, lengthbytes=627456, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.546839.
+[LOG] Thread::initThread                       :     Init FMOD file thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFC, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020A006FAC58
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020A006FA8F8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/BGM.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1294304
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 2688
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020CE87EDB80
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='level1', format=5, channels=2, frequency=48000, lengthbytes=665856, lengthpcm=2460107, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.577301.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020A006FA8F8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020A006FA748
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020CE87ED7C0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH3', format=5, channels=2, frequency=48000, lengthbytes=11456, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.873976.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020A006FA748
+[LOG] SoundI::release                          : SLASH3 (0000020A006FA748)
+[LOG] SoundI::release                          :     SLASH3 (0000020C239B0B98)
+[LOG] SoundI::release                          :     SLASH3 (0000020CED2EBDE8)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020CB4156748 : node = 0000020C85CD4EA0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020CB4156748
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020C85CD4FB0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH', format=5, channels=2, frequency=48000, lengthbytes=12960, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.975051.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020CB4156748
+[LOG] SoundI::release                          : SLASH (0000020CB4156748)
+[LOG] SoundI::release                          :     SLASH (0000020C239B0858)
+[LOG] SoundI::release                          :     SLASH (0000020C869BE0C8)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020CE88AD958 : node = 0000020A0170DCF0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020CE88AD958
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020A0170DE00
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH4', format=5, channels=2, frequency=48000, lengthbytes=11936, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.975031.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020CE88AD958
+[LOG] SoundI::release                          : SLASH4 (0000020CE88AD958)
+[LOG] SoundI::release                          :     SLASH4 (0000020C239AE2F8)
+[LOG] SoundI::release                          :     SLASH4 (0000020CB4156C58)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020A0009A7E8 : node = 0000020C928EC690
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020A0009A7E8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020C928EC7A0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH3', format=5, channels=2, frequency=48000, lengthbytes=11456, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.873976.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020A0009A7E8
+[LOG] SoundI::release                          : SLASH3 (0000020A0009A7E8)
+[LOG] SoundI::release                          :     SLASH3 (0000020C239AE2F8)
+[LOG] SoundI::release                          :     SLASH3 (0000020CBAA324A8)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020CB4156C58 : node = 0000020C85CD5260
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020CB4156C58
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020C85CD5370
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH', format=5, channels=2, frequency=48000, lengthbytes=12960, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.975051.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020CB4156C58
+[LOG] SoundI::release                          : SLASH (0000020CB4156C58)
+[LOG] SoundI::release                          :     SLASH (0000020C239B7538)
+[LOG] SoundI::release                          :     SLASH (0000020A0009A7E8)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020CB4156C58 : node = 0000020C85CD5120
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020CB4156C58
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020C85CD5230
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH3', format=5, channels=2, frequency=48000, lengthbytes=11456, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.873976.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020CB4156C58
+[LOG] SoundI::release                          : SLASH3 (0000020CB4156C58)
+[LOG] SoundI::release                          :     SLASH3 (0000020C239B3F98)
+[LOG] SoundI::release                          :     SLASH3 (0000020A0009A7E8)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020CB4156C58 : node = 0000020C85CD4FE0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020CB4156C58
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020C85CD50F0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH4', format=5, channels=2, frequency=48000, lengthbytes=11936, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.975031.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020CB4156C58
+[LOG] SoundI::release                          : SLASH4 (0000020CB4156C58)
+[LOG] SoundI::release                          :     SLASH4 (0000020C239B3AB8)
+[LOG] SoundI::release                          :     SLASH4 (0000020C869BE0C8)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020A0009C2E8 : node = 0000020C928EC690
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020A0009C2E8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020C928EC7A0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH3', format=5, channels=2, frequency=48000, lengthbytes=11456, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.873976.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020A0009C2E8
+[LOG] SoundI::release                          : SLASH3 (0000020A0009C2E8)
+[LOG] SoundI::release                          :     SLASH3 (0000020C239B5318)
+[LOG] SoundI::release                          :     SLASH3 (0000020CBAA324A8)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020A006FA088 : node = 0000020CE87EDBB0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020A006FA088
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020CE87EDCC0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH', format=5, channels=2, frequency=48000, lengthbytes=12960, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.975051.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020A006FA088
+[LOG] SoundI::release                          : SLASH (0000020A006FA088)
+[LOG] SoundI::release                          :     SLASH (0000020C239B2DB8)
+[LOG] SoundI::release                          :     SLASH (0000020CBAA32EC8)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020A006FA088 : node = 0000020CE87ED930
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020A006FA088
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020CE87EDA40
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH4', format=5, channels=2, frequency=48000, lengthbytes=11936, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.975031.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020A006FA088
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020A006FA598 : node = 0000020CE87EDCF0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020A006FA598
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020CE87EDE00
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH3', format=5, channels=2, frequency=48000, lengthbytes=11456, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.873976.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020A006FA598
+[LOG] SoundI::release                          : SLASH4 (0000020A006FA088)
+[LOG] SoundI::release                          :     SLASH4 (0000020C239B2598)
+[LOG] SoundI::release                          :     SLASH4 (0000020CBAA32B68)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020A006FA3E8 : node = 0000020CE87ED6B0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020A006FA3E8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020CE87ED7C0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH', format=5, channels=2, frequency=48000, lengthbytes=12960, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.975051.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020A006FA3E8
+[LOG] SoundI::release                          : SLASH3 (0000020A006FA598)
+[LOG] SoundI::release                          :     SLASH3 (0000020C239B8578)
+[LOG] SoundI::release                          :     SLASH3 (0000020CBAA324A8)
+[LOG] SoundI::release                          : SLASH (0000020A006FA3E8)
+[LOG] SoundI::release                          :     SLASH (0000020C239B7878)
+[LOG] SoundI::release                          :     SLASH (0000020CBAA32B68)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020A006FA3E8 : node = 0000020CE87ED6B0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020A006FA3E8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020CE87ED7C0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH4', format=5, channels=2, frequency=48000, lengthbytes=11936, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.975031.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020A006FA3E8
+[LOG] SoundI::release                          : SLASH4 (0000020A006FA3E8)
+[LOG] SoundI::release                          :     SLASH4 (0000020C239B8578)
+[LOG] SoundI::release                          :     SLASH4 (0000020A0009A7E8)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020A0009D728 : node = 0000020C928EA4D0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020A0009D728
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020C928EA5E0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH', format=5, channels=2, frequency=48000, lengthbytes=12960, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.975051.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020A0009D728
+[LOG] SoundI::release                          : SLASH (0000020A0009D728)
+[LOG] SoundI::release                          :     SLASH (0000020C239B5E78)
+[LOG] SoundI::release                          :     SLASH (0000020C869BE0C8)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020CED2EBA88 : node = 0000020C85CD7BC0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020CED2EBA88
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020C85CD7CD0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH3', format=5, channels=2, frequency=48000, lengthbytes=11456, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.873976.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020CED2EBA88
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020CED2EB3C8 : node = 0000020C85CD76C0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020CED2EB3C8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020C85CD77D0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH4', format=5, channels=2, frequency=48000, lengthbytes=11936, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.975031.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020CED2EB3C8
+[LOG] SoundI::release                          : SLASH3 (0000020CED2EBA88)
+[LOG] SoundI::release                          :     SLASH3 (0000020C239B28D8)
+[LOG] SoundI::release                          :     SLASH3 (0000020A006FA088)
+[LOG] SoundI::release                          : SLASH4 (0000020CED2EB3C8)
+[LOG] SoundI::release                          :     SLASH4 (0000020C239B2598)
+[LOG] SoundI::release                          :     SLASH4 (0000020A006FA3E8)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020CBAA32EC8 : node = 0000020CAF691C20
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020CBAA32EC8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020CAF691D30
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH', format=5, channels=2, frequency=48000, lengthbytes=12960, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.975051.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020CBAA32EC8
+[LOG] SoundI::release                          : SLASH (0000020CBAA32EC8)
+[LOG] SoundI::release                          :     SLASH (0000020C239B5318)
+[LOG] SoundI::release                          :     SLASH (0000020A006FA088)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020CED2EBDE8 : node = 0000020C85CD7A80
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020CED2EBDE8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020C85CD7B90
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH3', format=5, channels=2, frequency=48000, lengthbytes=11456, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.873976.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020CED2EBDE8
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020CED2EB218 : node = 0000020C85CD7BC0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020CED2EB218
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020C85CD7CD0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH4', format=5, channels=2, frequency=48000, lengthbytes=11936, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.975031.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020CED2EB218
+[LOG] SoundI::release                          : SLASH3 (0000020CED2EBDE8)
+[LOG] SoundI::release                          :     SLASH3 (0000020C239B28D8)
+[LOG] SoundI::release                          :     SLASH3 (0000020A006FA238)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020CED2EB3C8 : node = 0000020C85CD7A80
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020CED2EB3C8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020C85CD7B90
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH', format=5, channels=2, frequency=48000, lengthbytes=12960, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.975051.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020CED2EB3C8
+[LOG] SoundI::release                          : SLASH4 (0000020CED2EB218)
+[LOG] SoundI::release                          :     SLASH4 (0000020C239B42D8)
+[LOG] SoundI::release                          :     SLASH4 (0000020A006FA088)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020CED2EBA88 : node = 0000020C85CD7BC0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020CED2EBA88
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020C85CD7CD0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH3', format=5, channels=2, frequency=48000, lengthbytes=11456, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.873976.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020CED2EBA88
+[LOG] SoundI::release                          : SLASH (0000020CED2EB3C8)
+[LOG] SoundI::release                          :     SLASH (0000020C239B83D8)
+[LOG] SoundI::release                          :     SLASH (0000020A0009B718)
+[LOG] SoundI::release                          : SLASH3 (0000020CED2EBA88)
+[LOG] SoundI::release                          :     SLASH3 (0000020C239B6838)
+[LOG] SoundI::release                          :     SLASH3 (0000020A0009C2E8)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020CED2EB3C8 : node = 0000020C85CD7800
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020CED2EB3C8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020C85CD7910
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH4', format=5, channels=2, frequency=48000, lengthbytes=11936, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.975031.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020CED2EB3C8
+[LOG] SoundI::release                          : SLASH4 (0000020CED2EB3C8)
+[LOG] SoundI::release                          :     SLASH4 (0000020C239B5318)
+[LOG] SoundI::release                          :     SLASH4 (0000020A006FA088)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/BGM.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020CED2EB068 : node = 0000020C85CD7BC0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020CED2EB068
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/BGM.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/BGM.bank', mode=0x02010082
+[LOG] SystemI::createSound                     :     setdata soundi = 0000020CED2EB218 : node = 0000020C85CD7A80
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSound                     :     add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1294304
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 2688
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020C85CD7CD0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='enviromentSoundIsland', format=5, channels=2, frequency=48000, lengthbytes=627456, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.546839.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020CED2EB068
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020CED2EB218
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/BGM.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1294304
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 2688
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020C85CD7B90
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='level1', format=5, channels=2, frequency=48000, lengthbytes=665856, lengthpcm=2460107, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.577301.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020CED2EB218
+[LOG] SoundI::release                          : enviromentSoundIsland (0000020A006FAC58)
+[LOG] SoundI::release                          :     enviromentSoundIsland (0000020C239AF818)
+[LOG] SoundI::release                          :     enviromentSoundIsland (0000020CED2EBC38)
+[LOG] SoundI::release                          : level1 (0000020A006FA8F8)
+[LOG] SoundI::release                          :     level1 (0000020C239B1A38)
+[LOG] SoundI::release                          :     level1 (0000020CED2EB728)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020A0009A7E8 : node = 0000020C928ECE10
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020A0009A7E8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020C928ECF20
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH', format=5, channels=2, frequency=48000, lengthbytes=12960, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.975051.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020A0009A7E8
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020A0009B058 : node = 0000020C928EA4D0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020A0009B058
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020C928EA5E0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH3', format=5, channels=2, frequency=48000, lengthbytes=11456, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.873976.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020A0009B058
+[LOG] SoundI::release                          : SLASH (0000020A0009A7E8)
+[LOG] SoundI::release                          :     SLASH (0000020C239ACF78)
+[LOG] SoundI::release                          :     SLASH (0000020A006FA8F8)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020CBAA32D18 : node = 0000020CE87EDBB0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020CBAA32D18
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020CE87EDCC0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH4', format=5, channels=2, frequency=48000, lengthbytes=11936, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.975031.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020CBAA32D18
+[LOG] SoundI::release                          : SLASH3 (0000020A0009B058)
+[LOG] SoundI::release                          :     SLASH3 (0000020C239AF818)
+[LOG] SoundI::release                          :     SLASH3 (0000020CBAA324A8)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020CBAA32EC8 : node = 0000020CE87ED930
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020CBAA32EC8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020CE87EDA40
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH3', format=5, channels=2, frequency=48000, lengthbytes=11456, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.873976.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020CBAA32EC8
+[LOG] SoundI::release                          : SLASH4 (0000020CBAA32D18)
+[LOG] SoundI::release                          :     SLASH4 (0000020C239ABF38)
+[LOG] SoundI::release                          :     SLASH4 (0000020A006FA088)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020CBAA32D18 : node = 0000020CE87EDA70
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020CBAA32D18
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020CE87EDB80
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH', format=5, channels=2, frequency=48000, lengthbytes=12960, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.975051.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020CBAA32D18
+[LOG] SoundI::release                          : SLASH3 (0000020CBAA32EC8)
+[LOG] SoundI::release                          :     SLASH3 (0000020C239AF818)
+[LOG] SoundI::release                          :     SLASH3 (0000020A006FA8F8)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020CBAA324A8 : node = 0000020CE87ED930
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020CBAA324A8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020CE87EDA40
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH3', format=5, channels=2, frequency=48000, lengthbytes=11456, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.873976.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020CBAA324A8
+[LOG] SoundI::release                          : SLASH (0000020CBAA32D18)
+[LOG] SoundI::release                          :     SLASH (0000020C239ACF78)
+[LOG] SoundI::release                          :     SLASH (0000020CED2EB3C8)
+[LOG] SoundI::release                          : SLASH3 (0000020CBAA324A8)
+[LOG] SoundI::release                          :     SLASH3 (0000020C239AD118)
+[LOG] SoundI::release                          :     SLASH3 (0000020CED2EB578)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020CBAA32B68 : node = 0000020CE87ED6B0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020CBAA32B68
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020CE87ED7C0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH4', format=5, channels=2, frequency=48000, lengthbytes=11936, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.975031.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020CBAA32B68
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020CBAA32EC8 : node = 0000020CE87ED7F0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020CBAA32EC8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020CE87ED900
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH3', format=5, channels=2, frequency=48000, lengthbytes=11456, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.873976.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020CBAA32EC8
+[LOG] SoundI::release                          : SLASH4 (0000020CBAA32B68)
+[LOG] SoundI::release                          :     SLASH4 (0000020C239AD118)
+[LOG] SoundI::release                          :     SLASH4 (0000020CED2EB3C8)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020CBAA32B68 : node = 0000020CE87ED930
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020CBAA32B68
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020CE87EDA40
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH', format=5, channels=2, frequency=48000, lengthbytes=12960, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.975051.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020CBAA32B68
+[LOG] SoundI::release                          : SLASH3 (0000020CBAA32EC8)
+[LOG] SoundI::release                          :     SLASH3 (0000020C239ABA58)
+[LOG] SoundI::release                          :     SLASH3 (0000020CED2EBC38)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020CBAA32EC8 : node = 0000020CE87ED7F0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020CBAA32EC8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020CE87ED900
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH3', format=5, channels=2, frequency=48000, lengthbytes=11456, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.873976.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020CBAA32EC8
+[LOG] SoundI::release                          : SLASH (0000020CBAA32B68)
+[LOG] SoundI::release                          :     SLASH (0000020C239AFB58)
+[LOG] SoundI::release                          :     SLASH (0000020CED2EB728)
+[LOG] SoundI::release                          : SLASH3 (0000020CBAA32EC8)
+[LOG] SoundI::release                          :     SLASH3 (0000020C239ACF78)
+[LOG] SoundI::release                          :     SLASH3 (0000020CED2EBC38)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020CBAA32B68 : node = 0000020CE87ED7F0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020CBAA32B68
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020CE87ED900
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH4', format=5, channels=2, frequency=48000, lengthbytes=11936, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.975031.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020CBAA32B68
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020CBAA32EC8 : node = 0000020CE87ED930
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020CBAA32EC8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020CE87EDA40
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH', format=5, channels=2, frequency=48000, lengthbytes=12960, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.975051.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020CBAA32EC8
+[LOG] SoundI::release                          : SLASH4 (0000020CBAA32B68)
+[LOG] SoundI::release                          :     SLASH4 (0000020C239B1898)
+[LOG] SoundI::release                          :     SLASH4 (0000020CED2EB3C8)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020CBAA32B68 : node = 0000020CE87EDA70
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020CBAA32B68
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020CE87EDB80
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH3', format=5, channels=2, frequency=48000, lengthbytes=11456, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.873976.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020CBAA32B68
+[LOG] SoundI::release                          : SLASH (0000020CBAA32EC8)
+[LOG] SoundI::release                          :     SLASH (0000020C239B01D8)
+[LOG] SoundI::release                          :     SLASH (0000020CED2EBC38)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020CBAA32EC8 : node = 0000020CE87EDCF0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020CBAA32EC8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020CE87EDE00
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH', format=5, channels=2, frequency=48000, lengthbytes=12960, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.975051.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020CBAA32EC8
+[LOG] SoundI::release                          : SLASH3 (0000020CBAA32B68)
+[LOG] SoundI::release                          :     SLASH3 (0000020C239AE2F8)
+[LOG] SoundI::release                          :     SLASH3 (0000020CED2EB3C8)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020CBAA32B68 : node = 0000020CE87ED930
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020CBAA32B68
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020CE87EDA40
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH4', format=5, channels=2, frequency=48000, lengthbytes=11936, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.975031.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020CBAA32B68
+[LOG] SoundI::release                          : SLASH (0000020CBAA32EC8)
+[LOG] SoundI::release                          :     SLASH (0000020C239AF818)
+[LOG] SoundI::release                          :     SLASH (0000020CED2EBC38)
+[LOG] SoundI::release                          : SLASH4 (0000020CBAA32B68)
+[LOG] SoundI::release                          :     SLASH4 (0000020C239AFB58)
+[LOG] SoundI::release                          :     SLASH4 (0000020CED2EB3C8)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020CBAA324A8 : node = 0000020CE87ED7F0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020CBAA324A8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020CE87ED900
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH', format=5, channels=2, frequency=48000, lengthbytes=12960, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.975051.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020CBAA324A8
+[LOG] SoundI::release                          : SLASH (0000020CBAA324A8)
+[LOG] SoundI::release                          :     SLASH (0000020C239B1558)
+[LOG] SoundI::release                          :     SLASH (0000020CB4156C58)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020CBAA32B68 : node = 0000020CE87ED7F0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020CBAA32B68
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020CE87ED900
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH3', format=5, channels=2, frequency=48000, lengthbytes=11456, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.873976.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020CBAA32B68
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020CBAA324A8 : node = 0000020CE87ED6B0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020CBAA324A8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020CE87ED7C0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH', format=5, channels=2, frequency=48000, lengthbytes=12960, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.975051.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020CBAA324A8
+[LOG] SoundI::release                          : SLASH3 (0000020CBAA32B68)
+[LOG] SoundI::release                          :     SLASH3 (0000020C239B0858)
+[LOG] SoundI::release                          :     SLASH3 (0000020CB41568F8)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020CBAA32EC8 : node = 0000020CE87ED7F0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020CBAA32EC8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020CE87ED900
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH4', format=5, channels=2, frequency=48000, lengthbytes=11936, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.975031.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020CBAA32EC8
+[LOG] SoundI::release                          : SLASH (0000020CBAA324A8)
+[LOG] SoundI::release                          :     SLASH (0000020C239AD2B8)
+[LOG] SoundI::release                          :     SLASH (0000020CB4156C58)
+[LOG] SoundI::release                          : SLASH4 (0000020CBAA32EC8)
+[LOG] SoundI::release                          :     SLASH4 (0000020C239AF9B8)
+[LOG] SoundI::release                          :     SLASH4 (0000020BFEB74248)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020BFEB74E18 : node = 0000020CEC6143D0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020BFEB74E18
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020CEC6144E0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH', format=5, channels=2, frequency=48000, lengthbytes=12960, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.975051.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020BFEB74E18
+[LOG] SoundI::release                          : SLASH (0000020BFEB74E18)
+[LOG] SoundI::release                          :     SLASH (0000020C239AE2F8)
+[LOG] SoundI::release                          :     SLASH (0000020A006FA3E8)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020A0009D068 : node = 0000020C928EC690
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020A0009D068
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020C928EC7A0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH3', format=5, channels=2, frequency=48000, lengthbytes=11456, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.873976.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020A0009D068
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020A006FA238 : node = 0000020CAF691C20
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020A006FA238
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020CAF691D30
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH', format=5, channels=2, frequency=48000, lengthbytes=12960, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.975051.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020A006FA238
+[LOG] SoundI::release                          : SLASH3 (0000020A0009D068)
+[LOG] SoundI::release                          :     SLASH3 (0000020C239AF818)
+[LOG] SoundI::release                          :     SLASH3 (0000020A006FA3E8)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020A006FAC58 : node = 0000020CAF691860
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020A006FAC58
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020CAF691970
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH4', format=5, channels=2, frequency=48000, lengthbytes=11936, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.975031.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020A006FAC58
+[LOG] SoundI::release                          : SLASH (0000020A006FA238)
+[LOG] SoundI::release                          :     SLASH (0000020C239AF9B8)
+[LOG] SoundI::release                          :     SLASH (0000020CB41568F8)
+[LOG] SoundI::release                          : SLASH4 (0000020A006FAC58)
+[LOG] SoundI::release                          :     SLASH4 (0000020C239B0B98)
+[LOG] SoundI::release                          :     SLASH4 (0000020CB4156C58)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020BFEB745A8 : node = 0000020CEC614150
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020BFEB745A8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020CEC614260
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH', format=5, channels=2, frequency=48000, lengthbytes=12960, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.975051.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020BFEB745A8
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020BFEB74098 : node = 0000020CEC614510
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020BFEB74098
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020CEC614620
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH3', format=5, channels=2, frequency=48000, lengthbytes=11456, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.873976.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020BFEB74098
+[LOG] SoundI::release                          : SLASH (0000020BFEB745A8)
+[LOG] SoundI::release                          :     SLASH (0000020C239B0ED8)
+[LOG] SoundI::release                          :     SLASH (0000020CB41568F8)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020BFEB74248 : node = 0000020CEC614B50
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020BFEB74248
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020CEC614C60
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH4', format=5, channels=2, frequency=48000, lengthbytes=11936, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.975031.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020BFEB74248
+[LOG] SoundI::release                          : SLASH3 (0000020BFEB74098)
+[LOG] SoundI::release                          :     SLASH3 (0000020C239AFB58)
+[LOG] SoundI::release                          :     SLASH3 (0000020CB4156C58)
+[LOG] SoundI::release                          : SLASH4 (0000020BFEB74248)
+[LOG] SoundI::release                          :     SLASH4 (0000020C239ACF78)
+[LOG] SoundI::release                          :     SLASH4 (0000020CB41568F8)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020CBAA32B68 : node = 0000020CE87ED7F0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020CBAA32B68
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020CE87ED900
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH', format=5, channels=2, frequency=48000, lengthbytes=12960, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.975051.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020CBAA32B68
+[LOG] SoundI::release                          : SLASH (0000020CBAA32B68)
+[LOG] SoundI::release                          :     SLASH (0000020C239ABF38)
+[LOG] SoundI::release                          :     SLASH (0000020A0009B718)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020CBAA32B68 : node = 0000020CE87ED6B0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020CBAA32B68
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020CE87ED7C0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH3', format=5, channels=2, frequency=48000, lengthbytes=11456, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.873976.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020CBAA32B68
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020CBAA32EC8 : node = 0000020CE87EDCF0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020CBAA32EC8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020CE87EDE00
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH4', format=5, channels=2, frequency=48000, lengthbytes=11936, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.975031.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020CBAA32EC8
+[LOG] SoundI::release                          : SLASH3 (0000020CBAA32B68)
+[LOG] SoundI::release                          :     SLASH3 (0000020C239AD118)
+[LOG] SoundI::release                          :     SLASH3 (0000020A0009ACF8)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020CBAA32B68 : node = 0000020CE87EDA70
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020CBAA32B68
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020CE87EDB80
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH', format=5, channels=2, frequency=48000, lengthbytes=12960, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.975051.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020CBAA32B68
+[LOG] SoundI::release                          : SLASH4 (0000020CBAA32EC8)
+[LOG] SoundI::release                          :     SLASH4 (0000020C239ABA58)
+[LOG] SoundI::release                          :     SLASH4 (0000020A0009A7E8)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020CBAA32EC8 : node = 0000020CE87EDCF0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020CBAA32EC8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020CE87EDE00
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH3', format=5, channels=2, frequency=48000, lengthbytes=11456, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.873976.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020CBAA32EC8
+[LOG] SoundI::release                          : SLASH (0000020CBAA32B68)
+[LOG] SoundI::release                          :     SLASH (0000020C239ABF38)
+[LOG] SoundI::release                          :     SLASH (0000020A0009D068)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020CBAA32B68 : node = 0000020CE87EDBB0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020CBAA32B68
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020CE87EDCC0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH4', format=5, channels=2, frequency=48000, lengthbytes=11936, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.975031.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020CBAA32B68
+[LOG] SoundI::release                          : SLASH3 (0000020CBAA32EC8)
+[LOG] SoundI::release                          :     SLASH3 (0000020C239B01D8)
+[LOG] SoundI::release                          :     SLASH3 (0000020A0009A7E8)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020CBAA32EC8 : node = 0000020CE87EDCF0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020CBAA32EC8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020CE87EDE00
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH', format=5, channels=2, frequency=48000, lengthbytes=12960, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.975051.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020CBAA32EC8
+[LOG] SoundI::release                          : SLASH4 (0000020CBAA32B68)
+[LOG] SoundI::release                          :     SLASH4 (0000020C239ABBF8)
+[LOG] SoundI::release                          :     SLASH4 (0000020A0009B3B8)
+[LOG] SoundI::release                          : SLASH (0000020CBAA32EC8)
+[LOG] SoundI::release                          :     SLASH (0000020C239AE2F8)
+[LOG] SoundI::release                          :     SLASH (0000020A0009CD08)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000020CBAA324A8 : node = 0000020CE87EDA70
+[LOG] SystemI::createSound                     : add node to async list : head = 0000020A027274C8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000020CBAA324A8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 384512
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000020CE87EDB80
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH3', format=5, channels=2, frequency=48000, lengthbytes=11456, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.873976.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000020CBAA324A8
+[LOG] SoundI::release                          : SLASH3 (0000020CBAA324A8)
+[LOG] SoundI::release                          :     SLASH3 (0000020C239AD118)
+[LOG] SoundI::release                          :     SLASH3 (0000020A0009A7E8)
+[LOG] SoundI::release                          : level1 (0000020CED2EB218)
+[LOG] SoundI::release                          :     level1 (0000020C239B54B8)
+[LOG] SoundI::release                          :     level1 (0000020BFEB74AB8)
+[LOG] SoundI::release                          : enviromentSoundIsland (0000020CED2EB068)
+[LOG] SoundI::release                          :     enviromentSoundIsland (0000020C239B5B38)
+[LOG] SoundI::release                          :     enviromentSoundIsland (0000020C869BE0C8)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] SystemI::close                           : Closed.
