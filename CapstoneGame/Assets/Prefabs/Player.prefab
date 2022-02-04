@@ -334,7 +334,7 @@ MonoBehaviour:
   playingLure: 0
   instrumentHeld: 0
   instrumentsCollected: 4
-  inventoryStates: 01000000
+  inventoryStates: 00000000
   effectRadiusIndicator: {fileID: 7685905005795669616}
   lastCheckpoint: {x: 0, y: 0, z: 0}
   slashSpeaker: {fileID: 6292890480085915898}

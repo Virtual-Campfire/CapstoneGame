@@ -49,7 +49,7 @@ public class CharacterController_Player : MonoBehaviour
     bool playingInstrument = false;
     
     // Variables used with revised instrument / weapons system
-    public float AOEEffectRadius = 5; // Not applicable to actual range enemies currently can hear at
+    public float AOEEffectRadius = 5;
     public bool playingLure;
 
     enum EquipID
@@ -61,10 +61,10 @@ public class CharacterController_Player : MonoBehaviour
         AOE
     };
 
-    public int instrumentHeld, instrumentsCollected = 4;
+    public int instrumentHeld = 0, instrumentsCollected;
 
     // Array keeps track of what instruments the player has possession of
-    public bool[] inventoryStates = new bool[4] { true, false, false, false };
+    public bool[] inventoryStates = new bool[4] { false, false, false, false };
 
     public GameObject effectRadiusIndicator;
 
@@ -126,15 +126,15 @@ public class CharacterController_Player : MonoBehaviour
         //    SwapInstrumentId(-1);
         //}
 
-        // Check last melee attack and melee buffer time (so that players can queue up an attack if they click right before ending their last)
-        if (Input.GetButtonDown("Fire1") && Time.fixedTime > meleeStartTime + meleeDuration + meleeCooldown - meleeBufferTime)
+        // Check if melee weapon is equipped and available and last melee attack and melee buffer time (so that players can queue up an attack if they click right before ending their last)
+        if (inventoryStates[instrumentHeld] && Input.GetButtonDown("Fire1") && Time.fixedTime > meleeStartTime + meleeDuration + meleeCooldown - meleeBufferTime)
         {
             // Rinvy+++---------------------------------------------------
             meleeIndex = Random.Range(0, 3);
             isMeleeing = true;
         }
 
-        if (Input.GetButton("Fire2"))
+        if (inventoryStates[instrumentHeld] && Input.GetButton("Fire2"))
         {
             playingInstrument = true;
         }
