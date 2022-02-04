@@ -110,10 +110,11 @@ public class CharacterController_Player : MonoBehaviour
 
         // Check player inputs
         moveIntent = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        //if (Input.GetButtonDown("Jump"))
-        //{
-        //    isJumping = true;
-        //}
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            isJumping = true;
+        }
 
         //// Instrument inventory system
         //if (Input.GetButtonDown("Equip Left"))
