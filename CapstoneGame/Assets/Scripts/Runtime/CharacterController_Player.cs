@@ -68,13 +68,14 @@ public class CharacterController_Player : MonoBehaviour
 
     public GameObject effectRadiusIndicator;
 
+    // Checkpoint variables
+    public Vector3 lastCheckpoint;
 
     // Audio variables
     [SerializeField]
     StudioEventEmitter slashSpeaker, jumpSpeaker;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody>();
 
@@ -90,6 +91,9 @@ public class CharacterController_Player : MonoBehaviour
         currentResource = maxResource;
 
         resourceBarSize = resourceBar.transform.localScale;
+
+        // Set default checkpoint location
+        lastCheckpoint = transform.position;
     }
 
     // Update is called once per frame
@@ -455,6 +459,12 @@ public class CharacterController_Player : MonoBehaviour
                 instrumentHeld = (int)EquipID.Requiem;
                 break;
         }
+    }
+
+    // Used to return player to a safe location after going out-of-bounds or into a damage source with behaviour requiring a position reset
+    public void TeleportToCheckpoint()
+    {
+        rb.position = lastCheckpoint;
     }
 
     void OnDrawGizmos()
