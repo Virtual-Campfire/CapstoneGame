@@ -128,6 +128,8 @@ public class CharacterController_Player : MonoBehaviour
         // Check last melee attack and melee buffer time (so that players can queue up an attack if they click right before ending their last)
         if (Input.GetButtonDown("Fire1") && Time.fixedTime > meleeStartTime + meleeDuration + meleeCooldown - meleeBufferTime)
         {
+            // Rinvy+++---------------------------------------------------
+            meleeIndex = Random.Range(0, 3);
             isMeleeing = true;
         }
 
@@ -141,11 +143,20 @@ public class CharacterController_Player : MonoBehaviour
         }
     }
 
+    // Rinvy+++---------------------------------------------------
+    int meleeIndex = 0;
+
     void FixedUpdate()
     {
         #region Movement
         // Animator sends variables
         anim.SetFloat("Speed", moveVector.magnitude);
+        // Rinvy+++---------------------------------------------------
+        anim.SetBool("IsGrounded", isGrounded);
+        anim.SetBool("IsMeleeing", isMeleeing);
+        anim.SetInteger("AttackIndex", meleeIndex);
+        anim.SetBool("IsPlayingIns", playingInstrument);
+        anim.SetFloat("Health", health.currentHealth);
 
         // Ground ray is drawn a little bit above player character's foot
         groundRay = new Ray(groundRayBase.position + Vector3.up * 0.5f, Vector3.down);
