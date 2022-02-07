@@ -41,7 +41,7 @@ public class DeadState : FSMState
         Ma.SetFloat("_Control", ControlCaulate);
         LightIn.SetFloat("_control", ControlCaulate);
 
-        if (ControlCaulate >= 1.2) {
+        if (ControlCaulate >= 1) {
 
             Destroy(Pa);
         }

@@ -19,9 +19,10 @@ public class TriggerObject : MonoBehaviour
 
     public BeatController bc;
 
-    void Start()
+    void Awake()
     {
-        
+        // Get the player by name
+        Player = GameObject.Find("Player");
     }
 
     // Update is called once per frame

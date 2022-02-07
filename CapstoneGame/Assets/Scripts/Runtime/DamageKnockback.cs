@@ -35,8 +35,7 @@ public class DamageKnockback : MonoBehaviour
     {
         if (Time.fixedTime > invulnerableUntil)
         {
-            // Set invulnerability time
-            invulnerableUntil = Time.fixedTime + invulnTime;
+            SetInvulnTime();
 
             // Clip knockback Y axis to object's axis
             sourcePosition = new Vector3(sourcePosition.x, transform.position.y, sourcePosition.z);
@@ -44,35 +43,70 @@ public class DamageKnockback : MonoBehaviour
             // Apply knockback
             transform.position += (transform.position - sourcePosition).normalized * knockback;
 
-            // Apply damage
-            currentHealth -= damage;
-
-            // Cap health at 0
-            if (currentHealth < 0)
-            {
-                currentHealth = 0;
-            }
-
-            // Adjust health bar size based on current compared to total
-            if (healthBar != null)
-            {
-                healthBar.transform.localScale = new Vector3(healthBarSize.x / (1 / (currentHealth / maxHealth)), healthBarSize.y, healthBarSize.z);
-            }
-
-            // Show health bar if damaged or overhealed
-            if (healthBar != null)
-            {
-                if (currentHealth != maxHealth && showHealthBar)
-                {
-                    healthBar.SetActive(true);
-                }
-                else
-                {
-                    healthBar.SetActive(false);
-                }
-            }
+            ChangeHPValue(damage);
         }
 
+        CheckIfDead();
+    }
+
+    // This overload of the function only applies damage; no knockback is applied
+    public void ApplyDamage(float damage)
+    {
+        if (Time.fixedTime > invulnerableUntil)
+        {
+            SetInvulnTime();
+
+            ChangeHPValue(damage);
+        }
+
+        CheckIfDead();
+    }
+
+    void SetInvulnTime()
+    {
+        // Set invulnerability time
+        invulnerableUntil = Time.fixedTime + invulnTime;
+    }
+
+    void ChangeHPValue(float damage)
+    {
+        // Apply damage
+        currentHealth -= damage;
+
+        // Cap health at 0
+        if (currentHealth < 0)
+        {
+            currentHealth = 0;
+        }
+
+        // Conditional update of enemy health scripts
+        if (GetComponent<EnemyState>())
+        {
+            GetComponent<EnemyState>().HP = currentHealth;
+        }
+
+        // Adjust health bar size based on current compared to total
+        if (healthBar != null)
+        {
+            healthBar.transform.localScale = new Vector3(healthBarSize.x / (1 / (currentHealth / maxHealth)), healthBarSize.y, healthBarSize.z);
+        }
+
+        // Show health bar if damaged or overhealed
+        if (healthBar != null)
+        {
+            if (currentHealth != maxHealth && showHealthBar)
+            {
+                healthBar.SetActive(true);
+            }
+            else
+            {
+                healthBar.SetActive(false);
+            }
+        }
+    }
+
+    void CheckIfDead()
+    {
         // If this script overrides death check
         if (handleDeath && currentHealth <= 0)
         {

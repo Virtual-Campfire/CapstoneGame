@@ -6,9 +6,9 @@ public class LureState : FSMState
 {
     GameObject Player;
 
-    float LureRange;
+    public float LureRange;
 
-     UnityEngine.AI.NavMeshAgent agent;
+    UnityEngine.AI.NavMeshAgent agent;
 
 
 
@@ -32,35 +32,41 @@ public class LureState : FSMState
 
         agent = transform.parent.gameObject.GetComponent<NavMeshAgent>();
         Player = GameObject.Find("Player");
-        LureRange=Player.GetComponent<PlayerController>().Range;
 
+        UpdateRange();
     }
 
-    // Start is called before the first frame update
-    void Start()
+    void FixedUpdate()
     {
-       
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-       
+        // Update value if changed (in case lure range were to change)
+        UpdateRange();
     }
 
     public override void Act()
     {
+        
         float dis= Vector3.Distance(transform.position, Player.transform.position);
 
-        if (LureRange > dis && Player.GetComponent<PlayerController>().PlayLure == true)
+        if (Player.GetComponent<PlayerController>())
         {
+            if (LureRange > dis && Player.GetComponent<PlayerController>().PlayLure == true)
+            {
+                print("Lure method A received.");
+                agent.SetDestination(Player.transform.position);
 
-            agent.SetDestination(Player.transform.position);
+            }
+        }
+        // Alternative variable check
+        else if (Player.GetComponent<CharacterController_Player>())
+        {
+            if (LureRange > dis && Player.GetComponent<CharacterController_Player>().playingLure == true)
+            {
+                print("Lure method B received.");
+                agent.SetDestination(Player.transform.position);
 
+            }
         }
         else { agent.SetDestination(transform.position); }
-
- 
 
 
     }
@@ -85,18 +91,37 @@ public class LureState : FSMState
             manager.Fsm.PerformTransition(Transition.IntoChasing);
         }
 
-        if (GetComponentInParent<Attention>().attentionValue <= 10 && Player.GetComponent<PlayerController>().PlayLure==false && GetComponentInParent<EnemyState>().Timer<0) {
+        if (Player.GetComponent<PlayerController>())
+        {
+            if (GetComponentInParent<Attention>().attentionValue <= 10 && Player.GetComponent<PlayerController>().PlayLure == false && GetComponentInParent<EnemyState>().Timer < 0)
+            {
 
-            if (GetComponentInParent<EnemyState>().LastInput==true) { Invoke("Return", DelayBeforeDoing); }
-            
+                if (GetComponentInParent<EnemyState>().LastInput == true) { Invoke("Return", DelayBeforeDoing); }
 
+
+            }
+
+            if (Player.GetComponent<PlayerController>().PlayLure == true && GetComponentInParent<EnemyState>().DisToPlayer <= Player.GetComponent<PlayerController>().Range)
+            {
+                manager.Fsm.PerformTransition(Transition.IntoLure);
+            }
         }
 
-        if (Player.GetComponent<PlayerController>().PlayLure == true && GetComponentInParent<EnemyState>().DisToPlayer <= Player.GetComponent<PlayerController>().Range) {
-            manager.Fsm.PerformTransition(Transition.IntoLure);
+        // Alternative variable check
+        if (Player.GetComponent<CharacterController_Player>())
+        {
+            if (GetComponentInParent<Attention>().attentionValue <= 10 && Player.GetComponent<CharacterController_Player>().playingLure == false && GetComponentInParent<EnemyState>().Timer < 0)
+            {
+
+                if (GetComponentInParent<EnemyState>().LastInput == true) { Invoke("Return", DelayBeforeDoing); }
+
+                // Alternative variable check
+                if (Player.GetComponent<CharacterController_Player>().playingLure == true && GetComponentInParent<EnemyState>().DisToPlayer <= LureRange)
+                {
+                    manager.Fsm.PerformTransition(Transition.IntoLure);
+                }
+            }
         }
-
-
     }
 
 
@@ -106,5 +131,18 @@ public class LureState : FSMState
     }
 
    
+
+    void UpdateRange()
+    {
+        // Conditional statement to avoid null refs when exclusively using alternative lure calls
+        if (Player.GetComponent<PlayerController>())
+        {
+            LureRange = Player.GetComponent<PlayerController>().Range;
+        }
+        else if (Player.GetComponent<CharacterController_Player>())
+        {
+            LureRange = Player.GetComponent<CharacterController_Player>().AOEEffectRadius;
+        }
+    }
 
 }

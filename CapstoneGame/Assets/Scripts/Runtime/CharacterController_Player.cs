@@ -11,7 +11,7 @@ public class CharacterController_Player : MonoBehaviour
     // Character animator variables
     [SerializeField]
     Animator anim;
-    
+
     // Physics variables
     Rigidbody rb;
     CapsuleCollider capsule;
@@ -47,26 +47,40 @@ public class CharacterController_Player : MonoBehaviour
     [SerializeField]
     float currentResource, maxResource = 1, resourceRecoveryMult = .25f;
     bool playingInstrument = false;
-    float effectRadius = 5;
+    
+    // Variables used with revised instrument / weapons system
+    public float AOEEffectRadius = 5;
+    public bool playingLure;
 
-    // Will be used later with revised instrument / weapons system
-    public bool hasAOE, hasLure;
-    public bool equippedAOE = true, equippedLure;
+    enum EquipID
+    {
+        Siren,
+        Poison,
+        Roar,
+        Requiem,
+        AOE
+    };
+
+    public int instrumentHeld = 0, instrumentsCollected;
+
+    // Array keeps track of what instruments the player has possession of
+    public bool[] inventoryStates = new bool[4] { false, false, false, false };
 
     public GameObject effectRadiusIndicator;
-    
+
+    // Checkpoint variables
+    public Vector3 lastCheckpoint;
 
     // Audio variables
     [SerializeField]
     StudioEventEmitter slashSpeaker, jumpSpeaker;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody>();
 
         capsule = GetComponent<CapsuleCollider>();
-        
+
         floorLayer = 1 << LayerMask.NameToLayer("Floor");
         wallLayer = 1 << LayerMask.NameToLayer("Wall");
 
@@ -77,34 +91,50 @@ public class CharacterController_Player : MonoBehaviour
         currentResource = maxResource;
 
         resourceBarSize = resourceBar.transform.localScale;
+
+        // Set default checkpoint location
+        lastCheckpoint = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Once player health is depleted, reset scene (temporary solution)
+        // Once player health is depleted, return to main menu
         if (health.currentHealth <= 0)
         {
             // Temporary fix to stop music duplication on level reload
             BeatScroller.level1Music.Stop();
 
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene(0);
         }
 
         // Check player inputs
         moveIntent = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        if(Input.GetButtonDown("Jump"))
+
+        if (Input.GetButtonDown("Jump"))
         {
             isJumping = true;
         }
-        
-        // Check last melee attack and melee buffer time (so that players can queue up an attack if they click right before ending their last)
-        if (Input.GetButtonDown("Fire1") && Time.fixedTime > meleeStartTime + meleeDuration + meleeCooldown - meleeBufferTime)
+
+        //// Instrument inventory system
+        //if (Input.GetButtonDown("Equip Left"))
+        //{
+        //    SwapInstrumentId(1);
+        //}
+        //if (Input.GetButtonDown("Equip Right"))
+        //{
+        //    SwapInstrumentId(-1);
+        //}
+
+        // Check if melee weapon is equipped and available and last melee attack and melee buffer time (so that players can queue up an attack if they click right before ending their last)
+        if (inventoryStates[instrumentHeld] && Input.GetButtonDown("Fire1") && Time.fixedTime > meleeStartTime + meleeDuration + meleeCooldown - meleeBufferTime)
         {
+            // Rinvy+++---------------------------------------------------
+            meleeIndex = Random.Range(0, 3);
             isMeleeing = true;
         }
 
-        if (Input.GetButton("Fire2"))
+        if (inventoryStates[instrumentHeld] && Input.GetButton("Fire2"))
         {
             playingInstrument = true;
         }
@@ -114,14 +144,24 @@ public class CharacterController_Player : MonoBehaviour
         }
     }
 
+    // Rinvy+++---------------------------------------------------
+    int meleeIndex = 0;
+
     void FixedUpdate()
     {
+        #region Movement
         // Animator sends variables
         anim.SetFloat("Speed", moveVector.magnitude);
+        // Rinvy+++---------------------------------------------------
+        anim.SetBool("IsGrounded", isGrounded);
+        anim.SetBool("IsMeleeing", isMeleeing);
+        anim.SetInteger("AttackIndex", meleeIndex);
+        anim.SetBool("IsPlayingIns", playingInstrument);
+        anim.SetFloat("Health", health.currentHealth);
 
         // Ground ray is drawn a little bit above player character's foot
         groundRay = new Ray(groundRayBase.position + Vector3.up * 0.5f, Vector3.down);
-        
+
         // Calculate the angle of the normal that the player is standing on (angle rounded to nearest significant digit; for use in later functionality)
         float groundAngle = Mathf.Round(Vector3.Angle(groundRayHit.normal, groundRay.direction));
 
@@ -139,11 +179,11 @@ public class CharacterController_Player : MonoBehaviour
             isGrounded = true;
 
             // Readout for angle of normal that is currently stood on
-            Debug.Log("Hit!" + ", " + groundAngle % 60 + ", " + groundAngle);
-            
+            // Debug.Log("Hit!" + ", " + groundAngle % 60 + ", " + groundAngle);
+
             // Move character by distance of ground collision so that they are standing on top of the ground collision point
             rb.position = new Vector3(transform.position.x, groundRayHit.point.y + 1.05f, transform.position.z);
-            
+
             // Draw red line where ground detection is being checked (collision has already happened)
             Debug.DrawRay(groundRayBase.position + Vector3.up * 0.5f, groundRay.direction, Color.red);
 
@@ -163,7 +203,7 @@ public class CharacterController_Player : MonoBehaviour
             if (isJumping)
             {
                 print("Jump!");
-                
+
                 // Record velocity at moment before jumping
                 jumpVector = moveVector;
 
@@ -182,10 +222,10 @@ public class CharacterController_Player : MonoBehaviour
 
             // Set grounded flag off
             isGrounded = false;
-            
+
             // Set jumping variable to false to prevent complete jump buffering for after landing (partial jump buffering might be wanted later)
             isJumping = false;
-            
+
             // Add initial velocity from before jump began
             moveVector = new Vector3(jumpVector.x, moveVector.y, jumpVector.z);
 
@@ -210,12 +250,15 @@ public class CharacterController_Player : MonoBehaviour
 
         // Calculate position character is trying to move to for this physics update
         Vector3 nextPosition = rb.position + moveVector * Time.fixedDeltaTime;
+        #endregion
 
-        // Check if damage source overlaps character
+        #region Combat
+
+        // Check if player's melee attack overlaps with other characters
         if (meleeHurtbox.gameObject.activeSelf)
         {
             Collider[] temp = Physics.OverlapBox(meleeHurtbox.transform.position + transform.forward * meleeHurtbox.center.z, meleeHurtbox.size, meleeHurtbox.gameObject.transform.rotation, 1 << 14);
-            
+
             foreach (Collider item in temp)
             {
                 if (item.GetComponent<DamageKnockback>() && item.gameObject.tag == "Enemy")
@@ -240,13 +283,13 @@ public class CharacterController_Player : MonoBehaviour
         {
             // Reset variables
             meleeStartTime = Time.fixedTime;
-            
+
             // Get angle to derive the arc the weapon will cover when swiping
             meleeAngle = transform.rotation;
 
             // Reset input flag
             isMeleeing = false;
-            
+
             // Lock character's facing direction during attack
             rotLock = true;
 
@@ -262,7 +305,7 @@ public class CharacterController_Player : MonoBehaviour
         {
             // The angle the weapon will be rotating to for this physics update
             Quaternion tempRot = Quaternion.Euler(0, Mathf.Lerp(-60, 60, (Time.fixedTime - meleeStartTime) / meleeDuration), 0);
-            
+
             // Rotate weapon based on time since attacking
             meleeVisualRoot.transform.rotation = (Quaternion.Euler(meleeAngle.eulerAngles + tempRot.eulerAngles));
         }
@@ -275,7 +318,7 @@ public class CharacterController_Player : MonoBehaviour
 
             // Unlock character rotation
             rotLock = false;
-            
+
             // Make weapon swipe model/effect disappear
             meleeHurtbox.gameObject.SetActive(false);
 
@@ -283,38 +326,58 @@ public class CharacterController_Player : MonoBehaviour
             meleeDamage = meleeBaseDamage;
             meleeKnockback = meleeBaseKnockback;
         }
-
+        
         // Instrument ability only works when resources are above 0
         if (playingInstrument && currentResource > 0)
         {
-            // Instrument ability type
-            if (equippedAOE)
+            // AOE instrument abilities
+            if (instrumentHeld == (int)EquipID.Siren || instrumentHeld == (int)EquipID.AOE)
             {
-                // Check for actors within effect's range
-                Collider[] temp = Physics.OverlapSphere(transform.position, effectRadius, 1 << 14);
-
-                foreach (Collider item in temp)
+                // Siren behaviour
+                if (instrumentHeld == (int)EquipID.Siren)
                 {
-                    if (item.tag == "Enemy" && item.gameObject.GetComponent<DamageKnockback>())
-                    {
-                        // Apply damage to each enemy in the radius
-                        item.gameObject.GetComponent<DamageKnockback>().ApplyDamage(transform.position, 5, 1);
+                    // Luring flag for attracting certain characters
+                    playingLure = true;
 
-                        // Drain resource store
-                        AddResource(-Time.fixedDeltaTime);
+                    // Drain resource store
+                    AddResource(-Time.fixedDeltaTime * 1.5f);
+                }
+                else
+                {
+                    //AOE behaviour (old, used as a testing instrument for now)
+
+                    // Check for actors within effect's range
+                    Collider[] temp = Physics.OverlapSphere(transform.position, AOEEffectRadius, 1 << 14);
+
+                    foreach (Collider item in temp)
+                    {
+                        if (instrumentHeld == (int)EquipID.AOE)
+                        {
+                            if (item.tag == "Enemy" && item.gameObject.GetComponent<DamageKnockback>())
+                            {
+                                // Apply damage to each enemy in the radius
+                                item.gameObject.GetComponent<DamageKnockback>().ApplyDamage(transform.position, 5, 1);
+
+                                // Set enemy state timer for this distraction
+                                //item.gameObject.GetComponent<EnemyState>().LastLureInPut();
+
+                                // Drain resource store
+                                AddResource(-Time.fixedDeltaTime);
+                            }
+                        }
                     }
                 }
-
-                // Drain resource bar
-                currentResource -= Time.fixedDeltaTime;
             }
 
             // Visual effect for instrument effect radius
             effectRadiusIndicator.SetActive(true);
-            effectRadiusIndicator.transform.localScale = new Vector3(effectRadius * 2 - Mathf.Cos(Time.fixedTime * 5) * .25f, effectRadius * 2 - Mathf.Cos(Time.fixedTime * 5) * .25f, effectRadius * 2 - Mathf.Cos(Time.fixedTime * 5) * .25f);
+            effectRadiusIndicator.transform.localScale = new Vector3(AOEEffectRadius * 2 - Mathf.Cos(Time.fixedTime * 5) * .25f, AOEEffectRadius * 2 - Mathf.Cos(Time.fixedTime * 5) * .25f, AOEEffectRadius * 2 - Mathf.Cos(Time.fixedTime * 5) * .25f);
         }
         else
         {
+            // Disable luring flag by default
+            playingLure = false;
+
             effectRadiusIndicator.SetActive(false);
         }
 
@@ -347,6 +410,7 @@ public class CharacterController_Player : MonoBehaviour
 
         // Update resource bar size
         resourceBar.transform.localScale = new Vector3(resourceBarSize.x / (1 / (currentResource / maxResource)), resourceBarSize.y, resourceBarSize.z);
+        #endregion
     }
 
     void AddResource(float amount)
@@ -380,12 +444,47 @@ public class CharacterController_Player : MonoBehaviour
         }
     }
 
+    // Note: Add function to reevaluate the instrumentNum (number of instruments collected) when picking up an instrument here
+
+    // Function used for swapping between instruments in a cyclic fashion
+    void SwapInstrumentId(int value)
+    {
+        
+    }
+
+    // Used to start equipment switching actions
+    void CheckEquipID()
+    {
+        switch (instrumentHeld)
+        {
+            case (int)EquipID.Siren:
+                instrumentHeld = (int)EquipID.Siren;
+                // Additional weapon switch processes
+                break;
+            case (int)EquipID.Poison:
+                instrumentHeld = (int)EquipID.Poison;
+                break;
+            case (int)EquipID.Roar:
+                instrumentHeld = (int)EquipID.Roar;
+                break;
+            case (int)EquipID.Requiem:
+                instrumentHeld = (int)EquipID.Requiem;
+                break;
+        }
+    }
+
+    // Used to return player to a safe location after going out-of-bounds or into a damage source with behaviour requiring a position reset
+    public void TeleportToCheckpoint()
+    {
+        rb.position = lastCheckpoint;
+    }
+
     void OnDrawGizmos()
     {
         // Debug effect for violin radius
         if (playingInstrument && currentResource > 0)
         {
-            Gizmos.DrawWireSphere(transform.position, effectRadius);
+            Gizmos.DrawWireSphere(transform.position, AOEEffectRadius);
         }
     }
 }

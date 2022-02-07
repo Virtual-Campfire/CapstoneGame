@@ -11,17 +11,20 @@ public class PatrolState : FSMState
     public Transform[] points;
     private int destPoint = 0;
 
+    GameObject Player;
+
 
     void Awake()
     {
         stateID = StateID.Patrol;
         AddTransition(Transition.IntoDoubt, StateID.Doubt);
         AddTransition(Transition.IntoDead, StateID.Dead);
+        AddTransition(Transition.IntoLure, StateID.Lure);
 
         agent = transform.parent.gameObject.GetComponent<NavMeshAgent>();
 
 
-
+        Player = GameObject.Find("Player");
     }
 
     // Start is called before the first frame update
@@ -64,6 +67,22 @@ public class PatrolState : FSMState
 
         }
 
+        if (Player.GetComponent<PlayerController>())
+        {
+            if (Player.GetComponent<PlayerController>().PlayLure == true && GetComponentInParent<EnemyState>().DisToPlayer <= Player.GetComponent<PlayerController>().Range)
+            {
+                manager.Fsm.PerformTransition(Transition.IntoLure);
+            }
+        }
+
+        if (Player.GetComponent<CharacterController_Player>())
+        {
+            // Alternative variable check
+            if (Player.GetComponent<CharacterController_Player>().playingLure == true && GetComponentInParent<EnemyState>().DisToPlayer <= GetComponent<LureState>().LureRange)
+            {
+                manager.Fsm.PerformTransition(Transition.IntoLure);
+            }
+        }
 
         if (GetComponentInParent<Attention>().attentionValue > 10) { manager.Fsm.PerformTransition(Transition.IntoDoubt); }
     }
