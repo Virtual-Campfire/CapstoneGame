@@ -297,7 +297,7 @@ MonoBehaviour:
   LastInput: 0
   Timer: 0
   ReturnFromChase: 0
-  PositionHolder: {fileID: 0}
+  InitialPositionHolder: {fileID: 0}
   IsPatrol: 0
   HP: 10
   DisToPlayer: 0
@@ -399,7 +399,7 @@ MonoBehaviour:
   anim: {fileID: 4605458774600321462}
   agent: {fileID: 5185967567788728439}
   Player: {fileID: 0}
-  AttackRange: 1.5
+  AttackRange: 3
 --- !u!114 &5185967568021880454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -413,7 +413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  AttackRange: 1.5
+  AttackRange: 3.5
   EnemyDevilHead: 0
   FireBallRange: 0
   SkillCoolDown: 0
