@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using FMODUnity;
 
 // Adam B.
@@ -42,11 +43,17 @@ public class CharacterController_Player : MonoBehaviour
     public bool specialMelee = false;
 
     // Instrument effect variables
-    public GameObject resourceBar;
-    Vector3 resourceBarSize;
     [SerializeField]
     float currentResource, maxResource = 1, resourceRecoveryMult = .25f;
     bool playingInstrument = false;
+
+    // UI variables
+    [SerializeField]
+    Text noInstrumentWarning;
+    [SerializeField]
+    Health healthUI;
+    [SerializeField]
+    MagicBarScript magicUI;
     
     // Variables used with revised instrument / weapons system
     public float AOEEffectRadius = 5;
@@ -64,7 +71,7 @@ public class CharacterController_Player : MonoBehaviour
     public int instrumentHeld = 0, instrumentsCollected;
 
     // Array keeps track of what instruments the player has possession of
-    public bool[] inventoryStates = new bool[4] { false, false, false, false };
+    public bool[] instrumentStates = new bool[4] { false, false, false, false };
 
     public GameObject effectRadiusIndicator;
 
@@ -90,10 +97,16 @@ public class CharacterController_Player : MonoBehaviour
 
         currentResource = maxResource;
 
-        resourceBarSize = resourceBar.transform.localScale;
-
         // Set default checkpoint location
         lastCheckpoint = transform.position;
+
+        // Set UI defaults
+        healthUI.numOfHearths = (int)health.maxHealth;
+        healthUI.health = (int)health.currentHealth;
+        magicUI.SetMaxMagic((int)maxResource);
+
+        // Recount inventory upon waking up
+        AddToInventory(-1);
     }
 
     // Update is called once per frame
@@ -107,6 +120,10 @@ public class CharacterController_Player : MonoBehaviour
 
             SceneManager.LoadScene(0);
         }
+
+        // Update UI elements
+        healthUI.health = (int)health.currentHealth;
+        magicUI.SetMagic((int)currentResource);
 
         // Check player inputs
         moveIntent = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
@@ -127,14 +144,14 @@ public class CharacterController_Player : MonoBehaviour
         //}
 
         // Check if melee weapon is equipped and available and last melee attack and melee buffer time (so that players can queue up an attack if they click right before ending their last)
-        if (inventoryStates[instrumentHeld] && Input.GetButtonDown("Fire1") && Time.fixedTime > meleeStartTime + meleeDuration + meleeCooldown - meleeBufferTime)
+        if (instrumentStates[instrumentHeld] && Input.GetButtonDown("Fire1") && Time.fixedTime > meleeStartTime + meleeDuration + meleeCooldown - meleeBufferTime)
         {
             // Rinvy+++---------------------------------------------------
             meleeIndex = Random.Range(0, 3);
             isMeleeing = true;
         }
 
-        if (inventoryStates[instrumentHeld] && Input.GetButton("Fire2"))
+        if (instrumentStates[instrumentHeld] && Input.GetButton("Fire2"))
         {
             playingInstrument = true;
         }
@@ -407,9 +424,6 @@ public class CharacterController_Player : MonoBehaviour
             // Recover resource over time
             AddResource(Time.fixedDeltaTime * resourceRecoveryMult);
         }
-
-        // Update resource bar size
-        resourceBar.transform.localScale = new Vector3(resourceBarSize.x / (1 / (currentResource / maxResource)), resourceBarSize.y, resourceBarSize.z);
         #endregion
     }
 
@@ -429,25 +443,12 @@ public class CharacterController_Player : MonoBehaviour
         {
             currentResource = 0;
         }
-
-        // Show resource bar if not full
-        if (resourceBar != null)
-        {
-            if (currentResource != maxResource)
-            {
-                resourceBar.SetActive(true);
-            }
-            else
-            {
-                resourceBar.SetActive(false);
-            }
-        }
     }
 
     // Note: Add function to reevaluate the instrumentNum (number of instruments collected) when picking up an instrument here
 
     // Function used for swapping between instruments in a cyclic fashion
-    void SwapInstrumentId(int value)
+    void SwapInstrumentID(int value)
     {
         
     }
@@ -470,6 +471,37 @@ public class CharacterController_Player : MonoBehaviour
             case (int)EquipID.Requiem:
                 instrumentHeld = (int)EquipID.Requiem;
                 break;
+        }
+    }
+
+    // Adds an instrument to the inventory (inputting -1 or other negative values only recounts the inventory)
+    public void AddToInventory(int instrumentID)
+    {
+        if (instrumentID > -1 && instrumentStates[instrumentID] == false)
+        {
+            // Add instrument ID to inventory
+            instrumentStates[instrumentID] = true;
+        }
+
+        // Recount instruments collected
+        instrumentsCollected = 0;
+
+        foreach (bool item in instrumentStates)
+        {
+            if (item)
+            {
+                instrumentsCollected += 1;
+            }
+        }
+
+        // If not carrying any instruments, make warning message appear on HUD
+        if (instrumentsCollected == 0)
+        {
+            noInstrumentWarning.enabled = true;
+        }
+        else
+        {
+            noInstrumentWarning.enabled = false;
         }
     }
 

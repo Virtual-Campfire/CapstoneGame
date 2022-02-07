@@ -10,7 +10,7 @@ public class Health : MonoBehaviour
 
     public Image[] hearts;
     public Sprite fullHeart;
-    public Sprite empytHeart;
+    public Sprite emptyHeart;
 
     private void Update()
     {
@@ -27,7 +27,7 @@ public class Health : MonoBehaviour
             }
             else
             {
-                hearts[i].sprite = empytHeart;
+                hearts[i].sprite = emptyHeart;
             }
 
             if (i < numOfHearths)

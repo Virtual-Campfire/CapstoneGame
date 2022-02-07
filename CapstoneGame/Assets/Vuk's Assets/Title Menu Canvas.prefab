@@ -113,6 +113,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 318887575867119077}
+  - component: {fileID: 76394206817316601}
   m_Layer: 5
   m_Name: Hearts
   m_TagString: Untagged
@@ -149,6 +150,33 @@ RectTransform:
   m_AnchoredPosition: {x: 234.8, y: 194.96}
   m_SizeDelta: {x: 290.4, y: 19.998}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &76394206817316601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318887575867119078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b48bf8845ec8cfc4c8bd970355338c9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  numOfHearths: 0
+  hearts:
+  - {fileID: 318887576017908582}
+  - {fileID: 318887577427645146}
+  - {fileID: 318887576073124928}
+  - {fileID: 318887576414949182}
+  - {fileID: 318887577241909375}
+  - {fileID: 318887577383586190}
+  - {fileID: 318887577762463863}
+  - {fileID: 318887575973094775}
+  - {fileID: 318887577679849603}
+  - {fileID: 318887576247578219}
+  fullHeart: {fileID: 21300000, guid: 01d73318ec2af1d4ebea5109c1cc68fd, type: 3}
+  emptyHeart: {fileID: 21300000, guid: a87a1035f531d904a87d96aebdb1cdf0, type: 3}
 --- !u!1 &318887575881771938
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,7 +208,7 @@ RectTransform:
   m_Children:
   - {fileID: 318887576601856393}
   m_Father: {fileID: 318887576600088236}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -555,8 +583,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 318887576753555091}
+  - {fileID: 8054103494892622322}
   m_Father: {fileID: 318887576600088236}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -1009,8 +1038,8 @@ RectTransform:
   - {fileID: 318887575887674035}
   - {fileID: 318887575716913388}
   - {fileID: 318887576257611342}
-  - {fileID: 318887576089127389}
   - {fileID: 318887575881771937}
+  - {fileID: 318887576089127389}
   - {fileID: 318887576999326952}
   - {fileID: 318887575867119077}
   m_Father: {fileID: 0}
@@ -2365,3 +2394,84 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &2894605590940253868
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8054103494892622322}
+  - component: {fileID: 3473160476455801529}
+  - component: {fileID: 9184527817067798654}
+  m_Layer: 5
+  m_Name: Nothing Equipped Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &8054103494892622322
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2894605590940253868}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 318887576089127389}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 60, y: 0}
+  m_SizeDelta: {x: 120, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &3473160476455801529
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2894605590940253868}
+  m_CullTransparentMesh: 1
+--- !u!114 &9184527817067798654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2894605590940253868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'No Instruments.
+
+    Find one!'
