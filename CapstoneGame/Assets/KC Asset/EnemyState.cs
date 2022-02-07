@@ -11,9 +11,7 @@ public class EnemyState : MonoBehaviour
 
     public bool ReturnFromChase = false;
 
-    private GameObject LocationSave;
-
-    public GameObject PositionHolder;
+    public GameObject InitialPositionHolder;
 
     public bool IsPatrol;
 
@@ -27,20 +25,14 @@ public class EnemyState : MonoBehaviour
 
     private void Awake()
     {
-
-        LocationSave = GameObject.FindWithTag("LocationSave");
         Player = GameObject.Find("Player");
+
+        // Create initial position holder for referencing initial position and rotation of enemy
+        InitialPositionHolder = new GameObject("InitialPositionHolder");
+        InitialPositionHolder = Instantiate(InitialPositionHolder, this.transform.position, Quaternion.identity);
+        InitialPositionHolder.transform.eulerAngles = new Vector3(gameObject.transform.eulerAngles.x, gameObject.transform.eulerAngles.y);
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        PositionHolder = Instantiate(LocationSave, this.transform.position, Quaternion.identity);
-        PositionHolder.transform.eulerAngles = new Vector3(gameObject.transform.eulerAngles.x, gameObject.transform.eulerAngles.y);
-
-
-    }
-
+    
     // Update is called once per frame
     void Update()
     {

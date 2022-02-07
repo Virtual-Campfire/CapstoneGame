@@ -31,7 +31,7 @@ public class IdealState : FSMState
 
     private void Start()
     {
-        SaveLocation = GetComponentInParent<EnemyState>().PositionHolder.transform;
+        SaveLocation = GetComponentInParent<EnemyState>().InitialPositionHolder.transform;
         
     }
 
