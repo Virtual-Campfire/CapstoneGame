@@ -319,18 +319,18 @@ MonoBehaviour:
   meleeHurtbox: {fileID: 1206552032039454996}
   meleeVisualRoot: {fileID: 3965734059516288854}
   meleeDuration: 0.25
-  meleeCooldown: 0.15
+  meleeCooldown: 0.1
   meleeBufferTime: 0.25
   meleeDamage: 2
   meleeBaseDamage: 2
-  meleeKnockback: 2
-  meleeBaseKnockback: 2
+  meleeKnockback: 5
+  meleeBaseKnockback: 5
   specialMelee: 0
   resourceBar: {fileID: 3689728694970436120}
   currentResource: 1
   maxResource: 1
   resourceRecoveryMult: 0.25
-  AOEEffectRadius: 5
+  AOEEffectRadius: 10
   playingLure: 0
   instrumentHeld: 0
   instrumentsCollected: 4
