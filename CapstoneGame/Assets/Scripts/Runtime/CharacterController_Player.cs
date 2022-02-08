@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 using FMODUnity;
 
 // Adam B.
@@ -49,12 +48,14 @@ public class CharacterController_Player : MonoBehaviour
 
     // UI variables
     [SerializeField]
-    Text noInstrumentWarning;
+    GameObject noInstrumentWarning;
     [SerializeField]
     Health healthUI;
     [SerializeField]
     MagicBarScript magicUI;
-    
+    [SerializeField]
+    GameObject rhythmMechanics, rhythmUI, magicBar;
+
     // Variables used with revised instrument / weapons system
     public float AOEEffectRadius = 5;
     public bool playingLure;
@@ -494,14 +495,51 @@ public class CharacterController_Player : MonoBehaviour
             }
         }
 
-        // If not carrying any instruments, make warning message appear on HUD
+        // If not carrying any instruments, hide rhythm mechanics and show unequipped warning message on HUD
         if (instrumentsCollected == 0)
         {
-            noInstrumentWarning.enabled = true;
+            noInstrumentWarning.SetActive(true);
+
+            // Hide rhythm mechanics
+            MeshRenderer[] notes1 = rhythmMechanics.GetComponentsInChildren<MeshRenderer>();
+
+            foreach (MeshRenderer item in notes1)
+            {
+                item.enabled = false;
+            }
+
+            // Deactivate trigger object scripts for spark effect
+            TriggerObject[] notes2 = rhythmMechanics.GetComponentsInChildren<TriggerObject>();
+
+            foreach (TriggerObject item in notes2)
+            {
+                item.enabled = false;
+            }
         }
+        // If carrying instruments, show rhythm mechanics and hide unequipped warning message on HUD
         else
         {
-            noInstrumentWarning.enabled = false;
+            noInstrumentWarning.SetActive(false);
+
+            // Show rhythm mechanics
+            MeshRenderer[] notes1 = rhythmMechanics.GetComponentsInChildren<MeshRenderer>();
+
+            foreach (MeshRenderer item in notes1)
+            {
+                item.enabled = true;
+            }
+
+            // Activate trigger object scripts for spark effect
+            TriggerObject[] notes2 = rhythmMechanics.GetComponentsInChildren<TriggerObject>();
+
+            foreach (TriggerObject item in notes2)
+            {
+                item.enabled = true;
+            }
+
+            // Reveal UI portion
+            rhythmUI.SetActive(true);
+            magicBar.SetActive(true);
         }
     }
 

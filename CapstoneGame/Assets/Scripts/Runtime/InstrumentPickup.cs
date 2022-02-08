@@ -15,19 +15,16 @@ public class InstrumentPickup : MonoBehaviour
     GameObject instrumentModel;
 
     [SerializeField]
-    GameObject rhythmMechanics;
+    GameObject rhythmMechanics, rhythmUI, magicBar;
     
     void Awake()
     {
         instrumentLoc = instrumentModel.transform.position;
 
-        // Temporary code for revealing rhythm mechanics
-        MeshRenderer[] temp = rhythmMechanics.GetComponentsInChildren<MeshRenderer>();
+        
 
-        foreach (MeshRenderer item in temp)
-        {
-            item.enabled = false;
-        }
+        rhythmUI.SetActive(false);
+        magicBar.SetActive(false);
     }
 
     // Update is called once per frame
@@ -49,15 +46,7 @@ public class InstrumentPickup : MonoBehaviour
             other.GetComponent<CharacterController_Player>().AddToInventory(instrumentID);
 
             Debug.Log("Player has picked up an instrument with ID " + instrumentID);
-
-            // Temporary code for revealing rhythm mechanics
-            MeshRenderer[] temp = rhythmMechanics.GetComponentsInChildren<MeshRenderer>();
-
-            foreach (MeshRenderer item in temp)
-            {
-                item.enabled = true;
-            }
-
+            
             // Remove the pickup
             Destroy(gameObject);
         }
