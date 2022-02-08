@@ -97,7 +97,7 @@ public class attackState : FSMState
 
 
 
-        dist = Vector3.Distance(Player.transform.position, transform.position);
+        dist = Vector3.Distance(Player.transform.position, transform.parent.position);
         
 
         //from here for devil head special attack

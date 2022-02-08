@@ -37,13 +37,14 @@ public class ChaseState : FSMState
 
     private void Update()
     {
-        dist = Vector3.Distance(Player.transform.position, transform.position);
+        dist = Vector3.Distance(Player.transform.position, this.transform.parent.position);
+        Debug.Log(dist);
 
         // Control animator parameters
         anim.SetFloat("Speed", agent.velocity.magnitude);
     }
 
-
+    
     public override void DoBeforeEntering()
     {
         Debug.Log("I am ready in to the chasing now");
