@@ -51,7 +51,7 @@ public class InstrumentPickup : MonoBehaviour
         if (other.GetComponent<CharacterController_Player>())
         {
             // Add pickup's item ID to player inventory
-            other.GetComponent<CharacterController_Player>().inventoryStates[instrumentID] = true;
+            other.GetComponent<CharacterController_Player>().AddToInventory(0);
 
             Debug.Log("Player has picked up an instrument with ID " + instrumentID);
 

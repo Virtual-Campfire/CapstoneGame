@@ -311,6 +311,8 @@ MonoBehaviour:
   specialParticles: {fileID: 198203777143593298, guid: 53ebac442b16db64f9177d0c749cbb06, type: 3}
   Player: {fileID: 0}
   controller: {fileID: 0}
+  fmodEvent: 
+  hitValue: 0
 --- !u!54 &6248430027047255193
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -475,6 +477,8 @@ MonoBehaviour:
   specialParticles: {fileID: 198203777143593298, guid: 53ebac442b16db64f9177d0c749cbb06, type: 3}
   Player: {fileID: 0}
   controller: {fileID: 0}
+  fmodEvent: 
+  hitValue: 0
 --- !u!54 &6248430028623175194
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -565,7 +569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/level1BGM
+  Event: event:/BGMs/level1BGM
   PlayEvent: 0
   StopEvent: 0
   AllowFadeout: 1
