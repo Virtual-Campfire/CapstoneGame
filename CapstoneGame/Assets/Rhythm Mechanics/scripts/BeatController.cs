@@ -75,6 +75,7 @@ public class BeatController : MonoBehaviour
 
     public void swich()
     {
+        Debug.Log("BeatController Swich called ");
         instance.start();
     }
 
