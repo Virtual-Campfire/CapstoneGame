@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 // Adam B.
 // Controls a pickup that adds an instrument/ability to the player's inventory when they run into its trigger
@@ -15,16 +16,23 @@ public class InstrumentPickup : MonoBehaviour
     GameObject instrumentModel;
 
     [SerializeField]
-    GameObject rhythmMechanics, rhythmUI, magicBar;
-    
+    GameObject rhythmMechanics;
+
+    public GameObject AudioManager;
+    public GameObject BeatController;
+
     void Awake()
     {
         instrumentLoc = instrumentModel.transform.position;
 
-        
+        // Temporary code for revealing rhythm mechanics
+        MeshRenderer[] temp = rhythmMechanics.GetComponentsInChildren<MeshRenderer>();
 
-        rhythmUI.SetActive(false);
-        magicBar.SetActive(false);
+        foreach (MeshRenderer item in temp)
+        {
+            item.enabled = false;
+        }
+
     }
 
     // Update is called once per frame
@@ -43,12 +51,26 @@ public class InstrumentPickup : MonoBehaviour
         if (other.GetComponent<CharacterController_Player>())
         {
             // Add pickup's item ID to player inventory
-            other.GetComponent<CharacterController_Player>().AddToInventory(instrumentID);
+            other.GetComponent<CharacterController_Player>().inventoryStates[instrumentID] = true;
 
             Debug.Log("Player has picked up an instrument with ID " + instrumentID);
-            
+
+            // Temporary code for revealing rhythm mechanics
+            MeshRenderer[] temp = rhythmMechanics.GetComponentsInChildren<MeshRenderer>();
+
+            foreach (MeshRenderer item in temp)
+            {
+                item.enabled = true;
+            }
+
             // Remove the pickup
             Destroy(gameObject);
+
+            //Swich track
+            AudioManager.SendMessage("swich");
+            BeatController.SendMessage("swich");
+
+            Debug.Log("swich track");
         }
     }
 }

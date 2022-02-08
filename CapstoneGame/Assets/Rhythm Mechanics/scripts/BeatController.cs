@@ -13,42 +13,36 @@ public class BeatController : MonoBehaviour
     // Container for player controller
     public CharacterController_Player controller;
 
-    //Animator _animator;
+
+     private FMOD.Studio.EventInstance instance;
+
+     [FMODUnity.EventRef]
+     public string fmodEvent;
+
+
+     float timer = 0;
+
+     public float hitValue;
+     
 
     void Start()
     {
         // Get player controller script
         controller = Player.GetComponent<CharacterController_Player>();
+
+        instance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
+
     }
 
     private void Awake()
     {
-        // _animator = GetComponent<Animator>();
-        //_animator = Player.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
-        {
-           // PlayerSpecialBehavior1();
-        }
-
-        if (Input.GetButtonUp("Fire1"))
-        {
-           // _animator.ResetTrigger("Attack1");
-        }
-
-        if (Input.GetButtonDown("Fire2"))
-        {
-           // PlayerSpecialBehavior2();
-        }
-
-        if (Input.GetButtonUp("Fire2"))
-        {
-          //  _animator.ResetTrigger("Attack2");
-        }
+        hitValue -= Time.deltaTime * 10;
+        instance.setParameterByName("hit", hitValue);
     }
 
     public void PlayerSpecialBehavior1()
@@ -60,15 +54,28 @@ public class BeatController : MonoBehaviour
 
         // Modify the attack
         controller.specialMelee = true;
+
+
+        // Trigger audio
+        hitValue = 10;
+        instance.setParameterByName("hit", hitValue);
+        
+    //    if (hitValue == 0)
+    //    {
+    //        instance.setParameterByName("hit", 0);
+    //    }
+
+
     }
 
     public void PlayerSpecialBehavior2()
     {
-        // normal particles
-        // Instantiate(normalParticles, transform.position, Quaternion.identity);
         Debug.Log("PlayerSpecialBehavior 2 Triggerd !!!!!! ");
-
     }
 
+    public void swich()
+    {
+        instance.start();
+    }
 
 }

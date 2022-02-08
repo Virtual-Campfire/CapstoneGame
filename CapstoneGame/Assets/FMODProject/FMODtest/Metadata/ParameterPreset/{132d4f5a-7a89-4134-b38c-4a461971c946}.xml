@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{132d4f5a-7a89-4134-b38c-4a461971c946}">
+		<property name="name">
+			<value>TrackSwich</value>
+		</property>
+		<relationship name="folder">
+			<destination>{100b4319-0602-4124-9b23-265c3bffc8f9}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{42adb78b-915f-41a9-b16e-34757cca76bd}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{42adb78b-915f-41a9-b16e-34757cca76bd}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
