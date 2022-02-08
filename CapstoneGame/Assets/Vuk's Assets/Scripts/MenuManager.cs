@@ -11,6 +11,11 @@ public class MenuManager : MonoBehaviour
     public GameObject startButton;
     public EventSystem ES;
 
+    void Awake()
+    {
+        // startButton = GameObject.Find("Start Button");
+    }
+
     public void PlayGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -24,7 +29,7 @@ public class MenuManager : MonoBehaviour
         {
             frame[0].SetActive(false);
             frame[1].SetActive(true);
-            ES.SetSelectedGameObject(startButton);
+            // ES.SetSelectedGameObject(startButton);
         }
 
         // If main options are active and escape is pressed, go back to title card
