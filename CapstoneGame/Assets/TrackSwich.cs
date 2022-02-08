@@ -45,7 +45,7 @@ public class TrackSwich : MonoBehaviour
     public void swich()
     {
         Debug.Log("swich track GET");
-        FMODUnity.RuntimeManager.PlayOneShot(level1Combat);
+       // FMODUnity.RuntimeManager.PlayOneShot(level1Combat);
         // instance.setParameterByName("TrackSwich", trackNumber);
     }
 }
