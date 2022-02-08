@@ -113,6 +113,12 @@ public class CharacterController_Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Pressing escape returns to the menu (temporary)
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
+        }
+
         // Once player health is depleted, return to main menu
         if (health.currentHealth <= 0)
         {
