@@ -30,7 +30,7 @@ public class BeatScroller : MonoBehaviour
             if (Input.anyKeyDown)
             {
                 hasStarted = true;
-                level1Music.Play();
+             //   level1Music.Play();
              //   EnvironmentSound.Play();
             }
         }

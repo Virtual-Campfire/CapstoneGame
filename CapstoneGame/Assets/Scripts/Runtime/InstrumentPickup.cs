@@ -32,8 +32,6 @@ public class InstrumentPickup : MonoBehaviour
             item.enabled = false;
         }
 
-        //Swich track
-        AudioManager.SendMessage("swich");
     }
 
     // Update is called once per frame
@@ -66,6 +64,10 @@ public class InstrumentPickup : MonoBehaviour
 
             // Remove the pickup
             Destroy(gameObject);
+
+            //Swich track
+            AudioManager.SendMessage("swich");
+            Debug.Log("swich track");
         }
     }
 }
