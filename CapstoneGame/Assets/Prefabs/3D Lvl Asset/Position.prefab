@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 458996458}
   - component: {fileID: 458996460}
   - component: {fileID: 458996459}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: Spot Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,13 +44,13 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.9298501, b: 0.5707547, a: 1}
-  m_Intensity: 586043140
+  m_Intensity: 56705840
   m_Range: 6.5
   m_SpotAngle: 32.23
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 1
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -92,7 +92,7 @@ Light:
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
-  m_ShadowRadius: 0
+  m_ShadowRadius: 0.27
   m_ShadowAngle: 0
 --- !u!114 &458996459
 MonoBehaviour:
@@ -114,13 +114,13 @@ MonoBehaviour:
   m_PointlightHDType: 0
   m_SpotLightShape: 0
   m_AreaLightShape: 0
-  m_Intensity: 144687100
+  m_Intensity: 14000000
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
-  m_VolumetricDimmer: 3.4
+  m_VolumetricDimmer: 8
   m_LightUnit: 0
   m_FadeDistance: 10000
   m_VolumetricFadeDistance: 30000
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_ShapeWidth: 0.5
   m_ShapeHeight: 0.5
   m_AspectRatio: 1
-  m_ShapeRadius: 0.025
+  m_ShapeRadius: 0.27
   m_SoftnessScale: 1
   m_UseCustomSpotLightShadowCone: 0
   m_CustomSpotLightShadowCone: 30
@@ -389,7 +389,7 @@ GameObject:
   - component: {fileID: 1262426964847508397}
   - component: {fileID: 8694767363351843898}
   - component: {fileID: 1789840714960259905}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: Spot Light (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -403,13 +403,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1320691611387390773}
-  m_LocalRotation: {x: -0.23792662, y: -0.06703212, z: 0.3364824, w: -0.9086678}
-  m_LocalPosition: {x: 0.024, y: 0.09466073, z: 0.01}
+  m_LocalRotation: {x: -0.22831993, y: -0.09269169, z: 0.34307387, w: -0.90640974}
+  m_LocalPosition: {x: 0.02540013, y: 0.09466073, z: 0.017700063}
   m_LocalScale: {x: 0.016268846, y: 0.01626885, z: 0.016268848}
   m_Children: []
   m_Father: {fileID: 6023718396121305012}
   m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 28.522, y: -2.498, z: -41.275}
+  m_LocalEulerAnglesHint: {x: 28.522, y: 0.742, z: -41.275}
 --- !u!108 &8694767363351843898
 Light:
   m_ObjectHideFlags: 0
@@ -422,13 +422,13 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.9298501, b: 0.5707547, a: 1}
-  m_Intensity: 586062200
+  m_Intensity: 56705840
   m_Range: 6.5
   m_SpotAngle: 32.23
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 1
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -470,7 +470,7 @@ Light:
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
-  m_ShadowRadius: 0
+  m_ShadowRadius: 0.27
   m_ShadowAngle: 0
 --- !u!114 &1789840714960259905
 MonoBehaviour:
@@ -492,13 +492,13 @@ MonoBehaviour:
   m_PointlightHDType: 0
   m_SpotLightShape: 0
   m_AreaLightShape: 0
-  m_Intensity: 144691800
+  m_Intensity: 14000000
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
-  m_VolumetricDimmer: 3.4
+  m_VolumetricDimmer: 8
   m_LightUnit: 0
   m_FadeDistance: 10000
   m_VolumetricFadeDistance: 30000
@@ -508,7 +508,7 @@ MonoBehaviour:
   m_ShapeWidth: 0.5
   m_ShapeHeight: 0.5
   m_AspectRatio: 1
-  m_ShapeRadius: 0.025
+  m_ShapeRadius: 0.27
   m_SoftnessScale: 1
   m_UseCustomSpotLightShadowCone: 0
   m_CustomSpotLightShadowCone: 30
