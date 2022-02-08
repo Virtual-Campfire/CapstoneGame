@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 // Adam B.
 // Controls a pickup that adds an instrument/ability to the player's inventory when they run into its trigger
@@ -16,7 +17,9 @@ public class InstrumentPickup : MonoBehaviour
 
     [SerializeField]
     GameObject rhythmMechanics;
-    
+
+    public GameObject AudioManager;
+
     void Awake()
     {
         instrumentLoc = instrumentModel.transform.position;
@@ -28,6 +31,9 @@ public class InstrumentPickup : MonoBehaviour
         {
             item.enabled = false;
         }
+
+        //Swich track
+        AudioManager.SendMessage("swich");
     }
 
     // Update is called once per frame
