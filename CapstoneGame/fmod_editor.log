@@ -9,7 +9,7 @@
 [LOG] DownMix::init                            : done.
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 000001C649F1B718 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0000027194A27CF8 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -20,36 +20,1409 @@
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/BGM.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] Thread::initThread                       : Init FMOD nonblocking thread (0). Affinity: 0x8000000000000003, Priority: 0xFFFF7FFC, Stack Size: 114688, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
+[LOG] SystemI::createSound                     : setdata soundi = 00000271568B31A8 : node = 00000271339465D0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000271568B31A8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/BGM.bank', mode=0x02010082
+[LOG] SystemI::createSound                     :     filename = Assets/StreamingAssets/Desktop/BGM.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2015872
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 5760
+[LOG] SystemI::createSound                     :     setdata soundi = 00000270BE290A78 : node = 0000027133947B10
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSound                     :     add node to async list : head = 0000027157164068.  list count = 0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000271339466E0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='enviromentSoundIsland', format=5, channels=2, frequency=48000, lengthbytes=627456, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.546839.
+[LOG] Thread::initThread                       :     Init FMOD file thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFC, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000271568B31A8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000270BE290A78
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/BGM.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2015872
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 5760
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133947C20
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='level1noWeapon', format=5, channels=2, frequency=48000, lengthbytes=623296, lengthpcm=2386285, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.397213.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000270BE290A78
 [LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
 [LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 1637216
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 18944
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000003BEAA4F298
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000DF7A77F608
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE1EBC60E0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE1EBC60B0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE1EBC61B0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE1EBC6270
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001C58F70B718
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE1EA660E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE1EA660B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE1EA661B0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE1EA66270
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000027071903A98
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Footstep (3) - Trimmed', format=5, channels=2, frequency=48000, lengthbytes=4992, lengthpcm=20648, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.150360.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000DF7A77F608
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE1EA660E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE1EA660B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE1EA661B0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE1EA66270
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000027071903A98
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Footstep (2) - Trimmed', format=5, channels=2, frequency=48000, lengthbytes=4736, lengthpcm=19102, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.183472.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000DF7A77F608
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE1EA660E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE1EA660B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE1EA661B0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE1EA66270
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000027071903A98
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Footstep (2)', format=5, channels=2, frequency=48000, lengthbytes=4992, lengthpcm=20062, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.183472.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000DF7A77F608
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE1EA660E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE1EA660B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE1EA661B0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE1EA66270
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000027071903A98
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Footstep (5) - Trimmed', format=5, channels=2, frequency=48000, lengthbytes=2400, lengthpcm=9600, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.077972.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000DF7A77F608
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE1EA660E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE1EA660B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE1EA661B0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE1EA66270
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000027071903A98
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Footstep (4) - Trimmed', format=5, channels=2, frequency=48000, lengthbytes=2560, lengthpcm=9600, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.128052.
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000271577247C8 : node = 0000027133946710
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000271577247C8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133946820
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (6)', format=5, channels=2, frequency=48000, lengthbytes=243872, lengthpcm=1040718, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.154083.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000271577247C8
+[LOG] SoundI::release                          : Footstep (6) (00000271577247C8)
+[LOG] SoundI::release                          :     Footstep (6) (00000270C06D3D98)
+[LOG] SoundI::release                          :     Footstep (6) (0000027079CB1228)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000270BE290DD8 : node = 0000027133946710
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000270BE290DD8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133946820
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (7)', format=5, channels=2, frequency=48000, lengthbytes=224352, lengthpcm=947931, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.174286.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000270BE290DD8
+[LOG] SoundI::release                          : Footstep (7) (00000270BE290DD8)
+[LOG] SoundI::release                          :     Footstep (7) (00000270C06D8ED8)
+[LOG] SoundI::release                          :     Footstep (7) (0000027157720448)
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000DF7A77F608
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE1EA660E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE1EA660B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE1EA661B0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE1EA66270
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000270719040C8
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Jump', format=5, channels=1, frequency=48000, lengthbytes=7744, lengthpcm=44371, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.140656.
-[LOG] SoundI::release                          :  (000001C588664248)
-[LOG] SoundI::release                          :     violinning (000001C6250C4558)
-[LOG] SoundI::release                          :  (000001C58865F1C8)
-[LOG] SoundI::release                          :     Jump (000001C6250BFDD8)
-[LOG] SoundI::release                          :  (000001C58865FEB8)
-[LOG] SoundI::release                          :     Hit (1) (000001C6250C39F8)
-[LOG] SoundI::release                          :  (000001C588663838)
-[LOG] SoundI::release                          :     Hit (2) (000001C6250C3378)
-[LOG] SoundI::release                          :  (000001C588663F68)
-[LOG] SoundI::release                          :     Hit (3) (000001C6250C1B18)
-[LOG] SoundI::release                          :  (000001C5886640D8)
-[LOG] SoundI::release                          :     Hit (4) (000001C6250C3518)
-[LOG] SoundI::release                          :  (000001C588662868)
-[LOG] SoundI::release                          :     Hit (5) (000001C6250C1E58)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000027156FF77D8 : node = 0000027133946490
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000027156FF77D8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000271339465A0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (7)', format=5, channels=2, frequency=48000, lengthbytes=224352, lengthpcm=947931, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.174286.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000027156FF77D8
+[LOG] SoundI::release                          : Footstep (7) (0000027156FF77D8)
+[LOG] SoundI::release                          :     Footstep (7) (00000270C06D4418)
+[LOG] SoundI::release                          :     Footstep (7) (000002715E6DA158)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002715DD74318 : node = 0000027133944910
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002715DD74318
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133944A20
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (6)', format=5, channels=2, frequency=48000, lengthbytes=243872, lengthpcm=1040718, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.154083.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002715DD74318
+[LOG] SoundI::release                          : Footstep (6) (000002715DD74318)
+[LOG] SoundI::release                          :     Footstep (6) (00000270C06D74D8)
+[LOG] SoundI::release                          :     Footstep (6) (00000270BE290C28)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002715E6DA158 : node = 0000027133947C50
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002715E6DA158
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133947D60
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (7)', format=5, channels=2, frequency=48000, lengthbytes=224352, lengthpcm=947931, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.174286.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002715E6DA158
+[LOG] SoundI::release                          : Footstep (7) (000002715E6DA158)
+[LOG] SoundI::release                          :     Footstep (7) (00000270C06D7198)
+[LOG] SoundI::release                          :     Footstep (7) (000002718E7CA818)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002715E6D9DF8 : node = 0000027133947C50
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002715E6D9DF8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133947D60
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (7)', format=5, channels=2, frequency=48000, lengthbytes=224352, lengthpcm=947931, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.174286.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002715E6D9DF8
+[LOG] SoundI::release                          : Footstep (7) (000002715E6D9DF8)
+[LOG] SoundI::release                          :     Footstep (7) (00000270C06D79B8)
+[LOG] SoundI::release                          :     Footstep (7) (000002715771ECA8)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000270C0359668 : node = 0000027133945E50
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000270C0359668
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133945F60
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (6)', format=5, channels=2, frequency=48000, lengthbytes=243872, lengthpcm=1040718, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.154083.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000270C0359668
+[LOG] SoundI::release                          : Footstep (6) (00000270C0359668)
+[LOG] SoundI::release                          :     Footstep (6) (00000270C06D62F8)
+[LOG] SoundI::release                          :     Footstep (6) (0000027157721A38)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000027075873BE8 : node = 0000027133947C50
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000027075873BE8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133947D60
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (7)', format=5, channels=2, frequency=48000, lengthbytes=224352, lengthpcm=947931, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.174286.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000027075873BE8
+[LOG] SoundI::release                          : Footstep (7) (0000027075873BE8)
+[LOG] SoundI::release                          :     Footstep (7) (00000270C06D3D98)
+[LOG] SoundI::release                          :     Footstep (7) (0000027075874458)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000270C0359308 : node = 0000027133945950
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000270C0359308
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133945A60
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (6)', format=5, channels=2, frequency=48000, lengthbytes=243872, lengthpcm=1040718, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.154083.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000270C0359308
+[LOG] SoundI::release                          : Footstep (6) (00000270C0359308)
+[LOG] SoundI::release                          :     Footstep (6) (00000270C06D9078)
+[LOG] SoundI::release                          :     Footstep (6) (0000027075873BE8)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002715DD74318 : node = 0000027133947C50
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002715DD74318
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133947D60
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (7)', format=5, channels=2, frequency=48000, lengthbytes=224352, lengthpcm=947931, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.174286.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002715DD74318
+[LOG] SoundI::release                          : Footstep (7) (000002715DD74318)
+[LOG] SoundI::release                          :     Footstep (7) (00000270C06D86B8)
+[LOG] SoundI::release                          :     Footstep (7) (0000027075874968)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002715DD744C8 : node = 0000027133944550
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002715DD744C8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133944660
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (7)', format=5, channels=2, frequency=48000, lengthbytes=224352, lengthpcm=947931, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.174286.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002715DD744C8
+[LOG] SoundI::release                          : Footstep (7) (000002715DD744C8)
+[LOG] SoundI::release                          :     Footstep (7) (00000270C06D9A38)
+[LOG] SoundI::release                          :     Footstep (7) (00000270758740F8)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002715DD74D38 : node = 0000027133946710
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002715DD74D38
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133946820
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (6)', format=5, channels=2, frequency=48000, lengthbytes=243872, lengthpcm=1040718, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.154083.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002715DD74D38
+[LOG] SoundI::release                          : Footstep (6) (000002715DD74D38)
+[LOG] SoundI::release                          :     Footstep (6) (00000270C06D3D98)
+[LOG] SoundI::release                          :     Footstep (6) (0000027075873BE8)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002715DD749D8 : node = 0000027133945950
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002715DD749D8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133945A60
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (7)', format=5, channels=2, frequency=48000, lengthbytes=224352, lengthpcm=947931, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.174286.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002715DD749D8
+[LOG] SoundI::release                          : Footstep (7) (000002715DD749D8)
+[LOG] SoundI::release                          :     Footstep (7) (00000270C06D9078)
+[LOG] SoundI::release                          :     Footstep (7) (0000027075873528)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002715E6D9C48 : node = 0000027133947C50
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002715E6D9C48
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133947D60
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (6)', format=5, channels=2, frequency=48000, lengthbytes=243872, lengthpcm=1040718, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.154083.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002715E6D9C48
+[LOG] SoundI::release                          : Footstep (6) (000002715E6D9C48)
+[LOG] SoundI::release                          :     Footstep (6) (00000270C06D4DD8)
+[LOG] SoundI::release                          :     Footstep (6) (0000027156F7A528)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000027157721378 : node = 0000027133947D90
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000027157721378
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133947EA0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (7)', format=5, channels=2, frequency=48000, lengthbytes=224352, lengthpcm=947931, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.174286.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000027157721378
+[LOG] SoundI::release                          : Footstep (7) (0000027157721378)
+[LOG] SoundI::release                          :     Footstep (7) (00000270C06D5FB8)
+[LOG] SoundI::release                          :     Footstep (7) (0000027156F7A528)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000027157724B28 : node = 0000027133947D90
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000027157724B28
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133947EA0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (6)', format=5, channels=2, frequency=48000, lengthbytes=243872, lengthpcm=1040718, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.154083.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000027157724B28
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000270791CDE78 : node = 0000027133944550
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000270791CDE78
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133944660
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (7)', format=5, channels=2, frequency=48000, lengthbytes=224352, lengthpcm=947931, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.174286.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000270791CDE78
+[LOG] SoundI::release                          : Footstep (6) (0000027157724B28)
+[LOG] SoundI::release                          :     Footstep (6) (00000270C06D79B8)
+[LOG] SoundI::release                          :     Footstep (6) (000002715771F008)
+[LOG] SoundI::release                          : Footstep (7) (00000270791CDE78)
+[LOG] SoundI::release                          :     Footstep (7) (00000270C06D52B8)
+[LOG] SoundI::release                          :     Footstep (7) (0000027157721018)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002718E7CA818 : node = 0000027133947D90
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002718E7CA818
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133947EA0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (7)', format=5, channels=2, frequency=48000, lengthbytes=224352, lengthpcm=947931, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.174286.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002718E7CA818
+[LOG] SoundI::release                          : Footstep (7) (000002718E7CA818)
+[LOG] SoundI::release                          :     Footstep (7) (00000270C06D9BD8)
+[LOG] SoundI::release                          :     Footstep (7) (000002715DD74EE8)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002715DD74168 : node = 0000027133946AD0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002715DD74168
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133946BE0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (6)', format=5, channels=2, frequency=48000, lengthbytes=243872, lengthpcm=1040718, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.154083.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002715DD74168
+[LOG] SoundI::release                          : Footstep (6) (000002715DD74168)
+[LOG] SoundI::release                          :     Footstep (6) (00000270C06D38B8)
+[LOG] SoundI::release                          :     Footstep (6) (00000270C0359308)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002715DD74D38 : node = 0000027133944F50
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002715DD74D38
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133945060
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (6)', format=5, channels=2, frequency=48000, lengthbytes=243872, lengthpcm=1040718, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.154083.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002715DD74D38
+[LOG] SoundI::release                          : Footstep (6) (000002715DD74D38)
+[LOG] SoundI::release                          :     Footstep (6) (00000270C06D9A38)
+[LOG] SoundI::release                          :     Footstep (6) (00000270C0359818)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002718E7CA668 : node = 0000027133945950
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002718E7CA668
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133945A60
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (7)', format=5, channels=2, frequency=48000, lengthbytes=224352, lengthpcm=947931, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.174286.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002718E7CA668
+[LOG] SoundI::release                          : Footstep (7) (000002718E7CA668)
+[LOG] SoundI::release                          :     Footstep (7) (00000270C06D7198)
+[LOG] SoundI::release                          :     Footstep (7) (00000270C0359668)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000270C0359818 : node = 0000027133947D90
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000270C0359818
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133947EA0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (7)', format=5, channels=2, frequency=48000, lengthbytes=224352, lengthpcm=947931, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.174286.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000270C0359818
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000270C03594B8 : node = 0000027133944B90
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000270C03594B8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133944CA0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (6)', format=5, channels=2, frequency=48000, lengthbytes=243872, lengthpcm=1040718, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.154083.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000270C03594B8
+[LOG] SoundI::release                          : Footstep (7) (00000270C0359818)
+[LOG] SoundI::release                          :     Footstep (7) (00000270C06D9558)
+[LOG] SoundI::release                          :     Footstep (7) (0000027156F7A528)
+[LOG] SoundI::release                          : Footstep (6) (00000270C03594B8)
+[LOG] SoundI::release                          :     Footstep (6) (00000270C06D7CF8)
+[LOG] SoundI::release                          :     Footstep (6) (000002715DD74318)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000270C0359308 : node = 0000027133947D90
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000270C0359308
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133947EA0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (7)', format=5, channels=2, frequency=48000, lengthbytes=224352, lengthpcm=947931, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.174286.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000270C0359308
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000270C0359818 : node = 0000027133945E50
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000270C0359818
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133945F60
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (6)', format=5, channels=2, frequency=48000, lengthbytes=243872, lengthpcm=1040718, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.154083.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000270C0359818
+[LOG] SoundI::release                          : Footstep (7) (00000270C0359308)
+[LOG] SoundI::release                          :     Footstep (7) (00000270C06D89F8)
+[LOG] SoundI::release                          :     Footstep (7) (0000027156F7A528)
+[LOG] SoundI::release                          : Footstep (6) (00000270C0359818)
+[LOG] SoundI::release                          :     Footstep (6) (00000270C06D38B8)
+[LOG] SoundI::release                          :     Footstep (6) (000002715DD74EE8)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000270C03594B8 : node = 0000027133947D90
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000270C03594B8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133947EA0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (6)', format=5, channels=2, frequency=48000, lengthbytes=243872, lengthpcm=1040718, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.154083.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000270C03594B8
+[LOG] SoundI::release                          : Footstep (6) (00000270C03594B8)
+[LOG] SoundI::release                          :     Footstep (6) (00000270C06D4418)
+[LOG] SoundI::release                          :     Footstep (6) (0000027156F7A528)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000270C0359308 : node = 0000027133944F50
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000270C0359308
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133945060
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (7)', format=5, channels=2, frequency=48000, lengthbytes=224352, lengthpcm=947931, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.174286.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000270C0359308
+[LOG] SoundI::release                          : Footstep (7) (00000270C0359308)
+[LOG] SoundI::release                          :     Footstep (7) (00000270C06D4418)
+[LOG] SoundI::release                          :     Footstep (7) (00000270C03594B8)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000270758740F8 : node = 0000027133946990
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000270758740F8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133946AA0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (6)', format=5, channels=2, frequency=48000, lengthbytes=243872, lengthpcm=1040718, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.154083.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000270758740F8
+[LOG] SoundI::release                          : Footstep (6) (00000270758740F8)
+[LOG] SoundI::release                          :     Footstep (6) (00000270C06D4758)
+[LOG] SoundI::release                          :     Footstep (6) (00000270C0359668)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000027075873528 : node = 0000027133946710
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000027075873528
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133946820
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (7)', format=5, channels=2, frequency=48000, lengthbytes=224352, lengthpcm=947931, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.174286.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000027075873528
+[LOG] SoundI::release                          : Footstep (7) (0000027075873528)
+[LOG] SoundI::release                          :     Footstep (7) (00000270C06D4758)
+[LOG] SoundI::release                          :     Footstep (7) (00000270C0359668)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002718E7CA308 : node = 0000027133946710
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002718E7CA308
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133946820
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (6)', format=5, channels=2, frequency=48000, lengthbytes=243872, lengthpcm=1040718, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.154083.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002718E7CA308
+[LOG] SoundI::release                          : Footstep (6) (000002718E7CA308)
+[LOG] SoundI::release                          :     Footstep (6) (00000270C06D7198)
+[LOG] SoundI::release                          :     Footstep (6) (00000270C03594B8)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002718E7CA308 : node = 0000027133946990
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002718E7CA308
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133946AA0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (7)', format=5, channels=2, frequency=48000, lengthbytes=224352, lengthpcm=947931, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.174286.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002718E7CA308
+[LOG] SoundI::release                          : Footstep (7) (000002718E7CA308)
+[LOG] SoundI::release                          :     Footstep (7) (00000270C06D9078)
+[LOG] SoundI::release                          :     Footstep (7) (00000270C0359668)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002718E7CA668 : node = 0000027133944550
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002718E7CA668
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133944660
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (6)', format=5, channels=2, frequency=48000, lengthbytes=243872, lengthpcm=1040718, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.154083.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002718E7CA668
+[LOG] SoundI::release                          : Footstep (6) (000002718E7CA668)
+[LOG] SoundI::release                          :     Footstep (6) (00000270C06D8378)
+[LOG] SoundI::release                          :     Footstep (6) (000002715E6D9DF8)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002718E7CA308 : node = 0000027133944B90
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002718E7CA308
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133944CA0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (6)', format=5, channels=2, frequency=48000, lengthbytes=243872, lengthpcm=1040718, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.154083.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002718E7CA308
+[LOG] SoundI::release                          : Footstep (6) (000002718E7CA308)
+[LOG] SoundI::release                          :     Footstep (6) (00000270C06D79B8)
+[LOG] SoundI::release                          :     Footstep (6) (0000027075874458)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002718E7CA308 : node = 0000027133947D90
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002718E7CA308
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133947EA0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (7)', format=5, channels=2, frequency=48000, lengthbytes=224352, lengthpcm=947931, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.174286.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002718E7CA308
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/BGM.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000270791CE028 : node = 0000027133946710
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000270791CE028
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/BGM.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/BGM.bank', mode=0x02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSound                     :     setdata soundi = 00000270791CE1D8 : node = 0000027133944550
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2015872
+[LOG] SystemI::createSound                     :     add node to async list : head = 0000027157164068.  list count = 0
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 5760
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133946820
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 22000
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='enviromentSoundIsland', format=5, channels=2, frequency=48000, lengthbytes=627456, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.546839.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000270791CE028
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000270791CE1D8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/BGM.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2015872
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 5760
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133944660
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 22000
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='level1noWeapon', format=5, channels=2, frequency=48000, lengthbytes=623296, lengthpcm=2386285, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.397213.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000270791CE1D8
+[LOG] SoundI::release                          : Footstep (7) (000002718E7CA308)
+[LOG] SoundI::release                          :     Footstep (7) (00000270C06D9A38)
+[LOG] SoundI::release                          :     Footstep (7) (0000027075873528)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000270791CE538 : node = 0000027133944CD0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000270791CE538
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133944DE0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (6)', format=5, channels=2, frequency=48000, lengthbytes=243872, lengthpcm=1040718, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.154083.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000270791CE538
+[LOG] SoundI::release                          : level1noWeapon (00000270BE290A78)
+[LOG] SoundI::release                          :     level1noWeapon (00000270C06D55F8)
+[LOG] SoundI::release                          :     level1noWeapon (0000027156F7A378)
+[LOG] SoundI::release                          : enviromentSoundIsland (00000271568B31A8)
+[LOG] SoundI::release                          :     enviromentSoundIsland (00000270C06D5C78)
+[LOG] SoundI::release                          :     enviromentSoundIsland (0000027156F7A1C8)
+[LOG] SoundI::release                          : Footstep (6) (00000270791CE538)
+[LOG] SoundI::release                          :     Footstep (6) (00000270C06D5AD8)
+[LOG] SoundI::release                          :     Footstep (6) (0000027075873528)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000027156F7A1C8 : node = 0000027133947B10
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000027156F7A1C8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133947C20
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (6)', format=5, channels=2, frequency=48000, lengthbytes=243872, lengthpcm=1040718, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.154083.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000027156F7A1C8
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000271577236E8 : node = 0000027133946990
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000271577236E8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133946AA0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (7)', format=5, channels=2, frequency=48000, lengthbytes=224352, lengthpcm=947931, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.174286.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000271577236E8
+[LOG] SoundI::release                          : Footstep (6) (0000027156F7A1C8)
+[LOG] SoundI::release                          :     Footstep (6) (00000270C06D8378)
+[LOG] SoundI::release                          :     Footstep (6) (00000271568B2FF8)
+[LOG] SoundI::release                          : Footstep (7) (00000271577236E8)
+[LOG] SoundI::release                          :     Footstep (7) (00000270C06D7338)
+[LOG] SoundI::release                          :     Footstep (7) (00000270791CE6E8)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000027157722968 : node = 00000271339465D0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000027157722968
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000271339466E0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (6)', format=5, channels=2, frequency=48000, lengthbytes=243872, lengthpcm=1040718, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.154083.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000027157722968
+[LOG] SoundI::release                          : Footstep (6) (0000027157722968)
+[LOG] SoundI::release                          :     Footstep (6) (00000270C06D4F78)
+[LOG] SoundI::release                          :     Footstep (6) (00000270791CE898)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000271568B31A8 : node = 0000027133944910
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000271568B31A8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133944A20
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (7)', format=5, channels=2, frequency=48000, lengthbytes=224352, lengthpcm=947931, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.174286.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000271568B31A8
+[LOG] SoundI::release                          : Footstep (7) (00000271568B31A8)
+[LOG] SoundI::release                          :     Footstep (7) (00000270C06D7338)
+[LOG] SoundI::release                          :     Footstep (7) (00000270791CE388)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000271568B3358 : node = 0000027133947B10
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000271568B3358
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133947C20
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (6)', format=5, channels=2, frequency=48000, lengthbytes=243872, lengthpcm=1040718, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.154083.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000271568B3358
+[LOG] SoundI::release                          : Footstep (6) (00000271568B3358)
+[LOG] SoundI::release                          :     Footstep (6) (00000270C06D8378)
+[LOG] SoundI::release                          :     Footstep (6) (00000270791CE898)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000271568B3358 : node = 0000027133944A50
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000271568B3358
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133944B60
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (7)', format=5, channels=2, frequency=48000, lengthbytes=224352, lengthpcm=947931, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.174286.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000271568B3358
+[LOG] SoundI::release                          : Footstep (7) (00000271568B3358)
+[LOG] SoundI::release                          :     Footstep (7) (00000270C06D5938)
+[LOG] SoundI::release                          :     Footstep (7) (00000270791CE388)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000271568B31A8 : node = 0000027133944690
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000271568B31A8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000271339447A0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (6)', format=5, channels=2, frequency=48000, lengthbytes=243872, lengthpcm=1040718, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.154083.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000271568B31A8
+[LOG] SoundI::release                          : Footstep (6) (00000271568B31A8)
+[LOG] SoundI::release                          :     Footstep (6) (00000270C06D3D98)
+[LOG] SoundI::release                          :     Footstep (6) (0000027157569478)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000270BE291138 : node = 0000027133947B10
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000270BE291138
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133947C20
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (6)', format=5, channels=2, frequency=48000, lengthbytes=243872, lengthpcm=1040718, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.154083.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000270BE291138
+[LOG] SoundI::release                          : Footstep (6) (00000270BE291138)
+[LOG] SoundI::release                          :     Footstep (6) (00000270C06D5938)
+[LOG] SoundI::release                          :     Footstep (6) (000002715771FA28)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000270BE291138 : node = 0000027133945950
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000270BE291138
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133945A60
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (7)', format=5, channels=2, frequency=48000, lengthbytes=224352, lengthpcm=947931, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.174286.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000270BE291138
+[LOG] SoundI::release                          : Footstep (7) (00000270BE291138)
+[LOG] SoundI::release                          :     Footstep (7) (00000270C06D8378)
+[LOG] SoundI::release                          :     Footstep (7) (000002715E6D9C48)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000270BE290568 : node = 0000027133947B10
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000270BE290568
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133947C20
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (6)', format=5, channels=2, frequency=48000, lengthbytes=243872, lengthpcm=1040718, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.154083.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000270BE290568
+[LOG] SoundI::release                          : Footstep (6) (00000270BE290568)
+[LOG] SoundI::release                          :     Footstep (6) (00000270C06D38B8)
+[LOG] SoundI::release                          :     Footstep (6) (0000027075873BE8)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000270BE290A78 : node = 0000027133946990
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000270BE290A78
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133946AA0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (7)', format=5, channels=2, frequency=48000, lengthbytes=224352, lengthpcm=947931, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.174286.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000270BE290A78
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000270BE291138 : node = 0000027133944CD0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000270BE291138
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133944DE0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (6)', format=5, channels=2, frequency=48000, lengthbytes=243872, lengthpcm=1040718, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.154083.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000270BE291138
+[LOG] SoundI::release                          : Footstep (7) (00000270BE290A78)
+[LOG] SoundI::release                          :     Footstep (7) (00000270C06D7338)
+[LOG] SoundI::release                          :     Footstep (7) (0000027075873528)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000270BE290A78 : node = 0000027133944910
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000270BE290A78
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133944A20
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (7)', format=5, channels=2, frequency=48000, lengthbytes=224352, lengthpcm=947931, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.174286.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000270BE290A78
+[LOG] SoundI::release                          : Footstep (6) (00000270BE291138)
+[LOG] SoundI::release                          :     Footstep (6) (00000270C06D74D8)
+[LOG] SoundI::release                          :     Footstep (6) (0000027075872E68)
+[LOG] SoundI::release                          : Footstep (7) (00000270BE290A78)
+[LOG] SoundI::release                          :     Footstep (7) (00000270C06D48F8)
+[LOG] SoundI::release                          :     Footstep (7) (00000270758740F8)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002715E6D9C48 : node = 0000027133944690
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002715E6D9C48
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000271339447A0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (6)', format=5, channels=2, frequency=48000, lengthbytes=243872, lengthpcm=1040718, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.154083.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002715E6D9C48
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000002715DD74D38 : node = 0000027133944CD0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002715DD74D38
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133944DE0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (7)', format=5, channels=2, frequency=48000, lengthbytes=224352, lengthpcm=947931, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.174286.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002715DD74D38
+[LOG] SoundI::release                          : Footstep (6) (000002715E6D9C48)
+[LOG] SoundI::release                          :     Footstep (6) (00000270C06D4418)
+[LOG] SoundI::release                          :     Footstep (6) (00000270758736D8)
+[LOG] SoundI::release                          : Footstep (7) (000002715DD74D38)
+[LOG] SoundI::release                          :     Footstep (7) (00000270C06D8378)
+[LOG] SoundI::release                          :     Footstep (7) (0000027075874458)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000270C0359818 : node = 0000027133947B10
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000270C0359818
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133947C20
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (6)', format=5, channels=2, frequency=48000, lengthbytes=243872, lengthpcm=1040718, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.154083.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000270C0359818
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000271568B2FF8 : node = 0000027133947D90
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000271568B2FF8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133947EA0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (7)', format=5, channels=2, frequency=48000, lengthbytes=224352, lengthpcm=947931, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.174286.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000271568B2FF8
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000270BE291138 : node = 0000027133944690
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000270BE291138
+[LOG] SoundI::release                          : Footstep (6) (00000270C0359818)
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :         exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :         exinfo->length             = 1637216
+[LOG] SoundI::release                          :         Footstep (6) (00000270C06D4F78)
+[LOG] SystemI::createSoundInternal             :         exinfo->fileoffset         = 18944
+[LOG] SoundI::release                          :         Footstep (6) (000002715756AF78)
+[LOG] SystemI::createSoundInternal             :         exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000271339447A0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH4', format=5, channels=2, frequency=48000, lengthbytes=11936, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.975031.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000270BE291138
+[LOG] SoundI::release                          : Footstep (7) (00000271568B2FF8)
+[LOG] SoundI::release                          :     Footstep (7) (00000270C06D6978)
+[LOG] SoundI::release                          :     Footstep (7) (00000270791CE388)
+[LOG] SoundI::release                          : SLASH4 (00000270BE291138)
+[LOG] SoundI::release                          :     SLASH4 (00000270C06D4F78)
+[LOG] SoundI::release                          :     SLASH4 (00000270791CEA48)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000270BE291138 : node = 0000027133947B10
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000270BE291138
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133947C20
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH', format=5, channels=2, frequency=48000, lengthbytes=12960, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.975051.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000270BE291138
+[LOG] SoundI::release                          : SLASH (00000270BE291138)
+[LOG] SoundI::release                          :     SLASH (00000270C06D6498)
+[LOG] SoundI::release                          :     SLASH (00000270791CE388)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000270BE290568 : node = 0000027133947B10
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000270BE290568
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133947C20
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH3', format=5, channels=2, frequency=48000, lengthbytes=11456, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.873976.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000270BE290568
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/BGM.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000270BE290C28 : node = 0000027133944910
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000270BE290C28
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/BGM.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/BGM.bank', mode=0x02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2015872
+[LOG] SystemI::createSound                     :     setdata soundi = 00000270BE290718 : node = 0000027133947D90
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 5760
+[LOG] SystemI::createSound                     :     add node to async list : head = 0000027157164068.  list count = 0
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133944A20
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 22000
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='enviromentSoundIsland', format=5, channels=2, frequency=48000, lengthbytes=627456, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.546839.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000270BE290C28
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000270BE290718
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/BGM.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2015872
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 5760
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133947EA0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 22000
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='level1noWeapon', format=5, channels=2, frequency=48000, lengthbytes=623296, lengthpcm=2386285, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.397213.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000270BE290718
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000270BE2908C8 : node = 0000027133944690
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000270BE2908C8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000271339447A0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (7)', format=5, channels=2, frequency=48000, lengthbytes=224352, lengthpcm=947931, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.174286.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000270BE2908C8
+[LOG] SoundI::release                          : level1noWeapon (00000270791CE1D8)
+[LOG] SoundI::release                          :     level1noWeapon (00000270C06D7198)
+[LOG] SoundI::release                          :     level1noWeapon (0000027075874608)
+[LOG] SoundI::release                          : enviromentSoundIsland (00000270791CE028)
+[LOG] SoundI::release                          :     enviromentSoundIsland (00000270C06D9BD8)
+[LOG] SoundI::release                          :     enviromentSoundIsland (0000027075872CB8)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000271568B2FF8 : node = 0000027133945E50
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000271568B2FF8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133945F60
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH4', format=5, channels=2, frequency=48000, lengthbytes=11936, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.975031.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000271568B2FF8
+[LOG] SoundI::release                          : SLASH3 (00000270BE290568)
+[LOG] SoundI::release                          :     SLASH3 (00000270C06D4418)
+[LOG] SoundI::release                          :     SLASH3 (00000270791CE388)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000271568B31A8 : node = 0000027133944550
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000271568B31A8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133944660
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Footstep (6)', format=5, channels=2, frequency=48000, lengthbytes=243872, lengthpcm=1040718, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.154083.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000271568B31A8
+[LOG] SoundI::release                          : Footstep (7) (00000270BE2908C8)
+[LOG] SoundI::release                          :     Footstep (7) (00000270C06D5FB8)
+[LOG] SoundI::release                          :     Footstep (7) (00000270791CE538)
+[LOG] SoundI::release                          : SLASH4 (00000271568B2FF8)
+[LOG] SoundI::release                          :     SLASH4 (00000270C06D79B8)
+[LOG] SoundI::release                          :     SLASH4 (00000270791CE898)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000270BE290568 : node = 0000027133947B10
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000270BE290568
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133947C20
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH', format=5, channels=2, frequency=48000, lengthbytes=12960, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.975051.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000270BE290568
+[LOG] SoundI::release                          : Footstep (6) (00000271568B31A8)
+[LOG] SoundI::release                          :     Footstep (6) (00000270C06D7198)
+[LOG] SoundI::release                          :     Footstep (6) (00000270791CE388)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000271568B3358 : node = 0000027133944F50
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000271568B3358
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133945060
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH4', format=5, channels=2, frequency=48000, lengthbytes=11936, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.975031.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000271568B3358
+[LOG] SoundI::release                          : SLASH (00000270BE290568)
+[LOG] SoundI::release                          :     SLASH (00000270C06D79B8)
+[LOG] SoundI::release                          :     SLASH (00000270758747B8)
+[LOG] SystemI::createSound                     : filename = Assets/StreamingAssets/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000270BE290568 : node = 0000027133945A90
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027157164068.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000270BE290568
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/StreamingAssets/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1637216
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 18944
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027133945BA0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SLASH3', format=5, channels=2, frequency=48000, lengthbytes=11456, lengthpcm=2455385, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.873976.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000270BE290568
+[LOG] SoundI::release                          : SLASH4 (00000271568B3358)
+[LOG] SoundI::release                          :     SLASH4 (00000270C06D4418)
+[LOG] SoundI::release                          :     SLASH4 (0000027075873528)
+[LOG] SoundI::release                          : SLASH3 (00000270BE290568)
+[LOG] SoundI::release                          :     SLASH3 (00000270C06D4F78)
+[LOG] SoundI::release                          :     SLASH3 (00000270758736D8)
+[LOG] SoundI::release                          : level1noWeapon (00000270BE290718)
+[LOG] SoundI::release                          :     level1noWeapon (00000270C06D8378)
+[LOG] SoundI::release                          :     level1noWeapon (00000270791CE6E8)
+[LOG] SoundI::release                          : enviromentSoundIsland (00000270BE290C28)
+[LOG] SoundI::release                          :     enviromentSoundIsland (00000270C06D6498)
+[LOG] SoundI::release                          :     enviromentSoundIsland (00000270791CEA48)
+[LOG] SoundI::release                          :  (00000270C16E8058)
+[LOG] SoundI::release                          :     Footstep (2) - Trimmed (00000270C06D96F8)
+[LOG] SoundI::release                          :  (00000270C16E9FF8)
+[LOG] SoundI::release                          :     Footstep (3) - Trimmed (00000270C06D33D8)
+[LOG] SoundI::release                          :  (00000270C16E9198)
+[LOG] SoundI::release                          :     Footstep (2) (00000270C06D7678)
+[LOG] SoundI::release                          :  (00000270C16E88F8)
+[LOG] SoundI::release                          :     Footstep (4) - Trimmed (00000270C06D6CB8)
+[LOG] SoundI::release                          :  (00000270C16E7088)
+[LOG] SoundI::release                          :     Footstep (5) - Trimmed (00000270C06D6B18)
+[LOG] SoundI::release                          :  (0000027156FF5648)
+[LOG] SoundI::release                          :     violinning (00000270C06D3098)
+[LOG] SoundI::release                          :  (00000270715F3EA8)
+[LOG] SoundI::release                          :     Hit (1) (00000270C06D3238)
+[LOG] SoundI::release                          :  (0000027156FF6058)
+[LOG] SoundI::release                          :     Hit (2) (00000270C06D1EB8)
+[LOG] SoundI::release                          :  (0000027156FF5088)
+[LOG] SoundI::release                          :     Hit (3) (00000270C06D0998)
+[LOG] SoundI::release                          :  (0000027156FF54D8)
+[LOG] SoundI::release                          :     Hit (4) (00000270C06D21F8)
+[LOG] SoundI::release                          :  (0000027156FF6618)
+[LOG] SoundI::release                          :     Hit (5) (00000270C06D2058)
+[LOG] SoundI::release                          :  (00000270C16E8788)
+[LOG] SoundI::release                          :     Jump (00000270C06D6638)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
