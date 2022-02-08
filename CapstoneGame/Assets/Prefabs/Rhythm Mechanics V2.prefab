@@ -311,7 +311,7 @@ MonoBehaviour:
   specialParticles: {fileID: 198203777143593298, guid: 53ebac442b16db64f9177d0c749cbb06, type: 3}
   Player: {fileID: 0}
   controller: {fileID: 0}
-  fmodEvent: 
+  fmodEvent: event:/BGMs/level1Combat
   hitValue: 0
 --- !u!54 &6248430027047255193
 Rigidbody:
@@ -477,7 +477,7 @@ MonoBehaviour:
   specialParticles: {fileID: 198203777143593298, guid: 53ebac442b16db64f9177d0c749cbb06, type: 3}
   Player: {fileID: 0}
   controller: {fileID: 0}
-  fmodEvent: 
+  fmodEvent: event:/BGMs/level1Combat
   hitValue: 0
 --- !u!54 &6248430028623175194
 Rigidbody:
