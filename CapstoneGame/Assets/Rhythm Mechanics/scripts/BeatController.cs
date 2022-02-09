@@ -27,6 +27,9 @@ public class BeatController : MonoBehaviour
 
     void Start()
     {
+        // Find player in case reference unset
+        Player = GameObject.Find("Player");
+
         // Get player controller script
         controller = Player.GetComponent<CharacterController_Player>();
 
