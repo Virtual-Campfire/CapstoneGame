@@ -18,10 +18,12 @@ public class PauseMenuItemScript : MonoBehaviour
     public void Select()
     {
         background.color = hoverColor;
+        //Debug.Log(hoverColor);
     }
 
     public void DeSelect()
     {
         background.color = baseColor;
+        //Debug.Log(baseColor);
     }
 }

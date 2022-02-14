@@ -7,7 +7,7 @@ public class PauseMenuScript : MonoBehaviour
     public Vector2 normalisedMousePosition;
     public float currentAngle;
     public int selection;
-    public int previousSelection;
+    private int previousSelection;
 
     public GameObject[] menuItems;
 
@@ -21,7 +21,7 @@ public class PauseMenuScript : MonoBehaviour
 
         currentAngle = (currentAngle + 360) % 360;
 
-        selection = (int)currentAngle / 45;
+        selection = (int) currentAngle/45;
 
         if (selection != previousSelection)
         {
@@ -32,5 +32,7 @@ public class PauseMenuScript : MonoBehaviour
             menuItemSc = menuItems[selection].GetComponent<PauseMenuItemScript>();
             menuItemSc.Select();
         }
+
+        Debug.Log(selection);
     }
 }
