@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using FMODUnity;
+using UnityEngine.UI;
 
 // Adam B.
 // Script to control player character, including general movement and collision
@@ -55,6 +56,10 @@ public class CharacterController_Player : MonoBehaviour
     MagicBarScript magicUI;
     [SerializeField]
     GameObject rhythmMechanics, rhythmUI, magicBar;
+    [SerializeField]
+    Image meleeIcon, lureIcon;
+
+    Color meleeIconColor, lureIconColor;
 
     // Variables used with revised instrument / weapons system
     public float AOEEffectRadius = 5;
@@ -105,6 +110,9 @@ public class CharacterController_Player : MonoBehaviour
         healthUI.numOfHearths = (int)health.maxHealth;
         healthUI.health = (int)health.currentHealth;
         magicUI.SetMaxMagic((int)maxResource);
+
+        meleeIconColor = meleeIcon.color;
+        lureIconColor = lureIcon.color;
 
         // Recount inventory upon waking up
         AddToInventory(-1);
@@ -302,26 +310,33 @@ public class CharacterController_Player : MonoBehaviour
             }
         }
 
-        // If trying to melee and previous melee attack has finished
-        if (isMeleeing && Time.fixedTime > meleeStartTime + meleeDuration + meleeCooldown)
+        // If previous melee attack has finished
+        if (Time.fixedTime > meleeStartTime + meleeDuration + meleeCooldown)
         {
-            // Reset variables
-            meleeStartTime = Time.fixedTime;
+            // Lighten melee icon
+            meleeIcon.color = meleeIconColor;
 
-            // Get angle to derive the arc the weapon will cover when swiping
-            meleeAngle = transform.rotation;
+            // If trying to melee
+            if (isMeleeing)
+            {
+                // Reset variables
+                meleeStartTime = Time.fixedTime;
 
-            // Reset input flag
-            isMeleeing = false;
+                // Get angle to derive the arc the weapon will cover when swiping
+                meleeAngle = transform.rotation;
 
-            // Lock character's facing direction during attack
-            rotLock = true;
+                // Reset input flag
+                isMeleeing = false;
 
-            // Make weapon swipe model/effect appear
-            meleeHurtbox.gameObject.SetActive(true);
+                // Lock character's facing direction during attack
+                rotLock = true;
 
-            // Play slash sound
-            slashSpeaker.Play();
+                // Make weapon swipe model/effect appear
+                meleeHurtbox.gameObject.SetActive(true);
+
+                // Play slash sound
+                slashSpeaker.Play();
+            }
         }
 
         // If within duration of melee attack
@@ -332,6 +347,9 @@ public class CharacterController_Player : MonoBehaviour
 
             // Rotate weapon based on time since attacking
             meleeVisualRoot.transform.rotation = (Quaternion.Euler(meleeAngle.eulerAngles + tempRot.eulerAngles));
+
+            // Darken melee icon
+            meleeIcon.color = Color.gray;
         }
         else
         {
@@ -514,13 +532,17 @@ public class CharacterController_Player : MonoBehaviour
                 item.enabled = false;
             }
 
-            // Deactivate trigger object scripts for spark effect
+            // Deactivate trigger object scripts for rhythm hits and spark effect
             TriggerObject[] notes2 = rhythmMechanics.GetComponentsInChildren<TriggerObject>();
 
             foreach (TriggerObject item in notes2)
             {
                 item.enabled = false;
             }
+
+            // Hide UI portion related to music
+            rhythmUI.SetActive(false);
+            magicBar.SetActive(false);
         }
         // If carrying instruments, show rhythm mechanics and hide unequipped warning message on HUD
         else
@@ -535,7 +557,7 @@ public class CharacterController_Player : MonoBehaviour
                 item.enabled = true;
             }
 
-            // Activate trigger object scripts for spark effect
+            // Activate trigger object scripts for rhythm hits and spark effect
             TriggerObject[] notes2 = rhythmMechanics.GetComponentsInChildren<TriggerObject>();
 
             foreach (TriggerObject item in notes2)
@@ -543,7 +565,7 @@ public class CharacterController_Player : MonoBehaviour
                 item.enabled = true;
             }
 
-            // Reveal UI portion
+            // Reveal UI portion related to music
             rhythmUI.SetActive(true);
             magicBar.SetActive(true);
         }
