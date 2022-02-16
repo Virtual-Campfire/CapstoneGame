@@ -45,7 +45,7 @@ public class CharacterController_Player : MonoBehaviour
     // Instrument effect variables
     [SerializeField]
     float currentResource, maxResource = 1, resourceRecoveryMult = .25f;
-    bool playingInstrument = false;
+    bool playingInstrument = false, exhausted = false;
 
     // UI variables
     [SerializeField]
@@ -166,6 +166,7 @@ public class CharacterController_Player : MonoBehaviour
             isMeleeing = true;
         }
 
+        // When player presses instrument button
         if (instrumentStates[instrumentHeld] && Input.GetButton("Fire2"))
         {
             playingInstrument = true;
@@ -315,6 +316,8 @@ public class CharacterController_Player : MonoBehaviour
         {
             // Lighten melee icon
             meleeIcon.color = meleeIconColor;
+            // Reset icon size to its default
+            meleeIcon.transform.localScale = new Vector3(1f, 1f, 1f);
 
             // If trying to melee
             if (isMeleeing)
@@ -349,7 +352,9 @@ public class CharacterController_Player : MonoBehaviour
             meleeVisualRoot.transform.rotation = (Quaternion.Euler(meleeAngle.eulerAngles + tempRot.eulerAngles));
 
             // Darken melee icon
-            meleeIcon.color = Color.gray;
+            meleeIcon.color = new Color(.2f, .2f, .2f);
+            // Shrink icon
+            meleeIcon.transform.localScale = new Vector3(.8f, .8f, .8f);
         }
         else
         {
@@ -369,8 +374,14 @@ public class CharacterController_Player : MonoBehaviour
             meleeKnockback = meleeBaseKnockback;
         }
         
-        // Instrument ability only works when resources are above 0
-        if (playingInstrument && currentResource > 0)
+        // If magic bar has refilled after exhaustion, allow use of magic once again
+        if (currentResource == maxResource)
+        {
+            exhausted = false;
+        }
+
+        // Instrument ability only works when magic resources are above 0 and player has not recently exhausted magic resources
+        if (playingInstrument && currentResource > 0 && !exhausted)
         {
             // AOE instrument abilities
             if (instrumentHeld == (int)EquipID.Siren || instrumentHeld == (int)EquipID.AOE)
@@ -380,6 +391,11 @@ public class CharacterController_Player : MonoBehaviour
                 {
                     // Luring flag for attracting certain characters
                     playingLure = true;
+
+                    // Darken lure icon
+                    lureIcon.color = Color.gray;
+                    // Shrink icon
+                    lureIcon.transform.localScale = new Vector3(.8f, .8f, .8f);
 
                     // Drain resource store
                     AddResource(-Time.fixedDeltaTime * 1.5f);
@@ -411,14 +427,33 @@ public class CharacterController_Player : MonoBehaviour
                 }
             }
 
+            // If exhausting magic resources, darken lure icon and lock magic until bar refills to max
+            if (currentResource == 0)
+            {
+                lureIcon.color = new Color(.1f, .1f, .1f);
+
+                exhausted = true;
+            }
+
             // Visual effect for instrument effect radius
             effectRadiusIndicator.SetActive(true);
             effectRadiusIndicator.transform.localScale = new Vector3(AOEEffectRadius * 2 - Mathf.Cos(Time.fixedTime * 5) * .25f, AOEEffectRadius * 2 - Mathf.Cos(Time.fixedTime * 5) * .25f, AOEEffectRadius * 2 - Mathf.Cos(Time.fixedTime * 5) * .25f);
         }
         else
         {
+            // When not playing an instrument
+
             // Disable luring flag by default
             playingLure = false;
+
+            // If not exhausted, set icon colour to default
+            if (!exhausted)
+            {
+                // Lighten lure icon
+                lureIcon.color = lureIconColor;
+                // Reset icon size to its default
+                lureIcon.transform.localScale = new Vector3(1f, 1f, 1f);
+            }
 
             effectRadiusIndicator.SetActive(false);
         }
@@ -443,8 +478,8 @@ public class CharacterController_Player : MonoBehaviour
             rb.MovePosition(nextPosition);
         }
 
-        // When not playing an instrument
-        if (!playingInstrument)
+        // When not playing an instrument or exhausted magic resources
+        if (!playingInstrument || exhausted)
         {
             // Recover resource over time
             AddResource(Time.fixedDeltaTime * resourceRecoveryMult);
