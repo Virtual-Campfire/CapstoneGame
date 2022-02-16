@@ -20,6 +20,7 @@ public class InstrumentPickup : MonoBehaviour
 
     public GameObject AudioManager;
     public GameObject BeatController;
+    public GameObject BeatScroller;
 
     void Awake()
     {
@@ -69,6 +70,7 @@ public class InstrumentPickup : MonoBehaviour
             //Swich track
             AudioManager.SendMessage("swich");
             BeatController.SendMessage("swich");
+            BeatScroller.SendMessage("swich");
 
             Debug.Log("swich track");
         }
