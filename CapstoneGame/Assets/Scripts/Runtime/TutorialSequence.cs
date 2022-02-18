@@ -25,7 +25,7 @@ public class TutorialSequence : MonoBehaviour
     CharacterController_Player player;
 
     [SerializeField]
-    float timeSinceLast, timeBetween = .5f;
+    float timeSinceLast, timeBetween = 1;
 
     bool tutorialFinished = true;
 
@@ -60,8 +60,6 @@ public class TutorialSequence : MonoBehaviour
         // Do not cycle to next tutorial step unless time has passed so that players don't accidently cycle through all of them at once
         if (Time.time > timeSinceLast + timeBetween)
         {
-
-
             // Save time that this tutorial stage was cycled in
             timeSinceLast = Time.time;
 

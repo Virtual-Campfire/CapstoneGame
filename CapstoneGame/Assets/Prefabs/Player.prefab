@@ -308,8 +308,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 543230403425309533}
   groundRayBase: {fileID: 1206552032250544389}
-  moveSpeed: 5
-  jumpPower: 5
+  moveSpeed: 7.5
+  jumpPower: 4
   airControl: 0.5
   isGrounded: 0
   isJumping: 0
@@ -324,6 +324,8 @@ MonoBehaviour:
   meleeBaseDamage: 2
   meleeKnockback: 5
   meleeBaseKnockback: 5
+  enhancedDamage: 6
+  enhancedKnockback: 5
   specialMelee: 0
   currentResource: 5
   maxResource: 5
@@ -331,6 +333,11 @@ MonoBehaviour:
   noInstrumentWarning: {fileID: 0}
   healthUI: {fileID: 0}
   magicUI: {fileID: 0}
+  rhythmMechanics: {fileID: 0}
+  rhythmUI: {fileID: 0}
+  magicBar: {fileID: 0}
+  meleeIcon: {fileID: 0}
+  lureIcon: {fileID: 0}
   AOEEffectRadius: 10
   playingLure: 0
   instrumentHeld: 0

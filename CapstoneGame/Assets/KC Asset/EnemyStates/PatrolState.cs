@@ -49,8 +49,11 @@ public class PatrolState : FSMState
         if (GetComponentInParent<Attention>().attentionValue > 0) { agent.SetDestination(transform.parent.position); }
         else
         {
-
-            if (!agent.pathPending && agent.remainingDistance < 0.5f) { PatrolLoop(); }
+            // Extra check to avoid errors
+            if (agent.isOnNavMesh)
+            {
+                if (!agent.pathPending && agent.remainingDistance < 0.5f) { PatrolLoop(); }
+            }
 
 
         }

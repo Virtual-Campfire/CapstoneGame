@@ -38,7 +38,7 @@ public class CharacterController_Player : MonoBehaviour
     bool isMeleeing = false;
     float meleeStartTime;
     Quaternion meleeAngle;
-    public float meleeDuration = .5f, meleeCooldown = .5f, meleeBufferTime = .5f, meleeDamage = 0, meleeBaseDamage = 0, meleeKnockback = 2, meleeBaseKnockback = 2;
+    public float meleeDuration = .5f, meleeCooldown = .5f, meleeBufferTime = .5f, meleeDamage = 2, meleeBaseDamage = 2, meleeKnockback = 2, meleeBaseKnockback = 2, enhancedDamage = 6, enhancedKnockback = 5;
     public bool specialMelee = false;
 
     // Instrument effect variables
@@ -182,15 +182,7 @@ public class CharacterController_Player : MonoBehaviour
     void FixedUpdate()
     {
         #region Movement
-        // Animator sends variables
-        anim.SetFloat("Speed", moveVector.magnitude);
-        // Rinvy+++---------------------------------------------------
-        anim.SetBool("IsGrounded", isGrounded);
-        anim.SetBool("IsMeleeing", isMeleeing);
-        anim.SetInteger("AttackIndex", meleeIndex);
-        anim.SetBool("IsPlayingIns", playingInstrument);
-        anim.SetFloat("Health", health.currentHealth);
-
+        
         // Ground ray is drawn a little bit above player character's foot
         groundRay = new Ray(groundRayBase.position + Vector3.up * 0.5f, Vector3.down);
 
@@ -300,8 +292,9 @@ public class CharacterController_Player : MonoBehaviour
                         // Gain resource bar charge from hit
                         AddResource(.25f);
 
-                        // Add to knockback
-                        meleeKnockback = 5;
+                        // Enhance damage and knockback
+                        meleeDamage = enhancedDamage;
+                        meleeKnockback = enhancedKnockback;
                     }
 
                     // Apply melee effects
@@ -357,7 +350,7 @@ public class CharacterController_Player : MonoBehaviour
         }
         else
         {
-            // End of melee attack, deactivate any special effects
+            // End of melee attack, reset melee attribute defaults
             specialMelee = false;
             meleeDamage = meleeBaseDamage;
             meleeKnockback = meleeBaseKnockback;
@@ -367,10 +360,6 @@ public class CharacterController_Player : MonoBehaviour
 
             // Make weapon swipe model/effect disappear
             meleeHurtbox.gameObject.SetActive(false);
-
-            // Reset melee attribute defaults
-            meleeDamage = meleeBaseDamage;
-            meleeKnockback = meleeBaseKnockback;
         }
         
         // If magic bar has refilled after exhaustion, allow use of magic once again
@@ -484,6 +473,15 @@ public class CharacterController_Player : MonoBehaviour
             AddResource(Time.fixedDeltaTime * resourceRecoveryMult);
         }
         #endregion
+
+        // Animator sends variables
+        anim.SetFloat("Speed", moveVector.magnitude);
+        // Rinvy+++---------------------------------------------------
+        anim.SetBool("IsGrounded", isGrounded);
+        anim.SetBool("IsMeleeing", isMeleeing);
+        anim.SetInteger("AttackIndex", meleeIndex);
+        anim.SetBool("IsPlayingIns", playingInstrument);
+        anim.SetFloat("Health", health.currentHealth);
     }
 
     void AddResource(float amount)
