@@ -27,8 +27,7 @@ public class CharacterController_Player : MonoBehaviour
     // Variables for movement control factors
     Vector3 moveIntent, moveVector, rotVector, jumpVector;
     public float moveSpeed = 1, jumpPower = 2, airControl = .5f;
-    [SerializeField]
-    bool isGrounded = false, isJumping = false, moveLock = false, rotLock = false;
+    public bool isGrounded = false, isJumping = false, moveLock = false, rotLock = false;
 
     // Health variables
     DamageKnockback health;
