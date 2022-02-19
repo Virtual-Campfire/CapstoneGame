@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5981846382054828476}
   - component: {fileID: 4036623631349501516}
   - component: {fileID: 2257152991374761848}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: Pitfall Zone
   m_TagString: Untagged
   m_Icon: {fileID: 0}

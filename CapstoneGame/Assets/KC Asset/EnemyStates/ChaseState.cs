@@ -47,7 +47,7 @@ public class ChaseState : FSMState
     
     public override void DoBeforeEntering()
     {
-        Debug.Log("I am ready in to the chasing now");
+        //Debug.Log("I am ready in to the chasing now");
     }
 
 
