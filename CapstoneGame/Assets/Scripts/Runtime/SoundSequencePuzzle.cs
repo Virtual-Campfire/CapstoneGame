@@ -16,7 +16,7 @@ public class SoundSequencePuzzle : MonoBehaviour
     [SerializeField]
     int patternCompletion = 0;
     [SerializeField]
-    bool complete;
+    bool constructed, complete;
     [SerializeField]
     float activationDistance = 10;
 
@@ -30,15 +30,38 @@ public class SoundSequencePuzzle : MonoBehaviour
     {
         // Get the player controller script by its type
         player = FindObjectOfType<CharacterController_Player>();
-        timeOfLastChirp = Time.time;
-        StartCoroutine("Step");
+
+        // Check if the main puzzle is ready to start (it will not if stone bases lack their statues)
+        CheckPuzzle();
+    }
+
+    public void CheckPuzzle()
+    {
+        // Set default value until disproven (if statues are not on their stone bases)
+        constructed = true;
+
+        // Check if all sound stone bases have their statues
+        foreach (GameObject item in pieces)
+        {
+            if (!item.GetComponent<SoundStone>().isWhole)
+            {
+                constructed = false;
+            }
+        }
+
+        // Start puzzle hinting loop if all stone bases have their statues
+        if (constructed)
+        {
+            timeOfLastChirp = Time.time;
+            StartCoroutine("Step");
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        // If puzzle is incomplete and player is nearby
-        if (!complete && player.playingLure && Time.time > timeSinceInput + 1 && Vector3.Distance(player.gameObject.transform.position, transform.position) <= activationDistance)
+        // If puzzle is incomplete and player is nearby AND statues are on the bases of all sound stones
+        if (!complete && player.playingLure && Time.time > timeSinceInput + 1 && Vector3.Distance(player.gameObject.transform.position, transform.position) <= activationDistance && constructed)
         {
             // Stop hinting system when
             StopCoroutine("Step");
