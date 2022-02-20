@@ -59,7 +59,7 @@ public class IdealState : FSMState
 
     public override void Act()
     {
-        Debug.Log("NPC In ideal");
+        //Debug.Log("NPC In ideal");
 
 
         //if not at origanal position, move back to where it start
@@ -105,7 +105,7 @@ public class IdealState : FSMState
 
     public override void DoBeforeLeaving()
     {
-        Debug.Log("Leaving Ideal");
+        //Debug.Log("Leaving Ideal");
     }
 
 

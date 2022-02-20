@@ -30,7 +30,7 @@ public class DoubtState : FSMState
 
     public override void DoBeforeEntering()
     {
-        Debug.Log("In Doubt: Ehmmm£¿What I just saw?");
+        //Debug.Log("In Doubt: Ehmmm£¿What I just saw?");
         transform.parent.LookAt(transform.parent.position);
     }
 
