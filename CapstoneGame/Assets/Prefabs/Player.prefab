@@ -347,6 +347,7 @@ MonoBehaviour:
   lastCheckpoint: {x: 0, y: 0, z: 0}
   slashSpeaker: {fileID: 6292890480085915898}
   jumpSpeaker: {fileID: 916768440695829441}
+  violinSpeaker: {fileID: 4886577429081425453}
 --- !u!114 &6121775139370952919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -449,6 +450,7 @@ GameObject:
   - component: {fileID: 8277868503015936077}
   - component: {fileID: 2623508775193768634}
   - component: {fileID: 1472874482891738007}
+  - component: {fileID: 4886577429081425453}
   m_Layer: 0
   m_Name: Effect Radius Indicator
   m_TagString: Untagged
@@ -519,6 +521,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4886577429081425453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7685905005795669616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/PlayerFoley/Violinning
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1001 &1273364007332923255
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -21,7 +21,7 @@ public class SoundSequencePuzzle : MonoBehaviour
     float activationDistance = 10;
 
     [SerializeField] [Tooltip("Chirp Frequency is the time in seconds between each puzzle piece making a noice during when hinting the answer; Chirp Pause is the time in seconds between restarting the hint sequence from the beginning.")]
-    float chirpFrequency = 1, chirpPause = 3;
+    float chirpFrequency = 1, chirpPause = 3, delayBetweenInputs = 1;
     float timeOfLastChirp, timeSinceInput;
 
     CharacterController_Player player;
@@ -61,7 +61,7 @@ public class SoundSequencePuzzle : MonoBehaviour
     void Update()
     {
         // If puzzle is incomplete and player is nearby AND statues are on the bases of all sound stones
-        if (!complete && player.playingLure && Time.time > timeSinceInput + 1 && Vector3.Distance(player.gameObject.transform.position, transform.position) <= activationDistance && constructed)
+        if (!complete && player.playingLure && Time.time > timeSinceInput + delayBetweenInputs && Vector3.Distance(player.gameObject.transform.position, transform.position) <= activationDistance && constructed)
         {
             // Stop hinting system when
             StopCoroutine("Step");

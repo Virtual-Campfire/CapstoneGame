@@ -45,6 +45,7 @@ public class CharacterController_Player : MonoBehaviour
     [SerializeField]
     float currentResource, maxResource = 1, resourceRecoveryMult = .25f;
     bool playingInstrument = false, exhausted = false;
+    float lastSting;
 
     // UI variables
     [SerializeField]
@@ -85,7 +86,7 @@ public class CharacterController_Player : MonoBehaviour
 
     // Audio variables
     [SerializeField]
-    StudioEventEmitter slashSpeaker, jumpSpeaker;
+    StudioEventEmitter slashSpeaker, jumpSpeaker, violinSpeaker;
 
     void Awake()
     {
@@ -379,6 +380,15 @@ public class CharacterController_Player : MonoBehaviour
                 {
                     // Luring flag for attracting certain characters
                     playingLure = true;
+
+                    if (Time.time > lastSting + 1)
+                    {
+                        // Play violin sounds
+                        violinSpeaker.Play();
+
+                        // Set time until next violin sting to avoid sound fatigue until a looping sound is available
+                        lastSting = Time.time;
+                    }
 
                     // Darken lure icon
                     lureIcon.color = Color.gray;

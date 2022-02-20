@@ -43,6 +43,8 @@ public class SoundStone : MonoBehaviour
             // Set position of stone behind player
             statue.transform.position = player.transform.position;
             statue.transform.position += -player.transform.forward * 2;
+            // Reset rotation in case the statue was placed on its side
+            statue.transform.rotation = Quaternion.identity;
 
             // Put statue on base if they have been moved close together after being carried
             if (Vector3.Distance(player.transform.position, transform.position) < activationDist)
