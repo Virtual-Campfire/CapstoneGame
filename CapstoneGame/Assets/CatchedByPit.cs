@@ -8,11 +8,14 @@ public class CatchedByPit : MonoBehaviour
     public UnityEngine.AI.NavMeshAgent agent;
     public Transform PlaceHolder;
 
+    public Transform MyState;
+
     bool GotMessiage=false;
     // Start is called before the first frame update
     void Start()
     {
         agent = transform.gameObject.GetComponent<NavMeshAgent>();
+        MyState = gameObject.transform.Find("States");
     }
 
     // Update is called once per frame
@@ -26,7 +29,7 @@ public class CatchedByPit : MonoBehaviour
         GotMessiage = true;
 
 
-        Debug.Log("yesyesyesyes");
+       
     }
 
 
@@ -34,9 +37,14 @@ public class CatchedByPit : MonoBehaviour
     {
         Debug.Log(other.name);
 
-        if (other.tag == "PitFall")
+        if (other.gameObject.layer==20)
         {
-           gameObject.GetComponent<EnemyState>().enabled=false;
+           
+
+            MyState.gameObject.SetActive(false);
+            
+
+
             PlaceHolder = other.transform;
             agent.SetDestination(PlaceHolder.transform.position);
         }

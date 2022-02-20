@@ -49,7 +49,7 @@ public class OOBZone : MonoBehaviour
         if (other.tag == "Enemy")
         {
          
-            Destroy(other.gameObject);
+            Destroy(other.gameObject,3);
         }
     }
 

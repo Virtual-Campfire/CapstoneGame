@@ -21,7 +21,7 @@ public class StatueCheckTurn : MonoBehaviour
     void Update()
     {
         Vector3 angles = transform.rotation.eulerAngles;
-        Debug.Log(angles.y);
+       
 
         if (Player.GetComponent<CharacterController_Player>().instrumentStates[0] == true) {
             transform.Rotate(Rotation * Time.deltaTime*Speed);
