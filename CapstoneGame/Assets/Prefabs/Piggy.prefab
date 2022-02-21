@@ -70,6 +70,7 @@ GameObject:
   - component: {fileID: 5185967567788728329}
   - component: {fileID: 5185967567788728328}
   - component: {fileID: 1356566375530496257}
+  - component: {fileID: 6651852471604000711}
   m_Layer: 14
   m_Name: Piggy
   m_TagString: Enemy
@@ -319,6 +320,21 @@ MonoBehaviour:
   invulnTime: 1
   healthBar: {fileID: 6364871000628140784}
   showHealthBar: 1
+--- !u!114 &6651852471604000711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5185967567788728445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2dffd8947a4a4f4497b2b00fb82bd65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 0}
+  PlaceHolder: {fileID: 0}
+  MyState: {fileID: 0}
 --- !u!1 &5185967568021880451
 GameObject:
   m_ObjectHideFlags: 0
