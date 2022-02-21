@@ -29,6 +29,7 @@ public class attackState : FSMState
     
     bool SkillUsed;
 
+    Animator anim;
 
     void Awake()
     {
@@ -49,12 +50,12 @@ public class attackState : FSMState
             EnemyDevilHead = true;
         }
 
-
+        anim = transform.parent.GetComponentInChildren<Animator>();
     }
 
     private void Start()
     {
-
+        
     }
 
     private void Update()
@@ -126,16 +127,23 @@ public class attackState : FSMState
 
             }
             else if (dist <= MeleeAttack) {
-                //Melee attack put here
-                Debug.Log("if you want put melee attack caculation, in here and delet this line after finish");
-            }
                 
-                    
-                    
-                    
-         }
+                // Damage nearby player character
+                Player.GetComponent<DamageKnockback>().ApplyDamage(transform.position, 1, 1);
+            }
 
 
+            
+        }
+
+
+        // Immediately below is code for the melee check (currently, this occurs with each loop; the only reason this doesn't instantly destroy the player is because of invulnerability time)
+
+        // Damage nearby player character
+        Player.GetComponent<DamageKnockback>().ApplyDamage(transform.position, 1, 1);
+
+        // Update animator parameter
+        anim.SetTrigger("Attacking");
 
 
         //skill timer
@@ -148,14 +156,7 @@ public class attackState : FSMState
                 resetTimer();
             }
         }
-
-
-
-
-
-
-        // Damage nearby player character
-        Player.GetComponent<DamageKnockback>().ApplyDamage(transform.position, 1, 1);
+        
     }
 
 

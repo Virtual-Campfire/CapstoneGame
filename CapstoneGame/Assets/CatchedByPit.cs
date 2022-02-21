@@ -11,8 +11,8 @@ public class CatchedByPit : MonoBehaviour
     public Transform MyState;
 
     bool GotMessiage=false;
-    // Start is called before the first frame update
-    void Start()
+    
+    void Awake()
     {
         agent = transform.gameObject.GetComponent<NavMeshAgent>();
         MyState = gameObject.transform.Find("States");

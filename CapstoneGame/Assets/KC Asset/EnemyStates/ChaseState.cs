@@ -27,7 +27,7 @@ public class ChaseState : FSMState
 
         agent = transform.parent.gameObject.GetComponent<NavMeshAgent>();
 
-
+        //anim = GetComponentInChildren<Animator>();
     }
 
     private void Start()
@@ -41,7 +41,7 @@ public class ChaseState : FSMState
         // Debug.Log(dist);
 
         // Control animator parameters
-        anim.SetFloat("Speed", agent.velocity.magnitude);
+        //anim.SetFloat("Speed", agent.velocity.magnitude);
     }
 
     

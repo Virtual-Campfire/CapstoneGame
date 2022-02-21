@@ -6,7 +6,7 @@ public class DoubtState : FSMState
 {
     public GameObject Player;
 
-  
+    Animator anim;
 
     void Awake()
     {
@@ -20,6 +20,7 @@ public class DoubtState : FSMState
 
         Player = GameObject.Find("Player");
 
+        anim = transform.parent.GetComponentInChildren<Animator>();
     }
 
     private void Start()
@@ -32,6 +33,9 @@ public class DoubtState : FSMState
     {
         //Debug.Log("In Doubt: Ehmmm£¿What I just saw?");
         transform.parent.LookAt(transform.parent.position);
+
+        // Update animator parameter
+        anim.SetTrigger("Doubt");
     }
 
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyState : MonoBehaviour
 {
@@ -21,7 +22,12 @@ public class EnemyState : MonoBehaviour
     public float HP;
     public float DisToPlayer;
 
+    Animator anim;
 
+    float lastHP, currentHP;
+    
+    // Used to find the current speed of the enemy
+    Vector3 lastPos, currentPos;
 
     private void Awake()
     {
@@ -31,6 +37,8 @@ public class EnemyState : MonoBehaviour
         InitialPositionHolder = new GameObject("InitialPositionHolder");
         InitialPositionHolder = Instantiate(InitialPositionHolder, this.transform.position, Quaternion.identity);
         InitialPositionHolder.transform.eulerAngles = new Vector3(gameObject.transform.eulerAngles.x, gameObject.transform.eulerAngles.y);
+
+        anim = GetComponentInChildren<Animator>();
     }
     
     // Update is called once per frame
@@ -41,6 +49,18 @@ public class EnemyState : MonoBehaviour
         if (Timer <= -1) { Timer = -1; }
         LastLureInPut();
 
+        // Main area for updating animation parameters
+        anim.SetFloat("Speed", GetComponent<NavMeshAgent>().velocity.magnitude);
+
+        // Code for damage animation (checks HP one time through whole AI loop)
+        
+        currentHP = HP;
+
+        if (currentHP < lastHP)
+        {
+            anim.SetTrigger("Hurt");
+        }
+        lastHP = HP;
     }
 
 
@@ -61,5 +81,4 @@ public class EnemyState : MonoBehaviour
         else { LastInput = false; }
        
     }
-
 }
