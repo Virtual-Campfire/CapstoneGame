@@ -26,7 +26,7 @@ public class TutorialSequence : MonoBehaviour
 
     [SerializeField]
     float timeSinceLast, timeBetween = 1;
-
+    
     bool tutorialFinished = true;
 
     void Awake()
@@ -49,9 +49,6 @@ public class TutorialSequence : MonoBehaviour
         {
             // Tutorial has finished; this value can be reset to start the tutorial again
             tutorialFinished = true;
-            
-            // Unlock player movement if still locked
-            player.moveLock = false;
         }
     }
 
@@ -97,6 +94,11 @@ public class TutorialSequence : MonoBehaviour
                 {
                     player.moveLock = false;
                 }
+            }
+            else
+            {
+                // Unlock player movement if still locked
+                player.moveLock = false;
             }
 
             // Next time function is called, index will be for the next stage of the tutorial
