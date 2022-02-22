@@ -475,6 +475,13 @@ public class CharacterController_Player : MonoBehaviour
             // Apply final movement calculation
             rb.MovePosition(nextPosition);
         }
+        else
+        {
+            // Locked movement cancels out movement variables for this loop
+            rb.velocity = Vector3.zero;
+            nextPosition = rb.position;
+            moveVector = Vector3.zero;
+        }
 
         // When not playing an instrument or exhausted magic resources
         if (!playingInstrument || exhausted)
