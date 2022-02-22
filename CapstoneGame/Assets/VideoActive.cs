@@ -31,14 +31,14 @@ public class VideoActive : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
        
-        if (other.tag == "Player") { GetComponent<RawImage>().enabled = true; }
+        if (other.tag == "Player") { GetComponentInChildren<RawImage>().enabled = true; }
 
     }
 
     private void OnTriggerExit(Collider other)
     {
 
-        if (other.tag == "Player") { GetComponent<RawImage>().enabled = false; }
+        if (other.tag == "Player") { GetComponentInChildren<RawImage>().enabled = false; }
 
     }
 }
