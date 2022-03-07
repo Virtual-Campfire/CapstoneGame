@@ -9,6 +9,9 @@ using FMODUnity;
 // Players must activate the pieces in the sequence that they show
 public class SoundSequencePuzzle : MonoBehaviour
 {
+    public DoorTurning[] Gates;
+
+
     [SerializeField]
     GameObject[] doors;
     [SerializeField]
@@ -140,9 +143,15 @@ public class SoundSequencePuzzle : MonoBehaviour
             // Disable doors related to this puzzle
             foreach (GameObject item in doors)
             {
-                item.SetActive(false);
-            }
+                //item.SetActive(false);
+                
 
+            }
+            foreach (DoorTurning doorTurning in Gates)
+            {
+                doorTurning.OpenTheDoor = true;
+
+            }
             // Stop hinting system coroutine
             StopCoroutine("Step");
 

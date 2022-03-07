@@ -22,6 +22,28 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 0
+--- !u!114 &-8314511458380848666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/level1Combat/hit
+  m_EditorClassIdentifier: 
+  Name: hit
+  Min: 0
+  Max: 10
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 0
 --- !u!114 &-8302644614326455250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,7 +122,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 637798735787445496
+  lastModified: 637798720587888093
   FileSizes: []
   Exists: 1
 --- !u!114 &-6788416702229049288
@@ -346,6 +368,28 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &-3841193889650723635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/level1Combat/hit
+  m_EditorClassIdentifier: 
+  Name: hit
+  Min: 0
+  Max: 10
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &-3603653790354906872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -472,7 +516,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Desktop/BGM.bank
   Name: BGM
   StudioPath: bank:/BGM
-  lastModified: 637798735787305434
+  lastModified: 637798720587762761
   FileSizes: []
   Exists: 1
 --- !u!114 &-2500597342742143386
@@ -498,6 +542,28 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2000
+--- !u!114 &-2172518621240993501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/level1BGM/TrackSwich
+  m_EditorClassIdentifier: 
+  Name: TrackSwich
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &-1994975777895913801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -606,8 +672,8 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -2755012988622744920}
-  - {fileID: -6572855494419789139}
+  - {fileID: -2172518621240993501}
+  - {fileID: 5830824194584642850}
   MinDistance: 0
   MaxDistance: 0
   Length: 78857
@@ -690,7 +756,7 @@ MonoBehaviour:
   - {fileID: 913560089226243733}
   StringsBanks:
   - {fileID: 2924641574611298264}
-  stringsBankWriteTime: 637798735787315624
+  stringsBankWriteTime: 637798720587772791
   cacheVersion: 8
 --- !u!114 &913560089226243733
 MonoBehaviour:
@@ -707,7 +773,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637795687717367720
+  lastModified: 637764814231673109
   FileSizes: []
   Exists: 1
 --- !u!114 &945439159997034666
@@ -836,7 +902,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637798735787315624
+  lastModified: 637798720587772791
   FileSizes:
   - Name: 
     Value: 1386
@@ -975,7 +1041,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -6103907109507599668}
+  - {fileID: -3841193889650723635}
   MinDistance: 0
   MaxDistance: 0
   Length: 29142
@@ -1002,6 +1068,28 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 3500
+--- !u!114 &5830824194584642850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/level1BGM/hit
+  m_EditorClassIdentifier: 
+  Name: hit
+  Min: 0
+  Max: 10
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &5933973316355423571
 MonoBehaviour:
   m_ObjectHideFlags: 0
