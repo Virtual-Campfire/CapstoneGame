@@ -13,7 +13,7 @@ public class SoundSequencePuzzle : MonoBehaviour
 
 
     [SerializeField]
-    GameObject[] doors;
+    GameObject[] disappearingParts;
     [SerializeField]
     GameObject[] pieces;
     [SerializeField]
@@ -141,16 +141,13 @@ public class SoundSequencePuzzle : MonoBehaviour
             }
 
             // Disable doors related to this puzzle
-            foreach (GameObject item in doors)
+            foreach (GameObject item in disappearingParts)
             {
-                //item.SetActive(false);
-                
-
+                item.SetActive(false);
             }
             foreach (DoorTurning doorTurning in Gates)
             {
                 doorTurning.OpenTheDoor = true;
-
             }
             // Stop hinting system coroutine
             StopCoroutine("Step");
