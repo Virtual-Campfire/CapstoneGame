@@ -5,7 +5,7 @@ using UnityEngine;
 public class StatueCheckTurn : MonoBehaviour
 {
 
-    public GameObject Player;
+    public GameObject Tutorial;
 
     public Vector3 Rotation;
     public float Speed;
@@ -14,7 +14,7 @@ public class StatueCheckTurn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Player = GameObject.FindGameObjectWithTag("Player");
+        Tutorial = GameObject.Find("Instrument Tutorial");
     }
 
     // Update is called once per frame
@@ -23,7 +23,7 @@ public class StatueCheckTurn : MonoBehaviour
         Vector3 angles = transform.rotation.eulerAngles;
        
 
-        if (Player.GetComponent<CharacterController_Player>().instrumentStates[0] == true) {
+        if (Tutorial.GetComponent<TutorialSequence>().index > Tutorial.GetComponent<TutorialSequence>().tutorialPieces.Length) {
             transform.Rotate(Rotation * Time.deltaTime*Speed);
         if (angles.y <= HowMuchRotate) { Speed = 0; }
         }

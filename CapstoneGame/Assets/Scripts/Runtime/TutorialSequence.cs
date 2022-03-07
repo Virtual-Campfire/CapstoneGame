@@ -8,10 +8,10 @@ using System;
 // Script that controls text-based tutorial sequences (with minor interactivity and responses to player actions and key presses to aid in teaching)
 public class TutorialSequence : MonoBehaviour
 {
-    int index = 0;
+    public int index = 0;
 
     [Serializable]
-    struct Tutorials
+    public struct Tutorials
     {
         public Text[] text;
         public Image[] images;
@@ -19,7 +19,7 @@ public class TutorialSequence : MonoBehaviour
     }
 
     [SerializeField]
-    Tutorials[] tutorialPieces;
+    public Tutorials[] tutorialPieces;
 
     [SerializeField]
     CharacterController_Player player;
