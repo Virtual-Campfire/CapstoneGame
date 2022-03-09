@@ -87,7 +87,11 @@ Material:
     - _ZTestGBuffer: 3
     - _ZTestTransparent: 4
     - _ZWrite: 1
+<<<<<<< HEAD
     - _control: 1.0055073
+=======
+    - _control: 1.0308074
+>>>>>>> ac8b91af31d15a5f2674a9d74d733baddc1cc3a3
     m_Colors:
     - Color_61dd89627d934502b095ad16c5f762a3: {r: 0.7490196, g: 0.44313726, b: 0.090196066, a: 1}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
