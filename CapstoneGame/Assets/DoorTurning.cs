@@ -20,6 +20,7 @@ public class DoorTurning : MonoBehaviour
     void Update()
     {
         Vector3 angles = transform.rotation.eulerAngles;
+        Debug.Log(angles);
 
         Debug.Log(angles);
         if (OpenTheDoor)
