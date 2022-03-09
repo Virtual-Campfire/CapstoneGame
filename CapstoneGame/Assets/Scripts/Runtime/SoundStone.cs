@@ -15,6 +15,8 @@ public class SoundStone : MonoBehaviour
     GameObject player, statue;
     Collider trigger;
 
+    Vector3 initialPos;
+
     [SerializeField]
     float activationDist = 5;
     
@@ -33,6 +35,8 @@ public class SoundStone : MonoBehaviour
         {
             isWhole = true;
         }
+
+        initialPos = statue.transform.position;
     }
 
     void Update()
@@ -58,6 +62,17 @@ public class SoundStone : MonoBehaviour
                 GetComponentInParent<SoundSequencePuzzle>().CheckPuzzle();
             }
         }
+        else if (!isWhole)
+        {
+            // If player gets far away and loses hold of the statue, it returns to its initial position so it doesn't become inaccessible (ex. on player respawn after falling into a pit)
+            statue.transform.position = initialPos;
+        }
+
+        if (isWhole)
+        {
+            // Causes smooth return to position after pulsing down
+            statue.transform.position = Vector3.MoveTowards(statue.transform.position, transform.position + Vector3.up * 2, Time.deltaTime);
+        }
     }
 
     // Called to activate the particle system and other visual changes for when the stone is hinting what order it is activated in
@@ -65,5 +80,8 @@ public class SoundStone : MonoBehaviour
     {
         soundEmitter.Play();
         particles.Play();
+        
+        // Moves statue down when it makes a chirp (in case player cannot hear the sound or see the particles)
+        statue.transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
     }
 }

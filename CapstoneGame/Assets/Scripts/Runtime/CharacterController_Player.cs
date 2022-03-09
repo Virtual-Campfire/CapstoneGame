@@ -286,20 +286,24 @@ public class CharacterController_Player : MonoBehaviour
 
             foreach (Collider item in temp)
             {
-                if (item.GetComponent<DamageKnockback>() && item.gameObject.tag == "Enemy")
+                // Added check to catch edge cases related to hitting enemies who are about to be destroyed by something else
+                if (item != null)
                 {
-                    if (specialMelee)
+                    if (item.GetComponent<DamageKnockback>() && item.gameObject.tag == "Enemy")
                     {
-                        // Gain resource bar charge from hit
-                        AddResource(.25f);
+                        if (specialMelee)
+                        {
+                            // Gain resource bar charge from hit
+                            AddResource(.25f);
 
-                        // Enhance damage and knockback
-                        meleeDamage = enhancedDamage;
-                        meleeKnockback = enhancedKnockback;
+                            // Enhance damage and knockback
+                            meleeDamage = enhancedDamage;
+                            meleeKnockback = enhancedKnockback;
+                        }
+
+                        // Apply melee effects
+                        item.GetComponent<DamageKnockback>().ApplyDamage(rb.transform.position, meleeDamage, meleeKnockback);
                     }
-
-                    // Apply melee effects
-                    item.GetComponent<DamageKnockback>().ApplyDamage(rb.transform.position, meleeDamage, meleeKnockback);
                 }
             }
         }
