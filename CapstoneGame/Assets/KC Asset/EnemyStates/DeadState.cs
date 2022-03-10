@@ -39,7 +39,7 @@ public class DeadState : FSMState
     {
         ControlCaulate = ControlCaulate + Time.deltaTime * Speed;
         Ma.SetFloat("_Control", ControlCaulate);
-       // LightIn.SetFloat("_control", ControlCaulate);
+        LightIn.SetFloat("_control", ControlCaulate);
 
         if (ControlCaulate >= 1) {
 

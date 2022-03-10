@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: New Material
+  m_Name: LightIn
   m_Shader: {fileID: -6465566751694194690, guid: 333ae921796b1fb4c88df29c5d8c7546, type: 3}
   m_ShaderKeywords: _ALPHATEST_ON _DISABLE_SSR_TRANSPARENT _ENABLE_FOG_ON_TRANSPARENT
     _SURFACE_TYPE_TRANSPARENT
@@ -232,7 +232,7 @@ Material:
     - _ZTestGBuffer: 3
     - _ZTestTransparent: 4
     - _ZWrite: 0
-    - _control: 0
+    - _control: 1.0434487
     m_Colors:
     - Color_61dd89627d934502b095ad16c5f762a3: {r: 0.458, g: 0.27096334, b: 0.05515183, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}

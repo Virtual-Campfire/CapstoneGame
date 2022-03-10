@@ -6534,7 +6534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Pa: {fileID: 0}
   Ma: {fileID: 2100000, guid: 0e533d28834e7914894ae618a89b296b, type: 2}
-  LightIn: {fileID: 2100000, guid: 0229d4e5439ede140bdb73312bc66451, type: 2}
+  LightIn: {fileID: 2100000, guid: 4eaeacf24e17c3b4f983d58ef92a073e, type: 2}
   ControlCaulate: 0
   Speed: 0.25
 --- !u!114 &1602348624
