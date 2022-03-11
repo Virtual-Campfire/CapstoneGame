@@ -21,7 +21,6 @@ public class DoorTurning : MonoBehaviour
     {
         Vector3 angles = transform.rotation.eulerAngles;
 
-        Debug.Log(angles);
         if (OpenTheDoor)
         {
             transform.Rotate(Rotation * Time.deltaTime * Speed);

@@ -19,6 +19,11 @@ public class DamageKnockback : MonoBehaviour
     public bool showHealthBar = false;
     Vector3 healthBarSize;
 
+
+    public GameObject PiggyToHide;
+    public GameObject PiggyToShow;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,7 +51,7 @@ public class DamageKnockback : MonoBehaviour
             ChangeHPValue(damage);
         }
 
-        CheckIfDead();
+        DoBeforeDead();
     }
 
     // This overload of the function only applies damage; no knockback is applied
@@ -59,7 +64,7 @@ public class DamageKnockback : MonoBehaviour
             ChangeHPValue(damage);
         }
 
-        CheckIfDead();
+        DoBeforeDead();
     }
 
     void SetInvulnTime()
@@ -108,9 +113,20 @@ public class DamageKnockback : MonoBehaviour
     void CheckIfDead()
     {
         // If this script overrides death check
-        if (handleDeath && currentHealth <= 0)
-        {
+            
             Destroy(gameObject);
-        }
+
     }
+
+    void DoBeforeDead() {
+        PiggyToShow.SetActive(true);
+        PiggyToHide.SetActive(false);
+    if (handleDeath && currentHealth <= 0)
+    {
+
+        Invoke("CheckIfDead", 2);
+
+    }
+    }
+
 }
