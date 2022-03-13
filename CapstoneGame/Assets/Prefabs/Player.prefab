@@ -361,11 +361,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handleDeath: 0
-  currentHealth: 10
+  currentHealth: 3
   maxHealth: 10
   invulnTime: 1
   healthBar: {fileID: 878076589006137425}
   showHealthBar: 0
+  PiggyToHide: {fileID: 0}
+  PiggyToShow: {fileID: 0}
 --- !u!114 &916768440695829441
 MonoBehaviour:
   m_ObjectHideFlags: 0

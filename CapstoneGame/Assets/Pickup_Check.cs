@@ -28,6 +28,7 @@ public class Pickup_Check : MonoBehaviour
         {
             A.SendMessage("SelfDestruct");
             //Change Health value
+
         }
     }
 

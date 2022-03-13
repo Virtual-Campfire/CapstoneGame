@@ -118,15 +118,20 @@ public class DamageKnockback : MonoBehaviour
 
     }
 
-    void DoBeforeDead() {
-        PiggyToShow.SetActive(true);
-        PiggyToHide.SetActive(false);
-    if (handleDeath && currentHealth <= 0)
+    void DoBeforeDead() 
     {
+        if (PiggyToHide != null && PiggyToShow != null)
+        {
+            PiggyToShow.SetActive(true);
+            PiggyToHide.SetActive(false);
+        }
+        
+        if (handleDeath && currentHealth <= 0)
+        {
 
-        Invoke("CheckIfDead", 2);
+            Invoke("CheckIfDead", 2);
 
-    }
+        }
     }
 
 }

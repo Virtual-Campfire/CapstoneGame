@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3700413454606114102}
   - component: {fileID: 2962383426108270876}
   - component: {fileID: 418894170121811528}
+  - component: {fileID: 8085295436943724078}
   m_Layer: 0
   m_Name: Health_Small
   m_TagString: Untagged
@@ -32,7 +33,6 @@ Transform:
   - {fileID: 2566361802726052284}
   - {fileID: 5829898430724208383}
   - {fileID: 3220635685650418914}
-  - {fileID: 7211772990742373039}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -63,116 +63,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentName: Health_Small
   player: {fileID: 1206552032706234996, guid: 74c3ca48546edfd448252014d27d58af, type: 3}
---- !u!1 &7128085673299922017
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7211772990742373039}
-  - component: {fileID: 6015420980420422472}
-  - component: {fileID: 8562757765573911421}
-  - component: {fileID: 701670551174484402}
-  - component: {fileID: 3059618403269904526}
-  m_Layer: 0
-  m_Name: Pickup_Trigger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7211772990742373039
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7128085673299922017}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0005609207, y: 0.010711595, z: -0.026700113}
-  m_LocalScale: {x: 0.4408865, y: 0.04686292, z: 0.53653556}
-  m_Children: []
-  m_Father: {fileID: 3700413454606114102}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &6015420980420422472
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7128085673299922017}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &8562757765573911421
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7128085673299922017}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 257
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &701670551174484402
+  pickup: 0
+--- !u!65 &8085295436943724078
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7128085673299922017}
+  m_GameObject: {fileID: 7073255469252134239}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3059618403269904526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7128085673299922017}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19e6ff01c55d3b64e95640ae0049913b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentName: 
-  player: {fileID: 0}
+  m_Size: {x: 0.4669907, y: 0.13508369, z: 0.5556934}
+  m_Center: {x: 0.011763367, y: 0.038739316, z: -0.030945549}
 --- !u!1001 &2600605631696303703
 PrefabInstance:
   m_ObjectHideFlags: 0

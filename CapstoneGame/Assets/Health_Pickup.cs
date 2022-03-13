@@ -7,29 +7,32 @@ public class Health_Pickup : MonoBehaviour
     //Global Variables
     public string parentName;
     public GameObject player;
+    public bool pickup;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        pickup = false;
         parentName = transform.root.name;
+    }
+
+    private void Awake()
+    {
+        
     }
 
     //Triggered Script Upon Entering Collider for Health Pickup
     //Check type of parent health object
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Trigger has been entered");
         //Check identity of parent health object
         if (parentName == "Health_Small")
-        {
-            player.SendMessage("ChangeHPValue", -1);
-            Destroy(this);
-        }
+            smallHeal();
         else if (parentName == "Health_Large")
-        {
-            player.SendMessage("ChangeHPValue", -5);
-            Destroy(this);
-        }
+            bigHeal();
+        else
+            Debug.Log("Unrecognized Pickup");
     }
     //Send message of appropriate health collection to health manager script
     //
@@ -40,4 +43,17 @@ public class Health_Pickup : MonoBehaviour
     {
         
     }
+
+    void smallHeal()
+    {
+        player.GetComponent<DamageKnockback>().ApplyDamage(-1);
+        Destroy(gameObject);
+    }
+
+    void bigHeal()
+    {
+        player.GetComponent<DamageKnockback>().ApplyDamage(-5);
+        Destroy(gameObject);
+    }
+
 }
