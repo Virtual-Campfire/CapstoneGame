@@ -84,6 +84,12 @@ public class DamageKnockback : MonoBehaviour
             currentHealth = 0;
         }
 
+        // Cap health at max
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+
         // Conditional update of enemy health scripts
         if (GetComponent<EnemyState>())
         {
