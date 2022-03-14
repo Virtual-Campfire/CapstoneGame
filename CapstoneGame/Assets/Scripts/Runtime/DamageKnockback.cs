@@ -8,8 +8,9 @@ public class DamageKnockback : MonoBehaviour
 {
     [Tooltip("Do not enable if death is handled by other script(s).")]
     public bool handleDeath = false;
+    public bool ignoreKnockback = false;
 
-    public float currentHealth = 1, maxHealth = 1, invulnTime = 1;
+    public float currentHealth = 1, maxHealth = 1, invulnTime = 1, deathDelay = 0;
 
     LayerMask targetLayer;
     float invulnerableUntil;
@@ -42,11 +43,15 @@ public class DamageKnockback : MonoBehaviour
         {
             SetInvulnTime();
 
-            // Clip knockback Y axis to object's axis
-            sourcePosition = new Vector3(sourcePosition.x, transform.position.y, sourcePosition.z);
+            // Knockback application is ignored if entity ignores knockback (for example, barriers like fallen logs are "enemies", but shouldn't be knocked back)
+            if (!ignoreKnockback)
+            {
+                // Clip knockback Y axis to object's axis
+                sourcePosition = new Vector3(sourcePosition.x, transform.position.y, sourcePosition.z);
 
-            // Apply knockback
-            transform.position += (transform.position - sourcePosition).normalized * knockback;
+                // Apply knockback
+                transform.position += (transform.position - sourcePosition).normalized * knockback;
+            }
 
             ChangeHPValue(damage);
         }
@@ -129,17 +134,18 @@ public class DamageKnockback : MonoBehaviour
 
     void DoBeforeDead() 
     {
-        if (PiggyToHide != null && PiggyToShow != null)
+        if (currentHealth <= 0)
         {
-            PiggyToShow.SetActive(true);
-            PiggyToHide.SetActive(false);
-        }
-        
-        if (handleDeath && currentHealth <= 0)
-        {
+            if (PiggyToHide != null && PiggyToShow != null)
+            {
+                PiggyToShow.SetActive(true);
+                PiggyToHide.SetActive(false);
+            }
 
-            Invoke("CheckIfDead", 2);
-
+            if (handleDeath)
+            {
+                Invoke("CheckIfDead", deathDelay);
+            }
         }
     }
 }
