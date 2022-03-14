@@ -46,8 +46,12 @@ public class Health : MonoBehaviour
         // While on low health
         if (health <= Mathf.Round(numOfHearths * 0.3f))
         {
-            // Pulse the first full heart in the health UI
-            hearts[health - 1].transform.localScale = Vector3.one * (1 + Mathf.Sin(Time.time * 3) * 0.25f);
+            // Catch edge cases
+            if (health > 0)
+            {
+                // Pulse the first full heart in the health UI
+                hearts[health - 1].transform.localScale = Vector3.one * (1 + Mathf.Sin(Time.time * 3) * 0.25f);
+            }
         }
     }
 }

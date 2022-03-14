@@ -10,14 +10,14 @@ public class OOBZone : MonoBehaviour
     float damage;
 
     [SerializeField]
-    bool inescapable;
+    bool inescapable, pullsPlayer;
 
 
 
 
 
     // Function for out-of-bounds damage is intended to activate for only one frame, but will loop again if character is somehow still there
-    void OnTriggerStay(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         // Check if entity inside zone has a health system
         if (other.GetComponent<DamageKnockback>())
@@ -33,7 +33,15 @@ public class OOBZone : MonoBehaviour
 
                 if (other.GetComponent<CharacterController_Player>())
                 {
-                    other.GetComponent<CharacterController_Player>().TeleportToCheckpoint();
+                    if (pullsPlayer)
+                    {
+                        // Set the player's bearing to be toward the out-of-bounds zone
+                        other.GetComponent<CharacterController_Player>().pulled = true;
+                        other.GetComponent<CharacterController_Player>().pullSource = transform.position + Vector3.up * -10;
+                    }
+
+                    // Start a return from out-of-bounds
+                    other.GetComponent<CharacterController_Player>().ReturnFromOutOfBounds();
                 }
             }
 
