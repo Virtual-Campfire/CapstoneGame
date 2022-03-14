@@ -7,12 +7,10 @@ public class Health_Pickup : MonoBehaviour
     //Global Variables
     public string parentName;
     public GameObject player;
-    public bool pickup;
 
     // Start is called before the first frame update
     void Start()
     {
-        pickup = false;
         parentName = transform.root.name;
     }
 

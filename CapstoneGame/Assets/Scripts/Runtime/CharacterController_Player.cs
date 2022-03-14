@@ -49,7 +49,7 @@ public class CharacterController_Player : MonoBehaviour
 
     // Instrument effect variables
     [SerializeField]
-    float currentResource, maxResource = 1, resourceRecoveryMult = .25f;
+    public float currentResource, maxResource = 1, resourceRecoveryMult = .25f;
     bool playingInstrument = false, exhausted = false;
     float lastSting;
 
@@ -433,7 +433,7 @@ public class CharacterController_Player : MonoBehaviour
                     lureIcon.transform.localScale = new Vector3(.8f, .8f, .8f);
 
                     // Drain resource store
-                    AddResource(-Time.fixedDeltaTime * 1.5f);
+                    AddResource(-Time.deltaTime * 1.5f);
                 }
                 else
                 {
@@ -455,7 +455,7 @@ public class CharacterController_Player : MonoBehaviour
                                 //item.gameObject.GetComponent<EnemyState>().LastLureInPut();
 
                                 // Drain resource store
-                                AddResource(-Time.fixedDeltaTime);
+                                AddResource(-Time.deltaTime);
                             }
                         }
                     }
@@ -524,7 +524,7 @@ public class CharacterController_Player : MonoBehaviour
         if (!playingInstrument || exhausted)
         {
             // Recover resource over time
-            AddResource(Time.fixedDeltaTime * resourceRecoveryMult);
+            AddResource(Time.deltaTime * resourceRecoveryMult);
         }
         #endregion
 
@@ -538,7 +538,7 @@ public class CharacterController_Player : MonoBehaviour
         anim.SetFloat("Health", health.currentHealth);
     }
 
-    void AddResource(float amount)
+    public void AddResource(float amount)
     {
         // Add value to resource variable
         currentResource += amount;
