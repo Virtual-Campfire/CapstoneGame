@@ -13,11 +13,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handleDeath: 1
+  ignoreKnockback: 1
   currentHealth: 1
   maxHealth: 1
   invulnTime: 0
   healthBar: {fileID: 0}
   showHealthBar: 0
+  PiggyToHide: {fileID: 0}
+  PiggyToShow: {fileID: 0}
 --- !u!1001 &3294127936409646090
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27,7 +30,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2618159610372812995, guid: 27e15849e66d7d94e996904c262b33db, type: 3}
       propertyPath: m_Name
-      value: WoodLog
+      value: WoodLog Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3395224732734040697, guid: 27e15849e66d7d94e996904c262b33db, type: 3}
       propertyPath: m_RootOrder
