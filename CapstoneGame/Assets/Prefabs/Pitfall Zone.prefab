@@ -113,6 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   inescapable: 1
+  pullsPlayer: 1
 --- !u!65 &2257152991374761848
 BoxCollider:
   m_ObjectHideFlags: 0

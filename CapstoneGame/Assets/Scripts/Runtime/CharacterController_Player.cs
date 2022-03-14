@@ -25,9 +25,9 @@ public class CharacterController_Player : MonoBehaviour
     LayerMask floorLayer, wallLayer;
 
     // Variables for movement control factors
-    Vector3 moveIntent, moveVector, rotVector, jumpVector;
+    public Vector3 moveIntent, moveVector, rotVector, jumpVector, nextPosition, pullSource;
     public float moveSpeed = 1, jumpPower = 2, airControl = .5f;
-    public bool isGrounded = false, isJumping = false, moveLock = false, rotLock = false;
+    public bool isGrounded = false, isJumping = false, moveLock = false, rotLock = false, pulled = false;
 
     // Health variables
     DamageKnockback health;
@@ -156,15 +156,7 @@ public class CharacterController_Player : MonoBehaviour
 
         // Return to original colour
         flashingMat.color = Color.Lerp(flashingMat.color, defaultColour, Time.deltaTime * 2);
-
-        // Once player health is depleted, return to main menu
-        if (health.currentHealth <= 0)
-        {
-            // Temporary fix to stop music duplication on level reload
-            BeatScroller.level1Music.Stop();
-
-            SceneManager.LoadScene(0);
-        }
+        
 
         // Update UI elements
         healthUI.health = (int)health.currentHealth;
@@ -227,6 +219,15 @@ public class CharacterController_Player : MonoBehaviour
         // Added conditional so ground collision is only checked when moving down
         if (Physics.Raycast(groundRay, out groundRayHit, 1f, floorLayer | wallLayer, QueryTriggerInteraction.Ignore) && moveVector.y <= 0)
         {
+            // If player's health is depleted
+            if (health.currentHealth <= 0)
+            {
+                // Only updates whether or not death animation is playing if on the ground
+                anim.SetFloat("Health", health.currentHealth);
+
+                StartCoroutine(DeathSequence());
+            }
+
             // Reset jump vector to avoid edge cases with landing velocity
             jumpVector = Vector3.zero;
 
@@ -239,8 +240,12 @@ public class CharacterController_Player : MonoBehaviour
             // Readout for angle of normal that is currently stood on
             // Debug.Log("Hit!" + ", " + groundAngle % 60 + ", " + groundAngle);
 
-            // Move character by distance of ground collision so that they are standing on top of the ground collision point
-            rb.position = new Vector3(transform.position.x, groundRayHit.point.y + 1.05f, transform.position.z);
+            // Do not snap player to ground if being pulled
+            if (!pulled)
+            {
+                // Move character by distance of ground collision so that they are standing on top of the ground collision point
+                rb.position = new Vector3(transform.position.x, groundRayHit.point.y + 1.05f, transform.position.z);
+            }
 
             // Draw red line where ground detection is being checked (collision has already happened)
             Debug.DrawRay(groundRayBase.position + Vector3.up * 0.5f, groundRay.direction, Color.red);
@@ -307,7 +312,7 @@ public class CharacterController_Player : MonoBehaviour
         Debug.DrawRay(groundRayBase.position, transform.forward, Color.blue);
 
         // Calculate position character is trying to move to for this physics update
-        Vector3 nextPosition = rb.position + moveVector * Time.fixedDeltaTime;
+        nextPosition = rb.position + moveVector * Time.fixedDeltaTime;
         #endregion
 
         #region Combat
@@ -492,6 +497,7 @@ public class CharacterController_Player : MonoBehaviour
 
             effectRadiusIndicator.SetActive(false);
         }
+        #endregion
 
         // If not interrupted, rotate to final rotation angle
         if (!rotLock)
@@ -514,10 +520,16 @@ public class CharacterController_Player : MonoBehaviour
         }
         else
         {
-            // Locked movement cancels out movement variables for this loop
             rb.velocity = Vector3.zero;
-            nextPosition = rb.position;
             moveVector = Vector3.zero;
+            nextPosition = rb.position;
+
+            // If being pulled
+            if (pulled)
+            {
+                // Move character based on pull
+                rb.position = Vector3.Lerp(rb.position, pullSource, Time.fixedDeltaTime * 2);
+            }
         }
 
         // When not playing an instrument or exhausted magic resources
@@ -526,16 +538,17 @@ public class CharacterController_Player : MonoBehaviour
             // Recover resource over time
             AddResource(Time.fixedDeltaTime * resourceRecoveryMult);
         }
-        #endregion
 
-        // Animator sends variables
-        anim.SetFloat("Speed", moveVector.magnitude);
-        // Rinvy+++---------------------------------------------------
-        anim.SetBool("IsGrounded", isGrounded);
-        anim.SetBool("IsMeleeing", isMeleeing);
-        anim.SetInteger("AttackIndex", meleeIndex);
-        anim.SetBool("IsPlayingIns", playingInstrument);
-        anim.SetFloat("Health", health.currentHealth);
+        // Animator sends variables (do not update variables if playing death animation)
+        if (health.currentHealth > 0)
+        {
+            anim.SetFloat("Speed", moveVector.magnitude);
+            // Rinvy+++---------------------------------------------------
+            anim.SetBool("IsGrounded", isGrounded);
+            anim.SetBool("IsMeleeing", isMeleeing);
+            anim.SetInteger("AttackIndex", meleeIndex);
+            anim.SetBool("IsPlayingIns", playingInstrument);
+        }
     }
 
     void AddResource(float amount)
@@ -658,9 +671,53 @@ public class CharacterController_Player : MonoBehaviour
     }
 
     // Used to return player to a safe location after going out-of-bounds or into a damage source with behaviour requiring a position reset
-    public void TeleportToCheckpoint()
+    public void ReturnFromOutOfBounds()
     {
-        rb.position = lastCheckpoint;
+        // Variables pullSource and pulled are both changed externally by the pitfall at the moment
+        moveLock = true;
+        rotLock = true;
+        StartCoroutine(TeleportToCheckpoint());
+    }
+
+    IEnumerator TeleportToCheckpoint()
+    {
+        // Wait before moving player back to a checkpoint
+        yield return new WaitForSeconds(1);
+
+        // Make player invulnerable for a brief period
+        health.invulnerableUntil = Time.fixedTime + 3;
+
+        // Teleport just above checkpoint
+        rb.position = lastCheckpoint + Vector3.up * 3;
+
+        // Set character to float down after teleporting to checkpoint
+        pullSource = lastCheckpoint;
+
+        // Wait, then unlock movement if alive
+        yield return new WaitForSeconds(2);
+        if (health.currentHealth > 0)
+        {
+            moveLock = false;
+            rotLock = false;
+        }
+
+        // Release player from pull
+        pulled = false;
+    }
+
+    IEnumerator DeathSequence()
+    {
+        moveLock = true;
+        rotLock = true;
+
+        // Temporary fix to stop music duplication on level reload
+        BeatScroller.level1Music.Stop();
+        
+        // Fade in game over UI
+
+        yield return new WaitForSeconds(3);
+
+        SceneManager.LoadScene(0);
     }
 
     void OnDrawGizmos()

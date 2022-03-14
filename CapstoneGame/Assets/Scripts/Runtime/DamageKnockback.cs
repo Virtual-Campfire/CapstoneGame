@@ -13,7 +13,7 @@ public class DamageKnockback : MonoBehaviour
     public float currentHealth = 1, maxHealth = 1, invulnTime = 1, deathDelay = 0;
 
     LayerMask targetLayer;
-    float invulnerableUntil;
+    public float invulnerableUntil;
 
     [SerializeField]
     GameObject healthBar;
