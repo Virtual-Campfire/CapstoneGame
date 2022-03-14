@@ -31,6 +31,12 @@ public class CharacterController_Player : MonoBehaviour
 
     // Health variables
     DamageKnockback health;
+    float prevHealth;
+    
+    Color defaultColour;
+    [SerializeField]
+    GameObject flashingMesh, flashingMesh2;
+    Material flashingMat;
 
     // Variables for melee attack and tools (Note: melee attack works on the "hitbox" physics layer)
     public BoxCollider meleeHurtbox;
@@ -116,6 +122,15 @@ public class CharacterController_Player : MonoBehaviour
 
         // Recount inventory upon waking up
         AddToInventory(-1);
+
+        // Variables for flashing when damaged or healed
+        flashingMat = new Material(flashingMesh.GetComponent<SkinnedMeshRenderer>().material);
+        defaultColour = flashingMat.color;
+        flashingMesh.GetComponent<SkinnedMeshRenderer>().material = flashingMat;
+        flashingMesh2.GetComponent<SkinnedMeshRenderer>().material = flashingMat;
+
+        // Reset health change check
+        prevHealth = health.currentHealth;
     }
 
     // Update is called once per frame
@@ -126,6 +141,21 @@ public class CharacterController_Player : MonoBehaviour
         {
             SceneManager.LoadScene(0);
         }
+
+        // Upon taking damage
+        if (prevHealth > health.currentHealth)
+        {
+            // Colour of material flashes red
+            flashingMat.color = Color.red;
+        }
+        else if (prevHealth < health.currentHealth)
+        {
+            // Colour of material flashes green
+            flashingMat.color = Color.green;
+        }
+
+        // Return to original colour
+        flashingMat.color = Color.Lerp(flashingMat.color, defaultColour, Time.deltaTime * 2);
 
         // Once player health is depleted, return to main menu
         if (health.currentHealth <= 0)
@@ -175,6 +205,9 @@ public class CharacterController_Player : MonoBehaviour
         {
             playingInstrument = false;
         }
+
+        // Save current health
+        prevHealth = health.currentHealth;
     }
 
     // Rinvy+++---------------------------------------------------
