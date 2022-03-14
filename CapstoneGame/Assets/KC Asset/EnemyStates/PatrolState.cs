@@ -36,7 +36,12 @@ public class PatrolState : FSMState
     // Update is called once per frame
     void Update()
     {
-
+        // If enemy is sleeping, stop patrolling
+        if (GetComponentInParent<LureState>().VisionRange == 0)
+        {
+            // Stop in tracks
+            agent.SetDestination(agent.transform.position);
+        }
     }
 
 
@@ -94,11 +99,13 @@ public class PatrolState : FSMState
     void PatrolLoop()
     {
         if (points.Length == 0) { Debug.Log("Patrol check 'bool==True'  but no point set!!"); return; }
-           
         
-
-        agent.destination = points[destPoint].position;
-        destPoint = (destPoint + 1) % points.Length;
+        // If not asleep, do normal patrol loop
+        if (GetComponentInParent<LureState>().VisionRange != 0)
+        {
+            agent.destination = points[destPoint].position;
+            destPoint = (destPoint + 1) % points.Length;
+        }
 
 
     }

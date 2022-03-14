@@ -315,6 +315,8 @@ MonoBehaviour:
   isJumping: 0
   moveLock: 0
   rotLock: 0
+  flashingMesh: {fileID: 1463894464274630468}
+  flashingMesh2: {fileID: 6166151734232223170}
   meleeHurtbox: {fileID: 1206552032039454996}
   meleeVisualRoot: {fileID: 3965734059516288854}
   meleeDuration: 0.25
@@ -361,11 +363,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handleDeath: 0
-  currentHealth: 10
+  currentHealth: 3
   maxHealth: 10
   invulnTime: 1
   healthBar: {fileID: 878076589006137425}
   showHealthBar: 0
+  PiggyToHide: {fileID: 0}
+  PiggyToShow: {fileID: 0}
 --- !u!114 &916768440695829441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -687,5 +691,15 @@ GameObject:
 --- !u!4 &1747132633256893862 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 131630a3637578b4480a5425e059d342, type: 3}
+  m_PrefabInstance: {fileID: 2284933196929333837}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1463894464274630468 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 857226409422650633, guid: 131630a3637578b4480a5425e059d342, type: 3}
+  m_PrefabInstance: {fileID: 2284933196929333837}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6166151734232223170 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5343280129737652111, guid: 131630a3637578b4480a5425e059d342, type: 3}
   m_PrefabInstance: {fileID: 2284933196929333837}
   m_PrefabAsset: {fileID: 0}

@@ -35,7 +35,7 @@ public class DamageKnockback : MonoBehaviour
         }
     }
 
-    // This is meant for applying actual damage/knockback effects
+    // This is meant for applying actual damage/knockback effects (healing effects should not be done with this overload)
     public void ApplyDamage(Vector3 sourcePosition, float damage, float knockback)
     {
         if (Time.fixedTime > invulnerableUntil)
@@ -54,10 +54,15 @@ public class DamageKnockback : MonoBehaviour
         DoBeforeDead();
     }
 
-    // This overload of the function only applies damage; no knockback is applied
+    // This overload of the function only applies damage; no knockback is applied (healing calculations can be done here, as there are supporting conditionals)
     public void ApplyDamage(float damage)
     {
-        if (Time.fixedTime > invulnerableUntil)
+        // When healing, invulnerability time isn't considered
+        if (damage < 0)
+        {
+            ChangeHPValue(damage);
+        }
+        else if (Time.fixedTime > invulnerableUntil)
         {
             SetInvulnTime();
 
@@ -82,6 +87,12 @@ public class DamageKnockback : MonoBehaviour
         if (currentHealth < 0)
         {
             currentHealth = 0;
+        }
+
+        // Cap health at max
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
         }
 
         // Conditional update of enemy health scripts
@@ -113,20 +124,22 @@ public class DamageKnockback : MonoBehaviour
     void CheckIfDead()
     {
         // If this script overrides death check
-            
-            Destroy(gameObject);
-
+        Destroy(gameObject);
     }
 
-    void DoBeforeDead() {
-        PiggyToShow.SetActive(true);
-        PiggyToHide.SetActive(false);
-    if (handleDeath && currentHealth <= 0)
+    void DoBeforeDead() 
     {
+        if (PiggyToHide != null && PiggyToShow != null)
+        {
+            PiggyToShow.SetActive(true);
+            PiggyToHide.SetActive(false);
+        }
+        
+        if (handleDeath && currentHealth <= 0)
+        {
 
-        Invoke("CheckIfDead", 2);
+            Invoke("CheckIfDead", 2);
 
+        }
     }
-    }
-
 }

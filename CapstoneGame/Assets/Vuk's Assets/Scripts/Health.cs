@@ -38,6 +38,16 @@ public class Health : MonoBehaviour
             {
                 hearts[i].enabled = false;
             }
+
+            // Returns heart size to default (used when changing which heart is pulsing)
+            hearts[i].transform.localScale = Vector3.one;
+        }
+
+        // While on low health
+        if (health <= Mathf.Round(numOfHearths * 0.3f))
+        {
+            // Pulse the first full heart in the health UI
+            hearts[health - 1].transform.localScale = Vector3.one * (1 + Mathf.Sin(Time.time * 3) * 0.25f);
         }
     }
 }

@@ -6,7 +6,7 @@ public class LureState : FSMState
 {
     GameObject Player;
 
-    public float LureRange;
+    public float LureRange, VisionRange, MaxVisionRange;
 
     UnityEngine.AI.NavMeshAgent agent;
 
@@ -34,6 +34,10 @@ public class LureState : FSMState
         Player = GameObject.Find("Player");
 
         UpdateRange();
+
+        // Get default view range
+        MaxVisionRange = GetComponentInParent<FieldOfView>().viewRadius;
+        VisionRange = MaxVisionRange;
     }
 
     void FixedUpdate()
@@ -52,7 +56,7 @@ public class LureState : FSMState
             if (LureRange > dis && Player.GetComponent<PlayerController>().PlayLure == true)
             {
                 print("Lure method A received.");
-                agent.SetDestination(Player.transform.position);
+                //agent.SetDestination(Player.transform.position);
 
             }
         }
@@ -62,13 +66,45 @@ public class LureState : FSMState
             if (LureRange > dis && Player.GetComponent<CharacterController_Player>().playingLure == true)
             {
                 print("Lure method B received.");
-                agent.SetDestination(Player.transform.position);
+                //agent.SetDestination(Player.transform.position);
 
+                // Reduce vision cone radius when instrument is playing and not alerted to the player
+                VisionRange -= Time.deltaTime * MaxVisionRange;
+
+                // Cap vision radius at 0 units
+                if (VisionRange <= 0)
+                {
+                    VisionRange = 0;
+
+                    // If any animations for sleeping are available, trigger them here
+                }
             }
         }
-        else { agent.SetDestination(transform.position); }
+        else
+        {
+            agent.SetDestination(transform.position);
 
+            // Regenerate vision radius
+            VisionRange = MaxVisionRange;
 
+            // Cap vision radius at default
+            if (VisionRange > MaxVisionRange)
+            {
+                GetComponentInParent<FieldOfView>().viewRadius = VisionRange;
+            }
+        }
+        
+        // Update vision cone radius
+        GetComponentInParent<FieldOfView>().viewRadius = VisionRange;
+    }
+
+    public override void DoBeforeLeaving()
+    {
+        // Return vision radius to default (for example, if woken up)
+        VisionRange = MaxVisionRange;
+
+        // Update vision cone radius
+        GetComponentInParent<FieldOfView>().viewRadius = VisionRange;
     }
 
 
@@ -126,8 +162,11 @@ public class LureState : FSMState
 
 
     void Return() {
-
-        manager.Fsm.PerformTransition(Transition.IntoIdeal);
+        // Only exit out to idle state if not asleep
+        if (VisionRange != 0)
+        {
+            manager.Fsm.PerformTransition(Transition.IntoIdeal);
+        }
     }
 
    
