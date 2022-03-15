@@ -62,8 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentName: Health_Small
-  player: {fileID: 1206552032706234996, guid: 74c3ca48546edfd448252014d27d58af, type: 3}
-  pickup: 0
+  player: {fileID: 0}
 --- !u!65 &8085295436943724078
 BoxCollider:
   m_ObjectHideFlags: 0

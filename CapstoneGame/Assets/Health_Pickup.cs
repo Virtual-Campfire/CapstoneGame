@@ -16,7 +16,7 @@ public class Health_Pickup : MonoBehaviour
 
     private void Awake()
     {
-        
+        player = GameObject.Find("Player");
     }
 
     //Triggered Script Upon Entering Collider for Health Pickup

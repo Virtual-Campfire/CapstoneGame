@@ -17,8 +17,11 @@ public class DustPlay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        Isturning = GetComponentInParent<StatueCheckTurn>().IsTurning;
+        // Extra check for component before accessing it to avoid null references
+        if (GetComponentInParent<StatueCheckTurn>())
+        {
+            Isturning = GetComponentInParent<StatueCheckTurn>().IsTurning;
+        }
 
         if (Isturning == true && IsPlaying == false)
         {
