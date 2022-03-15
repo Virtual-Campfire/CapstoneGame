@@ -64,6 +64,8 @@ public class CharacterController_Player : MonoBehaviour
     GameObject rhythmMechanics, rhythmUI, magicBar;
     [SerializeField]
     Image meleeIcon, lureIcon;
+    [SerializeField]
+    Text gameoverText;
 
     Color meleeIconColor, lureIconColor;
 
@@ -165,10 +167,10 @@ public class CharacterController_Player : MonoBehaviour
         // Check player inputs
         moveIntent = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
-        if (Input.GetButtonDown("Jump"))
-        {
-            isJumping = true;
-        }
+        //if (Input.GetButtonDown("Jump"))
+        //{
+        //    isJumping = true;
+        //}
 
         //// Instrument inventory system
         //if (Input.GetButtonDown("Equip Left"))
@@ -685,7 +687,7 @@ public class CharacterController_Player : MonoBehaviour
         yield return new WaitForSeconds(1);
 
         // Make player invulnerable for a brief period
-        health.invulnerableUntil = Time.fixedTime + 3;
+        health.invulnerableUntil = Time.fixedTime + 2;
 
         // Teleport just above checkpoint
         rb.position = lastCheckpoint + Vector3.up * 3;
@@ -712,8 +714,9 @@ public class CharacterController_Player : MonoBehaviour
 
         // Temporary fix to stop music duplication on level reload
         BeatScroller.level1Music.Stop();
-        
-        // Fade in game over UI
+
+        // Add in game over UI
+        gameoverText.enabled = true;
 
         yield return new WaitForSeconds(3);
 

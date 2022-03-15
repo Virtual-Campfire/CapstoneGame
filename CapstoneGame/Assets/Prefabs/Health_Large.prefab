@@ -72,9 +72,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19e6ff01c55d3b64e95640ae0049913b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentName: 
-  player: {fileID: 1206552032706234996, guid: 74c3ca48546edfd448252014d27d58af, type: 3}
-  pickup: 0
+  parentName: Health_Large
+  player: {fileID: 0}
 --- !u!1001 &1004037149376793412
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -308,6 +308,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 543230403425309533}
   groundRayBase: {fileID: 1206552032250544389}
+  moveIntent: {x: 0, y: 0, z: 0}
+  moveVector: {x: 0, y: 0, z: 0}
+  rotVector: {x: 0, y: 0, z: 0}
+  jumpVector: {x: 0, y: 0, z: 0}
+  nextPosition: {x: 0, y: 0, z: 0}
+  pullSource: {x: 0, y: 0, z: 0}
   moveSpeed: 7.5
   jumpPower: 4
   airControl: 0.5
@@ -315,6 +321,7 @@ MonoBehaviour:
   isJumping: 0
   moveLock: 0
   rotLock: 0
+  pulled: 0
   flashingMesh: {fileID: 1463894464274630468}
   flashingMesh2: {fileID: 6166151734232223170}
   meleeHurtbox: {fileID: 1206552032039454996}
@@ -329,8 +336,8 @@ MonoBehaviour:
   enhancedDamage: 6
   enhancedKnockback: 5
   specialMelee: 0
-  currentResource: 5
-  maxResource: 5
+  currentResource: 20
+  maxResource: 20
   resourceRecoveryMult: 1
   noInstrumentWarning: {fileID: 0}
   healthUI: {fileID: 0}
@@ -340,6 +347,7 @@ MonoBehaviour:
   magicBar: {fileID: 0}
   meleeIcon: {fileID: 0}
   lureIcon: {fileID: 0}
+  gameoverText: {fileID: 0}
   AOEEffectRadius: 10
   playingLure: 0
   instrumentHeld: 0
@@ -364,10 +372,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handleDeath: 0
   ignoreKnockback: 0
-  currentHealth: 4
+  currentHealth: 10
   maxHealth: 10
   invulnTime: 1
   deathDelay: 0
+  invulnerableUntil: 0
   healthBar: {fileID: 878076589006137425}
   showHealthBar: 0
   PiggyToHide: {fileID: 0}

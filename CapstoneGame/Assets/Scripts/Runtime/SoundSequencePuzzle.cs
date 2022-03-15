@@ -115,8 +115,9 @@ public class SoundSequencePuzzle : MonoBehaviour
         // Feedback that player's answer is incorrect
         foreach (GameObject item in pieces)
         {
-            ParticleSystem.MainModule temp = item.GetComponent<SoundStone>().particles.main;
-            temp.startColor = Color.red;
+            ParticleSystem temp = item.GetComponentInChildren<ParticleSystem>();
+            ParticleSystem.MainModule temp2 = temp.main;
+            temp2.startColor = Color.red;
             item.GetComponent<SoundStone>().Chirp();
         }
 
@@ -135,8 +136,9 @@ public class SoundSequencePuzzle : MonoBehaviour
             // Feedback that player's answer is correct
             foreach (GameObject item in pieces)
             {
-                ParticleSystem.MainModule temp = item.GetComponent<SoundStone>().particles.main;
-                temp.startColor = Color.green;
+                ParticleSystem temp = item.GetComponentInChildren<ParticleSystem>();
+                ParticleSystem.MainModule temp2 = temp.main;
+                temp2.startColor = Color.green;
                 item.GetComponent<SoundStone>().Chirp();
             }
 
@@ -185,7 +187,7 @@ public class SoundSequencePuzzle : MonoBehaviour
             // Call each stone to make a sound in sequence
             for (int i = 0; i < pieces.Length; i++)
             {
-                ParticleSystem.MainModule temp = pieces[i].GetComponent<SoundStone>().particles.main;
+                ParticleSystem.MainModule temp = pieces[i].GetComponentInChildren<SoundStone>().particles.main;
                 temp.startColor = Color.white;
                 pieces[i].GetComponent<SoundStone>().Chirp();
 
