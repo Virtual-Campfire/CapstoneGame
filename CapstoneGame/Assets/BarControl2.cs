@@ -17,9 +17,14 @@ public class BarControl2 : MonoBehaviour
     {
         transform.position += new Vector3(0f, beatTempo * Time.deltaTime, 0f);
     }
+
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
+        if (other.gameObject.tag == "Destroy")
+        {
+            Debug.Log("Destroyed");
+            Destroy(gameObject);
+        }
     }
 }
 
