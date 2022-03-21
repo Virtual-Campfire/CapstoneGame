@@ -67,7 +67,7 @@ public class TriggerObject : MonoBehaviour
         }
     }
 
-    /*public void OnTriggerExit(Collider other)
+    public void OnTriggerExit(Collider other)
     {
         if (other.tag == "Activator1")
         {
@@ -78,5 +78,5 @@ public class TriggerObject : MonoBehaviour
         {
             canBepressed2 = false;
         }
-    }*/
+    }
 }
