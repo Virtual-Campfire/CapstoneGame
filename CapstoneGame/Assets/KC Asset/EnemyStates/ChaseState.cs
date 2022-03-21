@@ -14,7 +14,7 @@ public class ChaseState : FSMState
     float dist;
 
     //link attack range with the setting range from here
-    public float AttackRange;
+    public float AttackRange, FireBallRange;
 
     void Awake()
     {
@@ -26,6 +26,9 @@ public class ChaseState : FSMState
         Player = GameObject.Find("Player");
 
         agent = transform.parent.gameObject.GetComponent<NavMeshAgent>();
+
+        AttackRange = GetComponent<attackState>().AttackRange;
+        FireBallRange = GetComponent<attackState>().FireBallRange;
 
         //anim = GetComponentInChildren<Animator>();
     }
@@ -73,7 +76,7 @@ public class ChaseState : FSMState
             manager.Fsm.PerformTransition(Transition.IntoIdeal);
         }
 
-        if (dist <= AttackRange) {
+        if (dist <= AttackRange || (GetComponent<attackState>().EnemyDevilHead && dist <= FireBallRange) ) {
             manager.Fsm.PerformTransition(Transition.IntoAttack);
         }
     }

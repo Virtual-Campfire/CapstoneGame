@@ -583,9 +583,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handleDeath: 0
+  ignoreKnockback: 0
   currentHealth: 10
   maxHealth: 10
   invulnTime: 1
+  deathDelay: 0
+  invulnerableUntil: 0
   healthBar: {fileID: 6364871000628140784}
   showHealthBar: 1
   PiggyToHide: {fileID: 2743673748489573474}
@@ -686,6 +689,7 @@ MonoBehaviour:
   agent: {fileID: 5185967567788728439}
   Player: {fileID: 0}
   AttackRange: 3
+  FireBallRange: 0
 --- !u!114 &5185967568021880454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -703,7 +707,7 @@ MonoBehaviour:
   EnemyDevilHead: 0
   FireBallRange: 0
   SkillCoolDown: 0
-  MeleeAttack: 0
+  MeleeAttack: 2
   SkillScriptFrom: {fileID: 0}
 --- !u!114 &5185967568021880453
 MonoBehaviour:
@@ -936,7 +940,6 @@ GameObject:
   - component: {fileID: 1160116403296274179}
   - component: {fileID: 1747331690844469895}
   - component: {fileID: 2101238476056934907}
-  - component: {fileID: 4593441536224689871}
   - component: {fileID: 2451253844888183224}
   m_Layer: 0
   m_Name: HP Bar
@@ -1008,19 +1011,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4593441536224689871
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6364871000628140784}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2451253844888183224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1353,7 +1343,7 @@ BoxCollider:
   m_GameObject: {fileID: 8462630284051674709}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}

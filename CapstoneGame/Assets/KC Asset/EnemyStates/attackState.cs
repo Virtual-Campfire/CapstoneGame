@@ -106,45 +106,30 @@ public class attackState : FSMState
 
 
             if (dist <= FireBallRange && SkillUsed==false) {
-                //active skill
-                Debug.Log("Fireeeeee Ballllll~");
-                SkillScriptFrom.GetComponent<Projectile>().Shoot();
-                SkillScriptFrom.GetComponent<Projectile>().rdyShoot = false;
+                // Update animator parameter
+                anim.SetTrigger("RangedAttack");
 
-
-                //skill used
-                SkillUsed = true;
-
+                // Delayed firing of fireball to reflect animation's charge time
+                StartCoroutine(DelayedFireball());
             }
-
-
-            //MeleeAttack out range
-            if (SkillUsed && dist > MeleeAttack)
-            {
-
-                agent.SetDestination(Player.transform.position);
-                
-
-            }
-            else if (dist <= MeleeAttack) {
-                
-                // Damage nearby player character
-                Player.GetComponent<DamageKnockback>().ApplyDamage(transform.position, 1, 1);
-            }
-
-
-            
         }
 
+        //MeleeAttack out range
+        if ( (!EnemyDevilHead || SkillUsed) && dist > MeleeAttack)
+        {
 
-        // Immediately below is code for the melee check (currently, this occurs with each loop; the only reason this doesn't instantly destroy the player is because of invulnerability time)
+                agent.SetDestination(Player.transform.position);
+        }
+        else if (dist <= MeleeAttack) {
 
-        // Damage nearby player character
-        Player.GetComponent<DamageKnockback>().ApplyDamage(transform.position, 1, 1);
+            StartCoroutine(DelayedMeleeAttack());
 
-        // Update animator parameter
-        anim.SetTrigger("Attacking");
-
+            // Update animator parameter
+            anim.SetTrigger("Attacking");
+        }
+            
+        
+        
 
         //skill timer
         if (SkillUsed)
@@ -164,5 +149,38 @@ public class attackState : FSMState
         SkillCoolDown = Timer;
         SkillUsed = false;
     
+    }
+
+    // In case coroutines are still running when destroyed
+    void OnDestroy()
+    {
+        StopCoroutine(DelayedFireball());
+        StopCoroutine(DelayedMeleeAttack());
+    }
+
+    IEnumerator DelayedFireball()
+    {
+        yield return new WaitForSeconds(3f);
+
+        //active skill
+        Debug.Log("Fireeeeee Ballllll~");
+        SkillScriptFrom.GetComponent<Projectile>().Shoot();
+        SkillScriptFrom.GetComponent<Projectile>().rdyShoot = false;
+
+
+        //skill used
+        SkillUsed = true;
+    }
+
+    IEnumerator DelayedMeleeAttack()
+    {
+        yield return new WaitForSeconds(0.25f);
+
+        // If player is still within melee range
+        if (dist <= MeleeAttack)
+        {
+            // Damage nearby player character
+            Player.GetComponent<DamageKnockback>().ApplyDamage(transform.position, 1, 1);
+        }
     }
 }
