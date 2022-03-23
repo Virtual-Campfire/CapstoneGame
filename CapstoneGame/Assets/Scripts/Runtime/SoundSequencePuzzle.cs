@@ -10,12 +10,13 @@ using FMODUnity;
 public class SoundSequencePuzzle : MonoBehaviour
 {
     public DoorTurning[] Gates;
-
-
+    
     [SerializeField]
     GameObject[] disappearingParts;
     [SerializeField]
     GameObject[] pieces;
+    [SerializeField]
+    bool skipPuzzle;
     [SerializeField]
     int patternCompletion = 0;
     [SerializeField]
@@ -51,12 +52,20 @@ public class SoundSequencePuzzle : MonoBehaviour
                 constructed = false;
             }
         }
-
+        
         // Start puzzle hinting loop if all stone bases have their statues
         if (constructed)
         {
-            timeOfLastChirp = Time.time;
-            StartCoroutine("Step");
+            // Skip puzzle if variable has been set; start puzzle otherwise
+            if (skipPuzzle)
+            {
+                RightAnswer();
+            }
+            else
+            {
+                timeOfLastChirp = Time.time;
+                StartCoroutine("Step");
+            }
         }
     }
 
@@ -158,26 +167,6 @@ public class SoundSequencePuzzle : MonoBehaviour
             complete = true;
         }
     }
-
-    //// When player enters puzzle area
-    //void OnTriggerEnter(Collider other)
-    //{
-    //    // If object entering is the player
-    //    if (other.GetComponent<CharacterController_Player>())
-    //    {
-    //        // Fade music in later versions
-    //    }
-    //}
-
-    //// When player exits puzzle area
-    //void OnTriggerExit(Collider other)
-    //{
-    //    // If object exiting is the player
-    //    if (other.GetComponent<CharacterController_Player>())
-    //    {
-    //        // Fade music in later versions
-    //    }
-    //}
 
     // Controls the sequence hinting
     IEnumerator Step()
