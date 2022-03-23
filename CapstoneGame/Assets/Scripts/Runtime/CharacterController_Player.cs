@@ -697,11 +697,9 @@ public class CharacterController_Player : MonoBehaviour
 
         // Wait, then unlock movement if alive
         yield return new WaitForSeconds(2);
-        if (health.currentHealth > 0)
-        {
-            moveLock = false;
-            rotLock = false;
-        }
+        
+        moveLock = false;
+        rotLock = false;
 
         // Release player from pull
         pulled = false;
