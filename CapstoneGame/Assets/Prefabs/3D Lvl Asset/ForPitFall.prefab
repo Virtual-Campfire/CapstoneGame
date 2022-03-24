@@ -51,7 +51,7 @@ MonoBehaviour:
   Me: {fileID: 0}
   Speed: 7
   RangeAdjust: 28
-  HightAdjust: 3
+  HightAdjust: 3.75
 --- !u!1 &1248133303360929551
 GameObject:
   m_ObjectHideFlags: 0
