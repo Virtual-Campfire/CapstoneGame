@@ -38,6 +38,10 @@ public class CharacterController_Player : MonoBehaviour
     GameObject flashingMesh, flashingMesh2;
     Material flashingMat;
 
+    // Respawn effect
+    [SerializeField]
+    ParticleSystem respawnParticles;
+
     // Variables for melee attack and tools (Note: melee attack works on the "hitbox" physics layer)
     public BoxCollider meleeHurtbox;
     public GameObject meleeVisualRoot;
@@ -694,6 +698,9 @@ public class CharacterController_Player : MonoBehaviour
 
         // Set character to float down after teleporting to checkpoint
         pullSource = lastCheckpoint;
+
+        // Play respawn particle effects
+        respawnParticles.Play();
 
         // Wait, then unlock movement if alive
         yield return new WaitForSeconds(2);
