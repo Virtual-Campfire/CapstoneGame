@@ -53,7 +53,7 @@ public class CharacterController_Player : MonoBehaviour
 
     // Instrument effect variables
     [SerializeField]
-    public float currentResource, maxResource = 1, resourceRecoveryMult = .25f;
+    public float currentResource, maxResource = 1, resourceRecoveryMult = .25f, breakExhaustAtPercent = 100;
     bool playingInstrument = false, exhausted = false;
     float lastSting;
 
@@ -355,10 +355,14 @@ public class CharacterController_Player : MonoBehaviour
         // If previous melee attack has finished
         if (Time.fixedTime > meleeStartTime + meleeDuration + meleeCooldown)
         {
-            // Lighten melee icon
-            meleeIcon.color = meleeIconColor;
-            // Reset icon size to its default
-            meleeIcon.transform.localScale = new Vector3(1f, 1f, 1f);
+            // If holding an instrument
+            if (instrumentsCollected > 0)
+            {
+                // Lighten melee icon
+                meleeIcon.color = meleeIconColor;
+                // Reset icon size to its default
+                meleeIcon.transform.localScale = new Vector3(1f, 1f, 1f);
+            }
 
             // If trying to melee
             if (isMeleeing)
@@ -411,8 +415,8 @@ public class CharacterController_Player : MonoBehaviour
             meleeHurtbox.gameObject.SetActive(false);
         }
         
-        // If magic bar has refilled after exhaustion, allow use of magic once again
-        if (currentResource == maxResource)
+        // If magic bar has refilled to a specific pecentage after exhaustion, allow use of magic once again
+        if (currentResource >= maxResource * (breakExhaustAtPercent / 100))
         {
             exhausted = false;
         }
@@ -495,10 +499,14 @@ public class CharacterController_Player : MonoBehaviour
             // If not exhausted, set icon colour to default
             if (!exhausted)
             {
-                // Lighten lure icon
-                lureIcon.color = lureIconColor;
-                // Reset icon size to its default
-                lureIcon.transform.localScale = new Vector3(1f, 1f, 1f);
+                // If holding an instrument
+                if (instrumentsCollected > 0)
+                {
+                    // Lighten lure icon
+                    lureIcon.color = lureIconColor;
+                    // Reset icon size to its default
+                    lureIcon.transform.localScale = new Vector3(1f, 1f, 1f);
+                }
             }
 
             effectRadiusIndicator.SetActive(false);
@@ -627,7 +635,9 @@ public class CharacterController_Player : MonoBehaviour
         // If not carrying any instruments, hide rhythm mechanics and show unequipped warning message on HUD
         if (instrumentsCollected == 0)
         {
-            noInstrumentWarning.SetActive(true);
+            //noInstrumentWarning.SetActive(true);
+            meleeIcon.color = new Color(.1f, .1f, .1f);
+            lureIcon.color = new Color(.1f, .1f, .1f);
 
             // Hide rhythm mechanics
             MeshRenderer[] notes1 = rhythmMechanics.GetComponentsInChildren<MeshRenderer>();
@@ -652,7 +662,7 @@ public class CharacterController_Player : MonoBehaviour
         // If carrying instruments, show rhythm mechanics and hide unequipped warning message on HUD
         else
         {
-            noInstrumentWarning.SetActive(false);
+            //noInstrumentWarning.SetActive(false);
 
             // Show rhythm mechanics
             MeshRenderer[] notes1 = rhythmMechanics.GetComponentsInChildren<MeshRenderer>();

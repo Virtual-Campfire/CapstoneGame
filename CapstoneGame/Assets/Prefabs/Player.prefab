@@ -327,6 +327,7 @@ MonoBehaviour:
   currentResource: 20
   maxResource: 20
   resourceRecoveryMult: 1
+  breakExhaustAtPercent: 25
   noInstrumentWarning: {fileID: 0}
   healthUI: {fileID: 0}
   magicUI: {fileID: 0}
