@@ -32,7 +32,7 @@ public class TriggerObject : MonoBehaviour
             if (canBepressed1)
             {
                 bc = GameObject.Find("ButtonsFire1").GetComponent<BeatController>();
-                //bc.PlayerSpecialBehavior1();
+                bc.PlayerSpecialBehavior1();
             }
         }
 
@@ -41,7 +41,7 @@ public class TriggerObject : MonoBehaviour
             if (canBepressed2)
             {
                 bc = GameObject.Find("ButtonsFire2").GetComponent<BeatController>();
-                //bc.PlayerSpecialBehavior2();
+                bc.PlayerSpecialBehavior2();
             }
         }
     }

@@ -290,7 +290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyToPress: 113
   specialParticles: {fileID: 198203777143593298, guid: 53ebac442b16db64f9177d0c749cbb06, type: 3}
-  Player: {fileID: 0}
+  Player: {fileID: 1206552032706234996, guid: 74c3ca48546edfd448252014d27d58af, type: 3}
   controller: {fileID: 0}
   fmodEvent: event:/BGMs/level1Combat
   hitValue: 0
@@ -459,7 +459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyToPress: 101
   specialParticles: {fileID: 198203777143593298, guid: 53ebac442b16db64f9177d0c749cbb06, type: 3}
-  Player: {fileID: 0}
+  Player: {fileID: 1206552032706234996, guid: 74c3ca48546edfd448252014d27d58af, type: 3}
   controller: {fileID: 0}
   fmodEvent: event:/BGMs/level1Combat
   hitValue: 0
@@ -894,7 +894,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52385ae519b67d741af21cfb5f43df28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTime: 1
+  targetTime: 10
   hasStarted: 0
   theBars: {fileID: 5278558776148540678, guid: 7a18cfabf99e2714ca73aa420545270a, type: 3}
   spawnerPosition: {fileID: 6868548619470682760}
@@ -1006,7 +1006,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52385ae519b67d741af21cfb5f43df28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTime: 1
+  targetTime: 10
   hasStarted: 0
   theBars: {fileID: 5017963040794768419, guid: 53106f95ac26b3d4b9c6bcfc17374bf4, type: 3}
   spawnerPosition: {fileID: 6868548621248131514}
