@@ -894,7 +894,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52385ae519b67d741af21cfb5f43df28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTime: 1
+  targetTime: 10
   hasStarted: 0
   theBars: {fileID: 5278558776148540678, guid: 7a18cfabf99e2714ca73aa420545270a, type: 3}
   spawnerPosition: {fileID: 6868548619470682760}
@@ -1006,7 +1006,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52385ae519b67d741af21cfb5f43df28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTime: 1
+  targetTime: 10
   hasStarted: 0
   theBars: {fileID: 5017963040794768419, guid: 53106f95ac26b3d4b9c6bcfc17374bf4, type: 3}
   spawnerPosition: {fileID: 6868548621248131514}
