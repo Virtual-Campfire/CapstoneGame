@@ -20,7 +20,7 @@ public class SoundSequencePuzzle : MonoBehaviour
     [SerializeField]
     int patternCompletion = 0;
     [SerializeField]
-    bool constructed, complete;
+    public bool constructed, complete;
     [SerializeField]
     float activationDistance = 10;
 
@@ -72,8 +72,8 @@ public class SoundSequencePuzzle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // If puzzle is incomplete and player is nearby AND statues are on the bases of all sound stones
-        if (!complete && player.playingLure)
+        // Instrument activation option (melee can activate the function from another script)
+        if (player.playingLure)
         {
             ActivateStone();
         }
@@ -81,7 +81,8 @@ public class SoundSequencePuzzle : MonoBehaviour
 
     public void ActivateStone()
     {
-        if (Time.time > timeSinceInput + delayBetweenInputs && Vector3.Distance(player.gameObject.transform.position, transform.position) <= activationDistance && constructed)
+        // If puzzle is incomplete and player is nearby AND statues are on the bases of all sound stones
+        if (!complete && Time.time > timeSinceInput + delayBetweenInputs && Vector3.Distance(player.gameObject.transform.position, transform.position) <= activationDistance && constructed)
         {
             // Stop hinting system when
             StopCoroutine("Step");
@@ -185,7 +186,7 @@ public class SoundSequencePuzzle : MonoBehaviour
             for (int i = 0; i < pieces.Length; i++)
             {
                 ParticleSystem.MainModule temp = pieces[i].GetComponentInChildren<SoundStone>().particles.main;
-                temp.startColor = Color.white;
+                //temp.startColor = Color.white;
                 pieces[i].GetComponent<SoundStone>().Chirp();
 
                 yield return new WaitForSeconds(chirpFrequency);

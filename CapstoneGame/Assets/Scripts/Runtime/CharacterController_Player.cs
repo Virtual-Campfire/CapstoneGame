@@ -361,7 +361,7 @@ public class CharacterController_Player : MonoBehaviour
                 if (item != null)
                 {
                     // If any of the items hit are sound stones (with their statues in place) get the script that handles the whole puzzle to check which statue will be activated by the attack
-                    if (item.GetComponent<SoundStone>() && item.GetComponent<SoundStone>().isWhole)
+                    if (item.GetComponentInParent<SoundSequencePuzzle>() && item.GetComponentInParent<SoundSequencePuzzle>().constructed)
                     {
                         item.GetComponentInParent<SoundSequencePuzzle>().ActivateStone();
                     }
