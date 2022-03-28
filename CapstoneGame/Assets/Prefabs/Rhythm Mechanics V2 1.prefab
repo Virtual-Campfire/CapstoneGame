@@ -290,7 +290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyToPress: 113
   specialParticles: {fileID: 198203777143593298, guid: 53ebac442b16db64f9177d0c749cbb06, type: 3}
-  Player: {fileID: 0}
+  Player: {fileID: 1206552032706234996, guid: 74c3ca48546edfd448252014d27d58af, type: 3}
   controller: {fileID: 0}
   fmodEvent: event:/BGMs/level1Combat
   hitValue: 0
@@ -459,7 +459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyToPress: 101
   specialParticles: {fileID: 198203777143593298, guid: 53ebac442b16db64f9177d0c749cbb06, type: 3}
-  Player: {fileID: 0}
+  Player: {fileID: 1206552032706234996, guid: 74c3ca48546edfd448252014d27d58af, type: 3}
   controller: {fileID: 0}
   fmodEvent: event:/BGMs/level1Combat
   hitValue: 0
