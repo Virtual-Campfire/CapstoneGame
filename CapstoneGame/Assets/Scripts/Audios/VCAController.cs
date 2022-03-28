@@ -1,23 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class VCAController : MonoBehaviour
 {
-    // Start is called before the first frame update
 
     private FMOD.Studio.VCA VcaController;
     public string VcaName;
 
-    FMOD.Studio.EventInstance _event;
+    private Slider _slider;
+
+   // FMOD.Studio.EventInstance _event;
 
     void Start()
     {
         VcaController = FMODUnity.RuntimeManager.GetVCA("vca:/" + VcaName);
 
+        _slider = GetComponent<Slider>();
+
     }
 
-    // Update is called once per frame
+    public void SetVolume(float volume)
+    {
+        VcaController.setVolume(volume);
+    }
+
+
     void Update()
     {
         
