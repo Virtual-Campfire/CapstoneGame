@@ -73,7 +73,15 @@ public class SoundSequencePuzzle : MonoBehaviour
     void Update()
     {
         // If puzzle is incomplete and player is nearby AND statues are on the bases of all sound stones
-        if (!complete && player.playingLure && Time.time > timeSinceInput + delayBetweenInputs && Vector3.Distance(player.gameObject.transform.position, transform.position) <= activationDistance && constructed)
+        if (!complete && player.playingLure)
+        {
+            ActivateStone();
+        }
+    }
+
+    public void ActivateStone()
+    {
+        if (Time.time > timeSinceInput + delayBetweenInputs && Vector3.Distance(player.gameObject.transform.position, transform.position) <= activationDistance && constructed)
         {
             // Stop hinting system when
             StopCoroutine("Step");
@@ -82,7 +90,7 @@ public class SoundSequencePuzzle : MonoBehaviour
             float dist = 1000000;
 
             // Check distance between each piece and the player, until the closest piece is found and stored in memory
-            foreach(GameObject item in pieces)
+            foreach (GameObject item in pieces)
             {
                 float temp = Vector3.Distance(item.transform.position, player.gameObject.transform.position);
 
