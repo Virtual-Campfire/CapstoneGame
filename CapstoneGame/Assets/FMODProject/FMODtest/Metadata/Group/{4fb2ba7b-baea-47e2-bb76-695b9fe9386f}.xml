@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="MixerGroup" id="{4fb2ba7b-baea-47e2-bb76-695b9fe9386f}">
+		<property name="name">
+			<value>SFX</value>
+		</property>
+		<relationship name="masters">
+			<destination>{a5e81bd5-601d-42e7-95b1-4e0b8e6a7f9c}</destination>
+			<destination>{11932090-3d85-49f9-bded-fbadf75ef719}</destination>
+		</relationship>
+		<relationship name="effectChain">
+			<destination>{41eccb5e-1aca-4f22-a931-186047fab6b0}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{15878842-b4f2-406c-81de-f410f715b661}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{c5ffd4bf-4326-42d0-af67-6585ca72a51b}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{41eccb5e-1aca-4f22-a931-186047fab6b0}">
+		<relationship name="effects">
+			<destination>{0382478a-bf1f-4243-b15c-30e9c4e0c9d3}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{15878842-b4f2-406c-81de-f410f715b661}" />
+	<object class="MixerBusFader" id="{0382478a-bf1f-4243-b15c-30e9c4e0c9d3}" />
+</objects>
