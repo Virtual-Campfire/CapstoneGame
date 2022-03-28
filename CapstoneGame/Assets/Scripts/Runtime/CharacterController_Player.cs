@@ -100,6 +100,8 @@ public class CharacterController_Player : MonoBehaviour
     [SerializeField]
     StudioEventEmitter slashSpeaker, jumpSpeaker, violinSpeaker;
 
+    FMOD.Studio.Bus MasterBus;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -736,8 +738,15 @@ public class CharacterController_Player : MonoBehaviour
         yield return new WaitForSeconds(3);
 
         SceneManager.LoadScene(0);
+
+        //Stop playing music
+        //MasterBus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
+    void Start()
+    {
+        //MasterBus = FMODUnity.RuntimeManager.GetBus("Bus;/");
+    }
     void OnDrawGizmos()
     {
         // Debug effect for violin radius
