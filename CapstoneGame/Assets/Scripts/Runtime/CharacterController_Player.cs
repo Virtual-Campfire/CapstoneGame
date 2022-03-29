@@ -352,6 +352,21 @@ public class CharacterController_Player : MonoBehaviour
                     }
                 }
             }
+
+            // Secondary check for puzzle piece activation
+            Collider[] temp2 = Physics.OverlapBox(meleeHurtbox.transform.position + transform.forward * meleeHurtbox.center.z, meleeHurtbox.size, meleeHurtbox.gameObject.transform.rotation);
+
+            foreach (Collider item in temp2)
+            {
+                if (item != null)
+                {
+                    // If any of the items hit are sound stones (with their statues in place) get the script that handles the whole puzzle to check which statue will be activated by the attack
+                    if (item.GetComponentInParent<SoundSequencePuzzle>() && item.GetComponentInParent<SoundSequencePuzzle>().constructed)
+                    {
+                        item.GetComponentInParent<SoundSequencePuzzle>().ActivateStone();
+                    }
+                }
+            }
         }
 
         // If previous melee attack has finished

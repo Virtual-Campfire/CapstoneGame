@@ -10,8 +10,8 @@ TagManager:
   - Activator1
   - Activator2
   - DevilHead
-  - Destroy
   - Bar
+  - Instructions
   layers:
   - Default
   - TransparentFX
