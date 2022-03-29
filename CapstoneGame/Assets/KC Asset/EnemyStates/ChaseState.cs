@@ -23,7 +23,8 @@ public class ChaseState : FSMState
         AddTransition(Transition.IntoAttack, StateID.Attack);
         AddTransition(Transition.IntoDead, StateID.Dead);
 
-        Player = GameObject.Find("Player");
+        if (Player == null) { Player = GameObject.Find("Player"); }
+
 
         agent = transform.parent.gameObject.GetComponent<NavMeshAgent>();
 

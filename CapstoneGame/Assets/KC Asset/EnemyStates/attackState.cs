@@ -40,7 +40,7 @@ public class attackState : FSMState
 
 
         agent = transform.parent.gameObject.GetComponent<NavMeshAgent>();
-        Player = GameObject.Find("Player");
+        if (Player == null) { Player = GameObject.Find("Player"); }
         Timer = SkillCoolDown;
         //skill part
         SkillUsed = false;

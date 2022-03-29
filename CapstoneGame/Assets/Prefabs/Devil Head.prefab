@@ -749,6 +749,7 @@ MonoBehaviour:
   agent: {fileID: 0}
   SaveLocation: {fileID: 0}
   rotationResetSpeed: 0.003
+  Player: {fileID: 0}
 --- !u!114 &1501034351283945647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -778,7 +779,7 @@ MonoBehaviour:
   agent: {fileID: 1501034351518670424}
   Player: {fileID: 0}
   AttackRange: 3
-  FireBallRange: 0
+  FireBallRange: 10
 --- !u!114 &1501034351283945641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1085,6 +1086,7 @@ MonoBehaviour:
   increaseSpeed: 10
   decreaseSpeed: 10
   seePlayer: 0
+  Player: {fileID: 0}
 --- !u!114 &1501034351518670375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1102,6 +1104,7 @@ MonoBehaviour:
   ReturnFromChase: 0
   InitialPositionHolder: {fileID: 0}
   IsPatrol: 0
+  Player: {fileID: 0}
   HP: 10
   DisToPlayer: 0
 --- !u!114 &4755661717456797486
