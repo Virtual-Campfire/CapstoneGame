@@ -20,7 +20,7 @@ public class SoundSequencePuzzle : MonoBehaviour
     [SerializeField]
     int patternCompletion = 0;
     [SerializeField]
-    bool constructed, complete;
+    public bool constructed, complete;
     [SerializeField]
     float activationDistance = 10;
 
@@ -29,6 +29,9 @@ public class SoundSequencePuzzle : MonoBehaviour
     float timeOfLastChirp, timeSinceInput;
 
     CharacterController_Player player;
+
+    [SerializeField]
+    int hintStep;
 
     void Awake()
     {
@@ -64,7 +67,7 @@ public class SoundSequencePuzzle : MonoBehaviour
             else
             {
                 timeOfLastChirp = Time.time;
-                StartCoroutine("Step");
+                StartCoroutine(Step());
             }
         }
     }
@@ -72,17 +75,26 @@ public class SoundSequencePuzzle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // If puzzle is incomplete and player is nearby AND statues are on the bases of all sound stones
-        if (!complete && player.playingLure && Time.time > timeSinceInput + delayBetweenInputs && Vector3.Distance(player.gameObject.transform.position, transform.position) <= activationDistance && constructed)
+        // Instrument activation option (melee can activate the function from another script)
+        if (player.playingLure)
         {
-            // Stop hinting system when
-            StopCoroutine("Step");
+            ActivateStone();
+        }
+    }
+
+    public void ActivateStone()
+    {
+        // If puzzle is incomplete and player is nearby AND statues are on the bases of all sound stones
+        if (!complete && Time.time > timeSinceInput + delayBetweenInputs && Vector3.Distance(player.gameObject.transform.position, transform.position) <= activationDistance && constructed)
+        {
+            // Stop hinting system
+            StopAllCoroutines();
 
             GameObject closestPiece = pieces[0];
             float dist = 1000000;
 
             // Check distance between each piece and the player, until the closest piece is found and stored in memory
-            foreach(GameObject item in pieces)
+            foreach (GameObject item in pieces)
             {
                 float temp = Vector3.Distance(item.transform.position, player.gameObject.transform.position);
 
@@ -94,9 +106,6 @@ public class SoundSequencePuzzle : MonoBehaviour
                 }
             }
 
-            // Indicate this piece has been activated
-            closestPiece.GetComponent<SoundStone>().Chirp();
-
             // If the activated piece is the same as the next one in the sequence, let the player keep going
             if (closestPiece == pieces[patternCompletion])
             {
@@ -104,6 +113,11 @@ public class SoundSequencePuzzle : MonoBehaviour
                 if (patternCompletion == pieces.Length - 1)
                 {
                     RightAnswer();
+                }
+                else
+                {
+                    // Indicate this piece has been activated in the correct order
+                    closestPiece.GetComponent<SoundStone>().ChirpRight();
                 }
 
                 // Iterate value so this conditional statement checks for the next piece in the sequence next time a piece is activated
@@ -124,18 +138,19 @@ public class SoundSequencePuzzle : MonoBehaviour
         // Feedback that player's answer is incorrect
         foreach (GameObject item in pieces)
         {
-            ParticleSystem temp = item.GetComponentInChildren<ParticleSystem>();
-            ParticleSystem.MainModule temp2 = temp.main;
-            temp2.startColor = Color.red;
-            item.GetComponent<SoundStone>().Chirp();
+            //ParticleSystem temp = item.GetComponentInChildren<ParticleSystem>();
+            //ParticleSystem.MainModule temp2 = temp.main;
+            //temp2.startColor = Color.red;
+            item.GetComponent<SoundStone>().ChirpWrong();
         }
 
         // Reactivate hinting system
-        StopCoroutine("Step");
-        StartCoroutine("Step");
+        StopAllCoroutines();
+        StartCoroutine(Step());
 
         // Reset progress completing puzzle sequence
         patternCompletion = 0;
+        hintStep = -1;
     }
 
     void RightAnswer()
@@ -145,10 +160,10 @@ public class SoundSequencePuzzle : MonoBehaviour
             // Feedback that player's answer is correct
             foreach (GameObject item in pieces)
             {
-                ParticleSystem temp = item.GetComponentInChildren<ParticleSystem>();
-                ParticleSystem.MainModule temp2 = temp.main;
-                temp2.startColor = Color.green;
-                item.GetComponent<SoundStone>().Chirp();
+                //ParticleSystem temp = item.GetComponentInChildren<ParticleSystem>();
+                //ParticleSystem.MainModule temp2 = temp.main;
+                //temp2.startColor = Color.green;
+                item.GetComponent<SoundStone>().ChirpRight();
             }
 
             // Disable doors related to this puzzle
@@ -160,8 +175,9 @@ public class SoundSequencePuzzle : MonoBehaviour
             {
                 doorTurning.OpenTheDoor = true;
             }
+
             // Stop hinting system coroutine
-            StopCoroutine("Step");
+            StopAllCoroutines();
 
             // So this does not trigger again
             complete = true;
@@ -174,11 +190,11 @@ public class SoundSequencePuzzle : MonoBehaviour
         while (true)
         {
             // Call each stone to make a sound in sequence
-            for (int i = 0; i < pieces.Length; i++)
+            for (hintStep = 0; hintStep < pieces.Length; hintStep++)
             {
-                ParticleSystem.MainModule temp = pieces[i].GetComponentInChildren<SoundStone>().particles.main;
-                temp.startColor = Color.white;
-                pieces[i].GetComponent<SoundStone>().Chirp();
+                //ParticleSystem.MainModule temp = pieces[i].GetComponentInChildren<SoundStone>().particles.main;
+                //temp.startColor = Color.white;
+                pieces[hintStep].GetComponent<SoundStone>().Chirp();
 
                 yield return new WaitForSeconds(chirpFrequency);
             }
