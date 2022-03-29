@@ -76,7 +76,7 @@ public class SoundSequencePuzzle : MonoBehaviour
     void Update()
     {
         // Instrument activation option (melee can activate the function from another script)
-        if (player.playingLure)
+        if (player.playingSiren)
         {
             ActivateStone();
         }

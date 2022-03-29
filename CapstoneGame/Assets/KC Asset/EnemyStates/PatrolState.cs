@@ -86,7 +86,7 @@ public class PatrolState : FSMState
         if (Player.GetComponent<CharacterController_Player>())
         {
             // Alternative variable check
-            if (Player.GetComponent<CharacterController_Player>().playingLure == true && GetComponentInParent<EnemyState>().DisToPlayer <= GetComponent<LureState>().LureRange)
+            if (Player.GetComponent<CharacterController_Player>().playingSiren == true && GetComponentInParent<EnemyState>().DisToPlayer <= GetComponent<LureState>().LureRange)
             {
                 manager.Fsm.PerformTransition(Transition.IntoLure);
             }

@@ -63,7 +63,7 @@ public class LureState : FSMState
         // Alternative variable check
         else if (Player.GetComponent<CharacterController_Player>())
         {
-            if (LureRange > dis && Player.GetComponent<CharacterController_Player>().playingLure == true)
+            if (LureRange > dis && Player.GetComponent<CharacterController_Player>().playingSiren == true)
             {
                 print("Lure method B received.");
                 //agent.SetDestination(Player.transform.position);
@@ -146,13 +146,13 @@ public class LureState : FSMState
         // Alternative variable check
         if (Player.GetComponent<CharacterController_Player>())
         {
-            if (GetComponentInParent<Attention>().attentionValue <= 10 && Player.GetComponent<CharacterController_Player>().playingLure == false && GetComponentInParent<EnemyState>().Timer < 0)
+            if (GetComponentInParent<Attention>().attentionValue <= 10 && Player.GetComponent<CharacterController_Player>().playingSiren == false && GetComponentInParent<EnemyState>().Timer < 0)
             {
 
                 if (GetComponentInParent<EnemyState>().LastInput == true) { Invoke("Return", DelayBeforeDoing); }
 
                 // Alternative variable check
-                if (Player.GetComponent<CharacterController_Player>().playingLure == true && GetComponentInParent<EnemyState>().DisToPlayer <= LureRange)
+                if (Player.GetComponent<CharacterController_Player>().playingSiren == true && GetComponentInParent<EnemyState>().DisToPlayer <= LureRange)
                 {
                     manager.Fsm.PerformTransition(Transition.IntoLure);
                 }
