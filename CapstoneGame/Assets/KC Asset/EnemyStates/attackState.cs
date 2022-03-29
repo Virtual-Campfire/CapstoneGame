@@ -117,11 +117,13 @@ public class attackState : FSMState
         //MeleeAttack out range
         if ( (!EnemyDevilHead || SkillUsed) && dist > MeleeAttack)
         {
-
+            if (!GetComponent<ChaseState>().holdPosition)
+            {
                 agent.SetDestination(Player.transform.position);
+            }
         }
-        else if (dist <= MeleeAttack) {
-
+        else if (dist <= MeleeAttack)
+        {
             StartCoroutine(DelayedMeleeAttack());
 
             // Update animator parameter
@@ -179,8 +181,11 @@ public class attackState : FSMState
         // If player is still within melee range
         if (dist <= MeleeAttack)
         {
-            // Damage nearby player character
-            Player.GetComponent<DamageKnockback>().ApplyDamage(transform.position, 1, 1);
+            if (Player.GetComponent<DamageKnockback>())
+            {
+                // Damage nearby player character
+                Player.GetComponent<DamageKnockback>().ApplyDamage(transform.position, 1, 1);
+            }
         }
     }
 }

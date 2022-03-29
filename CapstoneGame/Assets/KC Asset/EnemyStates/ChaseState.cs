@@ -16,6 +16,9 @@ public class ChaseState : FSMState
     //link attack range with the setting range from here
     public float AttackRange, FireBallRange;
 
+    // Can be set to make AI enemy stay in the same spot while firing or otherwise set
+    public bool holdPosition;
+
     void Awake()
     {
         stateID = StateID.Chasing;
@@ -84,9 +87,10 @@ public class ChaseState : FSMState
 
     public override void Act()
     {
-        agent.SetDestination(Player.transform.position);
-
-
+        if (!holdPosition)
+        {
+            agent.SetDestination(Player.transform.position);
+        }
     }
 
 

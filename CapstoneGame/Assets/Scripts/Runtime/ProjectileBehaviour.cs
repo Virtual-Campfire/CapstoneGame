@@ -17,7 +17,10 @@ public class ProjectileBehaviour : MonoBehaviour
         // When hitting player, do damage
         if (other.gameObject.tag == "Player")
         {
-            other.GetComponent<DamageKnockback>().ApplyDamage(damage);
+            if (other.GetComponent<DamageKnockback>())
+            {
+                other.GetComponent<DamageKnockback>().ApplyDamage(damage);
+            }
         }
 
         // If projectile is not set to pass through obstacles
