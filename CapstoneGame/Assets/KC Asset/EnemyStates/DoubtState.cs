@@ -18,7 +18,7 @@ public class DoubtState : FSMState
 
         AddTransition(Transition.IntoDead, StateID.Dead);
 
-        Player = GameObject.Find("Player");
+        if (Player == null) { Player = GameObject.Find("Player"); }
 
         anim = transform.parent.GetComponentInChildren<Animator>();
     }

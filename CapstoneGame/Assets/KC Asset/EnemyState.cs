@@ -16,7 +16,7 @@ public class EnemyState : MonoBehaviour
 
     public bool IsPatrol;
 
-    GameObject Player;
+    public GameObject Player;
 
     [Header("Basic")]
     public float HP;
@@ -31,7 +31,8 @@ public class EnemyState : MonoBehaviour
 
     private void Awake()
     {
-        Player = GameObject.Find("Player");
+        if (Player == null) { Player = GameObject.Find("Player"); }
+        //Player = GameObject.Find("Player");
 
         // Create initial position holder for referencing initial position and rotation of enemy
         InitialPositionHolder = new GameObject("InitialPositionHolder");

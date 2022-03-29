@@ -17,20 +17,20 @@ public class Attention : MonoBehaviour
     GameObject player;
     public bool seePlayer;
 
-
+    public GameObject Player;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player");
+        if (Player == null) { Player = GameObject.Find("Player"); }
     }
 
     // Update is called once per frame
     void Update()
     {
-        float dist = Vector3.Distance(player.transform.position, transform.position);
+        float dist = Vector3.Distance(Player.transform.position, transform.position);
         if (seePlayer == true)
         {
 
