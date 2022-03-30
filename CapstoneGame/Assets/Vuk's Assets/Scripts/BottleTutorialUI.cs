@@ -5,6 +5,7 @@ using UnityEngine;
 public class BottleTutorialUI : MonoBehaviour
 {
     public GameObject BottleScriptUI;
+    public GameObject AudioManager;
 
     public static bool SciptInstructionsAppear = false;
 
@@ -20,6 +21,7 @@ public class BottleTutorialUI : MonoBehaviour
             BottleScriptUI.SetActive(true);
             SciptInstructionsAppear = true;
             Debug.Log("Inside");
+            AudioManager.SendMessage("Page");
         }
     }
 
