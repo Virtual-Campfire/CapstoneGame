@@ -106,6 +106,8 @@ public class CharacterController_Player : MonoBehaviour
 
     void Awake()
     {
+        MasterBus = RuntimeManager.GetBus("Bus:/");
+
         rb = GetComponent<Rigidbody>();
 
         capsule = GetComponent<CapsuleCollider>();
@@ -739,18 +741,16 @@ public class CharacterController_Player : MonoBehaviour
             gameoverText.enabled = true;
         }
 
+        //Stop playing music
+        MasterBus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
         yield return new WaitForSeconds(3);
 
         SceneManager.LoadScene(0);
 
-        //Stop playing music
-        //MasterBus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        
     }
-
-    void Start()
-    {
-        //MasterBus = FMODUnity.RuntimeManager.GetBus("Bus;/");
-    }
+    
     void OnDrawGizmos()
     {
         // Debug effect for violin radius
