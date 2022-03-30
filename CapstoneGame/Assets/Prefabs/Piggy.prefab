@@ -546,7 +546,7 @@ MeshRenderer:
   m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -713,6 +713,7 @@ MonoBehaviour:
   increaseSpeed: 10
   decreaseSpeed: 10
   seePlayer: 0
+  Player: {fileID: 0}
 --- !u!114 &5185967567788728328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -730,6 +731,7 @@ MonoBehaviour:
   ReturnFromChase: 0
   InitialPositionHolder: {fileID: 0}
   IsPatrol: 0
+  Player: {fileID: 0}
   HP: 10
   DisToPlayer: 0
 --- !u!114 &1356566375530496257
@@ -822,6 +824,7 @@ MonoBehaviour:
   agent: {fileID: 0}
   SaveLocation: {fileID: 0}
   rotationResetSpeed: 0.003
+  Player: {fileID: 0}
 --- !u!114 &5185967568021880448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -852,6 +855,7 @@ MonoBehaviour:
   Player: {fileID: 0}
   AttackRange: 3
   FireBallRange: 0
+  holdPosition: 0
 --- !u!114 &5185967568021880454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1718,7 +1722,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1cf50475e2f9995488b8bd76c9e89e4f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 1cf50475e2f9995488b8bd76c9e89e4f, type: 3}
       propertyPath: m_Controller
@@ -1859,7 +1863,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: d9298dcc78ae34c4aaa14ff373b822b9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d9298dcc78ae34c4aaa14ff373b822b9, type: 3}
       propertyPath: m_RootOrder
