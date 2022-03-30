@@ -20,6 +20,8 @@ public class TrackSwich : MonoBehaviour
 
     [FMODUnity.EventRef]
     public string PuzzleBell;
+    [FMODUnity.EventRef]
+    public string Pageturn;
 
     public bool hasStarted;
 
@@ -55,5 +57,10 @@ public class TrackSwich : MonoBehaviour
     public void FindXylophone()
     {
         FMODUnity.RuntimeManager.PlayOneShot(PuzzleBell);
+    }
+
+    public void Page()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(Pageturn);
     }
 }
