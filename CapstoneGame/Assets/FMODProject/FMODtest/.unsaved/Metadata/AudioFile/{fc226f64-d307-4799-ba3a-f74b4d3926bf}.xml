@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{fc226f64-d307-4799-ba3a-f74b4d3926bf}">
+		<property name="assetPath">
+			<value>Puzzle element Bell.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.7382993197278911</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{bd9b06dc-e458-44a9-b17d-7a559585b974}</destination>
+		</relationship>
+	</object>
+</objects>
