@@ -139,6 +139,9 @@ public class CharacterController_Player : MonoBehaviour
         flashingMesh.GetComponent<SkinnedMeshRenderer>().material = flashingMat;
         flashingMesh2.GetComponent<SkinnedMeshRenderer>().material = flashingMat;
 
+        // Get animator
+        anim = GetComponentInChildren<Animator>();
+
         // Reset health change check
         prevHealth = health.currentHealth;
     }
@@ -561,7 +564,7 @@ public class CharacterController_Player : MonoBehaviour
             anim.SetBool("IsGrounded", isGrounded);
             anim.SetBool("IsMeleeing", isMeleeing);
             anim.SetInteger("AttackIndex", meleeIndex);
-            anim.SetBool("IsPlayingIns", playingInstrument);
+            //anim.SetBool("IsPlayingIns", playingInstrument);
         }
     }
 
