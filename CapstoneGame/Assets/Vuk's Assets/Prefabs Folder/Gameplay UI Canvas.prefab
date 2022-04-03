@@ -354,7 +354,7 @@ RectTransform:
   m_GameObject: {fileID: 318887575887674036}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.05, y: 1, z: 1}
   m_Children:
   - {fileID: 318887577228632262}
   - {fileID: 318887577042634594}
@@ -2510,9 +2510,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Use its magical powers to put enemies to sleep by pressing on the right
-    mouse button. Be careful for you will be draining your magic bar in using this
-    ability.
+  m_text: I can use its magical powers to put enemies to sleep by pressing on the
+    right mouse button. I must be careful because using this ability will drain my
+    magic reservoir.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a677e0648640ccb4085e004f7f370432, type: 2}
   m_sharedMaterial: {fileID: -7803373540592412879, guid: a677e0648640ccb4085e004f7f370432, type: 2}
@@ -2646,8 +2646,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Attack enemies with the instrument by pressing the left mouse button. Time
-    your attacks to the beat of the music to get a double damage output.
+  m_text: I can attack enemies with this instrument by pressing the left mouse button.
+    Time my attacks to the beat of the music to get a double damage output.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a677e0648640ccb4085e004f7f370432, type: 2}
   m_sharedMaterial: {fileID: -7803373540592412879, guid: a677e0648640ccb4085e004f7f370432, type: 2}
@@ -3022,8 +3022,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Seems you have been shipwrecked and forgot on how to properly move young
-    man. Use the WASD keys to move around and explore your surroundings.
+  m_text: In case I forget how to move - use the WASD keys to move around and explore
+    my surroundings.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a677e0648640ccb4085e004f7f370432, type: 2}
   m_sharedMaterial: {fileID: -7803373540592412879, guid: a677e0648640ccb4085e004f7f370432, type: 2}
@@ -3314,7 +3314,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You have everything. Good luck on your adventure young bardman.
+  m_text: This is everything I got. Hope I can ward off any invaders that could steal
+    my barrels.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a677e0648640ccb4085e004f7f370432, type: 2}
   m_sharedMaterial: {fileID: -7803373540592412879, guid: a677e0648640ccb4085e004f7f370432, type: 2}
@@ -4405,8 +4406,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You found an instrument. You may be able to use it now to defend yourself
-    from any hostile encounters.
+  m_text: This is my ukelale. Not only can I play songs but I can also use it to
+    defend myself from any hostile encounters.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a677e0648640ccb4085e004f7f370432, type: 2}
   m_sharedMaterial: {fileID: -7803373540592412879, guid: a677e0648640ccb4085e004f7f370432, type: 2}

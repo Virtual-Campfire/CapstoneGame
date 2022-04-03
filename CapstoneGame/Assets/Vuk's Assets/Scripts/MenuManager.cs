@@ -33,10 +33,11 @@ public class MenuManager : MonoBehaviour
         }
 
         // If main options are active and escape is pressed, go back to title card
-        if (Input.GetKeyDown(KeyCode.Escape) && !frame[0].activeInHierarchy && !frame[2].activeInHierarchy)
+        if (Input.GetKeyDown(KeyCode.Escape) && !frame[0].activeInHierarchy && !frame[2].activeInHierarchy && !frame[3].activeInHierarchy)
         {
             frame[1].SetActive(false);
             frame[2].SetActive(false);
+            frame[3].SetActive(false);
             frame[0].SetActive(true);
         }
 
@@ -45,8 +46,26 @@ public class MenuManager : MonoBehaviour
         {
             frame[1].SetActive(true);
             frame[2].SetActive(false);
+            frame[3].SetActive(false);
             frame[0].SetActive(false);
         }
+
+        // If instructions are active and escape is pressed, go back to main options
+        if (Input.GetKeyDown(KeyCode.Escape) && !frame[0].activeInHierarchy && !frame[1].activeInHierarchy && !frame[2].activeInHierarchy && frame[3].activeInHierarchy)
+        {
+            frame[1].SetActive(true);
+            frame[2].SetActive(false);
+            frame[3].SetActive(false);
+            frame[0].SetActive(false);
+        }
+    }
+
+    public void Instructions()
+    {
+        frame[0].SetActive(false);
+        frame[1].SetActive(false);
+        frame[2].SetActive(false);
+        frame[3].SetActive(true);
     }
 
     public void Credits()
@@ -54,6 +73,7 @@ public class MenuManager : MonoBehaviour
         frame[0].SetActive(false);
         frame[1].SetActive(false);
         frame[2].SetActive(true);
+        frame[3].SetActive(false);
     }
 
     public void QuitGame()

@@ -757,6 +757,10 @@ PrefabInstance:
       propertyPath: ES
       value: 
       objectReference: {fileID: 1104124217}
+    - target: {fileID: 7067003448856997813, guid: 7b6985c50a49c5f49ae15ddc5f521cc6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7067003449029681448, guid: 7b6985c50a49c5f49ae15ddc5f521cc6, type: 3}
       propertyPath: m_Name
       value: Title Menu Canvas
@@ -848,6 +852,10 @@ PrefabInstance:
     - target: {fileID: 7067003449029681452, guid: 7b6985c50a49c5f49ae15ddc5f521cc6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7067003449074390540, guid: 7b6985c50a49c5f49ae15ddc5f521cc6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b6985c50a49c5f49ae15ddc5f521cc6, type: 3}
