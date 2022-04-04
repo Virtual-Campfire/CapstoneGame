@@ -60,7 +60,11 @@ public class attackState : FSMState
 
     private void Update()
     {
-        
+        if (GetComponent<ChaseState>().holdPosition)
+        {
+            // Make sure player is being looked at (for aiming)
+            transform.parent.LookAt(new Vector3(Player.transform.position.x, transform.position.y, Player.transform.position.z));
+        }
     }
 
 
@@ -114,20 +118,21 @@ public class attackState : FSMState
             }
         }
 
-        //MeleeAttack out range
-        if ( (!EnemyDevilHead || SkillUsed) && dist > MeleeAttack)
+        // Check if charging ranged attack first before trying melee (don't melee if charging ranged)
+        if (!GetComponent<ChaseState>().holdPosition)
         {
-            if (!GetComponent<ChaseState>().holdPosition)
+            //MeleeAttack out range
+            if ((!EnemyDevilHead || SkillUsed) && dist > MeleeAttack)
             {
                 agent.SetDestination(Player.transform.position);
             }
-        }
-        else if (dist <= MeleeAttack)
-        {
-            StartCoroutine(DelayedMeleeAttack());
+            else if (dist <= MeleeAttack)
+            {
+                StartCoroutine(DelayedMeleeAttack());
 
-            // Update animator parameter
-            anim.SetTrigger("Attacking");
+                // Update animator parameter
+                anim.SetTrigger("Attacking");
+            }
         }
             
         
@@ -143,7 +148,8 @@ public class attackState : FSMState
                 resetTimer();
             }
         }
-        
+
+
     }
 
 
@@ -162,7 +168,11 @@ public class attackState : FSMState
 
     IEnumerator DelayedFireball()
     {
+        GetComponent<ChaseState>().holdPosition = true;
+
         yield return new WaitForSeconds(3f);
+
+        GetComponent<ChaseState>().holdPosition = false;
 
         //active skill
         Debug.Log("Fireeeeee Ballllll~");

@@ -91,6 +91,11 @@ public class ChaseState : FSMState
         {
             agent.SetDestination(Player.transform.position);
         }
+        else
+        {
+            // If holding position if set to (happens when charging ranged attack)
+            agent.SetDestination(transform.position);
+        }
     }
 
 
