@@ -9,6 +9,8 @@ public class PlayerItemHolder : MonoBehaviour
     public bool HarpFind = false;
     public bool XylophoneFind = false;
 
+    public GameObject AudioManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,11 +25,17 @@ public class PlayerItemHolder : MonoBehaviour
 
 
     void FindXylophone()
-    { XylophoneFind = true; }
+    { XylophoneFind = true;
+        AudioManager.SendMessage("FindXylophone");
+    }
     void FindBell()
-    { BellFind = true; }
+    { BellFind = true;
+        AudioManager.SendMessage("FindBell");
+    }
     void FindHarp()
-    { HarpFind = true; }
+    { HarpFind = true;
+        AudioManager.SendMessage("FindHarp");
+    }
 
 
 

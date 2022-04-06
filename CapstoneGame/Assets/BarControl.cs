@@ -20,6 +20,10 @@ public class BarControl : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
+        if (other.gameObject.tag == "Destroy")
+        {
+            Debug.Log("Destroyed");
+            Destroy(gameObject);
+        }
     }
 }

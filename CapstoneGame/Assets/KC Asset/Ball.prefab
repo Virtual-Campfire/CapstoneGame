@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -6151110969181994793}
   - component: {fileID: 3656874480296826552}
   - component: {fileID: 3521903489306487421}
+  - component: {fileID: 2823806425138011164}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -94,7 +95,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 447321581879848316}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -110,7 +111,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
@@ -4900,3 +4901,17 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &2823806425138011164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447321581879848316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bb5dc36f72be8c4dab986e35d0258d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  passthrough: 0

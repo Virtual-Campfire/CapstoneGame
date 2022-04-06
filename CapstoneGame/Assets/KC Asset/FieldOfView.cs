@@ -17,7 +17,7 @@ public class FieldOfView : MonoBehaviour
     public int edgeResolveIterations;
     //this is for if close objects
     public float edgeDstThreshold;
-
+    
 
     [HideInInspector]
     public List<Transform> visibleTargets = new List<Transform>();

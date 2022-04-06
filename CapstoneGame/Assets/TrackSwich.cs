@@ -18,6 +18,11 @@ public class TrackSwich : MonoBehaviour
     [FMODUnity.EventRef]
     public string level1Combat;
 
+    [FMODUnity.EventRef]
+    public string PuzzleBell;
+    [FMODUnity.EventRef]
+    public string Pageturn;
+
     public bool hasStarted;
 
     void Start()
@@ -47,5 +52,15 @@ public class TrackSwich : MonoBehaviour
         Debug.Log("swich track GET");
        // FMODUnity.RuntimeManager.PlayOneShot(level1Combat);
         // instance.setParameterByName("TrackSwich", trackNumber);
+    }
+
+    public void FindXylophone()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(PuzzleBell);
+    }
+
+    public void Page()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(Pageturn);
     }
 }

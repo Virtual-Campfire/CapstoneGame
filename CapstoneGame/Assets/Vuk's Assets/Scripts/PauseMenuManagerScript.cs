@@ -6,7 +6,7 @@ public class PauseMenuManagerScript : MonoBehaviour
 {
     public static bool GameIsPaused = false;
 
-    public GameObject pauseMenuUI;
+    public GameObject GameMapUI;
 
     void Awake()
     {
@@ -31,14 +31,14 @@ public class PauseMenuManagerScript : MonoBehaviour
 
     void Resume()
     {
-        pauseMenuUI.SetActive(false);
+        GameMapUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
 
     void Pause()
     {
-        pauseMenuUI.SetActive(true);
+        GameMapUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
     }

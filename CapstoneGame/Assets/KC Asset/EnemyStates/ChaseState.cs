@@ -14,7 +14,10 @@ public class ChaseState : FSMState
     float dist;
 
     //link attack range with the setting range from here
-    public float AttackRange;
+    public float AttackRange, FireBallRange;
+
+    // Can be set to make AI enemy stay in the same spot while firing or otherwise set
+    public bool holdPosition;
 
     void Awake()
     {
@@ -23,9 +26,13 @@ public class ChaseState : FSMState
         AddTransition(Transition.IntoAttack, StateID.Attack);
         AddTransition(Transition.IntoDead, StateID.Dead);
 
-        Player = GameObject.Find("Player");
+        if (Player == null) { Player = GameObject.Find("Player"); }
+
 
         agent = transform.parent.gameObject.GetComponent<NavMeshAgent>();
+
+        AttackRange = GetComponent<attackState>().AttackRange;
+        FireBallRange = GetComponent<attackState>().FireBallRange;
 
         //anim = GetComponentInChildren<Animator>();
     }
@@ -73,16 +80,22 @@ public class ChaseState : FSMState
             manager.Fsm.PerformTransition(Transition.IntoIdeal);
         }
 
-        if (dist <= AttackRange) {
+        if (dist <= AttackRange || (GetComponent<attackState>().EnemyDevilHead && dist <= FireBallRange) ) {
             manager.Fsm.PerformTransition(Transition.IntoAttack);
         }
     }
 
     public override void Act()
     {
-        agent.SetDestination(Player.transform.position);
-
-
+        if (!holdPosition)
+        {
+            agent.SetDestination(Player.transform.position);
+        }
+        else
+        {
+            // If holding position if set to (happens when charging ranged attack)
+            agent.SetDestination(transform.position);
+        }
     }
 
 

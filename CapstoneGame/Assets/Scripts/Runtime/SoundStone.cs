@@ -8,7 +8,7 @@ using FMODUnity;
 // Controls the sound stones in the puzzle, including their retrieval if they are off their pedestal
 public class SoundStone : MonoBehaviour
 {
-    public ParticleSystem particles;
+    public ParticleSystem particlesNeutral, particlesRight, particlesWrong;
     StudioEventEmitter soundEmitter;
 
     [SerializeField]
@@ -25,7 +25,6 @@ public class SoundStone : MonoBehaviour
 
     void Awake()
     {
-        particles = GetComponentInChildren<ParticleSystem>();
         soundEmitter = GetComponent<StudioEventEmitter>();
 
         player = GameObject.Find("Player");
@@ -78,9 +77,27 @@ public class SoundStone : MonoBehaviour
     // Called to activate the particle system and other visual changes for when the stone is hinting what order it is activated in
     public void Chirp()
     {
+        ChimeAndMove();
+        particlesNeutral.Play();
+    }
+
+    public void ChirpRight()
+    {
+        ChimeAndMove();
+        particlesRight.Play();
+    }
+
+    public void ChirpWrong()
+    {
+        ChimeAndMove();
+        particlesWrong.Play();
+    }
+
+    void ChimeAndMove()
+    {
+        // Play sound
         soundEmitter.Play();
-        particles.Play();
-        
+
         // Moves statue down when it makes a chirp (in case player cannot hear the sound or see the particles)
         statue.transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
     }

@@ -23,10 +23,10 @@ public class DoorTurning : MonoBehaviour
 
         if (OpenTheDoor)
         {
-            transform.Rotate(Rotation * Time.deltaTime * Speed);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, HowMuchRotate, 0), Time.deltaTime * Speed);
           
         }
-        if (angles.y <= HowMuchRotate) { Speed = 0; OpenTheDoor = false; }
+        if (angles.y == HowMuchRotate) { Speed = 0; OpenTheDoor = false; }
 
     }
 }

@@ -11,7 +11,7 @@ public class IdealState : FSMState
     public Transform SaveLocation;
 
     public float rotationResetSpeed;
-    GameObject Player;
+    public GameObject Player;
 
 
     void Awake()
@@ -25,7 +25,7 @@ public class IdealState : FSMState
         agent = transform.parent.gameObject.GetComponent<NavMeshAgent>();
 
 
-        Player = GameObject.Find("Player");
+        if (Player == null) { Player = GameObject.Find("Player"); }
     }
 
 
@@ -81,7 +81,7 @@ public class IdealState : FSMState
         if (Player.GetComponent<CharacterController_Player>())
         {
             // Alternative variable check
-            if (Player.GetComponent<CharacterController_Player>().playingLure == true && GetComponentInParent<EnemyState>().DisToPlayer <= GetComponent<LureState>().LureRange)
+            if (Player.GetComponent<CharacterController_Player>().playingSiren == true && GetComponentInParent<EnemyState>().DisToPlayer <= GetComponent<LureState>().LureRange)
             {
                 manager.Fsm.PerformTransition(Transition.IntoLure);
             }

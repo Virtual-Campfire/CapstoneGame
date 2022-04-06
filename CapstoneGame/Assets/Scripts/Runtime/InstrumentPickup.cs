@@ -21,6 +21,7 @@ public class InstrumentPickup : MonoBehaviour
     public GameObject AudioManager;
     public GameObject BeatController;
     public GameObject BeatScroller;
+    public GameObject DestroyBar;
     public GameObject keySpawner1;
     public GameObject keySpawner2;
 
@@ -73,6 +74,7 @@ public class InstrumentPickup : MonoBehaviour
             AudioManager.SendMessage("swich");
             BeatController.SendMessage("swich");
             BeatScroller.SendMessage("swich");
+            DestroyBar.SendMessage("swich");
             keySpawner1.SendMessage("swich");
             keySpawner2.SendMessage("swich");
 

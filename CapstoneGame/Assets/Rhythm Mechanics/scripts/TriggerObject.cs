@@ -31,6 +31,7 @@ public class TriggerObject : MonoBehaviour
         if (Input.GetButtonDown("Fire1")){
             if (canBepressed1)
             {
+                bc = GameObject.Find("ButtonsFire1").GetComponent<BeatController>();
                 bc.PlayerSpecialBehavior1();
             }
         }
@@ -39,6 +40,7 @@ public class TriggerObject : MonoBehaviour
         {
             if (canBepressed2)
             {
+                bc = GameObject.Find("ButtonsFire2").GetComponent<BeatController>();
                 bc.PlayerSpecialBehavior2();
             }
         }
@@ -56,6 +58,12 @@ public class TriggerObject : MonoBehaviour
         {
             canBepressed2 = true;
             Instantiate(normalParticles2, Player.transform.position, Quaternion.identity);
+        }
+
+        if (other.gameObject.tag == "Destroy")
+        {
+            Debug.Log("destroyed bar");
+            Destroy(gameObject);
         }
     }
 

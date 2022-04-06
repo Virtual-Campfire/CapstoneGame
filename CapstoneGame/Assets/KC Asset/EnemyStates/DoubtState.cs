@@ -18,7 +18,7 @@ public class DoubtState : FSMState
 
         AddTransition(Transition.IntoDead, StateID.Dead);
 
-        Player = GameObject.Find("Player");
+        if (Player == null) { Player = GameObject.Find("Player"); }
 
         anim = transform.parent.GetComponentInChildren<Animator>();
     }
@@ -32,7 +32,7 @@ public class DoubtState : FSMState
     public override void DoBeforeEntering()
     {
         //Debug.Log("In Doubt: Ehmmm£¿What I just saw?");
-        transform.parent.LookAt(transform.parent.position);
+        transform.parent.LookAt(new Vector3(Player.transform.position.x, transform.position.y, Player.transform.position.z));
 
         // Update animator parameter
         anim.SetTrigger("Doubt");
@@ -43,9 +43,9 @@ public class DoubtState : FSMState
     public override void DoBeforeLeaving()
     {
 
-        transform.parent.LookAt(transform.parent.position);
+        transform.parent.LookAt(new Vector3(Player.transform.position.x, transform.position.y, Player.transform.position.z));
 
-       
+
     }
 
 
@@ -76,7 +76,7 @@ public class DoubtState : FSMState
     {
 
         if (GetComponentInParent<Attention>().attentionValue > 10 && GetComponentInParent<EnemyState>().ReturnFromChase==false && Vector3.Distance(transform.position,Player.transform.position)<=GetComponentInParent<FieldOfView>().viewRadius) {
-            transform.parent.LookAt(Player.transform.position);
+            transform.parent.LookAt(new Vector3(Player.transform.position.x, transform.position.y, Player.transform.position.z));
         }
 
         

@@ -38,6 +38,10 @@ public class CharacterController_Player : MonoBehaviour
     GameObject flashingMesh, flashingMesh2;
     Material flashingMat;
 
+    // Respawn effect
+    [SerializeField]
+    ParticleSystem respawnParticles;
+
     // Variables for melee attack and tools (Note: melee attack works on the "hitbox" physics layer)
     public BoxCollider meleeHurtbox;
     public GameObject meleeVisualRoot;
@@ -49,7 +53,7 @@ public class CharacterController_Player : MonoBehaviour
 
     // Instrument effect variables
     [SerializeField]
-    public float currentResource, maxResource = 1, resourceRecoveryMult = .25f;
+    public float currentResource, maxResource = 1, resourceRecoveryMult = .25f, breakExhaustAtPercent = 100;
     bool playingInstrument = false, exhausted = false;
     float lastSting;
 
@@ -63,15 +67,17 @@ public class CharacterController_Player : MonoBehaviour
     [SerializeField]
     GameObject rhythmMechanics, rhythmUI, magicBar;
     [SerializeField]
-    Image meleeIcon, lureIcon;
+    Image meleeIcon, sirenIcon;
     [SerializeField]
     Text gameoverText;
 
-    Color meleeIconColor, lureIconColor;
+    Color meleeIconColor, sirenIconColour;
 
     // Variables used with revised instrument / weapons system
+    [SerializeField]
+    ParticleSystem effectRadiusParticles;
     public float AOEEffectRadius = 5;
-    public bool playingLure;
+    public bool playingSiren;
 
     enum EquipID
     {
@@ -96,8 +102,12 @@ public class CharacterController_Player : MonoBehaviour
     [SerializeField]
     StudioEventEmitter slashSpeaker, jumpSpeaker, violinSpeaker;
 
+    FMOD.Studio.Bus MasterBus;
+
     void Awake()
     {
+        MasterBus = RuntimeManager.GetBus("Bus:/");
+
         rb = GetComponent<Rigidbody>();
 
         capsule = GetComponent<CapsuleCollider>();
@@ -120,7 +130,7 @@ public class CharacterController_Player : MonoBehaviour
         magicUI.SetMaxMagic((int)maxResource);
 
         meleeIconColor = meleeIcon.color;
-        lureIconColor = lureIcon.color;
+        sirenIconColour = sirenIcon.color;
 
         // Recount inventory upon waking up
         AddToInventory(-1);
@@ -130,6 +140,9 @@ public class CharacterController_Player : MonoBehaviour
         defaultColour = flashingMat.color;
         flashingMesh.GetComponent<SkinnedMeshRenderer>().material = flashingMat;
         flashingMesh2.GetComponent<SkinnedMeshRenderer>().material = flashingMat;
+
+        // Get animator
+        anim = GetComponentInChildren<Animator>();
 
         // Reset health change check
         prevHealth = health.currentHealth;
@@ -346,15 +359,34 @@ public class CharacterController_Player : MonoBehaviour
                     }
                 }
             }
+
+            // Secondary check for puzzle piece activation
+            Collider[] temp2 = Physics.OverlapBox(meleeHurtbox.transform.position + transform.forward * meleeHurtbox.center.z, meleeHurtbox.size, meleeHurtbox.gameObject.transform.rotation);
+
+            foreach (Collider item in temp2)
+            {
+                if (item != null)
+                {
+                    // If any of the items hit are sound stones (with their statues in place) get the script that handles the whole puzzle to check which statue will be activated by the attack
+                    if (item.GetComponentInParent<SoundSequencePuzzle>() && item.GetComponentInParent<SoundSequencePuzzle>().constructed)
+                    {
+                        item.GetComponentInParent<SoundSequencePuzzle>().ActivateStone();
+                    }
+                }
+            }
         }
 
         // If previous melee attack has finished
         if (Time.fixedTime > meleeStartTime + meleeDuration + meleeCooldown)
         {
-            // Lighten melee icon
-            meleeIcon.color = meleeIconColor;
-            // Reset icon size to its default
-            meleeIcon.transform.localScale = new Vector3(1f, 1f, 1f);
+            // If holding an instrument
+            if (instrumentsCollected > 0)
+            {
+                // Lighten melee icon
+                meleeIcon.color = meleeIconColor;
+                // Reset icon size to its default
+                meleeIcon.transform.localScale = new Vector3(1f, 1f, 1f);
+            }
 
             // If trying to melee
             if (isMeleeing)
@@ -407,8 +439,8 @@ public class CharacterController_Player : MonoBehaviour
             meleeHurtbox.gameObject.SetActive(false);
         }
         
-        // If magic bar has refilled after exhaustion, allow use of magic once again
-        if (currentResource == maxResource)
+        // If magic bar has refilled to a specific pecentage after exhaustion, allow use of magic once again
+        if (currentResource >= maxResource * (breakExhaustAtPercent / 100))
         {
             exhausted = false;
         }
@@ -422,8 +454,11 @@ public class CharacterController_Player : MonoBehaviour
                 // Siren behaviour
                 if (instrumentHeld == (int)EquipID.Siren)
                 {
-                    // Luring flag for attracting certain characters
-                    playingLure = true;
+                    // Siren flag for putting to sleep certain characters
+                    playingSiren = true;
+
+                    // Show instrument effect particles
+                    effectRadiusParticles.Play();
 
                     if (Time.time > lastSting + 1)
                     {
@@ -434,45 +469,20 @@ public class CharacterController_Player : MonoBehaviour
                         lastSting = Time.time;
                     }
 
-                    // Darken lure icon
-                    lureIcon.color = Color.gray;
+                    // Darken siren icon
+                    sirenIcon.color = Color.gray;
                     // Shrink icon
-                    lureIcon.transform.localScale = new Vector3(.8f, .8f, .8f);
+                    sirenIcon.transform.localScale = new Vector3(.8f, .8f, .8f);
 
                     // Drain resource store
                     AddResource(-Time.deltaTime * 1.5f);
                 }
-                else
-                {
-                    //AOE behaviour (old, used as a testing instrument for now)
-
-                    // Check for actors within effect's range
-                    Collider[] temp = Physics.OverlapSphere(transform.position, AOEEffectRadius, 1 << 14);
-
-                    foreach (Collider item in temp)
-                    {
-                        if (instrumentHeld == (int)EquipID.AOE)
-                        {
-                            if (item.tag == "Enemy" && item.gameObject.GetComponent<DamageKnockback>())
-                            {
-                                // Apply damage to each enemy in the radius
-                                item.gameObject.GetComponent<DamageKnockback>().ApplyDamage(transform.position, 5, 1);
-
-                                // Set enemy state timer for this distraction
-                                //item.gameObject.GetComponent<EnemyState>().LastLureInPut();
-
-                                // Drain resource store
-                                AddResource(-Time.deltaTime);
-                            }
-                        }
-                    }
-                }
             }
 
-            // If exhausting magic resources, darken lure icon and lock magic until bar refills to max
+            // If exhausting magic resources, darken siren icon and lock magic until bar refills to max
             if (currentResource == 0)
             {
-                lureIcon.color = new Color(.1f, .1f, .1f);
+                sirenIcon.color = new Color(.1f, .1f, .1f);
 
                 exhausted = true;
             }
@@ -485,16 +495,23 @@ public class CharacterController_Player : MonoBehaviour
         {
             // When not playing an instrument
 
-            // Disable luring flag by default
-            playingLure = false;
+            // Disable siren flag by default
+            playingSiren = false;
+
+            // Stop instrument effect particles
+            effectRadiusParticles.Stop();
 
             // If not exhausted, set icon colour to default
             if (!exhausted)
             {
-                // Lighten lure icon
-                lureIcon.color = lureIconColor;
-                // Reset icon size to its default
-                lureIcon.transform.localScale = new Vector3(1f, 1f, 1f);
+                // If holding an instrument
+                if (instrumentsCollected > 0)
+                {
+                    // Lighten siren icon
+                    sirenIcon.color = sirenIconColour;
+                    // Reset icon size to its default
+                    sirenIcon.transform.localScale = new Vector3(1f, 1f, 1f);
+                }
             }
 
             effectRadiusIndicator.SetActive(false);
@@ -549,7 +566,7 @@ public class CharacterController_Player : MonoBehaviour
             anim.SetBool("IsGrounded", isGrounded);
             anim.SetBool("IsMeleeing", isMeleeing);
             anim.SetInteger("AttackIndex", meleeIndex);
-            anim.SetBool("IsPlayingIns", playingInstrument);
+            //anim.SetBool("IsPlayingIns", playingInstrument);
         }
     }
 
@@ -623,7 +640,9 @@ public class CharacterController_Player : MonoBehaviour
         // If not carrying any instruments, hide rhythm mechanics and show unequipped warning message on HUD
         if (instrumentsCollected == 0)
         {
-            noInstrumentWarning.SetActive(true);
+            //noInstrumentWarning.SetActive(true);
+            meleeIcon.color = new Color(.1f, .1f, .1f);
+            sirenIcon.color = new Color(.1f, .1f, .1f);
 
             // Hide rhythm mechanics
             MeshRenderer[] notes1 = rhythmMechanics.GetComponentsInChildren<MeshRenderer>();
@@ -648,7 +667,7 @@ public class CharacterController_Player : MonoBehaviour
         // If carrying instruments, show rhythm mechanics and hide unequipped warning message on HUD
         else
         {
-            noInstrumentWarning.SetActive(false);
+            //noInstrumentWarning.SetActive(false);
 
             // Show rhythm mechanics
             MeshRenderer[] notes1 = rhythmMechanics.GetComponentsInChildren<MeshRenderer>();
@@ -695,13 +714,14 @@ public class CharacterController_Player : MonoBehaviour
         // Set character to float down after teleporting to checkpoint
         pullSource = lastCheckpoint;
 
+        // Play respawn particle effects
+        respawnParticles.Play();
+
         // Wait, then unlock movement if alive
         yield return new WaitForSeconds(2);
-        if (health.currentHealth > 0)
-        {
-            moveLock = false;
-            rotLock = false;
-        }
+        
+        moveLock = false;
+        rotLock = false;
 
         // Release player from pull
         pulled = false;
@@ -716,13 +736,21 @@ public class CharacterController_Player : MonoBehaviour
         BeatScroller.level1Music.Stop();
 
         // Add in game over UI
-        gameoverText.enabled = true;
+        if (gameoverText != null)
+        {
+            gameoverText.enabled = true;
+        }
+
+        //Stop playing music
+        MasterBus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 
         yield return new WaitForSeconds(3);
 
         SceneManager.LoadScene(0);
-    }
 
+        
+    }
+    
     void OnDrawGizmos()
     {
         // Debug effect for violin radius
