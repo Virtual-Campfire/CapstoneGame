@@ -21,6 +21,28 @@ MonoBehaviour:
     data2: 0
   Type: 0
   IsGlobal: 0
+  Exists: 0
+--- !u!114 &-8876766769636406731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/level1Combat/hit
+  m_EditorClassIdentifier: 
+  Name: hit
+  Min: 0
+  Max: 10
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
   Exists: 1
 --- !u!114 &-8699300242804528109
 MonoBehaviour:
@@ -188,7 +210,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 637848445023002662
+  lastModified: 637852711730000000
   FileSizes: []
   Exists: 1
 --- !u!114 &-7195391816058841857
@@ -279,6 +301,28 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 475
+--- !u!114 &-6695472883351300674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/level1Combat/hit
+  m_EditorClassIdentifier: 
+  Name: hit
+  Min: 0
+  Max: 10
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 0
 --- !u!114 &-6572855494419789139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -476,7 +520,30 @@ MonoBehaviour:
     data2: 0
   Type: 0
   IsGlobal: 0
-  Exists: 1
+  Exists: 0
+--- !u!114 &-4131912936753672814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Environment/WoodBreak
+  m_EditorClassIdentifier: 
+  Path: event:/Environment/WoodBreak
+  guid: f393fef2b8d8974e94fb2f2c79bb82c8
+  Banks:
+  - {fileID: -7668663992389562941}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-4069298391711913404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -537,13 +604,13 @@ MonoBehaviour:
   guid: a954735bb2de9b4fb75b152794abff8f
   Banks:
   - {fileID: -2736312619902327022}
-  IsStream: 0
+  IsStream: 1
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 0
+  Length: 51153
 --- !u!114 &-3603653790354906872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -566,6 +633,28 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 0
+--- !u!114 &-3545648577786906249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/level1BGM/hit
+  m_EditorClassIdentifier: 
+  Name: hit
+  Min: 0
+  Max: 10
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &-3347034529821863621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -824,7 +913,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Desktop/BGM.bank
   Name: BGM
   StudioPath: bank:/BGM
-  lastModified: 637848445022842755
+  lastModified: 637852711730000000
   FileSizes: []
   Exists: 1
 --- !u!114 &-2500597342742143386
@@ -850,6 +939,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2000
+--- !u!114 &-2496914383500392339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Environment/Minecart
+  m_EditorClassIdentifier: 
+  Path: event:/Environment/Minecart
+  guid: dada8ffbef502f47b1bdd5c7a2881b56
+  Banks:
+  - {fileID: -7668663992389562941}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4783
 --- !u!114 &-2163743372253187824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -960,7 +1072,52 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 1
+--- !u!114 &-967231441903434983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Environment/PuzzleHarp
+  m_EditorClassIdentifier: 
+  Path: event:/Environment/PuzzleHarp
+  guid: bc2d7d4e43cc3c49a24917f1b772e2af
+  Banks:
+  - {fileID: -7668663992389562941}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3964
 --- !u!114 &-926042710408180447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/level1Combat/hit
+  m_EditorClassIdentifier: 
+  Name: hit
+  Min: 0
+  Max: 10
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 0
+--- !u!114 &-859842596369198062
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1046,8 +1203,8 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 1592752577430528856}
-  - {fileID: -4395573426944280058}
+  - {fileID: 1957856844305800392}
+  - {fileID: 4032601664591024931}
   MinDistance: 0
   MaxDistance: 0
   Length: 78857
@@ -1125,12 +1282,20 @@ MonoBehaviour:
   - {fileID: -266746280564413389}
   - {fileID: 4638472418496422034}
   - {fileID: 945439159997034666}
+  - {fileID: 6350791309441675906}
+  - {fileID: 6199277119225308585}
+  - {fileID: 5023946197267481444}
+  - {fileID: 2738160889058086988}
+  - {fileID: 4375665225802028597}
+  - {fileID: -967231441903434983}
+  - {fileID: -2496914383500392339}
+  - {fileID: -4131912936753672814}
   EditorParameters: []
   MasterBanks:
   - {fileID: 913560089226243733}
   StringsBanks:
   - {fileID: 2924641574611298264}
-  stringsBankWriteTime: 637848445022852607
+  stringsBankWriteTime: 637852711730000000
   cacheVersion: 8
 --- !u!114 &84663349642735896
 MonoBehaviour:
@@ -1191,7 +1356,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637848445022842755
+  lastModified: 637852711730000000
   FileSizes: []
   Exists: 1
 --- !u!114 &945439159997034666
@@ -1304,7 +1469,7 @@ MonoBehaviour:
     data2: 0
   Type: 0
   IsGlobal: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &1717289514304576715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1393,6 +1558,28 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &1957856844305800392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/level1BGM/TrackSwich
+  m_EditorClassIdentifier: 
+  Name: TrackSwich
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &2230033741665235010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1459,6 +1646,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 51252
+--- !u!114 &2738160889058086988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Environment/PaperTurn
+  m_EditorClassIdentifier: 
+  Path: event:/Environment/PaperTurn
+  guid: 84a01ae614e95e4a991e990cf60dda5a
+  Banks:
+  - {fileID: -7668663992389562941}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2000
 --- !u!114 &2814114344082030312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1496,10 +1706,10 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637848445022852607
+  lastModified: 637852711730000000
   FileSizes:
   - Name: 
-    Value: 1386
+    Value: 1934
   Exists: 1
 --- !u!114 &3272609192565927648
 MonoBehaviour:
@@ -1590,6 +1800,28 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 0
+--- !u!114 &4032601664591024931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/level1BGM/hit
+  m_EditorClassIdentifier: 
+  Name: hit
+  Min: 0
+  Max: 10
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &4293567861316403496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1635,6 +1867,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2000
+--- !u!114 &4375665225802028597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Environment/HealthPickup
+  m_EditorClassIdentifier: 
+  Path: event:/Environment/HealthPickup
+  guid: 937747b4ba501b4082144d40e6cb2795
+  Banks:
+  - {fileID: -7668663992389562941}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4284
 --- !u!114 &4572872305997321603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1701,7 +1956,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -9045673039739462676}
+  - {fileID: -8876766769636406731}
   MinDistance: 0
   MaxDistance: 0
   Length: 29142
@@ -1728,6 +1983,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 3500
+--- !u!114 &5023946197267481444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Environment/PuzzleXylophone
+  m_EditorClassIdentifier: 
+  Path: event:/Environment/PuzzleXylophone
+  guid: 845593bf50fbdb4ea5eebd052ec054cb
+  Banks:
+  - {fileID: -7668663992389562941}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3428
 --- !u!114 &5865586057898462620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1772,6 +2050,29 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 1
+--- !u!114 &6199277119225308585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Environment/PuzzleBell
+  m_EditorClassIdentifier: 
+  Path: event:/Environment/PuzzleBell
+  guid: 135dc706c162d8418de2572f2d5142e1
+  Banks:
+  - {fileID: -7668663992389562941}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1738
 --- !u!114 &6243100101607438006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1794,6 +2095,29 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Exists: 1
+--- !u!114 &6350791309441675906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Environment/PiggyDamage
+  m_EditorClassIdentifier: 
+  Path: event:/Environment/PiggyDamage
+  guid: 001df5750a4b2b4699d78fa63606939a
+  Banks:
+  - {fileID: -7668663992389562941}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1259
 --- !u!114 &6422227767583913832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1905,6 +2229,28 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2430
+--- !u!114 &7758532188453518643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/level1BGM/TrackSwich
+  m_EditorClassIdentifier: 
+  Name: TrackSwich
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &7939858504934718631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1950,6 +2296,28 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 475
+--- !u!114 &8808371193331572110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/level1Combat/hit
+  m_EditorClassIdentifier: 
+  Name: hit
+  Min: 0
+  Max: 10
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Type: 0
+  IsGlobal: 0
+  Exists: 1
 --- !u!114 &9139482342185263115
 MonoBehaviour:
   m_ObjectHideFlags: 0
