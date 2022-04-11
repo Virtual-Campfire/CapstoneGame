@@ -536,6 +536,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 119397007}
     - target: {fileID: 1206552032706234997, guid: 74c3ca48546edfd448252014d27d58af, type: 3}
+      propertyPath: sirenIcon
+      value: 
+      objectReference: {fileID: 2101417495}
+    - target: {fileID: 1206552032706234997, guid: 74c3ca48546edfd448252014d27d58af, type: 3}
       propertyPath: rhythmMechanics
       value: 
       objectReference: {fileID: 830540830}

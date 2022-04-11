@@ -41,6 +41,12 @@ public class PatrolState : FSMState
         {
             // Stop in tracks
             agent.SetDestination(agent.transform.position);
+
+            // Enemy starts producing sparks
+            if (GetComponentInParent<EnemyState>().sparks && !GetComponentInParent<EnemyState>().sparks.isPlaying)
+            {
+                GetComponentInParent<EnemyState>().sparks.Play();
+            }
         }
     }
 
@@ -105,6 +111,12 @@ public class PatrolState : FSMState
         {
             agent.destination = points[destPoint].position;
             destPoint = (destPoint + 1) % points.Length;
+
+            // Stop sparking
+            if (GetComponentInParent<EnemyState>().sparks)
+            {
+                GetComponentInParent<EnemyState>().sparks.Play();
+            }
         }
 
 

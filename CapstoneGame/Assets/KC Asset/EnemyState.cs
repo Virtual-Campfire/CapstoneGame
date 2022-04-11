@@ -23,6 +23,7 @@ public class EnemyState : MonoBehaviour
     public float DisToPlayer;
 
     Animator anim;
+    public ParticleSystem sparks;
 
     float lastHP, currentHP;
     
@@ -40,6 +41,7 @@ public class EnemyState : MonoBehaviour
         InitialPositionHolder.transform.eulerAngles = new Vector3(gameObject.transform.eulerAngles.x, gameObject.transform.eulerAngles.y);
 
         anim = GetComponentInChildren<Animator>();
+        sparks = GetComponentInChildren<ParticleSystem>();
     }
     
     // Update is called once per frame
