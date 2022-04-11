@@ -59,13 +59,11 @@ public class CharacterController_Player : MonoBehaviour
 
     // UI variables
     [SerializeField]
-    GameObject noInstrumentWarning;
-    [SerializeField]
     Health healthUI;
     [SerializeField]
     MagicBarScript magicUI;
     [SerializeField]
-    GameObject rhythmMechanics, rhythmUI, magicBar;
+    GameObject rhythmMechanics, rhythmUI, magicBar, meleeUI, sirenUI;
     [SerializeField]
     Image meleeIcon, sirenIcon;
     [SerializeField]
@@ -128,6 +126,8 @@ public class CharacterController_Player : MonoBehaviour
         healthUI.numOfHearths = (int)health.maxHealth;
         healthUI.health = (int)health.currentHealth;
         magicUI.SetMaxMagic((int)maxResource);
+        meleeUI = GameObject.Find("Primary Attack");
+        sirenUI = GameObject.Find("Secondary Attack");
 
         meleeIconColor = meleeIcon.color;
         sirenIconColour = sirenIcon.color;
@@ -640,9 +640,12 @@ public class CharacterController_Player : MonoBehaviour
         // If not carrying any instruments, hide rhythm mechanics and show unequipped warning message on HUD
         if (instrumentsCollected == 0)
         {
-            //noInstrumentWarning.SetActive(true);
-            meleeIcon.color = new Color(.1f, .1f, .1f);
-            sirenIcon.color = new Color(.1f, .1f, .1f);
+            if (meleeUI && sirenUI)
+            {
+                // Hide UI elements for abilities
+                meleeUI.SetActive(false);
+                sirenUI.SetActive(false);
+            }
 
             // Hide rhythm mechanics
             MeshRenderer[] notes1 = rhythmMechanics.GetComponentsInChildren<MeshRenderer>();
@@ -667,7 +670,12 @@ public class CharacterController_Player : MonoBehaviour
         // If carrying instruments, show rhythm mechanics and hide unequipped warning message on HUD
         else
         {
-            //noInstrumentWarning.SetActive(false);
+            if (meleeUI && sirenUI)
+            {
+                // Show UI elements for abilities
+                meleeUI.SetActive(true);
+                sirenUI.SetActive(true);
+            }
 
             // Show rhythm mechanics
             MeshRenderer[] notes1 = rhythmMechanics.GetComponentsInChildren<MeshRenderer>();
