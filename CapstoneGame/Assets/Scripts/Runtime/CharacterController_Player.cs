@@ -73,7 +73,7 @@ public class CharacterController_Player : MonoBehaviour
 
     // Variables used with revised instrument / weapons system
     [SerializeField]
-    ParticleSystem effectRadiusParticles;
+    ParticleSystem effectRadiusParticles, slashParticles;
     public float AOEEffectRadius = 5;
     public bool playingSiren;
 
@@ -183,16 +183,6 @@ public class CharacterController_Player : MonoBehaviour
         //if (Input.GetButtonDown("Jump"))
         //{
         //    isJumping = true;
-        //}
-
-        //// Instrument inventory system
-        //if (Input.GetButtonDown("Equip Left"))
-        //{
-        //    SwapInstrumentId(1);
-        //}
-        //if (Input.GetButtonDown("Equip Right"))
-        //{
-        //    SwapInstrumentId(-1);
         //}
 
         // Check if melee weapon is equipped and available and last melee attack and melee buffer time (so that players can queue up an attack if they click right before ending their last)
@@ -335,6 +325,9 @@ public class CharacterController_Player : MonoBehaviour
         // Check if player's melee attack overlaps with other characters
         if (meleeHurtbox.gameObject.activeSelf)
         {
+            // Show slashing visual effect
+            slashParticles.Play();
+
             Collider[] temp = Physics.OverlapBox(meleeHurtbox.transform.position + transform.forward * meleeHurtbox.center.z, meleeHurtbox.size, meleeHurtbox.gameObject.transform.rotation, 1 << 14);
 
             foreach (Collider item in temp)
