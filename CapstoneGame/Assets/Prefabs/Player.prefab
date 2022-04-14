@@ -5143,7 +5143,8 @@ MonoBehaviour:
   sirenUI: {fileID: 0}
   meleeIcon: {fileID: 0}
   sirenIcon: {fileID: 0}
-  gameoverText: {fileID: 0}
+  gameoverUI: {fileID: 0}
+  winUI: {fileID: 0}
   effectRadiusParticles: {fileID: 3877576820446661231}
   slashParticles: {fileID: 169400506336683686}
   AOEEffectRadius: 10

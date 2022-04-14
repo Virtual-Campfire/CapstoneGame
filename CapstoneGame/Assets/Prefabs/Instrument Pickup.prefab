@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3569631554733680017}
   - component: {fileID: 580401102821417066}
   - component: {fileID: 2745759308834442612}
+  - component: {fileID: 325824643542500159}
   m_Layer: 0
   m_Name: Instrument Pickup
   m_TagString: Untagged
@@ -59,7 +60,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instrumentID: 0
-  instrumentModel: {fileID: 8970949007723510555}
+  rhythmMechanics: {fileID: 0}
+  AudioManager: {fileID: 0}
+  BeatController: {fileID: 0}
+  BeatScroller: {fileID: 0}
+  DestroyBar: {fileID: 0}
+  keySpawner1: {fileID: 0}
+  keySpawner2: {fileID: 0}
+--- !u!114 &325824643542500159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3011759940998588920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 690232ebf9c25264e89ea25da0b341cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 8970949007723510555}
+  bobHeight: 0.25
+  spinsPerSecond: 0.5
 --- !u!1001 &1741869500123789314
 PrefabInstance:
   m_ObjectHideFlags: 0

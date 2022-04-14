@@ -67,7 +67,7 @@ public class CharacterController_Player : MonoBehaviour
     [SerializeField]
     Image meleeIcon, sirenIcon;
     [SerializeField]
-    Text gameoverText;
+    GameObject gameoverUI, winUI;
 
     Color meleeIconColor, sirenIconColour;
 
@@ -128,6 +128,10 @@ public class CharacterController_Player : MonoBehaviour
         magicUI.SetMaxMagic((int)maxResource);
         meleeUI = GameObject.Find("Primary Attack");
         sirenUI = GameObject.Find("Secondary Attack");
+        gameoverUI = GameObject.Find("Game Over UI");
+        winUI = GameObject.Find("Win UI");
+        gameoverUI.SetActive(false);
+        winUI.SetActive(false);
 
         meleeIconColor = meleeIcon.color;
         sirenIconColour = sirenIcon.color;
@@ -728,18 +732,18 @@ public class CharacterController_Player : MonoBehaviour
         pulled = false;
     }
 
-    IEnumerator DeathSequence()
+    public IEnumerator DeathSequence()
     {
+        // Prevents some edge cases if both sequences are somehow called one after the other
+        StopCoroutine(WinSequence());
+
         moveLock = true;
         rotLock = true;
 
-        // Temporary fix to stop music duplication on level reload
-        BeatScroller.level1Music.Stop();
-
         // Add in game over UI
-        if (gameoverText != null)
+        if (gameoverUI != null)
         {
-            gameoverText.enabled = true;
+            gameoverUI.SetActive(true);
         }
 
         //Stop playing music
@@ -748,10 +752,27 @@ public class CharacterController_Player : MonoBehaviour
         yield return new WaitForSeconds(3);
 
         SceneManager.LoadScene(0);
-
-        
     }
-    
+
+    public IEnumerator WinSequence()
+    {
+        // Prevents some edge cases if both sequences are somehow called one after the other
+        StopCoroutine(DeathSequence());
+
+        // Add in game over UI
+        if (winUI != null)
+        {
+            winUI.SetActive(true);
+        }
+
+        //Stop playing music
+        MasterBus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
+        yield return new WaitForSeconds(3);
+
+        SceneManager.LoadScene(0);
+    }
+
     void OnDrawGizmos()
     {
         // Debug effect for violin radius
