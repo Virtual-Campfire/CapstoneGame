@@ -25,10 +25,10 @@ public class ForkliftBehaviour : MonoBehaviour
     GameObject GroupToHide, GroupToShow;
 
     [SerializeField]
-    GameObject[] DissolveMeshes;
+    GameObject[] DissolveMeshes, LightInMeshes;
     [SerializeField]
-    Material DissolveMat;
-    Material DissolveMatInst;
+    Material DissolveMat, LightInMat;
+    Material DissolveMatInst, LightInMatInst;
 
     float controlCalculate;
 
@@ -38,9 +38,12 @@ public class ForkliftBehaviour : MonoBehaviour
         {
             // Create an instance of the dissolve material
             DissolveMatInst = new Material(DissolveMat);
-            
+            // Create an instance of the light-in material
+            LightInMatInst = new Material(LightInMat);
+
             // Apply that instance to the material component so properties are not modified from the instance instead of the global material
             DissolveMeshes[i].GetComponent<Renderer>().material.CopyPropertiesFromMaterial(DissolveMatInst);
+            LightInMeshes[i].GetComponent<Renderer>().material.CopyPropertiesFromMaterial(LightInMatInst);
         }
 
         Agent = GetComponent<NavMeshAgent>();
@@ -66,14 +69,18 @@ public class ForkliftBehaviour : MonoBehaviour
             GroupToShow.SetActive(true);
 
             controlCalculate = controlCalculate + Time.deltaTime;
-
+            
             // Modify material instance in each mesh
             foreach (GameObject item in DissolveMeshes)
             {
                 item.GetComponent<Renderer>().material.SetFloat("_Control", controlCalculate);
             }
-            
-            // When dissolve is done, destroy forklift
+            foreach (GameObject item in LightInMeshes)
+            {
+                item.GetComponent<Renderer>().material.SetFloat("_Control", controlCalculate);
+            }
+
+            // When death effect is done, destroy forklift
             if (controlCalculate >= 1)
             {
                 controlCalculate = 0;
