@@ -6,6 +6,9 @@ using UnityEngine;
 // Simple script to interpolate a position to another target position; useful for certain camera movement
 public class LerpToTarget : MonoBehaviour
 {
+    [SerializeField]
+    Vector3 PlayerPosOffset, PlayerRotOffset;
+
     // Different named movement settings for the camera
     public enum CameraMoveType: int
     {
@@ -22,28 +25,36 @@ public class LerpToTarget : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Quaternion targetAngle = target.localRotation;
+        Quaternion targetRot = target.localRotation;
+        Vector3 targetPos = target.position;
+
+        // Add a special offset if with the player
+        if (target.gameObject.name == "Ground Ray Base")
+        {
+            targetRot = Quaternion.Euler(target.localRotation.eulerAngles + PlayerRotOffset);
+            targetPos = target.position + PlayerPosOffset;
+        }
 
         if (mode == CameraMoveType.camHard)
         {
             // Smooth follow, with immediate once target is reached
-            transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
             // Smooth rotation
-            transform.rotation = Quaternion.Lerp(transform.rotation, targetAngle, Time.deltaTime * rotSpeed);
+            transform.localRotation = Quaternion.Lerp(transform.rotation, targetRot, Time.deltaTime * rotSpeed);
         }
         else if (mode == CameraMoveType.camSoft)
         {
             // Smooth follow, with slow approach to target (reaches target increasingly slower)
-            transform.position += (target.position - transform.position) * speed * Time.deltaTime;
+            transform.position += (targetPos - transform.position) * speed * Time.deltaTime;
             // Smooth rotation
-            transform.rotation = Quaternion.Lerp(transform.rotation, targetAngle, Time.deltaTime * rotSpeed);
+            transform.localRotation = Quaternion.Lerp(transform.rotation, targetRot, Time.deltaTime * rotSpeed);
         }
         else
         {
             // Rigid follow, no smoothing on the camera's part
-            transform.position = target.position;
+            transform.position = targetPos;
             // Rigid rotation
-            transform.rotation = targetAngle;
+            transform.localRotation = targetRot;
         }
     }
 }
