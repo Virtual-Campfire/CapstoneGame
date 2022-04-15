@@ -22,6 +22,6 @@ public class OscillateOffset : MonoBehaviour
     void FixedUpdate()
     {
         // Add position offset, then the oscillating position modifier (in relative to the object's local direction for up) to the initial position
-        transform.position = initialPos + offsetPos + transform.up * Mathf.Cos(Time.fixedTime * cyclesPerSecond * 2 * Mathf.PI) * amplitude;
+        transform.localPosition = initialPos + offsetPos + transform.up * Mathf.Cos(Time.fixedTime * cyclesPerSecond * 2 * Mathf.PI) * amplitude;
     }
 }

@@ -155,11 +155,11 @@ public class CharacterController_Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Pressing escape returns to the menu (temporary)
-        if (Input.GetKeyUp(KeyCode.Escape))
-        {
-            SceneManager.LoadScene(0);
-        }
+        //// Pressing escape returns to the menu (temporary)
+        //if (Input.GetKeyUp(KeyCode.Escape))
+        //{
+        //    SceneManager.LoadScene(0);
+        //}
 
         // Upon taking damage
         if (prevHealth > health.currentHealth)
@@ -339,7 +339,7 @@ public class CharacterController_Player : MonoBehaviour
                 // Added check to catch edge cases related to hitting enemies who are about to be destroyed by something else
                 if (item != null)
                 {
-                    if (item.GetComponent<DamageKnockback>() && item.gameObject.tag == "Enemy")
+                    if (item.transform.parent.GetComponentInChildren<DamageKnockback>() && item.gameObject.tag == "Enemy")
                     {
                         if (specialMelee)
                         {
@@ -352,7 +352,7 @@ public class CharacterController_Player : MonoBehaviour
                         }
 
                         // Apply melee effects
-                        item.GetComponent<DamageKnockback>().ApplyDamage(rb.transform.position, meleeDamage, meleeKnockback);
+                        item.transform.parent.GetComponentInChildren<DamageKnockback>().ApplyDamage(rb.transform.position, meleeDamage, meleeKnockback);
                     }
                 }
             }
