@@ -1185,6 +1185,14 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 827289836}
+    - target: {fileID: 9153982769863150668, guid: 336e1a26f09d6d342af7c14673f5b262, type: 3}
+      propertyPath: targets.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9153982769863150668, guid: 336e1a26f09d6d342af7c14673f5b262, type: 3}
+      propertyPath: targets.Array.data[0]
+      value: 
+      objectReference: {fileID: 827289836}
     - target: {fileID: 9153982769863150669, guid: 336e1a26f09d6d342af7c14673f5b262, type: 3}
       propertyPath: m_RootOrder
       value: 12
