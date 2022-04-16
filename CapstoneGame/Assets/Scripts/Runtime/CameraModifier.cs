@@ -23,7 +23,13 @@ public class CameraModifier : MonoBehaviour
         {
             // Save the camera's previous target
             oldCamNode = cam.GetComponent<LerpToTarget>().target.gameObject;
+        }
+    }
 
+    void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject == player)
+        {
             // Set the main camera's target to this script's camera node
             cam.GetComponent<LerpToTarget>().target = newCamNode.transform;
         }
@@ -33,8 +39,8 @@ public class CameraModifier : MonoBehaviour
     {
         if (other.gameObject == player)
         {
-            // Set the main camera's target to its previous target
-            cam.GetComponent<LerpToTarget>().target = oldCamNode.transform;
+            // Set the main camera's target to the player
+            cam.GetComponent<LerpToTarget>().target = GameObject.Find("Ground Ray Base").transform;
         }
     }
 }
