@@ -37,7 +37,7 @@ public class PatrolState : FSMState
     void Update()
     {
         // If enemy is sleeping, stop patrolling
-        if (GetComponentInParent<LureState>().VisionRange == 0)
+        if (GetComponentInParent<FieldOfView>().viewRadius == 0)
         {
             // Stop in tracks
             agent.SetDestination(agent.transform.position);
@@ -47,6 +47,11 @@ public class PatrolState : FSMState
             {
                 GetComponentInParent<EnemyState>().sparks.Play();
             }
+        }
+        else
+        {
+            // Stop playing particles if vision range is changed
+            GetComponentInParent<EnemyState>().sparks.Stop();
         }
     }
 
@@ -107,7 +112,7 @@ public class PatrolState : FSMState
         if (points.Length == 0) { Debug.Log("Patrol check 'bool==True'  but no point set!!"); return; }
         
         // If not asleep, do normal patrol loop
-        if (GetComponentInParent<LureState>().VisionRange != 0)
+        if (GetComponentInParent<FieldOfView>().viewRadius != 0)
         {
             agent.destination = points[destPoint].position;
             destPoint = (destPoint + 1) % points.Length;
@@ -115,7 +120,7 @@ public class PatrolState : FSMState
             // Stop sparking
             if (GetComponentInParent<EnemyState>().sparks)
             {
-                GetComponentInParent<EnemyState>().sparks.Play();
+                GetComponentInParent<EnemyState>().sparks.Stop();
             }
         }
 

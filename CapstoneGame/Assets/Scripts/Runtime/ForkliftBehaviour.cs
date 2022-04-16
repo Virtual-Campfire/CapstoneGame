@@ -13,6 +13,13 @@ public class ForkliftBehaviour : MonoBehaviour
     GameObject[] Nodes;
 
     [SerializeField]
+    [Tooltip("Set this to true if the forklift should disappear once it reaches its final movement node.")]
+    bool disappearAtEndNode;
+    [SerializeField]
+    [Tooltip("Set this to true if the forklift should be active at all times and only start moving once triggered externally.")]
+    public bool waitForTrigger;
+
+    [SerializeField]
     int nodeIndex;
     [SerializeField]
     [Tooltip("How many units away from the destination before considering it reached. A higher value makes the forklift turn to its next destination sooner.")]
@@ -49,56 +56,71 @@ public class ForkliftBehaviour : MonoBehaviour
         Agent = GetComponent<NavMeshAgent>();
         nodeIndex = 0;
 
-        // Go to the first node
-        GoToNextNode();
+        if (!waitForTrigger)
+        {
+            // Go to the first node
+            GoToNextNode();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         // When near the destination node, change destination to next node in the array
-        if (Vector3.Distance(Agent.nextPosition, Agent.destination) < pathingTolerance)
+        if (Vector3.Distance(Agent.nextPosition, Agent.destination) < pathingTolerance && !waitForTrigger)
         {
             GoToNextNode();
         }
 
-        if (GetComponent<DamageKnockback>().currentHealth == 0)
+        // Extra component check to avoid null refs if forklift doesn't have health
+        if (GetComponent<DamageKnockback>())
         {
-            // Hide regular mesh, show dissolve mesh
-            GroupToHide.SetActive(false);
-            GroupToShow.SetActive(true);
-
-            controlCalculate = controlCalculate + Time.deltaTime;
-            
-            // Modify material instance in each mesh
-            foreach (GameObject item in DissolveMeshes)
+            if (GetComponent<DamageKnockback>().currentHealth == 0)
             {
-                item.GetComponent<Renderer>().material.SetFloat("_Control", controlCalculate);
-            }
-            foreach (GameObject item in LightInMeshes)
-            {
-                item.GetComponent<Renderer>().material.SetFloat("_Control", controlCalculate);
-            }
+                // Hide regular mesh, show dissolve mesh
+                GroupToHide.SetActive(false);
+                GroupToShow.SetActive(true);
 
-            // When death effect is done, destroy forklift
-            if (controlCalculate >= 1)
-            {
-                controlCalculate = 0;
+                controlCalculate = controlCalculate + Time.deltaTime;
 
-                // Drop violin at position before disappearing
-                Instantiate(Violin, transform.position, Quaternion.identity);
+                // Modify material instance in each mesh
+                foreach (GameObject item in DissolveMeshes)
+                {
+                    item.GetComponent<Renderer>().material.SetFloat("_Control", controlCalculate);
+                }
+                foreach (GameObject item in LightInMeshes)
+                {
+                    item.GetComponent<Renderer>().material.SetFloat("_Control", controlCalculate);
+                }
 
-                Destroy(gameObject);
+                // When death effect is done, destroy forklift
+                if (controlCalculate >= 1)
+                {
+                    controlCalculate = 0;
+
+                    // Drop violin at position before disappearing
+                    Instantiate(Violin, transform.position, Quaternion.identity);
+
+                    Destroy(gameObject);
+                }
             }
         }
     }
 
-    void GoToNextNode()
+    public void GoToNextNode()
     {
-        Agent.SetDestination(Nodes[nodeIndex].transform.position);
+        if (nodeIndex == Nodes.Length && disappearAtEndNode)
+        {
+            // Once the final node has been reached, if set to disappear, remove the forklift from play
+            Destroy(gameObject);
+        }
+        else
+        {
+            Agent.SetDestination(Nodes[nodeIndex].transform.position);
+        }
 
         // Follow next node (staying at final destination if it is reached)
-        if (nodeIndex < Nodes.Length - 1)
+        if (nodeIndex < Nodes.Length)
         {
             nodeIndex++;
         }

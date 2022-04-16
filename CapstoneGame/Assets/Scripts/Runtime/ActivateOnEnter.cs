@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Adam B.
-// Activates a gameobject when trigger is entered
+// Activates forklifts when trigger is entered
 public class ActivateOnEnter : MonoBehaviour
 {
     [SerializeField]
@@ -13,8 +13,14 @@ public class ActivateOnEnter : MonoBehaviour
     {
         foreach (GameObject item in targets)
         {
-            // Set object to be deactivated by default if referenced in this script
-            item.SetActive(false);
+            if (item.GetComponent<ForkliftBehaviour>())
+            {
+                // Set object to be deactivated by default if referenced in this script, unless it is a forklift that is set to wait
+                if (!item.GetComponent<ForkliftBehaviour>().waitForTrigger)
+                {
+                    item.SetActive(false);
+                }
+            }
         }
     }
 
@@ -26,7 +32,15 @@ public class ActivateOnEnter : MonoBehaviour
             {
                 if (item)
                 {
+                    // Set the forklift to active if it's not already
                     item.SetActive(true);
+                    
+                    // If the forklift is waiting for an external trigger to start its movement behaviour, start it
+                    if (item.GetComponent<ForkliftBehaviour>().waitForTrigger)
+                    {
+                        item.GetComponent<ForkliftBehaviour>().waitForTrigger = false;
+                        item.GetComponent<ForkliftBehaviour>().GoToNextNode();
+                    }
                 }
             }
         }

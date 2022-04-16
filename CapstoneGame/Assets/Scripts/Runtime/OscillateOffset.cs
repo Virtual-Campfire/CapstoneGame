@@ -15,7 +15,7 @@ public class OscillateOffset : MonoBehaviour
 
     void Awake()
     {
-        initialPos = transform.position;
+        initialPos = transform.localPosition;
     }
     
     // Movement is called on physics update frame, just in case this object has a collider
