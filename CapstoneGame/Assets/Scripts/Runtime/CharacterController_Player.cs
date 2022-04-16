@@ -339,7 +339,7 @@ public class CharacterController_Player : MonoBehaviour
                 // Added check to catch edge cases related to hitting enemies who are about to be destroyed by something else
                 if (item != null)
                 {
-                    if (item.transform.parent.GetComponentInChildren<DamageKnockback>() && item.gameObject.tag == "Enemy")
+                    if (item.transform.GetComponentInChildren<DamageKnockback>() && item.gameObject.tag == "Enemy")
                     {
                         if (specialMelee)
                         {
@@ -352,7 +352,7 @@ public class CharacterController_Player : MonoBehaviour
                         }
 
                         // Apply melee effects
-                        item.transform.parent.GetComponentInChildren<DamageKnockback>().ApplyDamage(rb.transform.position, meleeDamage, meleeKnockback);
+                        item.transform.GetComponentInChildren<DamageKnockback>().ApplyDamage(rb.transform.position, meleeDamage, meleeKnockback);
                     }
                 }
             }
