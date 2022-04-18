@@ -20,7 +20,7 @@ public class ForkliftBehaviour : MonoBehaviour
     public bool waitForTrigger;
 
     [SerializeField]
-    int nodeIndex;
+    int nextNodeIndex;
     [SerializeField]
     [Tooltip("How many units away from the destination before considering it reached. A higher value makes the forklift turn to its next destination sooner.")]
     float pathingTolerance;
@@ -54,7 +54,7 @@ public class ForkliftBehaviour : MonoBehaviour
         }
 
         Agent = GetComponent<NavMeshAgent>();
-        nodeIndex = 0;
+        nextNodeIndex = -1;
 
         if (!waitForTrigger)
         {
@@ -109,20 +109,23 @@ public class ForkliftBehaviour : MonoBehaviour
 
     public void GoToNextNode()
     {
-        if (nodeIndex == Nodes.Length && disappearAtEndNode)
+        // Follow next node (staying at final destination if it is reached)
+        if (nextNodeIndex < Nodes.Length)
         {
-            // Once the final node has been reached, if set to disappear, remove the forklift from play
-            Destroy(gameObject);
+            nextNodeIndex++;
+        }
+
+        if (nextNodeIndex == Nodes.Length)
+        {
+            if(disappearAtEndNode)
+            {
+                // Once the final node has been reached, if set to disappear, remove the forklift from play
+                Destroy(gameObject);
+            }
         }
         else
         {
-            Agent.SetDestination(Nodes[nodeIndex].transform.position);
-        }
-
-        // Follow next node (staying at final destination if it is reached)
-        if (nodeIndex < Nodes.Length)
-        {
-            nodeIndex++;
+            Agent.SetDestination(Nodes[nextNodeIndex].transform.position);
         }
     }
 }

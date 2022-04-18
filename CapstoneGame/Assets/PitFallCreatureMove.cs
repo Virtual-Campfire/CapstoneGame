@@ -19,6 +19,8 @@ public class PitFallCreatureMove : MonoBehaviour
     {
         Me = this.gameObject;
 
+        // Override height adjust (temporary fix)
+        HightAdjust = transform.position.y;
     }
 
     // Update is called once per frame
